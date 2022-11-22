@@ -9,6 +9,7 @@ public class NPCMovement : MonoBehaviour
     [SerializeField]
     float moveSpeed;
     int waypointIndex = 0;
+    public bool canMove = true;
     
     void Start()
     {
@@ -18,7 +19,11 @@ public class NPCMovement : MonoBehaviour
  
     void Update()
     {
-        Move();   
+        if (canMove == true)
+        {
+            Move();
+        }
+        
     }
 
     void Move()
