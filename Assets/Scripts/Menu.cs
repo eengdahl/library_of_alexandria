@@ -7,10 +7,6 @@ using TMPro;
 
 public class Menu : MonoBehaviour
 {
-    public Button quit;
-    public Button start;
-    public Button creidts;
-    public Button settings;
 
 
     public void Quit()
