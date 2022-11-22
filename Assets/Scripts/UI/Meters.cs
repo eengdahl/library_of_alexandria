@@ -9,37 +9,46 @@ public class Meters : MonoBehaviour
 {
     public Slider showTimeLeft;
     public Slider noiseMeter;
-    public float timer = 300f;
-    float noNoise = 5f;
+    private float timer;
+    private int maxNoise = 100;
+
+    private void Start()
+    {
+        noiseMeter.maxValue = 100;
+    }
 
 
-    // Update is called once per frame
     void Update()
     {
         //Creating a timer and counting down from full time to no time 
-        timer = timer - Time.deltaTime;
-        showTimeLeft.value = timer;
+        timer += Time.deltaTime;
+
+        if (timer > 1)
+        {
+            showTimeLeft.value++;
+            timer = 0;
+            UpdateNoise(-5);
+        }
 
         //testing so the noisemeter Reacts
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Ping");
-            UpdateNoise(1);
+            UpdateNoise(10);
         }
+
     }
 
 
     //Function for very basic update of noisemeter
     public void UpdateNoise(int noise)
     {
-      
-
-
         noiseMeter.value += noise;
 
-        if (true)
+        if (noiseMeter.value >= maxNoise)
         {
-
+            SceneManager.LoadScene("Meny");
         }
+
+
     }
 }
