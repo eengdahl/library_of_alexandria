@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class NPCMovement : MonoBehaviour
 {
-    [SerializeField]
-    Transform[] wayPoints;
+    WayPointsArmory wayPointsArmory;
+    
+    public Transform[] wayPoints;
     [SerializeField]
     float moveSpeed;
     int waypointIndex = 0;
     public bool canMove = true;
+    int movementArrayPickerIndex;
     
     void Start()
     {
+        movementArrayPickerIndex = Random.Range(0, 4);
+        wayPointsArmory = FindObjectOfType<WayPointsArmory>();
+        wayPoints = wayPointsArmory.GetArray(movementArrayPickerIndex);
         transform.position = wayPoints[waypointIndex].transform.position;
     }
 
