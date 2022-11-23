@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1959179944428149601}
   - component: {fileID: 3000971275300853287}
   - component: {fileID: 388176057605290319}
+  - component: {fileID: 241423413}
   m_Layer: 0
   m_Name: Number
   m_TagString: Untagged
@@ -97,7 +98,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2596194515947288399}
-  m_Text: 0
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -111,6 +112,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &241423413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2596194515947288399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76f2e2310bb406438b1848eba479ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7742822217300257482
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +137,7 @@ GameObject:
   - component: {fileID: 3146768158377521077}
   - component: {fileID: 1968372268}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: WayPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +157,7 @@ Transform:
   m_Children:
   - {fileID: 7739317255395532890}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8502514209206297263
 SpriteRenderer:
