@@ -8,10 +8,14 @@ public class NPCMakeNoise : MonoBehaviour
     public AudioSource aS;
     public AudioClip[] nosie;
     public bool makeingNosie = false;
+    Meters meters;
+
     void Start()
     {
         aS = GetComponent<AudioSource>();
         timer = 0;
+        meters = FindObjectOfType<Meters>();
+
     }
 
     // Update is called once per frame
@@ -27,7 +31,6 @@ public class NPCMakeNoise : MonoBehaviour
             if (startMakingSoundPicker >= 2)
             {
                 makeingNosie = true;
-                Debug.Log("Should turn noise making on now");
             }
             timer = 0;
         }
@@ -35,12 +38,15 @@ public class NPCMakeNoise : MonoBehaviour
         if (makeingNosie == true)
         {
             timer = 0;
-            Debug.Log("Inside makingNoise");
             aS.enabled = true;
+
+            meters.UpdateNoise(10);
+
         }
         else if (makeingNosie == false)
         {
             aS.enabled = false;
         }
     }
+
 }

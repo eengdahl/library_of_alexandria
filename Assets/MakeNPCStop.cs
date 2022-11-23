@@ -21,7 +21,7 @@ public class MakeNPCStop : MonoBehaviour
             
             if (canStopToHusch && Input.GetKey(KeyCode.F)) //&& npcNoise.makeingNosie == true
             {
-                Debug.Log("Should STOP NPC");
+               
                 npcMove.canMove = false;             
             }
             if (npcMove.canMove == false)
