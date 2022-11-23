@@ -39,7 +39,7 @@ public class NPCMakeNoise : MonoBehaviour
         {
             timer = 0;
             aS.enabled = true;
-
+            //Calling Meters and adjusting noisemeter
             meters.UpdateNoise(10);
 
         }

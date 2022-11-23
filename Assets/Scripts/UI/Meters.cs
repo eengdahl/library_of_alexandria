@@ -41,12 +41,10 @@ public class Meters : MonoBehaviour
             }
 
             //Making noisemeter decreses always, NOT a good solution'
-            UpdateNoise(-2);
+            UpdateNoise(-4);
 
             timer = 0;
         }
-
-
 
     }
 
@@ -54,11 +52,12 @@ public class Meters : MonoBehaviour
     //Function for very basic update of noisemeter
     public void UpdateNoise(int noise)
     {
-
+        //Saving all input in buffer and resets every run. 
+        //This nr can reach 4000ish  and is a bit buggy
         noiseBuffer += noise;
         if (timer > 1f)
         {
-            Debug.Log(noiseBuffer);
+         
             // Takes input  from other objects and adds noise
             if (noiseBuffer > 0)
             {
@@ -67,7 +66,6 @@ public class Meters : MonoBehaviour
             //Takes input from other objects and decreses noise
             else if (noiseBuffer <= 0)
             {
-
                 //cant figure out how to make slider move smooth,
                 noiseMeter.value += -5;
 
@@ -86,10 +84,6 @@ public class Meters : MonoBehaviour
 
         // noiseMeter.value = Mathf.MoveTowards(noiseMeter.value, noise, 5);
         //noiseMeter.value = +Mathf.SmoothDamp(noiseMeter.value, noise, ref test, 1);
-
-
-
-
 
     }
 }
