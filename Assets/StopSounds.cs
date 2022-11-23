@@ -4,38 +4,39 @@ using UnityEngine;
 
 public class StopSounds : MonoBehaviour
 {
-    public bool husched;
-
+    public bool canDoHusch;
+    GameObject npc;
+    NPCMakeNoise npcSound;
     private void Start()
     {
-        husched = false;
+        canDoHusch = false;
+    }
+
+    private void Update()
+    {
+        if(canDoHusch && Input.GetKey(KeyCode.F)&&npcSound.makeingNosie == true)
+        {
+            Debug.Log("F is pressed and sound should stop");
+            npcSound.timer = 0;
+            npcSound.makeingNosie = false;
+            canDoHusch = false;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if  (collision.tag == "NPC Sound")
         {
-            GameObject npc = collision.transform.parent.gameObject;
-            NPCMakeNoise npcSound = npc.GetComponent<NPCMakeNoise>();           
-            npcSound.timer = 0;
-            npcSound.makeingNosie = false;
-                
-            
+            canDoHusch = true;
+            npc = collision.transform.parent.gameObject;
+            npcSound = npc.GetComponent<NPCMakeNoise>();
+           
 
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "NPC Sound")
-        {
-            if (Input.GetKeyDown("space"))
-            {
-                GameObject npc = collision.transform.parent.gameObject;
-                NPCMakeNoise npcSound = npc.GetComponent<NPCMakeNoise>();
-                npcSound.timer = 0;
-                npcSound.makeingNosie = false;
-            }
-
-        }
+        npc = null;
+        npcSound = null;
     }
 
 }

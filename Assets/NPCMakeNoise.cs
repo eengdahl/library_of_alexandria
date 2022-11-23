@@ -21,10 +21,10 @@ public class NPCMakeNoise : MonoBehaviour
         //Make the timer increase chance of making noise 
         timer += Time.deltaTime;
 
-        if (timer >= 5f)
+        if (timer >= 3f)
         {
             float startMakingSoundPicker = Random.Range(1f, 10f);
-            if (startMakingSoundPicker >= 8)
+            if (startMakingSoundPicker >= 2)
             {
                 makeingNosie = true;
                 Debug.Log("Should turn noise making on now");
@@ -34,6 +34,7 @@ public class NPCMakeNoise : MonoBehaviour
 
         if (makeingNosie == true)
         {
+            timer = 0;
             Debug.Log("Inside makingNoise");
             aS.enabled = true;
         }
