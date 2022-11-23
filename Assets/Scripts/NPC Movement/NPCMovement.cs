@@ -12,7 +12,8 @@ public class NPCMovement : MonoBehaviour
     int waypointIndex = 0;
     public bool canMove = true;
     int movementArrayPickerIndex;
-    
+    float stopTimer;
+    public float stillAfterHusch = 2;
     void Start()
     {
         movementArrayPickerIndex = Random.Range(0, 4);
@@ -26,7 +27,16 @@ public class NPCMovement : MonoBehaviour
     {
         if (canMove == true)
         {
+            stopTimer = 0;
             Move();
+        }
+        else if (canMove == false)
+        {
+            stopTimer += Time.deltaTime;
+            if (stopTimer > stillAfterHusch)
+            {
+                canMove = true;
+            }
         }
         
     }

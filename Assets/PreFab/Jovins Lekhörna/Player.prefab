@@ -1,5 +1,72 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &382444399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382444400}
+  - component: {fileID: 382444402}
+  - component: {fileID: 382444401}
+  m_Layer: 0
+  m_Name: BookPickUp&Return
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &382444400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382444399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4355956085948609702}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &382444402
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382444399}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &382444401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382444399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dbd8cbbf86c06844b4e34bf918a2733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxNumberOfBooks: 2
+  booksInArms: 0
+  whiteBooksInHands: 0
+  redBooksInHands: 0
+  blueBooksInHands: 0
+  greenBooksInHands: 0
 --- !u!1 &4355956085948609704
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,8 +99,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4355956086700047641}
+  - {fileID: 382444400}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4355956085948609703
 SpriteRenderer:
@@ -99,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7494566bacb008489c9aca26110785c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
 --- !u!50 &4355956085948609700
 Rigidbody2D:
   serializedVersion: 4
@@ -130,14 +198,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4355956086700047641}
-  - component: {fileID: 4355956086700047639}
-  - component: {fileID: 4355956086700047638}
   - component: {fileID: 4355956086700047636}
   - component: {fileID: 4355956086700047640}
   - component: {fileID: 4355956086700047637}
   m_Layer: 0
   m_Name: Husch
-  m_TagString: Untagged
+  m_TagString: Husch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,33 +223,6 @@ Transform:
   m_Father: {fileID: 4355956085948609702}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4355956086700047639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4355956086700047642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99538459d7519584d8389396bc92ea0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canDoHusch: 0
---- !u!114 &4355956086700047638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4355956086700047642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0769f1a5d1dd62b408284d6cba46b573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canStopToHusch: 0
-  stopTimerMax: 5
 --- !u!114 &4355956086700047636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   schhSound: {fileID: 8300000, guid: a98bfbb66d9c6e8429dfa83ec18527f5, type: 3}
+  lenghtOfHusch: 0.5
+  doesHuschSound: 0
 --- !u!58 &4355956086700047640
 CircleCollider2D:
   m_ObjectHideFlags: 0

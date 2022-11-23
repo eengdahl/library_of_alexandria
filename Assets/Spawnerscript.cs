@@ -7,7 +7,7 @@ public class Spawnerscript : MonoBehaviour
     public GameObject firstNPC;
 
     float timer;
-    float timer_between_NPCSpawns = 5f;
+    [SerializeField]float timer_between_NPCSpawns = 5f;
     // Start is called before the first frame update
     void Start()
     {
