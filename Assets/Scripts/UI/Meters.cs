@@ -14,10 +14,14 @@ public class Meters : MonoBehaviour
     public Slider showTimeLeft;
     public Slider noiseMeter;
     private float timer;
-    private float maxNoise = 100;
+    public float timer2;
+    private float maxNoise = 300;
+    private float noiseBuffer;
+
     private void Start()
     {
         noiseMeter.maxValue = maxNoise;
+
     }
 
 
@@ -28,6 +32,7 @@ public class Meters : MonoBehaviour
 
         if (timer > 1)
         {
+
             showTimeLeft.value++;
 
             if (showTimeLeft.value >= 300)
@@ -35,17 +40,13 @@ public class Meters : MonoBehaviour
                 SceneManager.LoadScene("Meny");
             }
 
-            //Making noisemeter decreses if no noise is present, NOT a good solution
+            //Making noisemeter decreses always, NOT a good solution'
             UpdateNoise(-2);
 
             timer = 0;
         }
 
-        //testing so the noisemeter Reacts
-        if (Input.GetButtonDown("Jump"))
-        {
-            UpdateNoise(10);
-        }
+
 
     }
 
@@ -54,37 +55,40 @@ public class Meters : MonoBehaviour
     public void UpdateNoise(int noise)
     {
 
+        noiseBuffer += noise;
+        if (timer > 1f)
+        {
+            Debug.Log(noiseBuffer);
+            // Takes input  from other objects and adds noise
+            if (noiseBuffer > 0)
+            {
+                noiseMeter.value += 10;
+            }
+            //Takes input from other objects and decreses noise
+            else if (noiseBuffer <= 0)
+            {
+
+                //cant figure out how to make slider move smooth,
+                noiseMeter.value += -5;
+
+            }
+
+            //if noisemeter reaches max, exit game
+            if (noiseMeter.value >= maxNoise)
+            {
+
+                Debug.Log("MaxNoise");
+                // SceneManager.LoadScene("Meny");
+            }
+            noiseBuffer = 0;
+            timer = 0;
+        }
+
         // noiseMeter.value = Mathf.MoveTowards(noiseMeter.value, noise, 5);
         //noiseMeter.value = +Mathf.SmoothDamp(noiseMeter.value, noise, ref test, 1);
 
-        // Takes input  from other objects and adds noise
-        if (noise >= 0)
-        {
-
-            for (int i = 0; i < noise; i++)
-            {
-                //cant figure out how to make slider move smooth,
-                noiseMeter.value++;
-
-            }
-        }
-        //Takes input from other objects and decreses noise
-        else if (noise < 0)
-        {
-            for (int i = 0; i < Mathf.Abs(noise); i++)
-            {
-                //cant figure out how to make slider move smooth,
-                noiseMeter.value--;
-            }
-        }
 
 
-
-        //if noisemeter reaches max, exit game
-        if (noiseMeter.value >= maxNoise)
-        {
-            SceneManager.LoadScene("Meny");
-        }
 
 
     }
