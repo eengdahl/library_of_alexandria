@@ -55,9 +55,12 @@ public class Meters : MonoBehaviour
         //Saving all input in buffer and resets every run. 
         //This nr can reach 4000ish  and is a bit buggy
         noiseBuffer += noise;
+
+    
         if (timer > 1f)
         {
-         
+      
+
             // Takes input  from other objects and adds noise
             if (noiseBuffer > 0)
             {
