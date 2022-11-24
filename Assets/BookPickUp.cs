@@ -11,6 +11,7 @@ public class BookPickUp : MonoBehaviour
     public int redBooksInHands;
     public int blueBooksInHands;
     public int greenBooksInHands;
+
     private void Awake()
     {
         booksInArms = 0;

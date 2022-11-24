@@ -8,22 +8,22 @@ public class WayPointsArmory : MonoBehaviour
     public Transform[] secondArray;
     public Transform[] thirdArray;
     public Transform[] forthArray;
-    List<Transform[]> arrayOfTransformArrays;
+    List<Transform[]> listOfTransformArrays;
     
     // Start is called before the first frame update
     void Start()
     {
-        arrayOfTransformArrays = new List<Transform[]>();
-        arrayOfTransformArrays.Add(firstArray);
-        arrayOfTransformArrays.Add(secondArray);
-        arrayOfTransformArrays.Add(thirdArray);
-        arrayOfTransformArrays.Add(forthArray);
+        listOfTransformArrays = new List<Transform[]>();
+        listOfTransformArrays.Add(firstArray);
+        listOfTransformArrays.Add(secondArray);
+        listOfTransformArrays.Add(thirdArray);
+        listOfTransformArrays.Add(forthArray);
     }
     
     public Transform[] GetArray(int index)
     {
         Transform[] returnArray;
-        returnArray = arrayOfTransformArrays[index];
+        returnArray = listOfTransformArrays[index];
 
         return returnArray;
     }
