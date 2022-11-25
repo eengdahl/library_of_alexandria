@@ -7,7 +7,7 @@ public class NPCMakeNoise : MonoBehaviour
     public float timer;
     public AudioSource aS;
     public AudioClip[] nosie;
-    public bool makeingNosie = false;
+    public bool makingNosie = false;
     Meters meters;
 
     void Start()
@@ -30,12 +30,12 @@ public class NPCMakeNoise : MonoBehaviour
             float startMakingSoundPicker = Random.Range(1f, 10f);
             if (startMakingSoundPicker <= 4)
             {
-                makeingNosie = true;
+                makingNosie = true;
             }
             timer = 0;
         }
 
-        if (makeingNosie == true)
+        if (makingNosie == true)
         {
             timer = 0;
             aS.enabled = true;
@@ -43,7 +43,7 @@ public class NPCMakeNoise : MonoBehaviour
             meters.UpdateNoise(10);
 
         }
-        else if (makeingNosie == false)
+        else if (makingNosie == false)
         {
             aS.enabled = false;
         }

@@ -14,11 +14,11 @@ public class StopSounds : MonoBehaviour
 
     private void Update()
     {
-        if(canDoHusch && Input.GetKey(KeyCode.F)&&npcSound.makeingNosie == true)
+        if(canDoHusch && Input.GetKey(KeyCode.F)&&npcSound.makingNosie == true)
         {
             Debug.Log("F is pressed and sound should stop");
             npcSound.timer = 0;
-            npcSound.makeingNosie = false;
+            npcSound.makingNosie = false;
             canDoHusch = false;
         }
     }

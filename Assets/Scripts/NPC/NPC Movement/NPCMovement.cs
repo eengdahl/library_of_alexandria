@@ -29,7 +29,7 @@ public class NPCMovement : MonoBehaviour
     int waypointIndex = 0;
     int movementArrayPickerIndex;
     public int numberOfPaths;
-
+    Transform currentWaypoint;
     private void Awake()
     {
         
@@ -111,6 +111,8 @@ public class NPCMovement : MonoBehaviour
     void MoveToChair()
     {       
         transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position, moveSpeed * Time.deltaTime);
+        currentWaypoint = chairs[chairPicker].transform;
+        FlipFacingDirection();
     }
     void CanMove()
     {
@@ -131,14 +133,31 @@ public class NPCMovement : MonoBehaviour
     void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+        currentWaypoint = wayPoints[waypointIndex];
+        FlipFacingDirection();
 
         if (transform.position == wayPoints[waypointIndex].transform.position)
         {
             waypointIndex += 1;
+            
         }
         if (waypointIndex == wayPoints.Length)
         {
             waypointIndex = 0;
+            
+        }
+    }
+    void FlipFacingDirection()
+    {
+        if (currentWaypoint.position.x < transform.position.x)
+        {
+            if (transform.localScale.x > 0)
+                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        }
+        else if (currentWaypoint.position.x > transform.position.x)
+        {
+            if (transform.localScale.x < 0)
+                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         }
     }
 }

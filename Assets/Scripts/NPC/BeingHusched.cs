@@ -24,9 +24,10 @@ public class BeingHusched : MonoBehaviour
         {
             //Stop noise;
             npcMakeNoise.timer = 0; // Reset timer in npcMakeNoise so it doesnt start makeing nosie right after being husched
-            npcMakeNoise.makeingNosie = false;//Set the makeing noise in npc to false, with other words is silent
+            npcMakeNoise.makingNosie = false;//Set the makeing noise in npc to false, with other words is silent
             //Stop momvement of NPC
             npcMovement.canMove = false;
+            
 
         }
 

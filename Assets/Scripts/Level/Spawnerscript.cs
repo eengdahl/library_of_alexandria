@@ -23,7 +23,7 @@ public class Spawnerscript : MonoBehaviour
         {
             SpawnNPC();
             timer = 0;
-            Debug.Log(timer);
+            
         }
     }
 
