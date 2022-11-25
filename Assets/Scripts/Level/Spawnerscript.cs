@@ -18,7 +18,7 @@ public class Spawnerscript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        Debug.Log(timer);
+       
         if (timer >= timer_between_NPCSpawns)
         {
             SpawnNPC();
