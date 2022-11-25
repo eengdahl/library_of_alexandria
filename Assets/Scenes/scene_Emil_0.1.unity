@@ -6480,6 +6480,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1003988378, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: secondArray.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1003988378, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: firstArray.Array.data[0]
       value: 
       objectReference: {fileID: 1818896873}
@@ -6585,7 +6589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6176864221342469635, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.000023
+      value: -5.0000305
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
