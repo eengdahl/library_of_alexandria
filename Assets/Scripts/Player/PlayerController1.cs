@@ -30,12 +30,12 @@ public class PlayerController1 : MonoBehaviour
             SceneManager.LoadScene("Meny");
         }
 
-        //Added a quick way to reset game 
-        if (Input.GetKey("r"))
-        {
-            SceneManager.LoadScene("scene_main");
-
-        }
+        ////Added a quick way to reset game 
+        //if (Input.GetKey("r"))
+        //{
+        //    SceneManager.LoadScene("scene_main");
+        //    SceneManager.
+        //}
 
 
     }

@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55c73065c3bab24b94411b6cdbddc9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 2
   canMove: 1
   stillAfterHusch: 2
   nPCbookPickUp: {fileID: 606453319}
