@@ -33,7 +33,7 @@ public class NPCBookPickUpScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         int chanceOfPickUp = Random.Range(1, 11);
-        if (haveBook == false && chanceOfPickUp > 4)
+        if (haveBook == false && chanceOfPickUp > 9)
         {
             
             if (collision.tag == "Bookshelf Green")

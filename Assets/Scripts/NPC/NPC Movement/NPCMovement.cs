@@ -28,6 +28,7 @@ public class NPCMovement : MonoBehaviour
     public Transform[] wayPoints;
     int waypointIndex = 0;
     int movementArrayPickerIndex;
+    public int numberOfPaths;
 
     private void Awake()
     {
@@ -37,7 +38,7 @@ public class NPCMovement : MonoBehaviour
     void Start()
     {
         //Waypoint Picker
-        movementArrayPickerIndex = Random.Range(0, 4);
+        movementArrayPickerIndex = Random.Range(0, numberOfPaths);
         
         wayPoints = wayPointsArmory.GetArray(movementArrayPickerIndex);
         transform.position = wayPoints[waypointIndex].transform.position; // Set location to 
