@@ -41,7 +41,7 @@ public class Meters : MonoBehaviour
             }
 
             //Making noisemeter decreses always, NOT a good solution'
-            UpdateNoise(-4);
+            UpdateNoise(-8);
 
             timer = 0;
         }
