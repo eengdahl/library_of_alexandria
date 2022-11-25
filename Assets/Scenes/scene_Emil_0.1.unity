@@ -1404,6 +1404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoints
       objectReference: {fileID: 0}
+    - target: {fileID: 1656196505126467052, guid: 150d85d4cb4c2704f8021613ccc62a1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1656196505126467053, guid: 150d85d4cb4c2704f8021613ccc62a1d, type: 3}
       propertyPath: m_RootOrder
       value: 7
