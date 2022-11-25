@@ -25,7 +25,7 @@ public class NPCMakeNoise : MonoBehaviour
         //Make the timer increase chance of making noise 
         timer += Time.deltaTime;
 
-        if (timer >= 1f)
+        if (timer >= 4f)
         {
             float startMakingSoundPicker = Random.Range(1f, 10f);
             if (startMakingSoundPicker <= 4)
