@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TurnTextOff : MonoBehaviour
 {
-    TextMesh text;
+    MeshRenderer text;
     void Start()
     {    //Turn off the text when script run ( not done!
-        text = GetComponent<TextMesh>();
-        
+        text = GetComponent<MeshRenderer>();
+        text.enabled = false;
     }
 
     // Update is called once per frame
