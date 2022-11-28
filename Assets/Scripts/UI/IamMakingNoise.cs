@@ -44,7 +44,7 @@ public class IamMakingNoise : MonoBehaviour
 
             if (!hasBeenAdded)
             {
-                noiseHandeler.ÍAmMakingNoise(self);
+                noiseHandeler.IAmMakingNoise(self);
                 hasBeenAdded = true;
             }
 

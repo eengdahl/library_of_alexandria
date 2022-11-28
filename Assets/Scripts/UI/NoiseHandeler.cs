@@ -25,7 +25,7 @@ public class NoiseHandeler : MonoBehaviour
     }
 
 
-    public void ÍAmMakingNoise(GameObject NPCMakingNoise)
+    public void IAmMakingNoise(GameObject NPCMakingNoise)
     {
 
         ListOfNoisemakers.Add(NPCMakingNoise);
