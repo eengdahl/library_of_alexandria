@@ -25,10 +25,10 @@ public class PlayerController1 : MonoBehaviour
         moveVelocity = inputAxis.normalized * speed;
 
         //Added a quick way to get to menu by pressing esc
-        if (Input.GetButton("Cancel"))
-        {
-            SceneManager.LoadScene("Meny");
-        }
+        //if (Input.GetButton("Cancel"))
+        //{
+            //SceneManager.LoadScene("Meny");
+        //}
 
         ////Added a quick way to reset game 
         //if (Input.GetKey("r"))
