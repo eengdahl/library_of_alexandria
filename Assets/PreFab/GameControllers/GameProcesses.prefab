@@ -309,8 +309,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -9.5, y: -2.399994}
-  m_SizeDelta: {x: 120.9996, y: 7.961502}
+  m_AnchoredPosition: {x: -14.079498, y: -0.1578}
+  m_SizeDelta: {x: 240.4476, y: 17.1204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6176864220257201132
 MonoBehaviour:
@@ -464,6 +464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6176864220609053188}
   - component: {fileID: 6176864220609053189}
+  - component: {fileID: 1016374378}
   m_Layer: 0
   m_Name: GameProcesses
   m_TagString: Untagged
@@ -486,7 +487,7 @@ Transform:
   - {fileID: 6176864220612409769}
   - {fileID: 990194450}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6176864220609053189
 MonoBehaviour:
@@ -501,8 +502,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showTimeLeft: {fileID: 6176864220565489790}
-  noiseMeter: {fileID: 6176864220257201132}
   timer2: 0
+--- !u!114 &1016374378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176864220609053191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1d23d295a28c14b976c5f1bf68c463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListOfNoisemakers: []
+  soundLevelInRoom: 0
+  noiseSlider: {fileID: 6176864220257201132}
 --- !u!1 &6176864220612409773
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -5.0000305, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6176864221690524620
