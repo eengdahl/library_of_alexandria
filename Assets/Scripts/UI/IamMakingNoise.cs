@@ -14,6 +14,7 @@ public class IamMakingNoise : MonoBehaviour
     public NoiseHandeler noiseHandeler;
     public GameObject self;
     public bool hasBeenAdded;
+    private float maxLevelOfSound;
 
 
     void Start()
@@ -24,6 +25,7 @@ public class IamMakingNoise : MonoBehaviour
         npcMakeNoise = GetComponent<NPCMakeNoise>();
         self = this.gameObject;
         hasBeenAdded = false;
+        maxLevelOfSound = 5;
 
     }
 
@@ -35,6 +37,10 @@ public class IamMakingNoise : MonoBehaviour
         if (timer >= 1 && npcMakeNoise.makingNosie == true)
         {
             levelOfSound += noiseinc;
+            if (levelOfSound >maxLevelOfSound)
+            {
+                levelOfSound = maxLevelOfSound;
+            }
 
             if (!hasBeenAdded)
             {
