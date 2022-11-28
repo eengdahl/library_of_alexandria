@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656196504677203262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -77,7 +77,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656196504878161512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.54, z: 0}
+  m_LocalPosition: {x: 0, y: 6.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -141,7 +141,7 @@ Transform:
   - {fileID: 3359307752710643749}
   - {fileID: 4989985143282248146}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1656196505153725560
 GameObject:
@@ -167,7 +167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656196505153725560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.16, z: 0}
+  m_LocalPosition: {x: 0, y: 4.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -298,7 +298,11 @@ MonoBehaviour:
   - {fileID: 3359307753071562788}
   - {fileID: 3359307751572453854}
   - {fileID: 3359307753569126803}
-  - {fileID: 3359307752524291981}
+  - {fileID: 3359307753253909895}
+  - {fileID: 3359307752792898446}
+  - {fileID: 3359307752688605261}
+  - {fileID: 3359307751851220044}
+  - {fileID: 3359307753544082181}
   secondArray:
   - {fileID: 3359307752710643749}
   - {fileID: 3359307752982670005}
@@ -315,9 +319,18 @@ MonoBehaviour:
   - {fileID: 3359307753569126803}
   - {fileID: 3359307751572453854}
   thirdArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3359307752710643749}
+  - {fileID: 3359307753071562788}
+  - {fileID: 3359307752982670005}
+  - {fileID: 3359307753017000114}
+  - {fileID: 3359307753584604755}
+  - {fileID: 3359307752827765782}
+  - {fileID: 3359307753210975377}
+  - {fileID: 3359307752910427074}
+  - {fileID: 3359307751851220044}
+  - {fileID: 3359307752198418173}
+  - {fileID: 3359307751526824987}
+  - {fileID: 3359307752982670005}
   forthArray:
   - {fileID: 0}
   - {fileID: 0}
@@ -449,6 +462,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -654,6 +679,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 19
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -717,6 +754,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -782,6 +831,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -845,6 +906,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -981,6 +1054,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1190,6 +1275,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -1253,6 +1350,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1318,6 +1427,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -1381,6 +1502,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1446,6 +1579,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -1509,6 +1654,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1574,6 +1731,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 22
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -1637,6 +1806,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1702,6 +1883,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 9
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -1765,6 +1958,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1902,6 +2107,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -1965,6 +2182,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2030,6 +2259,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 22
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -2093,6 +2334,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2158,6 +2411,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 16
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -2221,6 +2486,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2286,6 +2563,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 18
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -2349,6 +2638,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2482,6 +2783,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -2545,6 +2858,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2610,6 +2935,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 9
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -2673,6 +3010,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint  14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2738,6 +3087,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 16
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -2802,6 +3163,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -2865,6 +3238,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2998,6 +3383,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 13
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -3061,6 +3458,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3126,6 +3535,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -3189,6 +3610,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3254,6 +3687,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -3317,6 +3762,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3382,6 +3839,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -3446,6 +3915,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -3509,6 +3990,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3714,6 +4207,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -3777,6 +4282,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3914,6 +4431,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -3977,6 +4506,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4042,6 +4583,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -4105,6 +4658,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint  14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4170,6 +4735,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 21
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -4233,6 +4810,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4298,6 +4887,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 13
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -4362,6 +4963,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 18
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -4425,6 +5038,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4698,6 +5323,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -4761,6 +5398,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -4902,6 +5551,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 9
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -5034,6 +5695,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -5097,6 +5770,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -5234,6 +5919,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 22
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -5370,6 +6067,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -5433,6 +6142,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -5498,6 +6219,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 13
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63373715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -5562,6 +6295,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 17
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -5625,6 +6370,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -5762,6 +6519,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -5826,6 +6595,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint  14
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -5889,6 +6670,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPointStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.06891531
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8629908
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9528302
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -6094,6 +6887,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.20212682
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
@@ -6157,6 +6962,18 @@ PrefabInstance:
     - target: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
       propertyPath: m_Name
       value: WayPoint 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10588237
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502514209206297263, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21580468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
