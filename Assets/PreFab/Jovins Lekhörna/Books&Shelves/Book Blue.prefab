@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 8951082433322567922}
   - component: {fileID: 8951082433322567925}
   - component: {fileID: 77766191036831246}
+  - component: {fileID: 328735537}
   m_Layer: 0
   m_Name: Book Blue
   m_TagString: Book Blue
@@ -90,7 +91,7 @@ Transform:
   m_Children:
   - {fileID: 70539091845721803}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8951082433322567925
 SpriteRenderer:
@@ -170,3 +171,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &328735537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8951082433322567927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a9e24fcfa67294ab575018f2d5b7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BookColour: {fileID: 5692523030477188719, guid: 4d9632f90cc63504690c42730a6d67fb, type: 3}
