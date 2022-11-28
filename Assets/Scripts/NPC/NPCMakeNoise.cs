@@ -8,17 +8,17 @@ public class NPCMakeNoise : MonoBehaviour
     public AudioSource aS;
     public AudioClip[] nosie;
     public bool makingNosie = false;
-    Meters meters;
+
 
     void Start()
     {
         aS = GetComponent<AudioSource>();
         timer = 0;
-        meters = FindObjectOfType<Meters>();
 
         //Setting Diffrent Noiceclipp
         Random.Range(0, nosie.Length);
-      //  aS.clip = nosie[(Random.Range(0, nosie.Length));
+        aS.clip = nosie[Random.Range(0, nosie.Length)];
+
 
     }
 
@@ -44,7 +44,7 @@ public class NPCMakeNoise : MonoBehaviour
             timer = 0;
             aS.enabled = true;
             //Calling Meters and adjusting noisemeter
-           // meters.UpdateNoise(10);
+            // meters.UpdateNoise(10);
 
         }
         else if (makingNosie == false)
