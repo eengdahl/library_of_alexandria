@@ -48,7 +48,7 @@ public class InventoryPlayer : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             kid = FindChildWithTag(slots[i], bookColour);
-            Debug.Log(kid);
+            
             if (kid != null && kid.tag == bookColour)
             {
                 Slot slot = slots[i].GetComponent<Slot>();
