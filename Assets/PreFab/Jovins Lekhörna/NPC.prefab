@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beingHusched: 0
+  iMakeNoise: {fileID: 6829161596565585033}
 --- !u!58 &655782998
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -205,6 +206,7 @@ GameObject:
   - component: {fileID: 709626101}
   - component: {fileID: 1398966624}
   - component: {fileID: 6850743164651283470}
+  - component: {fileID: 6829161596565585033}
   m_Layer: 7
   m_Name: NPC
   m_TagString: Untagged
@@ -228,7 +230,7 @@ Transform:
   - {fileID: 655782997}
   - {fileID: 1952695675258746294}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5865293537661773344
 SpriteRenderer:
@@ -452,3 +454,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f0d79a37ffa53489bb746ed14a44db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6829161596565585033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5865293537661773346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b36250cf1037454b9e2de94499cca2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelOfSound: 0
+  npcMakeNoise: {fileID: 0}
+  noiseinc: 1
+  noiseHandeler: {fileID: 0}
+  self: {fileID: 0}
+  hasBeenAdded: 0

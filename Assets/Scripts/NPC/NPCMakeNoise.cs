@@ -16,6 +16,10 @@ public class NPCMakeNoise : MonoBehaviour
         timer = 0;
         meters = FindObjectOfType<Meters>();
 
+        //Setting Diffrent Noiceclipp
+        Random.Range(0, nosie.Length);
+      //  aS.clip = nosie[(Random.Range(0, nosie.Length));
+
     }
 
     // Update is called once per frame
@@ -40,7 +44,7 @@ public class NPCMakeNoise : MonoBehaviour
             timer = 0;
             aS.enabled = true;
             //Calling Meters and adjusting noisemeter
-            meters.UpdateNoise(10);
+           // meters.UpdateNoise(10);
 
         }
         else if (makingNosie == false)

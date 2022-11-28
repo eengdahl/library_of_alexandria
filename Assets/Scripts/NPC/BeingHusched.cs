@@ -9,12 +9,14 @@ public class BeingHusched : MonoBehaviour
     NPCMakeNoise npcMakeNoise;
     NPCMovement npcMovement;
     MakeHuschSound makeHuschSound;
+    [SerializeField] IamMakingNoise iMakeNoise;
     private void Start()
     {
         makeHuschSound = FindObjectOfType<MakeHuschSound>();
         npcMovement = GetComponent<NPCMovement>();
         npcMakeNoise = GetComponentInParent<NPCMakeNoise>();
         npcMovement = GetComponentInParent<NPCMovement>();
+        //iMakeNoise = GetComponent<IamMakingNoise>();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -27,8 +29,8 @@ public class BeingHusched : MonoBehaviour
             npcMakeNoise.makingNosie = false;//Set the makeing noise in npc to false, with other words is silent
             //Stop momvement of NPC
             npcMovement.canMove = false;
-            
 
+            iMakeNoise.levelOfSound = 0;
         }
 
 
