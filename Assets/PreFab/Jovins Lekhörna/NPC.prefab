@@ -419,7 +419,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   aS: {fileID: 0}
-  nosie: []
+  nosie:
+  - {fileID: 8300000, guid: c9523d3d1af306043bca585df02f73bf, type: 3}
+  - {fileID: 8300000, guid: 24fbcf0acbdd12d4c9ebf22d66cc8613, type: 3}
+  - {fileID: 8300000, guid: 44b434ec0c64ea049a4ed2e66960373b, type: 3}
   makingNosie: 0
 --- !u!50 &1398966624
 Rigidbody2D:
