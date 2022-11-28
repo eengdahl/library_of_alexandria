@@ -21,13 +21,14 @@ public class NoiseHandeler : MonoBehaviour
     void Update()
     {
         noiseSlider.maxValue = 300000;
+        //Checking over all noise
         CheckingNoise();
     }
 
 
     public void IAmMakingNoise(GameObject NPCMakingNoise)
     {
-
+        //Called from NPCs making noise
         ListOfNoisemakers.Add(NPCMakingNoise);
 
 
@@ -35,14 +36,15 @@ public class NoiseHandeler : MonoBehaviour
 
     public void CheckingNoise()
     {
+        //Going through NPCs making noise and adding theire current noiselevel
         for (int i = 0; i < ListOfNoisemakers.Count; i++)
         {
             IamMakingNoise iamMakingNoise = ListOfNoisemakers[i].GetComponent<IamMakingNoise>();
             soundLevelWhileInLoop += iamMakingNoise.levelOfSound;
-            Debug.Log(soundLevelWhileInLoop);
         }
         soundLevelInRoom = soundLevelWhileInLoop;
         soundLevelWhileInLoop = 0;
+        //Adjusting visible slider to current noiselevel
         noiseSlider.value = soundLevelInRoom;
     }
 }
