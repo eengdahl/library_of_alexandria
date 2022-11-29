@@ -49,7 +49,7 @@ public class Registration : MonoBehaviour
         if (collision.tag == "Deliver")
         {
             //Checking if inventory is occupied and sending that many books to the table
-            //testing with all colors untill a undefined book is ingame
+            //testing with all colors untill a undefined book is ingame 
             for (int i = 0; i < 3; i++)
             {
                 if (inventoryPlayer.isFull[i])
