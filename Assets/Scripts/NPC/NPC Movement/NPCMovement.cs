@@ -27,7 +27,7 @@ public class NPCMovement : MonoBehaviour
     int chairPicker = 0;
     public GameObject[] chairs;
     ChairOccupied chairOccupiedScript;
-    bool hasChair = false;
+    public bool hasChair = false;
     float seatedTimer = 0;
     float willBeSeatedFor;
 
