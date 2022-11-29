@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 606453318}
   - component: {fileID: 606453320}
   - component: {fileID: 606453319}
+  - component: {fileID: 429556135}
   m_Layer: 7
   m_Name: BookPickUpZone
   m_TagString: Untagged
@@ -66,6 +67,20 @@ MonoBehaviour:
   blueBook: 0
   redBook: 0
   greenBook: 0
+--- !u!114 &429556135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606453317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f4594ff7909594f8dfa8195f314b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerMax: 5
+  blankBookObject: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
 --- !u!1 &655782996
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +222,7 @@ GameObject:
   - component: {fileID: 1398966624}
   - component: {fileID: 6850743164651283470}
   - component: {fileID: 6829161596565585033}
+  - component: {fileID: 1811363365}
   m_Layer: 7
   m_Name: NPC
   m_TagString: Untagged
@@ -230,7 +246,7 @@ Transform:
   - {fileID: 655782997}
   - {fileID: 1952695675258746294}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5865293537661773344
 SpriteRenderer:
@@ -302,6 +318,7 @@ MonoBehaviour:
   nPCbookPickUp: {fileID: 606453319}
   blankBook: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
   chairs: []
+  hasChair: 0
   wayPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -476,3 +493,15 @@ MonoBehaviour:
   noiseHandeler: {fileID: 0}
   self: {fileID: 0}
   hasBeenAdded: 0
+--- !u!114 &1811363365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5865293537661773346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2abe2537afcc741b405dbf6de75cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
