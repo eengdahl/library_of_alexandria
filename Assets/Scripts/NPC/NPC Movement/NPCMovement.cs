@@ -16,6 +16,12 @@ public class NPCMovement : MonoBehaviour
     //Pick up book
     [SerializeField]NPCBookPickUpScript nPCbookPickUp;
 
+
+
+    // What book to leave at table
+    [SerializeField]GameObject blankBook;
+
+
     //Chairs
     int chairPicker = 0;
     public GameObject[] chairs;
@@ -97,6 +103,7 @@ public class NPCMovement : MonoBehaviour
            seatedTimer += Time.deltaTime;
             if (seatedTimer > willBeSeatedFor)
             { //Reset everything that have anything to do with books
+            Instantiate(blankBook,transform.position,transform.rotation);//Spawn book 
                 nPCbookPickUp.haveBook = false;
                 chairOccupiedScript.chairOccupied = false;
                 hasChair = false;

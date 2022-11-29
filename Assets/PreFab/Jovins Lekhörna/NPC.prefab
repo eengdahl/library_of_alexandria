@@ -300,6 +300,7 @@ MonoBehaviour:
   canMove: 1
   stillAfterHusch: 2
   nPCbookPickUp: {fileID: 606453319}
+  blankBook: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
   chairs: []
   wayPoints:
   - {fileID: 0}
