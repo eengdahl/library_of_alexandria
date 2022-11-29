@@ -179,17 +179,17 @@ public class NPCMovement : MonoBehaviour
         for (int i = 0; i < tables.Length; i++)
         {
             float distance = Vector3.Distance(transform.position, tables[i].transform.position);
-            Debug.Log("Calculating distance between tables");
+            
             distanceBetween[i] = distance;
-            Debug.Log("Calculating distance between tables again");
+            
         }
+        //Randomize x and y spawn point of table
+        float randomX = Random.Range(-1f, 1f);
+        float randomY = Random.Range(-0.1f, 0.1f);
+        //Find the lowest value in distance array
         int lowestIndex;
         lowestIndex = GetIndexOfLowestValue(distanceBetween);
-
-
-
-
-        Instantiate(blankBook, tables[lowestIndex].transform.position, tables[lowestIndex].transform.rotation);
+        Instantiate(blankBook, tables[lowestIndex].transform.position + new Vector3(randomX,randomY,0), tables[lowestIndex].transform.rotation);
 
     }
     public int GetIndexOfLowestValue(float[] arr)
