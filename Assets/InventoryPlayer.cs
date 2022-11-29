@@ -43,7 +43,7 @@ public class InventoryPlayer : MonoBehaviour
         return child;
     }
 
-    void ReturnBooks(string bookColour)
+    public void ReturnBooks(string bookColour)
     {
         for (int i = 0; i < slots.Length; i++)
         {

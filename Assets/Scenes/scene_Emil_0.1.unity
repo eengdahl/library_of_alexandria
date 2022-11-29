@@ -1278,6 +1278,10 @@ MonoBehaviour:
   - {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
   timer: 0
   rb: {fileID: 1193998808}
+  slots:
+  - {fileID: 1744490854}
+  - {fileID: 199478667}
+  - {fileID: 141511244}
 --- !u!61 &1193998812
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1351,6 +1355,24 @@ Transform:
   m_Father: {fileID: 1826445488}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1243299928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2100566771, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
+  m_PrefabInstance: {fileID: 5216065889690705610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1243299932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243299928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b67331008844a243a4d20bac8f6bd1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  booksOnTable: 0
 --- !u!1001 &1285763995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2232,7 +2254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6176864221342469635, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.0000076
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
