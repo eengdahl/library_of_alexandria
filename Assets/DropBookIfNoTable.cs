@@ -31,7 +31,7 @@ public class DropBookIfNoTable : MonoBehaviour
                 if(dropBookPicker >= 7)
                 {
                     Instantiate(blankBookObject);
-                    npcBookPickUpScript.haveBook = false;                  
+                    npcBookPickUpScript.haveBook = false;       
                 }
                 timer = 0; // Reset the timer
             }
