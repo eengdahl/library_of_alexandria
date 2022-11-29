@@ -20,6 +20,7 @@ public class NPCMovement : MonoBehaviour
 
     // What book to leave at table
     [SerializeField]GameObject blankBook;
+    float[] distanceBetween;
 
 
     //Chairs
@@ -71,6 +72,7 @@ public class NPCMovement : MonoBehaviour
             {              
                 MoveToChair();
                 LeaveChair();
+
             }
             //If dont have chair
             else if (!hasChair)
@@ -103,11 +105,11 @@ public class NPCMovement : MonoBehaviour
            seatedTimer += Time.deltaTime;
             if (seatedTimer > willBeSeatedFor)
             { //Reset everything that have anything to do with books
-            Instantiate(blankBook,transform.position,transform.rotation);//Spawn book 
-                nPCbookPickUp.haveBook = false;
-                chairOccupiedScript.chairOccupied = false;
-                hasChair = false;
-                seatedTimer = 0;
+            SpawnBook();//Spawn book 
+            nPCbookPickUp.haveBook = false;
+            chairOccupiedScript.chairOccupied = false;
+            hasChair = false;
+            seatedTimer = 0;
             }
         
     }
@@ -166,5 +168,42 @@ public class NPCMovement : MonoBehaviour
             if (transform.localScale.x < 0)
                 transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         }
+    }
+    void SpawnBook()
+    {
+        GameObject[] tables; //tables gameObjects
+        tables = GameObject.FindGameObjectsWithTag("Table");
+        distanceBetween = new float[tables.Length];
+
+        //Calculate the distance between the NPC position and the tables
+        for (int i = 0; i < tables.Length; i++)
+        {
+            float distance = Vector3.Distance(transform.position, tables[i].transform.position);
+            Debug.Log("Calculating distance between tables");
+            distanceBetween[i] = distance;
+            Debug.Log("Calculating distance between tables again");
+        }
+        int lowestIndex;
+        lowestIndex = GetIndexOfLowestValue(distanceBetween);
+
+
+
+
+        Instantiate(blankBook, tables[lowestIndex].transform.position, tables[lowestIndex].transform.rotation);
+
+    }
+    public int GetIndexOfLowestValue(float[] arr)
+    {
+        float value = float.PositiveInfinity;
+        int index = -1;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] < value)
+            {
+                index = i;
+                value = arr[i];
+            }
+        }
+        return index;
     }
 }
