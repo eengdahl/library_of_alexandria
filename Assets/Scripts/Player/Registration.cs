@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,9 @@ public class Registration : MonoBehaviour
     InventoryPlayer inventoryPlayer;
     DeliverBooks deliverBooks;
     public GameObject[] slots;
-    private int buffer;
+    public int buffer;
     public GameObject bookSpawnPoint;
+    GameObject kid;
 
 
     // Start is called before the first frame update
@@ -22,7 +24,7 @@ public class Registration : MonoBehaviour
         deliverBooks = FindObjectOfType<DeliverBooks>();
         inventoryPlayer = FindObjectOfType<InventoryPlayer>();
 
-     
+
     }
 
 
@@ -35,38 +37,71 @@ public class Registration : MonoBehaviour
 
             if (timer > spawnrate)
             {
-                Instantiate(books[Random.Range(0, books.Count)], bookSpawnPoint.transform.position, Quaternion.identity);
+                Instantiate(books[UnityEngine.Random.Range(0, books.Count)], bookSpawnPoint.transform.position, Quaternion.identity);
                 deliverBooks.AddBookToTable(-1);
                 timer = 0;
             }
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
         if (collision.tag == "Deliver")
         {
-            //Checking if inventory is occupied and sending that many books to the table
-            //testing with all colors untill a undefined book is ingame 
-            for (int i = 0; i < 3; i++)
+
+            foreach (GameObject slot in slots)
             {
-                if (inventoryPlayer.isFull[i])
+                GameObject bookWhite;
+                bookWhite = inventoryPlayer.FindChildWithTag(slot, "Book White");
+
+                if (bookWhite != null && deliverBooks.tableFull == false)
                 {
-                    buffer++;
+                    inventoryPlayer.ReturnBooksToReception("Book White", 1);
+                    deliverBooks.AddBookToTable(1);
                 }
-                if (i == 2 && buffer > 0)
-                {
-                    Debug.Log(buffer);
-                    deliverBooks.AddBookToTable(buffer);
-                    //inventoryPlayer.ReturnBooks("Book Green");
-                    //inventoryPlayer.ReturnBooks("Book Red");
-                    //inventoryPlayer.ReturnBooks("Book Blue");
-                    inventoryPlayer.ReturnBooks("Book White");
-                    buffer = 0;
-                }
+
             }
 
         }
-
     }
+
+
 }
+
+
+
+//if (collision.tag == "Deliver")
+//{
+
+//    //Checking if inventory is occupied and sending that many books to the table
+//    //testing with all colors untill a undefined book is ingame 
+//    for (int i = 0; i < 3; i++)
+//    {
+//        if (inventoryPlayer.isFull[i])
+//        {
+//            buffer++;
+//        }
+//        //Setting a max of 10 books at the table at once
+//        if (deliverBooks.booksOnTable + buffer >= 10)
+//        {
+
+//            for (int k = deliverBooks.booksOnTable + buffer; k <= 10; k++)
+//            {
+//                deliverBooks.AddBookToTable(1);
+//                inventoryPlayer.ReturnBooks("Book White");
+//            }
+//            buffer = 0;
+//            return;
+//        }
+//        else if (i == 2 && buffer > 0)
+//        {
+//            for (int j = 0; j <= buffer; j++)
+//            {
+//                deliverBooks.AddBookToTable(1);
+//                inventoryPlayer.ReturnBooks("Book White");
+
+//            }
+//            //inventoryPlayer.ReturnBooks("Book Green");
+//            //inventoryPlayer.ReturnBooks("Book Red");
+//            //inventoryPlayer.ReturnBooks("Book Blue");
+//            buffer = 0;
+//        }
+//    }
+
+//}

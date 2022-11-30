@@ -9,7 +9,7 @@ public class InventoryPlayer : MonoBehaviour
     GameObject kid;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Bookshelf Red") 
+        if (collision.tag == "Bookshelf Red")
         {
             ReturnBooks("Book Red");
         }
@@ -25,9 +25,9 @@ public class InventoryPlayer : MonoBehaviour
         {
             ReturnBooks("Book White");
         }
-        
+
     }
-    GameObject FindChildWithTag(GameObject parent, string tag)
+    public GameObject FindChildWithTag(GameObject parent, string tag)
     {
         GameObject child = null;
 
@@ -48,12 +48,35 @@ public class InventoryPlayer : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             kid = FindChildWithTag(slots[i], bookColour);
-            
+
             if (kid != null && kid.tag == bookColour)
             {
                 Slot slot = slots[i].GetComponent<Slot>();
                 slot.DestroyBook();
             }
+        }
+    }
+
+    public void ReturnBooksToReception(string bookColour,int amount)
+    {
+        int counter = 0;
+        for (int i = 0; i < slots.Length; i++)
+        {
+
+            kid = FindChildWithTag(slots[i], bookColour);
+
+            if (kid != null && kid.tag == bookColour)
+            {
+                counter++;
+                Slot slot = slots[i].GetComponent<Slot>();
+                slot.DestroyBook();
+            }
+
+            if(counter >= amount)
+            {
+                break;
+            }
+
         }
     }
 }
