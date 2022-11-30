@@ -13,7 +13,7 @@ public class BeingHusched : MonoBehaviour
     private void Start()
     {
         makeHuschSound = FindObjectOfType<MakeHuschSound>();
-        npcMovement = GetComponent<NPCMovement>();
+        //npcMovement = GetComponent<NPCMovement>();
         npcMakeNoise = GetComponentInParent<NPCMakeNoise>();
         npcMovement = GetComponentInParent<NPCMovement>();
         //iMakeNoise = GetComponent<IamMakingNoise>();
