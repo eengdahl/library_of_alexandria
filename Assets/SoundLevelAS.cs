@@ -17,7 +17,7 @@ public class SoundLevelAS : MonoBehaviour
     {
         if (noiseLevel / 20f < 1)
         {
-            noiseLevel = iAmMakingNoise.levelOfSound / 20;
+            noiseLevel = iAmMakingNoise.levelOfSound / 100;
         }
         else if (noiseLevel / 20f > 1)
         {

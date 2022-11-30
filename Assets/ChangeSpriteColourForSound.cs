@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class ChangeSpriteColourForSound : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     NPCMakeNoise npcMakeNoiseScript;
+
+    IamMakingNoise iamMakingNoiseScript;
     // Start is called before the first frame update
     void Start()
     {
         npcMakeNoiseScript = GetComponent<NPCMakeNoise>();
-        spriteRenderer = GetComponent<SpriteRenderer>();  
+ 
+        iamMakingNoiseScript = GetComponent<IamMakingNoise>();
     }
 
     // Update is called once per frame
@@ -19,7 +22,7 @@ public class ChangeSpriteColourForSound : MonoBehaviour
         if (npcMakeNoiseScript.makingNosie == true)
         {
             
-            spriteRenderer.color = new Color(200, 0, 0, 255);
+            spriteRenderer.color = new Color(1, 0, 0, iamMakingNoiseScript.levelOfSound / 20);
         }
         if (npcMakeNoiseScript.makingNosie == false)
         {
