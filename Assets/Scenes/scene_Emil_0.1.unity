@@ -1216,6 +1216,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1193998810, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: slots.Array.data[0]
+      value: 
+      objectReference: {fileID: 1744490854}
+    - target: {fileID: 1193998810, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: slots.Array.data[1]
+      value: 
+      objectReference: {fileID: 199478667}
+    - target: {fileID: 1193998810, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: slots.Array.data[2]
+      value: 
+      objectReference: {fileID: 141511244}
     - target: {fileID: 1630847188, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: slots.Array.data[0]
       value: 
@@ -1279,65 +1291,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
---- !u!50 &1193998808 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4355956085948609700, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-  m_PrefabInstance: {fileID: 1193998807}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1193998809 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1664763972554779679, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-  m_PrefabInstance: {fileID: 1193998807}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1193998810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193998809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f77fa59fc291243b252a4842357289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  books:
-  - {fileID: 8951082433322567927, guid: f76badc9dede309458493afe663bbf20, type: 3}
-  - {fileID: 6315467735399731171, guid: 9cce3270c0fb8f649a58fc1f194fc71d, type: 3}
-  - {fileID: 127380270547771485, guid: bcae79f396452704abcbf9d23218f71f, type: 3}
-  - {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
-  timer: 0
-  rb: {fileID: 1193998808}
-  slots:
-  - {fileID: 1744490854}
-  - {fileID: 199478667}
-  - {fileID: 141511244}
---- !u!61 &1193998812
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193998809}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1204425249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,24 +1338,6 @@ Transform:
   m_Father: {fileID: 1826445488}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1243299928 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2100566771, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
-  m_PrefabInstance: {fileID: 5216065889690705610}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1243299932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243299928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b67331008844a243a4d20bac8f6bd1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  booksOnTable: 0
 --- !u!1001 &1285763995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2562,14 +2497,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 150559541, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2100566774, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7349438753114596915, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_Name
       value: Registration

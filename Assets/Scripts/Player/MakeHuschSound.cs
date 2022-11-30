@@ -21,7 +21,7 @@ public class MakeHuschSound : MonoBehaviour
     void Update()
     {
         //Om du trycker på  activate spela husch ljudet och gör om boolen doesHuschSound till true
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown("space"))
         {
             doesHuschSound = true;
             audioSource.Play();

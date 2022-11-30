@@ -8,11 +8,11 @@ public class Registration : MonoBehaviour
     public float timer;
     private float spawnrate;
     public Rigidbody2D rb;
-    private Vector2 spawnPosition;
     InventoryPlayer inventoryPlayer;
     DeliverBooks deliverBooks;
     public GameObject[] slots;
     private int buffer;
+    public GameObject bookSpawnPoint;
 
 
     // Start is called before the first frame update
@@ -22,9 +22,7 @@ public class Registration : MonoBehaviour
         deliverBooks = FindObjectOfType<DeliverBooks>();
         inventoryPlayer = FindObjectOfType<InventoryPlayer>();
 
-
-        //Hardcoded spawnposition for registrated books
-        spawnPosition = new Vector2(7.1f, -1.8f);
+     
     }
 
 
@@ -37,7 +35,7 @@ public class Registration : MonoBehaviour
 
             if (timer > spawnrate)
             {
-                Instantiate(books[Random.Range(0, books.Count)], spawnPosition, Quaternion.identity);
+                Instantiate(books[Random.Range(0, books.Count)], bookSpawnPoint.transform.position, Quaternion.identity);
                 deliverBooks.AddBookToTable(-1);
                 timer = 0;
             }
@@ -60,9 +58,9 @@ public class Registration : MonoBehaviour
                 {
                     Debug.Log(buffer);
                     deliverBooks.AddBookToTable(buffer);
-                    inventoryPlayer.ReturnBooks("Book Green");
-                    inventoryPlayer.ReturnBooks("Book Red");
-                    inventoryPlayer.ReturnBooks("Book Blue");
+                    //inventoryPlayer.ReturnBooks("Book Green");
+                    //inventoryPlayer.ReturnBooks("Book Red");
+                    //inventoryPlayer.ReturnBooks("Book Blue");
                     inventoryPlayer.ReturnBooks("Book White");
                     buffer = 0;
                 }
