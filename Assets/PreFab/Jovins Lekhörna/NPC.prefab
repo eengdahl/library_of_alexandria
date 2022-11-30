@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 1952695675258746294}
   - component: {fileID: 3835715654486137187}
   - component: {fileID: 7257350906950206359}
+  - component: {fileID: 1102603008}
   m_Layer: 7
   m_Name: ClutterChecker
   m_TagString: Untagged
@@ -205,7 +206,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
-  m_Radius: 2.27
+  m_Radius: 4
+--- !u!114 &1102603008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029151628160199246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0200a11e76770040b35bdea0ff80a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcMakeNoiseScript: {fileID: 709626101}
 --- !u!1 &5865293537661773346
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +261,7 @@ Transform:
   - {fileID: 655782997}
   - {fileID: 1952695675258746294}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5865293537661773344
 SpriteRenderer:
@@ -443,6 +457,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 24fbcf0acbdd12d4c9ebf22d66cc8613, type: 3}
   - {fileID: 8300000, guid: 44b434ec0c64ea049a4ed2e66960373b, type: 3}
   makingNosie: 0
+  chanceOfMakingSound: 0
 --- !u!50 &1398966624
 Rigidbody2D:
   serializedVersion: 4
