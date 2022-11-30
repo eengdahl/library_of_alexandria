@@ -28,9 +28,10 @@ public class DropBookIfNoTable : MonoBehaviour
             {
                 //If the random picked number is in range drop book and mark the npc to have haveBook = false 
                 dropBookPicker = Random.Range(1, 11);
-                if(dropBookPicker >= 7)
+                if(dropBookPicker >= 5)
                 {
-                    Instantiate(blankBookObject);
+                    Debug.Log("Should drop book");
+                    Instantiate(blankBookObject,transform.position,transform.rotation);
                     npcBookPickUpScript.haveBook = false;       
                 }
                 timer = 0; // Reset the timer
