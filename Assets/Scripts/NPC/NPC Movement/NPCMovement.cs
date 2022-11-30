@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCMovement : MonoBehaviour
 {
-    WayPointsArmory wayPointsArmory;
+   
 
     //BasicMovement
     [SerializeField]
@@ -32,6 +32,7 @@ public class NPCMovement : MonoBehaviour
     float willBeSeatedFor;
 
     //Waypoints
+    WayPointsArmory wayPointsArmory;
     public Transform[] wayPoints;
     int waypointIndex = 0;
     int movementArrayPickerIndex;
@@ -39,18 +40,19 @@ public class NPCMovement : MonoBehaviour
     Transform currentWaypoint;
     private void Awake()
     {
-        
-        wayPointsArmory = FindObjectOfType<WayPointsArmory>();
+      
+
     }
     void Start()
     {
+        wayPointsArmory = FindObjectOfType<WayPointsArmory>();
         //Waypoint Picker
         movementArrayPickerIndex = Random.Range(0, 3);
-        
-        wayPoints = wayPointsArmory.GetArray(movementArrayPickerIndex);
-        transform.position = wayPoints[waypointIndex].transform.position; // Set location to 
 
-        
+        wayPoints = wayPointsArmory.GetArray(movementArrayPickerIndex);
+        transform.position = wayPoints[waypointIndex].transform.position; // Set location to
+
+
         chairs = GameObject.FindGameObjectsWithTag("Chair");
         
     }
@@ -58,28 +60,34 @@ public class NPCMovement : MonoBehaviour
 
     void Update()
     {
-        //If NPC havent picked up a book yet
-        if (nPCbookPickUp.haveBook == false)
-        {
-            CanMove();
-        }
-        //If NPC have picked up a book
-        else if (nPCbookPickUp.haveBook == true)
-        {
-
-            //If has chair
-            if (hasChair)
-            {              
-                MoveToChair();
-                LeaveChair();
-
-            }
-            //If dont have chair
-            else if (!hasChair)
+        if(gameObject.tag == "NPC")
+        { //If NPC havent picked up a book yet
+            if (nPCbookPickUp.haveBook == false)
             {
-                CheckIfChairsEmpty();
                 CanMove();
             }
+            //If NPC have picked up a book
+            else if (nPCbookPickUp.haveBook == true)
+            {
+
+                //If has chair
+                if (hasChair)
+                {
+                    MoveToChair();
+                    LeaveChair();
+
+                }
+                //If dont have chair
+                else if (!hasChair)
+                {
+                    CheckIfChairsEmpty();
+                    CanMove();
+                }
+            }
+        }
+        if (gameObject.tag == "Researcher")
+        {
+            Move();
         }
 
     }
