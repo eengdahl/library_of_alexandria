@@ -42,9 +42,11 @@ public class Registration : MonoBehaviour
                 timer = 0;
             }
         }
+
+        //Checking if player can drop book in reception
         if (collision.tag == "Deliver")
         {
-
+            //Checking each slot in inventory and if white - deliver to table and remove from inventory
             foreach (GameObject slot in slots)
             {
                 GameObject bookWhite;
@@ -52,8 +54,8 @@ public class Registration : MonoBehaviour
 
                 if (bookWhite != null && deliverBooks.tableFull == false)
                 {
-                    inventoryPlayer.ReturnBooksToReception("Book White", 1);
                     deliverBooks.AddBookToTable(1);
+                    inventoryPlayer.ReturnBooksToReception("Book White", 1);
                 }
 
             }

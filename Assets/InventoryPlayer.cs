@@ -57,6 +57,8 @@ public class InventoryPlayer : MonoBehaviour
         }
     }
 
+
+    //Checking if book in inventory is white and deleting as many books as called for
     public void ReturnBooksToReception(string bookColour,int amount)
     {
         int counter = 0;
@@ -64,7 +66,7 @@ public class InventoryPlayer : MonoBehaviour
         {
 
             kid = FindChildWithTag(slots[i], bookColour);
-
+            //If book med färg finns -radera den
             if (kid != null && kid.tag == bookColour)
             {
                 counter++;
@@ -72,6 +74,7 @@ public class InventoryPlayer : MonoBehaviour
                 slot.DestroyBook();
             }
 
+            //Om funktionen är callad för att förstöra en book, avbryts loopen när en book är destroyad
             if(counter >= amount)
             {
                 break;
