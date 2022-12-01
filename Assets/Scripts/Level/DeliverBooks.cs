@@ -17,7 +17,7 @@ public class DeliverBooks : MonoBehaviour
 
     public void AddBookToTable(int books)
     {
-        booksOnTable += books;
+        booksOnTable = booksOnTable +   books;
 
         if (books > 0 && !tableFull)
         {
