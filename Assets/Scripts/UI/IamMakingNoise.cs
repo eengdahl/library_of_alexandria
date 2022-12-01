@@ -26,7 +26,7 @@ public class IamMakingNoise : MonoBehaviour
         self = this.gameObject;
         hasBeenAdded = false;
 
-        maxLevelOfSound = 20;
+        maxLevelOfSound = 40;
 
     }
 

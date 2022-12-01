@@ -39,10 +39,16 @@ public class NPCMovement : MonoBehaviour
     public int numberOfPaths;
     Transform currentWaypoint;
     bool isLeaving = false;
+    int ExitWayPointIndex = 0;
 
     //Exit
     public GameObject[] exitStartsGO;
     public Transform[] exitStartTF;
+    public Transform[] exitWaypoints;//2
+    public int numberOfExitArrays;
+    int indexPickerExitArray = 0;
+    bool havepicked = false;
+    public Transform currentTransformExitDebugRemoveLater;
     private void Awake()
     {
 
@@ -52,7 +58,7 @@ public class NPCMovement : MonoBehaviour
     {
         wayPointsArmory = FindObjectOfType<WayPointsArmory>();
         //Waypoint Picker
-        movementArrayPickerIndex = Random.Range(0, 1);
+        movementArrayPickerIndex = Random.Range(0, 2);
 
         wayPoints = wayPointsArmory.GetArray(movementArrayPickerIndex);
         transform.position = wayPoints[waypointIndex].transform.position; // Set location to
@@ -72,15 +78,15 @@ public class NPCMovement : MonoBehaviour
     {
         if (gameObject.tag == "NPC")
         { //If NPC havent picked up a book yet
-            if (nPCbookPickUp.haveBook == false)//&& isLeaving == false
+            if (nPCbookPickUp.haveBook == false && isLeaving == false)//&& isLeaving == false
             {
                 CanMove();
             }
-            //if (nPCbookPickUp.haveBook == false && isLeaving == true)
-            //{
+            else if (isLeaving == true)
+            {
 
-            //    ExitMove();
-            //}
+                ExitMove2();
+            }
             //If NPC have picked up a book
             else if (nPCbookPickUp.haveBook == true)
             {
@@ -134,7 +140,7 @@ public class NPCMovement : MonoBehaviour
             chairOccupiedScript.chairOccupied = false;
             hasChair = false;
             seatedTimer = 0;
-            isLeaving = true;
+            isLeaving = true;//Bool to start looking for exit arrays
         }
 
     }
@@ -164,10 +170,59 @@ public class NPCMovement : MonoBehaviour
             }
         }
     }
+    void ExitMove2()
+    {
+
+        //Pick the closest waypoint
+        
+        float distanceStart;
+        float distance;
+        distanceStart = Vector3.Distance(transform.position, exitStartTF[0].position);
+        for (int i = 0; i < exitStartTF.Length; i++)
+        {
+            Debug.Log("Inside the for loop now :) ");
+            if (havepicked== false)
+            {
+                distance = Vector3.Distance(transform.position, exitStartTF[i].position);
+                if (distanceStart < distance)
+                {
+                    Debug.Log("Should have picked the closest");
+                    indexPickerExitArray = i;
+                    havepicked = true;
+                }
+
+
+            }
+
+
+        }
+
+        exitWaypoints = wayPointsArmory.GetExitArray(indexPickerExitArray);// Get the array of waypoints for exiting
+        
+        transform.position = Vector3.MoveTowards(transform.position, exitWaypoints[ExitWayPointIndex].transform.position, moveSpeed * Time.deltaTime);
+        currentTransformExitDebugRemoveLater = exitWaypoints[ExitWayPointIndex];//Debug Thingy
+        currentWaypoint = exitWaypoints[ExitWayPointIndex]; //For NPC flip
+        FlipFacingDirection();
+        
+        //If NPC reach waypoint, change that waypoint
+        if (transform.position == exitWaypoints[ExitWayPointIndex].transform.position)
+        {
+            ExitWayPointIndex += 1;
+
+        }
+        if (ExitWayPointIndex == exitWaypoints.Length)//If reaches the last waypoint delete the npc
+        {
+            
+            Destroy(this.gameObject);
+
+        }
+        
+    }
+ 
     void ExitMove()
     {
 
-        int indexPickerExit = 0;
+        
         bool havepicked = false;
         float distanceStart;
         float distance;
@@ -181,7 +236,7 @@ public class NPCMovement : MonoBehaviour
                 if (distanceStart > distance)
                 {
                     Debug.Log("Should have picked the closest");
-                    indexPickerExit = i;
+                    indexPickerExitArray = i;
                     havepicked = true;
                 }
 
@@ -190,7 +245,7 @@ public class NPCMovement : MonoBehaviour
 
 
         }
-        wayPoints = wayPointsArmory.GetExitArray(indexPickerExit);//Make it change this index
+        wayPoints = wayPointsArmory.GetExitArray(indexPickerExitArray);//Make it change this index
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         currentWaypoint = wayPoints[waypointIndex];
         FlipFacingDirection();
