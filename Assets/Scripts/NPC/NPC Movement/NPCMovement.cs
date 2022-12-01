@@ -38,11 +38,6 @@ public class NPCMovement : MonoBehaviour
     int movementArrayPickerIndex;
     public int numberOfPaths;
     Transform currentWaypoint;
-    bool isLeaving = false;
-
-    //Exit
-    public GameObject[] exitStartsGO;
-    public Transform[] exitStartTF;
     private void Awake()
     {
       
@@ -52,19 +47,14 @@ public class NPCMovement : MonoBehaviour
     {
         wayPointsArmory = FindObjectOfType<WayPointsArmory>();
         //Waypoint Picker
-        movementArrayPickerIndex = Random.Range(0, 5);
+        movementArrayPickerIndex = Random.Range(0, 3);
 
         wayPoints = wayPointsArmory.GetArray(movementArrayPickerIndex);
         transform.position = wayPoints[waypointIndex].transform.position; // Set location to
 
-        exitStartsGO = GameObject.FindGameObjectsWithTag("ExitStart");
-        exitStartTF = new Transform[exitStartsGO.Length];
+
         chairs = GameObject.FindGameObjectsWithTag("Chair");
-        //Store the gameobjects transforms into a transform array
-        for (int i = 0; i < exitStartsGO.Length; i++)
-        {
-            exitStartTF[i] = exitStartsGO[i].transform;
-        }
+        
     }
 
 
@@ -72,14 +62,9 @@ public class NPCMovement : MonoBehaviour
     {
         if(gameObject.tag == "NPC")
         { //If NPC havent picked up a book yet
-            if (nPCbookPickUp.haveBook == false && isLeaving == false)
+            if (nPCbookPickUp.haveBook == false)
             {
                 CanMove();
-            }
-            if (nPCbookPickUp.haveBook == false && isLeaving == true)
-            {
-                
-                ExitMove();
             }
             //If NPC have picked up a book
             else if (nPCbookPickUp.haveBook == true)
@@ -126,15 +111,13 @@ public class NPCMovement : MonoBehaviour
         
            willBeSeatedFor = Random.Range(25f, 30f); //Decides how long the NPC will be seated (starts when book is picked up)
            seatedTimer += Time.deltaTime;
-            if (seatedTimer > willBeSeatedFor&&nPCbookPickUp.haveBook == true)
+            if (seatedTimer > willBeSeatedFor)
             { //Reset everything that have anything to do with books
-            waypointIndex = 0;//Reset the index so it picks the first in exit array instead of move array
             SpawnBook();//Spawn book 
             nPCbookPickUp.haveBook = false;
             chairOccupiedScript.chairOccupied = false;
             hasChair = false;
             seatedTimer = 0;
-            isLeaving = true;
             }
         
     }
@@ -164,54 +147,8 @@ public class NPCMovement : MonoBehaviour
             }
         }
     }
-    void ExitMove()
-    {
-
-        int indexPickerExit = 0;
-        bool havepicked = false;
-        float distanceStart;
-        float distance;
-        distanceStart = Vector3.Distance(transform.position, exitStartTF[0].position);
-        for (int i = 0; i < exitStartTF.Length; i++)
-        {
-            Debug.Log("Inside the for loop now :) ");
-            if (!havepicked)
-            {
-                distance = Vector3.Distance(transform.position, exitStartTF[i].position);
-                if (distanceStart > distance)
-                {
-                    Debug.Log("Should have picked the closest");
-                    indexPickerExit = i;
-                    havepicked = true;
-                }
-                
-                wayPoints = wayPointsArmory.GetExitArray(indexPickerExit);//Make it change this index
-            }
-            
-
-        }
-
-
-
-        transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
-        currentWaypoint = wayPoints[waypointIndex];
-        FlipFacingDirection();
-
-        if (transform.position == wayPoints[waypointIndex].transform.position)
-        {
-            waypointIndex += 1;
-
-        }
-        if (waypointIndex == wayPoints.Length)
-        {
-            Destroy(this.gameObject);
-
-        }
-    }
     void Move()
     {
-
-
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         currentWaypoint = wayPoints[waypointIndex];
         FlipFacingDirection();
@@ -223,7 +160,7 @@ public class NPCMovement : MonoBehaviour
         }
         if (waypointIndex == wayPoints.Length)
         {
-            waypointIndex = 1;
+            waypointIndex = 0;
             
         }
     }
@@ -255,8 +192,8 @@ public class NPCMovement : MonoBehaviour
             
         }
         //Randomize x and y spawn point of table
-        float randomX = Random.Range(-0.42f, 0.42f);
-        float randomY = Random.Range(-0.85f, 0.85f);
+        float randomX = Random.Range(-1f, 1f);
+        float randomY = Random.Range(-0.1f, 0.1f);
         //Find the lowest value in distance array
         int lowestIndex;
         lowestIndex = GetIndexOfLowestValue(distanceBetween);
