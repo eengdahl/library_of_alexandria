@@ -72,15 +72,15 @@ public class NPCMovement : MonoBehaviour
     {
         if (gameObject.tag == "NPC")
         { //If NPC havent picked up a book yet
-            if (nPCbookPickUp.haveBook == false && isLeaving == false)
+            if (nPCbookPickUp.haveBook == false)//&& isLeaving == false
             {
                 CanMove();
             }
-            if (nPCbookPickUp.haveBook == false && isLeaving == true)
-            {
+            //if (nPCbookPickUp.haveBook == false && isLeaving == true)
+            //{
 
-                ExitMove();
-            }
+            //    ExitMove();
+            //}
             //If NPC have picked up a book
             else if (nPCbookPickUp.haveBook == true)
             {
