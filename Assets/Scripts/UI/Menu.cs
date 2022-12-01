@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("JULIA");
+        SceneManager.LoadScene("scene_jovin_0.1 1");
     }
 
     public void Credits()

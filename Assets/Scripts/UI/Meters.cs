@@ -34,7 +34,7 @@ public class Meters : MonoBehaviour
 
             showTimeLeft.value++;
 
-            if (showTimeLeft.value >= 300)
+            if (showTimeLeft.value >= showTimeLeft.maxValue)
             {
                 SceneManager.LoadScene("Meny");
             }
