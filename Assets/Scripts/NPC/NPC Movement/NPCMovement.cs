@@ -128,7 +128,7 @@ public class NPCMovement : MonoBehaviour
         seatedTimer += Time.deltaTime;
         if (seatedTimer > willBeSeatedFor && nPCbookPickUp.haveBook == true)
         { //Reset everything that have anything to do with books
-            waypointIndex = 0;//Reset the index so it picks the first in exit array instead of move array
+            
             SpawnBook();//Spawn book 
             nPCbookPickUp.haveBook = false;
             chairOccupiedScript.chairOccupied = false;
