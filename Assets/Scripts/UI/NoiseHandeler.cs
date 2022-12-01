@@ -47,8 +47,12 @@ public class NoiseHandeler : MonoBehaviour
         //Going through NPCs making noise and adding theire current noiselevel
         for (int i = 0; i < ListOfNoisemakers.Count; i++)
         {
-            IamMakingNoise iamMakingNoise = ListOfNoisemakers[i].GetComponent<IamMakingNoise>();
-            soundLevelWhileInLoop += iamMakingNoise.levelOfSound;
+            if(ListOfNoisemakers[i] != null)
+            {
+                IamMakingNoise iamMakingNoise = ListOfNoisemakers[i].GetComponent<IamMakingNoise>();
+                soundLevelWhileInLoop += iamMakingNoise.levelOfSound;
+            }
+            
         }
         soundLevelInRoom = soundLevelWhileInLoop;
         soundLevelWhileInLoop = 0;
