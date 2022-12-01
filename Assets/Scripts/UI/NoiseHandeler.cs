@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NoiseHandeler : MonoBehaviour
 {
@@ -15,12 +16,19 @@ public class NoiseHandeler : MonoBehaviour
 
 
 
-
+    private void Start()
+    {
+        noiseSlider.maxValue = 200;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        noiseSlider.maxValue = 200;
+        if (noiseSlider.value >= 200)
+        {
+            SceneManager.LoadScene("Meny");
+        }
+        
         //Checking over all noise
         CheckingNoise();
     }

@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.23, y: 0.49}
+  m_AnchoredPosition: {x: -0.48, y: 0.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1959179944428149601
@@ -98,7 +98,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2596194515947288399}
-  m_Text: 
+  m_Text: 24
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -157,7 +157,7 @@ Transform:
   m_Children:
   - {fileID: 7739317255395532890}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8502514209206297263
 SpriteRenderer:
