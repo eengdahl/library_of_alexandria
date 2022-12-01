@@ -24,7 +24,6 @@ public class Registration : MonoBehaviour
         deliverBooks = FindObjectOfType<DeliverBooks>();
         inventoryPlayer = FindObjectOfType<InventoryPlayer>();
 
-
     }
 
 
