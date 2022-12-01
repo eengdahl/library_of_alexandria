@@ -4861,9 +4861,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.43030915}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.2366863
 --- !u!114 &1630847185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4975,6 +4975,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  buffer: 0
+  bookSpawnPoint: {fileID: 0}
 --- !u!1 &4355956085948609704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5013,7 +5015,7 @@ Transform:
   - {fileID: 3804539513904997578}
   - {fileID: 259384976}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4355956085948609703
 SpriteRenderer:
