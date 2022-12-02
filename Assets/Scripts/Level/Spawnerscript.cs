@@ -24,7 +24,7 @@ public class Spawnerscript : MonoBehaviour
        
         if (timer >= timer_between_NPCSpawns)
         {
-            NPCPicker = Random.Range(0, standardNpcs.Length + 1);
+            NPCPicker = Random.Range(0, standardNpcs.Length);
 
             pickedNPC = standardNpcs[NPCPicker];
             SpawnNPC();
