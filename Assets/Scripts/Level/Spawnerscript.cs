@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Spawnerscript : MonoBehaviour
 {
-    public GameObject firstNPC;
-
+    public GameObject[] standardNpcs;
+    //public GameObject firstNPC;
+    //public GameObject secondNPC;
+    GameObject pickedNPC;
+    int NPCPicker = 0;
     float timer;
     [SerializeField]float timer_between_NPCSpawns = 5f;
     // Start is called before the first frame update
@@ -21,6 +24,9 @@ public class Spawnerscript : MonoBehaviour
        
         if (timer >= timer_between_NPCSpawns)
         {
+            NPCPicker = Random.Range(0, standardNpcs.Length + 1);
+
+            pickedNPC = standardNpcs[NPCPicker];
             SpawnNPC();
             timer = 0;
             
@@ -29,6 +35,6 @@ public class Spawnerscript : MonoBehaviour
 
     public void SpawnNPC()
     {
-        Instantiate(firstNPC, transform.position,Quaternion.identity);
+        Instantiate(pickedNPC, transform.position,Quaternion.identity);
     }
 }
