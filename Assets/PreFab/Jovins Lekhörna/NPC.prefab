@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 215002210814868452}
   - component: {fileID: 6793662420831611921}
+  - component: {fileID: 1895433057}
   m_Layer: 7
   m_Name: RedSprite
   m_TagString: Untagged
@@ -232,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381905575694592577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -280,8 +281,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 13f44a1afe582244c84718b3b86c4cbc, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.9607843}
+  m_Sprite: {fileID: 21300000, guid: 8af35cfbb1df4084a89f28c859b7c195, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -291,6 +292,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1895433057
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381905575694592577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1e5ca7d479321e41a693629117a1206, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2029151628160199246
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +409,7 @@ GameObject:
   - component: {fileID: 1811363365}
   - component: {fileID: 1811363366}
   - component: {fileID: 8852623583786270690}
+  - component: {fileID: 1891633731}
   m_Layer: 7
   m_Name: NPC
   m_TagString: NPC
@@ -404,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 5865293537661773346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.39, y: 3.44, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 606453318}
@@ -456,7 +478,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 13f44a1afe582244c84718b3b86c4cbc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8af35cfbb1df4084a89f28c859b7c195, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -479,6 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55c73065c3bab24b94411b6cdbddc9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redSpriteAnimator: {fileID: 1895433057}
   moveSpeed: 2
   canMove: 1
   stillAfterHusch: 2
@@ -494,6 +517,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   numberOfPaths: 1
+  exitStartsGO: []
+  exitStartTF: []
+  exitWaypoints: []
+  numberOfExitArrays: 0
+  currentTransformExitDebugRemoveLater: {fileID: 0}
 --- !u!82 &709626102
 AudioSource:
   m_ObjectHideFlags: 0
@@ -703,3 +731,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2.16}
   m_Direction: 0
+--- !u!95 &1891633731
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5865293537661773346}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1e5ca7d479321e41a693629117a1206, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

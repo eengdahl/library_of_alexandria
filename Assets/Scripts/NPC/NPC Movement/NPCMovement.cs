@@ -5,6 +5,10 @@ using UnityEngine;
 public class NPCMovement : MonoBehaviour
 {
 
+    //Animations
+    Animator thisAnimator;
+    [SerializeField]Animator redSpriteAnimator;
+
 
     //BasicMovement
     [SerializeField]
@@ -56,6 +60,11 @@ public class NPCMovement : MonoBehaviour
     }
     void Start()
     {
+
+        //Animators
+        thisAnimator = GetComponent<Animator>();
+
+
         wayPointsArmory = FindObjectOfType<WayPointsArmory>();
         //Waypoint Picker
         movementArrayPickerIndex = Random.Range(0, 2);
@@ -73,12 +82,12 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
-
+    
     void Update()
     {
         if (gameObject.tag == "NPC")
         { //If NPC havent picked up a book yet
-            if (nPCbookPickUp.haveBook == false && isLeaving == false)//&& isLeaving == false
+            if (nPCbookPickUp.haveBook == false && isLeaving == false)
             {
                 CanMove();
             }
@@ -150,7 +159,13 @@ public class NPCMovement : MonoBehaviour
     }
     void MoveToChair()
     {
+
         transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position, moveSpeed * Time.deltaTime);
+        if(transform.position == chairs[chairPicker].transform.position) // if at chair
+        {
+            thisAnimator.SetBool("isWalking", false);
+            redSpriteAnimator.SetBool("isWalking", false);
+        }
         currentWaypoint = chairs[chairPicker].transform;
         FlipFacingDirection();
     }
@@ -163,6 +178,10 @@ public class NPCMovement : MonoBehaviour
         }
         else if (canMove == false)
         {
+            //Idle animators
+            thisAnimator.SetBool("isWalking", false);
+            redSpriteAnimator.SetBool("isWalking", false);
+            
             stopTimer += Time.deltaTime;
             if (stopTimer > stillAfterHusch)
             {
@@ -263,7 +282,8 @@ public class NPCMovement : MonoBehaviour
     }
     void Move()
     {
-
+        thisAnimator.SetBool("isWalking", true);
+        redSpriteAnimator.SetBool("isWalking", true);
 
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         currentWaypoint = wayPoints[waypointIndex];
