@@ -9,12 +9,13 @@ public class MakeHuschSound : MonoBehaviour
     float huschTimer;
     public float lenghtOfHusch;
     public bool doesHuschSound;
+    Animator animatorKarin;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        
+        animatorKarin = GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,20 +26,25 @@ public class MakeHuschSound : MonoBehaviour
         {
             doesHuschSound = true;
             audioSource.Play();
+            animatorKarin.SetBool("IsHushing", true);
         }
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
         if (doesHuschSound)
         {
             huschTimer += Time.deltaTime;
+
+         
             if (huschTimer >= lenghtOfHusch)
             {
+                animatorKarin.SetBool("IsHushing", false);
                 doesHuschSound = false;
             }
-            
+
         }
         //Om vi inte huschar ska husch timern vara på 0
-        else if(!doesHuschSound)
+        else if (!doesHuschSound)
         {
+            animatorKarin.SetBool("IsHushing", false);
             huschTimer = 0;
         }
     }
