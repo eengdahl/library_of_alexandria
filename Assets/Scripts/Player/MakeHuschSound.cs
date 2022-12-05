@@ -9,15 +9,21 @@ public class MakeHuschSound : MonoBehaviour
     AudioSource audioSource;
     float huschTimer;
     public float lenghtOfHusch;
+    private float chargedHush;
+    public float standardRadius = 0.4697719f;
     public bool doesHuschSound;
     Animator animatorKarin;
-    private float chargedHush;
+    CircleCollider2D collider2D;
+
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         animatorKarin = GetComponentInParent<Animator>();
+        collider2D = GetComponent<CircleCollider2D>();
+      //  collider2D.radius = standardRadius;
+
         // Random.Range(0, schhSound.Length);
         audioSource.clip = schhSound[Random.Range(0, schhSound.Length)];
     }
@@ -36,10 +42,14 @@ public class MakeHuschSound : MonoBehaviour
         {
             doesHuschSound = true;
             audioSource.clip = longHush;
-            Invoke("StopAudio",chargedHush);
+            Invoke("StopAudio", chargedHush);
             audioSource.Play();
             animatorKarin.SetBool("IsHushing", true);
+            collider2D.radius = chargedHush;
+
+            lenghtOfHusch = chargedHush;
             chargedHush = 0;
+
         }
         //Makes standard hush
         else if (Input.GetKeyUp("space"))
@@ -49,7 +59,7 @@ public class MakeHuschSound : MonoBehaviour
             audioSource.Play();
             animatorKarin.SetBool("IsHushing", true);
 
-            chargedHush = 0;
+
         }
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
         if (doesHuschSound)
@@ -60,6 +70,9 @@ public class MakeHuschSound : MonoBehaviour
             if (huschTimer >= lenghtOfHusch)
             {
                 animatorKarin.SetBool("IsHushing", false);
+                collider2D.radius = standardRadius;
+                lenghtOfHusch = 0.5f;
+                chargedHush = 0;
                 doesHuschSound = false;
             }
 
@@ -69,11 +82,13 @@ public class MakeHuschSound : MonoBehaviour
         {
             animatorKarin.SetBool("IsHushing", false);
             huschTimer = 0;
+
         }
     }
 
     private void StopAudio()
     {
         audioSource.Stop();
+        doesHuschSound = false;
     }
 }
