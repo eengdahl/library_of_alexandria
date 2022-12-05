@@ -11,11 +11,10 @@ public class PlayerController1 : MonoBehaviour
     private Vector2 moveVelocity;
     Vector2 inputAxis;
     bool facingRight = false;
-    public Animator animator;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+
     }
 
     private void Update()
@@ -25,13 +24,10 @@ public class PlayerController1 : MonoBehaviour
         inputAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = inputAxis.normalized * speed;
 
-
-      
-
         //Added a quick way to get to menu by pressing esc
         //if (Input.GetButton("Cancel"))
         //{
-        //SceneManager.LoadScene("Meny");
+            //SceneManager.LoadScene("Meny");
         //}
 
         ////Added a quick way to reset game 
@@ -55,11 +51,7 @@ public class PlayerController1 : MonoBehaviour
             flip();
         }
         rb.velocity = moveVelocity;
-        animator.SetFloat("IsMoving", moveVelocity.x);
-        if (moveVelocity.x == 0)
-        {
-            animator.SetFloat("IsMoving", moveVelocity.y);
-        }
+
         //rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
     private void flip()
