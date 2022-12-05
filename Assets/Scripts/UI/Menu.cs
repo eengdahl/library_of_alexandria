@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("scene_jovin_0.1 1");
+        SceneManager.LoadScene("scene_main");
     }
 
     public void Credits()
