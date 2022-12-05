@@ -38,8 +38,8 @@ public class WayPointsArmory : MonoBehaviour
         listOfExitArrays = new List<Transform[]>();
         listOfExitArrays.Add(firstExitArray);
         listOfExitArrays.Add(secondExitArray);
-        listOfExitArrays.Add(thirdExitArray);
-        listOfExitArrays.Add(forthExitArray);
+        //listOfExitArrays.Add(thirdExitArray);
+        //listOfExitArrays.Add(forthExitArray);
     }
     void Start()
     {
