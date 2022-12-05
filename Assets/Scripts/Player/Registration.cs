@@ -34,7 +34,7 @@ public class Registration : MonoBehaviour
 
             if (timer > spawnrate)
             {
-                Instantiate(books[UnityEngine.Random.Range(0, books.Count)], bookSpawnPoint.transform.position, Quaternion.identity);
+                Instantiate(books[UnityEngine.Random.Range(0, books.Count )], bookSpawnPoint.transform.position += new Vector3(0,0.1f), Quaternion.identity);
                 deliverBooks.AddBookToTable(-1);
                 timer = 0;
             }
