@@ -26,6 +26,9 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] GameObject blankBook;
     float[] distanceBetween;
 
+    //Tables flip sprite
+    GameObject[] tables;
+
 
     //Chairs
     int chairPicker = 0;
@@ -60,6 +63,9 @@ public class NPCMovement : MonoBehaviour
     }
     void Start()
     {
+
+        //Tables
+        //tables = GameObject.FindGameObjectsWithTag("Table");
 
         //Animators
         thisAnimator = GetComponent<Animator>();
@@ -193,7 +199,8 @@ public class NPCMovement : MonoBehaviour
     {
 
         //Pick the closest waypoint
-        
+        thisAnimator.SetBool("isWalking", true);
+        redSpriteAnimator.SetBool("isWalking", true);
         float distanceStart;
         float distance;
         distanceStart = Vector3.Distance(transform.position, exitStartTF[0].position);
@@ -237,7 +244,11 @@ public class NPCMovement : MonoBehaviour
         }
         
     }
- 
+
+    void FlipSpriteWhenSittingAtTable()
+    {
+        //Sprint 2
+    }
     void ExitMove()
     {
 
