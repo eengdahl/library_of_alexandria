@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MakeHuschSound : MonoBehaviour
 {
-    public AudioClip schhSound;
+    public AudioClip[] schhSound;
     AudioSource audioSource;
     float huschTimer;
     public float lenghtOfHusch;
@@ -16,6 +16,8 @@ public class MakeHuschSound : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         animatorKarin = GetComponentInParent<Animator>();
+       // Random.Range(0, schhSound.Length);
+        audioSource.clip = schhSound[Random.Range(0, schhSound.Length)];
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class MakeHuschSound : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             doesHuschSound = true;
+            audioSource.clip = schhSound[Random.Range(0, schhSound.Length)];
             audioSource.Play();
             animatorKarin.SetBool("IsHushing", true);
         }
