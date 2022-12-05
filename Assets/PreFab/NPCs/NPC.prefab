@@ -281,7 +281,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -89906774, guid: f48e3f701cd550c45a94d0553a7b053f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8af35cfbb1df4084a89f28c859b7c195, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -302,7 +302,7 @@ Animator:
   m_GameObject: {fileID: 1381905575694592577}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 49e955b625a564849b86ca72cb0d4c76, type: 2}
+  m_Controller: {fileID: 9100000, guid: a1e5ca7d479321e41a693629117a1206, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 8852623583786270690}
   - component: {fileID: 1891633731}
   m_Layer: 7
-  m_Name: NPC 2
+  m_Name: NPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -89906774, guid: f48e3f701cd550c45a94d0553a7b053f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8af35cfbb1df4084a89f28c859b7c195, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redSpriteAnimator: {fileID: 1895433057}
-  moveSpeed: 2
+  moveSpeed: 1.5
   canMove: 1
   stillAfterHusch: 2
   nPCbookPickUp: {fileID: 606453319}
@@ -741,7 +741,7 @@ Animator:
   m_GameObject: {fileID: 5865293537661773346}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 49e955b625a564849b86ca72cb0d4c76, type: 2}
+  m_Controller: {fileID: 9100000, guid: a1e5ca7d479321e41a693629117a1206, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
