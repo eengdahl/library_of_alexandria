@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Registration : MonoBehaviour
 {
+
     public List<GameObject> books;
     public float timer;
-    private float spawnrate;
+    public float spawnrate;
     public Rigidbody2D rb;
     InventoryPlayer inventoryPlayer;
     DeliverBooks deliverBooks;
@@ -15,33 +16,58 @@ public class Registration : MonoBehaviour
     public int buffer;
     public GameObject bookSpawnPoint;
     GameObject bookWhite;
-
-
+    public int amountRegistered;
+    public List <GameObject> registeredBooks;
+    
     // Start is called before the first frame update
     void Start()
     {
+
+        amountRegistered = 0;
         spawnrate = 5;
         deliverBooks = FindObjectOfType<DeliverBooks>();
         inventoryPlayer = FindObjectOfType<InventoryPlayer>();
 
     }
     private void Update()
-    { 
-        
-        if(deliverBooks.booksOnTable >= 1)
+    {
+
+        if (deliverBooks.booksOnTable >= 1)
         {
             timer += Time.deltaTime;
 
             if (timer > spawnrate)
             {
-                Instantiate(books[UnityEngine.Random.Range(0, books.Count )], bookSpawnPoint.transform.position += new Vector3(0,0.1f), Quaternion.identity);
+                Vector3 thisSpawnPoint = bookSpawnPoint.transform.position + new Vector3(0, amountRegistered / 10f);
+                
+                GameObject book = Instantiate(books[UnityEngine.Random.Range(0, books.Count)], thisSpawnPoint, Quaternion.identity);
+                registeredBooks.Add(book);
+                //registeredBooks[registeredBooks.IndexOf(book)].GetComponent<Collider2D>().enabled = false;
+
+                amountRegistered += 1;
                 deliverBooks.AddBookToTable(-1);
                 timer = 0;
+
+
+
+                //if (registeredBooks.IndexOf(book) != 0 )
+                //{
+                //    Debug.Log("registeredBooks" + registeredBooks.Count);
+                //    book.transform.parent = registeredBooks[registeredBooks.Count-1].transform;
+                //}
+
+                //else if (registeredBooks.IndexOf(book) == 0)
+                //{
+                //    book.transform.parent = bookSpawnPoint.transform;
+                //}
+
+
+
             }
         }
         //timer += Time.deltaTime;
 
-       
+
     }
 
     public void OnTriggerStay2D(Collider2D collision)
