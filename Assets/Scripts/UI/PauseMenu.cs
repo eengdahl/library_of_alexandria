@@ -54,7 +54,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("JULIA");
+        SceneManager.LoadScene("scene_main");
         Time.timeScale = 1f;
         AudioListener.volume = 1f;
         isGamePaused = false;
