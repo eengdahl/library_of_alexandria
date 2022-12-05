@@ -37,6 +37,7 @@ public class NPCMovement : MonoBehaviour
     public bool hasChair = false;
     float seatedTimer = 0;
     float willBeSeatedFor;
+    public bool isSeated = false;
 
     //Waypoints
     WayPointsArmory wayPointsArmory;
@@ -95,6 +96,7 @@ public class NPCMovement : MonoBehaviour
         { //If NPC havent picked up a book yet
             if (nPCbookPickUp.haveBook == false && isLeaving == false)
             {
+                
                 CanMove();
             }
             else if (isLeaving == true)
@@ -149,7 +151,7 @@ public class NPCMovement : MonoBehaviour
         seatedTimer += Time.deltaTime;
         if (seatedTimer > willBeSeatedFor && nPCbookPickUp.haveBook == true)
         { //Reset everything that have anything to do with books
-            
+            isSeated = false;
             SpawnBook();//Spawn book 
             nPCbookPickUp.haveBook = false;
             chairOccupiedScript.chairOccupied = false;
@@ -169,6 +171,7 @@ public class NPCMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position, moveSpeed * Time.deltaTime);
         if(transform.position == chairs[chairPicker].transform.position) // if at chair
         {
+            isSeated = true;
             thisAnimator.SetBool("isWalking", false);
             redSpriteAnimator.SetBool("isWalking", false);
         }
@@ -204,7 +207,7 @@ public class NPCMovement : MonoBehaviour
         float distanceStart;
         float distance;
         distanceStart = Vector3.Distance(transform.position, exitStartTF[0].position);
-        for (int i = 0; i < exitStartTF.Length; i++)
+        for (int i = 0; i < exitStartTF.Length; i++) // exitStartTF.Length
         {
             Debug.Log("Inside the for loop now :) ");
             if (havepicked== false)
@@ -234,7 +237,6 @@ public class NPCMovement : MonoBehaviour
         if (transform.position == exitWaypoints[ExitWayPointIndex].transform.position)
         {
             ExitWayPointIndex += 1;
-
         }
         if (ExitWayPointIndex == exitWaypoints.Length)//If reaches the last waypoint delete the npc
         {

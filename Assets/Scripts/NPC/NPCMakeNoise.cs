@@ -9,7 +9,7 @@ public class NPCMakeNoise : MonoBehaviour
     public AudioClip[] nosie;
     public bool makingNosie = false;
     public float chanceOfMakingSound;//if smaller or same than this number make sound
-    
+    public NPCMovement npcMovement;
     void Start()
     {
         aS = GetComponent<AudioSource>();
@@ -19,23 +19,35 @@ public class NPCMakeNoise : MonoBehaviour
         Random.Range(0, nosie.Length);
         aS.clip = nosie[Random.Range(0, nosie.Length)];
 
-
+        npcMovement = GetComponent<NPCMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
         //Make the timer increase chance of making noise 
         timer += Time.deltaTime;
 
         if (timer >= 2f)
         {
             float startMakingSoundPicker = Random.Range(1f, 10f);
-            if (startMakingSoundPicker <= chanceOfMakingSound)
+            if (npcMovement.isSeated == true)
             {
-                makingNosie = true;
+                if (startMakingSoundPicker <= chanceOfMakingSound)
+                {
+                    makingNosie = true;
+                }
             }
+            if(npcMovement.isSeated == false)
+            {
+                if (startMakingSoundPicker * 2 <= chanceOfMakingSound)
+                {
+                    makingNosie = true;
+                }
+            }
+
+
             timer = 0;
         }
 

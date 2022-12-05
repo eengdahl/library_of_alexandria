@@ -141,9 +141,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03974068}
+  m_Offset: {x: -0.013341099, y: -0.03974065}
   serializedVersion: 2
-  m_Radius: 0.49305022
+  m_Radius: 0.30894384
 --- !u!1 &847817220
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,9 +204,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08294761}
+  m_Offset: {x: 0, y: -0.0009778142}
   serializedVersion: 2
-  m_Radius: 1.4346107
+  m_Radius: 0.6198512
 --- !u!1 &1381905575694592577
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,9 +372,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1886335, y: -0.35673693}
+  m_Offset: {x: 0.18863344, y: -0.28876287}
   serializedVersion: 2
-  m_Radius: 0.97790956
+  m_Radius: 0.5795079
 --- !u!114 &1102603008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,7 +435,7 @@ Transform:
   - {fileID: 215002210814868452}
   - {fileID: 847817221}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5865293537661773344
 SpriteRenderer:
@@ -509,6 +509,7 @@ MonoBehaviour:
   blankBook: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
   chairs: []
   hasChair: 0
+  isSeated: 0
   wayPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -638,6 +639,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 44b434ec0c64ea049a4ed2e66960373b, type: 3}
   makingNosie: 0
   chanceOfMakingSound: 0
+  npcMovement: {fileID: 0}
 --- !u!50 &1398966624
 Rigidbody2D:
   serializedVersion: 4

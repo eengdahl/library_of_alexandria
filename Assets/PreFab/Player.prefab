@@ -5231,7 +5231,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcfea979e58c3d4da7e1dea5115b1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  schhSound: {fileID: 8300000, guid: a98bfbb66d9c6e8429dfa83ec18527f5, type: 3}
+  schhSound:
+  - {fileID: 8300000, guid: 489473a1c58a1d44e999cf542d3508ca, type: 3}
+  - {fileID: 8300000, guid: 95f901500d7c4f9408256d731cd0198f, type: 3}
+  - {fileID: 8300000, guid: 84a5b5c144612d544afbbb1d273b26fa, type: 3}
+  - {fileID: 8300000, guid: 4e26162d084841a4a971ed39934a7c05, type: 3}
+  longHush: {fileID: 8300000, guid: 70b4c37b68444d545ad65159b7e5d2ff, type: 3}
   lenghtOfHusch: 0.5
   doesHuschSound: 0
 --- !u!58 &4355956086700047640
