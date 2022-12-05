@@ -5236,6 +5236,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 95f901500d7c4f9408256d731cd0198f, type: 3}
   - {fileID: 8300000, guid: 84a5b5c144612d544afbbb1d273b26fa, type: 3}
   - {fileID: 8300000, guid: 4e26162d084841a4a971ed39934a7c05, type: 3}
+  longHush: {fileID: 8300000, guid: 70b4c37b68444d545ad65159b7e5d2ff, type: 3}
   lenghtOfHusch: 0.5
   doesHuschSound: 0
 --- !u!58 &4355956086700047640
