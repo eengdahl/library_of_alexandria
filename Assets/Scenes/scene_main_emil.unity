@@ -711,10 +711,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7349438753114596915, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_Name
       value: Registration
@@ -4540,7 +4536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6176864221267170185, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.0000343
+      value: -5.0000305
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

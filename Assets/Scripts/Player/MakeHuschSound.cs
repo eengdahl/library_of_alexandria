@@ -22,13 +22,10 @@ public class MakeHuschSound : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         animatorKarin = GetComponentInParent<Animator>();
         collider2D = GetComponent<CircleCollider2D>();
-      //  collider2D.radius = standardRadius;
-
-        // Random.Range(0, schhSound.Length);
         audioSource.clip = schhSound[Random.Range(0, schhSound.Length)];
+       
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Om du trycker på  activate spela husch ljudet och gör om boolen doesHuschSound till true
@@ -38,13 +35,18 @@ public class MakeHuschSound : MonoBehaviour
 
         }
         //Makes a chargedHush
-        if (Input.GetKeyUp("space") && chargedHush > 0.5f)
+        if (Input.GetKeyUp("space") && chargedHush > 1f)
         {
-            doesHuschSound = true;
-            audioSource.clip = longHush;
+            //finetunear hur effektiv chargehush ska vara, work in progress
+            chargedHush /= 1.50f;
             Invoke("StopAudio", chargedHush);
+
+            doesHuschSound = true;
+            //picking long hush
+            audioSource.clip = longHush;
             audioSource.Play();
             animatorKarin.SetBool("IsHushing", true);
+            //Setting hushradius after how long hush was charged
             collider2D.radius = chargedHush;
 
             lenghtOfHusch = chargedHush;
@@ -52,7 +54,7 @@ public class MakeHuschSound : MonoBehaviour
 
         }
         //Makes standard hush
-        else if (Input.GetKeyUp("space"))
+        else if (Input.GetKeyUp("space") && !doesHuschSound)
         {
             doesHuschSound = true;
             audioSource.clip = schhSound[Random.Range(0, schhSound.Length)];
@@ -70,12 +72,10 @@ public class MakeHuschSound : MonoBehaviour
             if (huschTimer >= lenghtOfHusch)
             {
                 animatorKarin.SetBool("IsHushing", false);
-                collider2D.radius = standardRadius;
                 lenghtOfHusch = 0.5f;
                 chargedHush = 0;
                 doesHuschSound = false;
             }
-
         }
         //Om vi inte huschar ska husch timern vara på 0
         else if (!doesHuschSound)
@@ -83,12 +83,15 @@ public class MakeHuschSound : MonoBehaviour
             animatorKarin.SetBool("IsHushing", false);
             huschTimer = 0;
 
+
         }
     }
 
+    //Stopps chargehush after time of charge hush
     private void StopAudio()
     {
         audioSource.Stop();
         doesHuschSound = false;
+        collider2D.radius = standardRadius;
     }
 }
