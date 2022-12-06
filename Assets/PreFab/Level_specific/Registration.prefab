@@ -87,6 +87,8 @@ GameObject:
   - component: {fileID: 150559539}
   - component: {fileID: 150559541}
   - component: {fileID: 150559540}
+  - component: {fileID: 863303929}
+  - component: {fileID: 863303930}
   m_Layer: 0
   m_Name: RegistrationPart
   m_TagString: Registration
@@ -102,8 +104,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150559538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.53, y: -0.21, z: 0}
-  m_LocalScale: {x: 1.2722, y: 3.6976, z: 1}
+  m_LocalPosition: {x: -0.772, y: 0.986, z: 0}
+  m_LocalScale: {x: -1.3319935, y: 1.3052527, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 193841438}
@@ -188,6 +190,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &863303929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150559538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c83f3f035ea8044cbee6b7a69dca823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookColours: []
+--- !u!114 &863303930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150559538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d60e4594d75a3459338aafa3059829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &193841437
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193841437}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 0.271, z: 0}
+  m_LocalPosition: {x: -0.8, y: -0.22, z: 0}
   m_LocalScale: {x: 0.78603995, y: 0.2704457, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

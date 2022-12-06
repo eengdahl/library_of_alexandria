@@ -4824,7 +4824,6 @@ GameObject:
   m_Component:
   - component: {fileID: 382444400}
   - component: {fileID: 382444402}
-  - component: {fileID: 1630847185}
   - component: {fileID: 1630847188}
   m_Layer: 0
   m_Name: BookPickUp&Return
@@ -4864,18 +4863,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.5684544}
   serializedVersion: 2
   m_Radius: 0.2749828
---- !u!114 &1630847185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382444399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 759b17859cd0a984bbc9618e932972ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1630847188
 MonoBehaviour:
   m_ObjectHideFlags: 0
