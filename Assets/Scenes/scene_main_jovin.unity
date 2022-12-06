@@ -844,11 +844,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 193841438, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.11
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 193841438, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.248
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 130977649592286797, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_Enabled
@@ -903,10 +903,7 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8429481477575907518, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 477731586}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
 --- !u!4 &232424144 stripped
 Transform:
@@ -1423,78 +1420,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &477731585
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 477731586}
-  - component: {fileID: 477731588}
-  - component: {fileID: 477731587}
-  m_Layer: 0
-  m_Name: PickUpBooksFromReception
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &477731586
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477731585}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.28, y: 0.67, z: -0.015265287}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 751524530}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &477731587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477731585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c83f3f035ea8044cbee6b7a69dca823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bookColours: []
---- !u!61 &477731588
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477731585}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &497557972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,12 +2267,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7349438753114596915, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
   m_PrefabInstance: {fileID: 230190639}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &751524530 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8429481477575907518, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
-  m_PrefabInstance: {fileID: 230190639}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &751524531
+--- !u!114 &751524532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2362,7 +2282,7 @@ MonoBehaviour:
   maxSway: 0.03
   toMany: 0
   spawnPoint: {fileID: 716024556}
-  maxAmountOfBooks: 15
+  maxAmountOfBooks: 10
 --- !u!1001 &767354619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3537,10 +3457,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1193998810, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: spawnrate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1193998810, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: bookSpawnPoint
       value: 
       objectReference: {fileID: 716024556}
@@ -3623,22 +3539,6 @@ PrefabInstance:
     - target: {fileID: 4355956085948609702, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355956085948609703, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: m_Size.x
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355956085948609703, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: m_Size.y
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355956085948609703, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355956085948609703, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4355956085948609704, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: m_Name
@@ -5957,6 +5857,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6176864220257201133, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.41000366
+      objectReference: {fileID: 0}
     - target: {fileID: 6176864220609053188, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6016,10 +5920,6 @@ PrefabInstance:
     - target: {fileID: 6176864221107140044, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6176864221267170185, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -5.0000153
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

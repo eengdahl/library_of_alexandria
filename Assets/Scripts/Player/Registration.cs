@@ -18,7 +18,7 @@ public class Registration : MonoBehaviour
     GameObject bookWhite;
     public int amountRegistered;
     public List <GameObject> registeredBooks;
-    SwayBooksList swayBookScript;
+    public SwayBooksList swayBookScript;
     // Start is called before the first frame update
     void Start()
     {
