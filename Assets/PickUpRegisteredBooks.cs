@@ -14,14 +14,14 @@ public class PickUpRegisteredBooks : MonoBehaviour
         registrationScript = FindObjectOfType<Registration>();
         inventoryPlayer = GameObject.FindGameObjectWithTag("BookPickUpZone").GetComponent<InventoryPlayer>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "BookPickUpZone")
-        {
-            for (int i = 0; i > registrationScript.; i++)
-            {
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "BookPickUpZone")
+    //    {
+    //        for (int i = 0; i > registrationScript.; i++)
+    //        {
 
-            }
-        }
-    }
+    //        }
+    //    }
+    //}
 }
