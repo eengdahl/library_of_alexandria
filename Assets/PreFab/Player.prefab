@@ -4969,6 +4969,7 @@ MonoBehaviour:
   - {fileID: 6315467735399731171, guid: 9cce3270c0fb8f649a58fc1f194fc71d, type: 3}
   - {fileID: 127380270547771485, guid: bcae79f396452704abcbf9d23218f71f, type: 3}
   timer: 0
+  spawnrate: 0
   rb: {fileID: 4355956085948609700}
   slots:
   - {fileID: 0}
@@ -4976,6 +4977,8 @@ MonoBehaviour:
   - {fileID: 0}
   buffer: 0
   bookSpawnPoint: {fileID: 0}
+  amountRegistered: 0
+  registeredBooks: []
 --- !u!1 &4355956085948609704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5084,7 +5087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  animator: {fileID: 1558703683}
+  karinCantMove: 0
 --- !u!50 &4355956085948609700
 Rigidbody2D:
   serializedVersion: 4
@@ -5125,7 +5128,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4355956085948609704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecf10f1accb17e6468795ecedb85ea4c, type: 3}
   m_Name: 
@@ -5238,6 +5241,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e26162d084841a4a971ed39934a7c05, type: 3}
   longHush: {fileID: 8300000, guid: 70b4c37b68444d545ad65159b7e5d2ff, type: 3}
   lenghtOfHusch: 0.5
+  standardRadius: 0.4697719
   doesHuschSound: 0
 --- !u!58 &4355956086700047640
 CircleCollider2D:
