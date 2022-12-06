@@ -2671,10 +2671,6 @@ PrefabInstance:
       propertyPath: slots.Array.data[2]
       value: 
       objectReference: {fileID: 1762982493}
-    - target: {fileID: 1558703681, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1630847188, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: slots.Array.data[0]
       value: 
