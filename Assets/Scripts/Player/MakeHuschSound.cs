@@ -9,8 +9,8 @@ public class MakeHuschSound : MonoBehaviour
     AudioSource audioSource;
     float huschTimer;
     public float lenghtOfHusch;
-    private float chargedHush;
-    public float standardRadius = 0.4697719f;
+    public float chargedHush;
+    public float standardRadius = 0.5f;//0.4697719f;
     public bool doesHuschSound;
     Animator animatorKarin;
     CircleCollider2D collider2D;
@@ -33,7 +33,11 @@ public class MakeHuschSound : MonoBehaviour
         //Om du trycker på  activate spela husch ljudet och gör om boolen doesHuschSound till true
         if (Input.GetKey("space"))
         {
-            chargedHush += Time.deltaTime;
+            if (chargedHush < 1.5f)
+            {
+                chargedHush += Time.deltaTime;
+            }
+            
 
         }
         //Makes a chargedHush

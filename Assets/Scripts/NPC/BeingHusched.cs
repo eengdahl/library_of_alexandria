@@ -28,10 +28,9 @@ public class BeingHusched : MonoBehaviour
             npcMakeNoise.timer = 0; // Reset timer in npcMakeNoise so it doesnt start makeing nosie right after being husched
             npcMakeNoise.makingNosie = false;//Set the makeing noise in npc to false, with other words is silent
             //Stop momvement of NPC
-            if (!npcMovement.hasChair)
-            {
+            
                 npcMovement.canMove = false;
-            }
+            
             
 
             iMakeNoise.levelOfSound = 0;

@@ -111,7 +111,26 @@ public class NPCMovement : MonoBehaviour
                 //If has chair
                 if (hasChair)
                 {
-                    MoveToChair();
+                    if (canMove == true)
+                    {
+                        stopTimer = 0;
+                        MoveToChair();
+                        Debug.Log("should move to chair");
+                    }
+                    else if (canMove == false)
+                    {
+                        Debug.Log("Should not move");
+                        //Idle animators
+                        thisAnimator.SetBool("isWalking", false);
+                        redSpriteAnimator.SetBool("isWalking", false);
+
+                        stopTimer += Time.deltaTime;
+                        if (stopTimer > stillAfterHusch)
+                        {
+                            canMove = true;
+                        }
+                    }
+                    
                     LeaveChair();
 
                 }
@@ -148,7 +167,11 @@ public class NPCMovement : MonoBehaviour
     {
 
         willBeSeatedFor = Random.Range(25f, 30f); //Decides how long the NPC will be seated (starts when book is picked up)
-        seatedTimer += Time.deltaTime;
+        if (isSeated)// start timer when at chair
+        {
+            seatedTimer += Time.deltaTime;
+        }
+        
         if (seatedTimer > willBeSeatedFor && nPCbookPickUp.haveBook == true)
         { //Reset everything that have anything to do with books
             isSeated = false;
