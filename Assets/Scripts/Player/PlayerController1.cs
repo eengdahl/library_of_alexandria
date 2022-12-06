@@ -11,6 +11,7 @@ public class PlayerController1 : MonoBehaviour
     private Vector2 moveVelocity;
     Vector2 inputAxis;
     bool facingRight = false;
+    public bool karinCantMove = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,7 +20,10 @@ public class PlayerController1 : MonoBehaviour
 
     private void Update()
     {
-
+        if (karinCantMove)
+        {
+            return;
+        }
 
         inputAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = inputAxis.normalized * speed;
@@ -49,6 +53,12 @@ public class PlayerController1 : MonoBehaviour
         else if (Input.GetAxisRaw("Horizontal") < 0 && !facingRight)
         {
             flip();
+        }
+
+        if (karinCantMove)
+        {
+            rb.velocity = new Vector2(0, 0);
+            return;
         }
         rb.velocity = moveVelocity;
 

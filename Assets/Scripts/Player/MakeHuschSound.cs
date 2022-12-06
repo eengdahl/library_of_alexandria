@@ -14,6 +14,7 @@ public class MakeHuschSound : MonoBehaviour
     public bool doesHuschSound;
     Animator animatorKarin;
     CircleCollider2D collider2D;
+    PlayerController1 playerController1;
 
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class MakeHuschSound : MonoBehaviour
         animatorKarin = GetComponentInParent<Animator>();
         collider2D = GetComponent<CircleCollider2D>();
         audioSource.clip = schhSound[Random.Range(0, schhSound.Length)];
+        playerController1 = GetComponentInParent<PlayerController1>();
        
     }
 
@@ -42,10 +44,12 @@ public class MakeHuschSound : MonoBehaviour
             Invoke("StopAudio", chargedHush);
 
             doesHuschSound = true;
+
             //picking long hush
             audioSource.clip = longHush;
             audioSource.Play();
             animatorKarin.SetBool("IsHushing", true);
+
             //Setting hushradius after how long hush was charged
             collider2D.radius = chargedHush;
 
@@ -67,7 +71,7 @@ public class MakeHuschSound : MonoBehaviour
         if (doesHuschSound)
         {
             huschTimer += Time.deltaTime;
-
+            playerController1.karinCantMove = true;
 
             if (huschTimer >= lenghtOfHusch)
             {
@@ -83,7 +87,7 @@ public class MakeHuschSound : MonoBehaviour
             animatorKarin.SetBool("IsHushing", false);
             huschTimer = 0;
 
-
+            playerController1.karinCantMove = false;
         }
     }
 
