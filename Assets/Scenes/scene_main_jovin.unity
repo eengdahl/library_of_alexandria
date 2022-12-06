@@ -842,18 +842,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 193841438, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 193841438, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.271
-      objectReference: {fileID: 0}
-    - target: {fileID: 130977649592286797, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7349438753114596915, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_Name
       value: Registration
@@ -2262,27 +2250,6 @@ Transform:
   m_Father: {fileID: 1826445488}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &751524528 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7349438753114596915, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
-  m_PrefabInstance: {fileID: 230190639}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &751524532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751524528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46ddc6d0c8c18ed4892aaa0f95d53e69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSway: 0.03
-  toMany: 0
-  spawnPoint: {fileID: 716024556}
-  maxAmountOfBooks: 10
 --- !u!1001 &767354619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3460,18 +3427,6 @@ PrefabInstance:
       propertyPath: bookSpawnPoint
       value: 
       objectReference: {fileID: 716024556}
-    - target: {fileID: 1193998810, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: books.Array.data[0]
-      value: 
-      objectReference: {fileID: 8951082433322567927, guid: f7fedd67702cb234db072026eeb73348, type: 3}
-    - target: {fileID: 1193998810, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: books.Array.data[1]
-      value: 
-      objectReference: {fileID: 6315467735399731171, guid: c77aa71a04056d744b7749ee36bb5dbe, type: 3}
-    - target: {fileID: 1193998810, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: books.Array.data[2]
-      value: 
-      objectReference: {fileID: 127380270547771485, guid: a8bba627e238cc5478daad436632ac93, type: 3}
     - target: {fileID: 1193998810, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: slots.Array.data[0]
       value: 
@@ -5856,10 +5811,6 @@ PrefabInstance:
     - target: {fileID: 6176864220122938185, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6176864220257201133, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.41000366
       objectReference: {fileID: 0}
     - target: {fileID: 6176864220609053188, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_RootOrder

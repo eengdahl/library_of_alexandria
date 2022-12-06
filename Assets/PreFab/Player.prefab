@@ -4965,9 +4965,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   books:
-  - {fileID: 8951082433322567927, guid: f76badc9dede309458493afe663bbf20, type: 3}
-  - {fileID: 6315467735399731171, guid: 9cce3270c0fb8f649a58fc1f194fc71d, type: 3}
-  - {fileID: 127380270547771485, guid: bcae79f396452704abcbf9d23218f71f, type: 3}
+  - {fileID: 8951082433322567927, guid: f7fedd67702cb234db072026eeb73348, type: 3}
+  - {fileID: 6315467735399731171, guid: c77aa71a04056d744b7749ee36bb5dbe, type: 3}
+  - {fileID: 127380270547771485, guid: a8bba627e238cc5478daad436632ac93, type: 3}
   timer: 0
   spawnrate: 0
   rb: {fileID: 4355956085948609700}
@@ -4979,6 +4979,7 @@ MonoBehaviour:
   bookSpawnPoint: {fileID: 0}
   amountRegistered: 0
   registeredBooks: []
+  swayBookScript: {fileID: 0}
 --- !u!1 &4355956085948609704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5020,7 +5021,7 @@ Transform:
   - {fileID: 3804539513904997578}
   - {fileID: 259384976}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4355956085948609703
 SpriteRenderer:
