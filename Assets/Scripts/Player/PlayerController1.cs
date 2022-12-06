@@ -12,10 +12,11 @@ public class PlayerController1 : MonoBehaviour
     Vector2 inputAxis;
     bool facingRight = false;
     public bool karinCantMove = false;
+    Animator animator;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -61,6 +62,8 @@ public class PlayerController1 : MonoBehaviour
             return;
         }
         rb.velocity = moveVelocity;
+        animator.SetFloat("IsMoving",rb.velocity.magnitude);
+        
 
         //rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }

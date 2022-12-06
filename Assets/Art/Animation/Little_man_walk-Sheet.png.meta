@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 508778b3daf792541aa0539e9807a9c2
+guid: 2361fa2738f1fc04e94b6eff79ab3645
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: karin_walk_Sheet_0
+      name: Little_man_walk-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 24
-        height: 48
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31b6222f263adad428087f98e0f91b1c
-      internalID: 636902265
+      spriteID: 389c86e77b4375a4f9facfbb2c5859e0
+      internalID: 845904065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: karin_walk_Sheet_1
+      name: Little_man_walk-Sheet_1
       rect:
         serializedVersion: 2
         x: 24
         y: 0
         width: 24
-        height: 48
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 340f0fd42595f6a4b8f71e49d3b64092
-      internalID: -1618444849
+      spriteID: d83630b7f95312c4e8ff16d74c65b1cb
+      internalID: -1185692492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: karin_walk_Sheet_2
+      name: Little_man_walk-Sheet_2
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 24
-        height: 48
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9df66f2c205a5a541bfc0bc2b6c3fab3
-      internalID: 999257737
+      spriteID: 2d8b90972c513c64695b2af4e829bcf9
+      internalID: -1704921400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: karin_walk_Sheet_3
+      name: Little_man_walk-Sheet_3
       rect:
         serializedVersion: 2
         x: 72
         y: 0
         width: 24
-        height: 48
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0ed149502f38614eafd376e409e4164
-      internalID: 1169761051
+      spriteID: 046895010d9882145af52218da20cbc7
+      internalID: -1513111204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: karin_walk_Sheet_4
+      name: Little_man_walk-Sheet_4
       rect:
         serializedVersion: 2
         x: 96
         y: 0
         width: 24
-        height: 48
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a737d30a5fb7f5746abd30b7b10294e4
-      internalID: -1474471294
+      spriteID: 2f42206e4ef9dd94dad9a19b2df317f5
+      internalID: -1503222419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: karin_walk_Sheet_5
+      name: Little_man_walk-Sheet_5
       rect:
         serializedVersion: 2
         x: 120
         y: 0
         width: 24
-        height: 48
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e89121a96f30a24d82f3003850468d2
-      internalID: 1082558627
+      spriteID: 823743d9eacdf5c4bac0baf80cdeb617
+      internalID: -2099458495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: karin_walk_Sheet_6
+      name: Little_man_walk-Sheet_6
       rect:
         serializedVersion: 2
         x: 144
         y: 0
         width: 24
-        height: 48
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,8 +247,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87f706e540fffa146af7875cd14e9bc1
-      internalID: -1436631201
+      spriteID: 98cfe2b512259fe4bac60c87dc73ff69
+      internalID: -2139642514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Little_man_walk-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c42ec02bab1fe4e8cd089b5815d759
+      internalID: -1487842599
       vertices: []
       indices: 
       edges: []
@@ -264,13 +285,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      karin_walk_Sheet_5: 1082558627
-      karin_walk_Sheet_3: 1169761051
-      karin_walk_Sheet_4: -1474471294
-      karin_walk_Sheet_0: 636902265
-      karin_walk_Sheet_6: -1436631201
-      karin_walk_Sheet_1: -1618444849
-      karin_walk_Sheet_2: 999257737
+      Little_man_walk-Sheet_6: -2139642514
+      Little_man_walk-Sheet_3: -1513111204
+      Little_man_walk-Sheet_5: -2099458495
+      Little_man_walk-Sheet_2: -1704921400
+      Little_man_walk-Sheet_1: -1185692492
+      Little_man_walk-Sheet_0: 845904065
+      Little_man_walk-Sheet_4: -1503222419
+      Little_man_walk-Sheet_7: -1487842599
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

@@ -15,14 +15,14 @@ public class HuschChangeSprite : MonoBehaviour
     }
     private void Update()
     {
-        if(makeHuschSoundScript.doesHuschSound == true)
-        {
-            spriteRenderer.sprite = huschSprite;
-        }
-        else if (makeHuschSoundScript.doesHuschSound == false)
-        {
-            spriteRenderer.sprite = normalSprite;
-        }
+        //if(makeHuschSoundScript.doesHuschSound == true)
+        //{
+        //    spriteRenderer.sprite = huschSprite;
+        //}
+        //else if (makeHuschSoundScript.doesHuschSound == false)
+        //{
+        //    spriteRenderer.sprite = normalSprite;
+        //}
         
     }
 }
