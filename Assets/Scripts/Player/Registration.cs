@@ -18,11 +18,11 @@ public class Registration : MonoBehaviour
     GameObject bookWhite;
     public int amountRegistered;
     public List <GameObject> registeredBooks;
-    
+    SwayBooksList swayBookScript;
     // Start is called before the first frame update
     void Start()
     {
-
+        swayBookScript = FindObjectOfType<SwayBooksList>();
         amountRegistered = 0;
         spawnrate = 5;
         deliverBooks = FindObjectOfType<DeliverBooks>();
@@ -31,6 +31,8 @@ public class Registration : MonoBehaviour
     }
     private void Update()
     {
+        if(swayBookScript.toMany == false)
+        {
 
         if (deliverBooks.booksOnTable >= 1)
         {
@@ -47,24 +49,9 @@ public class Registration : MonoBehaviour
                 amountRegistered += 1;
                 deliverBooks.AddBookToTable(-1);
                 timer = 0;
-
-
-
-                //if (registeredBooks.IndexOf(book) != 0 )
-                //{
-                //    Debug.Log("registeredBooks" + registeredBooks.Count);
-                //    book.transform.parent = registeredBooks[registeredBooks.Count-1].transform;
-                //}
-
-                //else if (registeredBooks.IndexOf(book) == 0)
-                //{
-                //    book.transform.parent = bookSpawnPoint.transform;
-                //}
-
-
-
             }
         }
+       }
         //timer += Time.deltaTime;
 
 

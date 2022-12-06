@@ -41,7 +41,7 @@ public class NPCMakeNoise : MonoBehaviour
             }
             if(npcMovement.isSeated == false)
             {
-                if (startMakingSoundPicker * 2 <= chanceOfMakingSound)
+                if (startMakingSoundPicker * 2  <= chanceOfMakingSound)
                 {
                     makingNosie = true;
                 }

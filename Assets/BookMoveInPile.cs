@@ -13,7 +13,7 @@ public class BookMoveInPile : MonoBehaviour
     
     private void Start()
     {
-        bool turned = false;
+        
         registrationScript = FindObjectOfType<Registration>();
         moveTowards = new Vector3(transform.position.x + 0.05f, transform.position.y, 0);
 
@@ -26,7 +26,7 @@ public class BookMoveInPile : MonoBehaviour
         registeredBooks = registrationScript.registeredBooks;
         thisIndex = registeredBooks.IndexOf(this.gameObject);
         Debug.Log(registeredBooks.IndexOf(gameObject));
-        if (registeredBooks.Count >= 7 && registeredBooks.IndexOf(this.gameObject) == 2) ; //registeredBooks.IndexOf(this.gameObject)==2 && 
+        if (registeredBooks.Count >= 7 && registeredBooks.IndexOf(this.gameObject) == 2)  //registeredBooks.IndexOf(this.gameObject)==2 && 
         {
             
             Debug.Log("Should be moving now"+registeredBooks.IndexOf(this.gameObject));

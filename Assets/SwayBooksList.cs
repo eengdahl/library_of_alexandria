@@ -9,17 +9,27 @@ public class SwayBooksList : MonoBehaviour
     public float maxSway = 0.03f;
     float finalSway;
     float timer;
+    public bool toMany;
     public GameObject spawnPoint;
     Registration registrationScript;
+    [SerializeField] int maxAmountOfBooks;
     private void Start()
     {
         registrationScript = FindObjectOfType<Registration>();
-
+        toMany = false;
         startAngle = spawnPoint.transform.position;
+
     }
     private void Update()
     {
+        
+        if (registrationScript.registeredBooks.Count >= maxAmountOfBooks)
+        {
+            toMany = true;
+        }
 
+        if (!toMany) { 
+        
         if (registrationScript.registeredBooks.Count >= 5)
         {
             for (int i = 0; i < registrationScript.registeredBooks.Count; i++)
@@ -34,8 +44,8 @@ public class SwayBooksList : MonoBehaviour
                     startAngle = registrationScript.registeredBooks[i - 1].transform.position;
                 }
 
-                float swaySpeedThis = swaySpeed + (i / 100f);
-                float maxSwayThis = maxSway + (i / 100f);
+                float swaySpeedThis = swaySpeed + (i / 200f);
+                float maxSwayThis = maxSway + (i / 600f);
 
 
                 finalSway = startAngle.x + Mathf.Sin(timer * swaySpeedThis) * maxSwayThis;
@@ -60,7 +70,7 @@ public class SwayBooksList : MonoBehaviour
 
                 registrationScript.registeredBooks[i].transform.position = new Vector3(spawnPoint.transform.position.x, startAngle.y + 0.1f, 0);
             }
-        }
-        
+           }       
+        }     
     }
 }

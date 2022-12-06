@@ -69,8 +69,8 @@ GameObject:
   - component: {fileID: 6315467735399731174}
   - component: {fileID: 6315467735399731169}
   - component: {fileID: 5566522443767887575}
-  - component: {fileID: -887651890513770737}
-  - component: {fileID: -3700064962139511637}
+  - component: {fileID: -6865002161187433972}
+  - component: {fileID: 8768510134649935210}
   m_Layer: 0
   m_Name: Book Green On Desk
   m_TagString: Book Green
@@ -172,30 +172,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &-887651890513770737
+--- !u!114 &-6865002161187433972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6315467735399731171}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6884f4aef28597d4dbcb2ef987631a72, type: 3}
+  m_Script: {fileID: 11500000, guid: 914d12b27223a0b498e3c5a0e3c56bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turningLeft: 0
-  thisIndex: 0
---- !u!114 &-3700064962139511637
+--- !u!114 &8768510134649935210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6315467735399731171}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a3c8223764bd94b93f912a4263977c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a60a2905aa079147b94f3aef7a987fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSway: 0.03
+  bookColour: {fileID: 6176176296137580510, guid: d882963c38aa35c4e936f1941ef4e361, type: 3}

@@ -209,13 +209,13 @@ public class NPCMovement : MonoBehaviour
         distanceStart = Vector3.Distance(transform.position, exitStartTF[0].position);
         for (int i = 0; i < exitStartTF.Length; i++) // exitStartTF.Length
         {
-            Debug.Log("Inside the for loop now :) ");
+            
             if (havepicked== false)
             {
                 distance = Vector3.Distance(transform.position, exitStartTF[i].position);
                 if (distanceStart < distance)
                 {
-                    Debug.Log("Should have picked the closest");
+                   
                     indexPickerExitArray = i;
                     havepicked = true;
                 }

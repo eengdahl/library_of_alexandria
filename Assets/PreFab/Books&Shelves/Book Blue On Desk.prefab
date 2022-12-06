@@ -68,8 +68,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8951082433322567922}
   - component: {fileID: 8951082433322567925}
-  - component: {fileID: 3922473237846647519}
-  - component: {fileID: 8807479994816487401}
+  - component: {fileID: -4352520697500335929}
+  - component: {fileID: -3356115358395332665}
   m_Layer: 0
   m_Name: Book Blue On Desk
   m_TagString: Book Blue
@@ -145,30 +145,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3922473237846647519
+--- !u!114 &-4352520697500335929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8951082433322567927}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6884f4aef28597d4dbcb2ef987631a72, type: 3}
+  m_Script: {fileID: 11500000, guid: 914d12b27223a0b498e3c5a0e3c56bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turningLeft: 0
-  thisIndex: 0
---- !u!114 &8807479994816487401
+--- !u!114 &-3356115358395332665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8951082433322567927}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a3c8223764bd94b93f912a4263977c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a60a2905aa079147b94f3aef7a987fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSway: 0.03
+  bookColour: {fileID: 5692523030477188719, guid: 4d9632f90cc63504690c42730a6d67fb, type: 3}
