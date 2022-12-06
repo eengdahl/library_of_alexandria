@@ -24,10 +24,10 @@ public class NoiseHandeler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (noiseSlider.value >= noiseSlider.maxValue)
-        {
-            SceneManager.LoadScene("Meny");
-        }
+        //if (noiseSlider.value >= noiseSlider.maxValue)
+        //{
+        //    SceneManager.LoadScene("Meny");
+        //}
         
         //Checking over all noise
         CheckingNoise();

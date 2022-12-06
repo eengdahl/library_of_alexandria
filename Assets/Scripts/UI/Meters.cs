@@ -15,13 +15,8 @@ public class Meters : MonoBehaviour
     //public Slider noiseMeter;
     private float timer;
     public float timer2;
-
-
-    private void Start()
-    {
-  
-
-    }
+    
+ 
 
 
     void Update()
@@ -36,7 +31,9 @@ public class Meters : MonoBehaviour
 
             if (showTimeLeft.value >= showTimeLeft.maxValue)
             {
-                SceneManager.LoadScene("Meny");
+                
+                 
+                //SceneManager.LoadScene("Meny");
             }
 
             //Making noisemeter decreses always, NOT a good solution'
