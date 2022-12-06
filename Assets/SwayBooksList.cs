@@ -44,8 +44,8 @@ public class SwayBooksList : MonoBehaviour
                     startAngle = registrationScript.registeredBooks[i - 1].transform.position;
                 }
 
-                float swaySpeedThis = swaySpeed + (i / 200f);
-                float maxSwayThis = maxSway + (i / 600f);
+                float swaySpeedThis = swaySpeed + (i / 100f); //Was good until 15+ books swaySpeed + (i / 200f)
+                    float maxSwayThis = maxSway + (i / 600f);
 
 
                 finalSway = startAngle.x + Mathf.Sin(timer * swaySpeedThis) * maxSwayThis;

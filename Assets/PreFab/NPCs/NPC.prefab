@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 655782997}
   - component: {fileID: 655782999}
-  - component: {fileID: 655782998}
+  - component: {fileID: 4576567926583486157}
   m_Layer: 7
   m_Name: HuschedZone
   m_TagString: Untagged
@@ -128,8 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beingHusched: 0
   iMakeNoise: {fileID: 6829161596565585033}
---- !u!58 &655782998
-CircleCollider2D:
+--- !u!70 &4576567926583486157
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -141,9 +141,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.013341099, y: -0.03974065}
-  serializedVersion: 2
-  m_Radius: 0.30894384
+  m_Offset: {x: -0.0024032593, y: -0.028838217}
+  m_Size: {x: 0.20681095, y: 0.50974953}
+  m_Direction: 0
 --- !u!1 &847817220
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +435,7 @@ Transform:
   - {fileID: 215002210814868452}
   - {fileID: 847817221}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5865293537661773344
 SpriteRenderer:
