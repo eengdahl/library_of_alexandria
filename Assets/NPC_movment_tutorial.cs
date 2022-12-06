@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCMovement : MonoBehaviour
+public class NPC_movment_tutorial : MonoBehaviour
 {
 
     //Animations
@@ -16,11 +16,7 @@ public class NPCMovement : MonoBehaviour
     public bool canMove = true;
     float stopTimer;
     public float stillAfterHusch = 2;
-
-    //Pick up book
-    [SerializeField] NPCBookPickUpScript nPCbookPickUp;
-
-
+    float i = 1;
 
     // What book to leave at table
     [SerializeField] GameObject blankBook;
@@ -37,7 +33,6 @@ public class NPCMovement : MonoBehaviour
     public bool hasChair = false;
     float seatedTimer = 0;
     float willBeSeatedFor;
-    public bool isSeated = false;
 
     //Waypoints
     WayPointsArmory wayPointsArmory;
@@ -74,7 +69,8 @@ public class NPCMovement : MonoBehaviour
 
         wayPointsArmory = FindObjectOfType<WayPointsArmory>();
         //Waypoint Picker
-        movementArrayPickerIndex = Random.Range(0, 2);
+        //movementArrayPickerIndex = Random.Range(0, 2);
+        movementArrayPickerIndex = 3;
 
         wayPoints = wayPointsArmory.GetArray(movementArrayPickerIndex);
         transform.position = wayPoints[waypointIndex].transform.position; // Set location to
@@ -87,47 +83,17 @@ public class NPCMovement : MonoBehaviour
         {
             exitStartTF[i] = exitStartsGO[i].transform;
         }
+        
+        
     }
 
     
     void Update()
     {
-        if (gameObject.tag == "NPC")
-        { //If NPC havent picked up a book yet
-            if (nPCbookPickUp.haveBook == false && isLeaving == false)
-            {
-                
-                CanMove();
-            }
-            else if (isLeaving == true)
-            {
-
-                ExitMove2();
-            }
-            //If NPC have picked up a book
-            else if (nPCbookPickUp.haveBook == true)
-            {
-
-                //If has chair
-                if (hasChair)
-                {
-                    MoveToChair();
-                    LeaveChair();
-
-                }
-                //If dont have chair
-                else if (!hasChair)
-                {
-                    CheckIfChairsEmpty();
-                    CanMove();
-                }
-            }
-        }
-        if (gameObject.tag == "Researcher")
+        if (gameObject.tag == "NPC" && i == 1)
         {
-            Move();
+            CanMove();
         }
-
     }
     void CheckIfChairsEmpty()
     {
@@ -144,23 +110,6 @@ public class NPCMovement : MonoBehaviour
             ChairPicker();
         }
     }
-    void LeaveChair()
-    {
-
-        willBeSeatedFor = Random.Range(25f, 30f); //Decides how long the NPC will be seated (starts when book is picked up)
-        seatedTimer += Time.deltaTime;
-        if (seatedTimer > willBeSeatedFor && nPCbookPickUp.haveBook == true)
-        { //Reset everything that have anything to do with books
-            isSeated = false;
-            SpawnBook();//Spawn book 
-            nPCbookPickUp.haveBook = false;
-            chairOccupiedScript.chairOccupied = false;
-            hasChair = false;
-            seatedTimer = 0;
-            isLeaving = true;//Bool to start looking for exit arrays
-        }
-
-    }
     void ChairPicker()
     {
         chairPicker = Random.Range(0, chairs.Length);
@@ -171,7 +120,6 @@ public class NPCMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position, moveSpeed * Time.deltaTime);
         if(transform.position == chairs[chairPicker].transform.position) // if at chair
         {
-            isSeated = true;
             thisAnimator.SetBool("isWalking", false);
             redSpriteAnimator.SetBool("isWalking", false);
         }
@@ -207,15 +155,15 @@ public class NPCMovement : MonoBehaviour
         float distanceStart;
         float distance;
         distanceStart = Vector3.Distance(transform.position, exitStartTF[0].position);
-        for (int i = 0; i < exitStartTF.Length; i++) // exitStartTF.Length
+        for (int i = 0; i < exitStartTF.Length; i++)
         {
-            
+            Debug.Log("Inside the for loop now :) ");
             if (havepicked== false)
             {
                 distance = Vector3.Distance(transform.position, exitStartTF[i].position);
                 if (distanceStart < distance)
                 {
-                   
+                    Debug.Log("Should have picked the closest");
                     indexPickerExitArray = i;
                     havepicked = true;
                 }
@@ -237,6 +185,7 @@ public class NPCMovement : MonoBehaviour
         if (transform.position == exitWaypoints[ExitWayPointIndex].transform.position)
         {
             ExitWayPointIndex += 1;
+
         }
         if (ExitWayPointIndex == exitWaypoints.Length)//If reaches the last waypoint delete the npc
         {

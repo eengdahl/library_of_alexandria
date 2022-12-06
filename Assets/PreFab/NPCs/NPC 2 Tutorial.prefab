@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1839996508562734256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.617247
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.191061
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773345, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773346, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_Name
+      value: NPC 2 Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865293537661773347, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+--- !u!95 &1839996507207972595 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1891633731, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+  m_PrefabInstance: {fileID: 1839996508562734256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5254942613209766546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5865293537661773346, guid: 98aa359e348696e41afd05824daefa6a, type: 3}
+  m_PrefabInstance: {fileID: 1839996508562734256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4925796834388133555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254942613209766546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1923a506d97eb41b7bfac6d49dd04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redSpriteAnimator: {fileID: 1839996507207972595}
+  moveSpeed: 1.25
+  canMove: 1
+  stillAfterHusch: 2
+  blankBook: {fileID: 0}
+  chairs: []
+  hasChair: 0
+  wayPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  numberOfPaths: 1
+  exitStartsGO: []
+  exitStartTF: []
+  exitWaypoints: []
+  numberOfExitArrays: 0
+  currentTransformExitDebugRemoveLater: {fileID: 0}
+--- !u!114 &6197471499646373188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254942613209766546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1923a506d97eb41b7bfac6d49dd04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redSpriteAnimator: {fileID: 1839996507207972595}
+  moveSpeed: 1.25
+  canMove: 1
+  stillAfterHusch: 2
+  blankBook: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
+  chairs: []
+  hasChair: 0
+  wayPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  numberOfPaths: 1
+  exitStartsGO: []
+  exitStartTF: []
+  exitWaypoints: []
+  numberOfExitArrays: 0
+  currentTransformExitDebugRemoveLater: {fileID: 0}
+--- !u!114 &6960113271945054267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254942613209766546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dbd8cbbf86c06844b4e34bf918a2733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxNumberOfBooks: 0
+  booksInArms: 0
+  whiteBooksInHands: 0
+  redBooksInHands: 0
+  blueBooksInHands: 0
+  greenBooksInHands: 0
