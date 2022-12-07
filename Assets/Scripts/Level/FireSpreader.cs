@@ -18,7 +18,7 @@ public class FireSpreader : MonoBehaviour
 
     private void Start()
     {
-        spreadFireTimer = 1;
+        spreadFireTimer = 8;
     }
 
     void Update()
@@ -46,24 +46,12 @@ public class FireSpreader : MonoBehaviour
         activeFires.Add(fire);
 
         counter++;
-        //Can only spread if avalible spots open
-
+        
+        //Added more fire every third
         if (counter % 3 == 0)
         {
             SpreadFire();
         }
-        //if (counter >= firePositions.Count)
-        //{
-        //    return;
-        //}
 
-        ////adding more fire every third spawn
-        //if (counter % 3 == 0)
-        //{
-        //    Instantiate(fire, firePositions[counter].transform.position, transform.rotation);
-        //    activeFires.Add(fire);
-        //    counter++;
-
-        //}
     }
 }

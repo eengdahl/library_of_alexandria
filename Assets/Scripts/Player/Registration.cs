@@ -19,6 +19,7 @@ public class Registration : MonoBehaviour
     public int amountRegistered;
     public List <GameObject> registeredBooks;
     public SwayBooksList swayBookScript;
+    AudioSource aS;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class Registration : MonoBehaviour
         spawnrate = 5;
         deliverBooks = FindObjectOfType<DeliverBooks>();
         inventoryPlayer = FindObjectOfType<InventoryPlayer>();
+        aS = GetComponent<AudioSource>();
 
     }
     private void Update()
@@ -85,6 +87,7 @@ public class Registration : MonoBehaviour
                 {
                     deliverBooks.AddBookToTable(1);
                     inventoryPlayer.ReturnBooksToReception("Book White", 1);
+                    aS.Play();
 
                     //Why this break is needed is beyond me 
                 break;
