@@ -9,24 +9,23 @@ public class FireSpreader : MonoBehaviour
 {
     public GameObject fire;
     float timer;
+    public float spreadFireTimer;
     public List<GameObject> activeFires;
-    private bool firstTime;
     public GameObject fireStarterPosition;
-    public List<Vector3> firePositions;
-    Vector3 lastPosition;
+    public List<GameObject> firePositions;
     int counter = 0;
 
-    void Start()
-    {
-        firstTime = true;
 
+    private void Start()
+    {
+        spreadFireTimer = 8;
     }
 
     void Update()
     {
         timer += Time.deltaTime;
 
-        if (timer > 10)
+        if (timer > spreadFireTimer)
         {
             SpreadFire();
             timer = 0;
@@ -37,56 +36,22 @@ public class FireSpreader : MonoBehaviour
 
     public void SpreadFire()
     {
-        
-
-        if (firstTime)
+        //Can only spread if avalible spots open
+        if (counter >= firePositions.Count)
         {
-            Instantiate(fire, fireStarterPosition.transform.position, transform.rotation);
-            activeFires.Add(fire);
-            // firePositions.Add(activeFires[activeFires.Count-1].transform.position);
-
-            firstTime = false;
             return;
         }
-        for (int i = 0; i < 3; i++)
+
+        Instantiate(fire, firePositions[counter].transform.position, transform.rotation);
+        activeFires.Add(fire);
+
+        counter++;
+        
+        //Added more fire every third
+        if (counter % 3 == 0)
         {
-
-            lastPosition = new Vector2(fireStarterPosition.transform.position.x - counter, fireStarterPosition.transform.position.y);
-            //lastPosition = new Vector2((activeFires[i].transform.position.x - counter), activeFires[i].transform.position.y);
-
-
-            Instantiate(fire, lastPosition, transform.rotation);
-            activeFires.Add(fire);
-            //firePositions.Add(activeFires[i].transform.position);
-
-            counter++;
-
+            SpreadFire();
         }
-
-
-        //    if (total == 0)
-        //    {
-        //        Instantiate(fire, transform.position, transform.rotation);
-        //        activeFires.Add(fire);
-        //        firePositions = new Vector3[activeFires.Count];
-
-
-
-        //        total++;
-        //        return;
-        //    }
-        //    else
-        //    {
-
-        //        lastPosition = firePositions[total];
-        //        lastPosition.x--;
-        //        //total++;
-        //        Debug.Log("ping");
-        //        Instantiate(fire, firePositions[activeFires.Count], transform.rotation);
-        //        firePositions = new Vector3[activeFires.Count];
-        //        activeFires.Add(fire);
-        //    }
-
 
     }
 }

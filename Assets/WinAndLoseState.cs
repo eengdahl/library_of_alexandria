@@ -12,7 +12,7 @@ public class WinAndLoseState : MonoBehaviour
     public TMP_Text fellOver;
     public TMP_Text toLoud;
     public TMP_Text youWon;
-    public Meters meters;
+   
     float endTimer;
     SwayBooksList swayBooksList;
     private void Start()
@@ -25,7 +25,7 @@ public class WinAndLoseState : MonoBehaviour
         {
             endTimer += Time.deltaTime;
             youWon.enabled = true;
-            if (endTimer > 5)
+            if (endTimer > 10)
             {
                 SceneManager.LoadScene("Meny");
             }
@@ -35,7 +35,7 @@ public class WinAndLoseState : MonoBehaviour
         {
             endTimer += Time.deltaTime;
             toLoud.enabled = true;
-            if (endTimer > 5)
+            if (endTimer > 10)
             {
                 SceneManager.LoadScene("Meny");
             }
@@ -44,7 +44,7 @@ public class WinAndLoseState : MonoBehaviour
         {
             endTimer += Time.deltaTime;
             fellOver.enabled = true;
-            if (endTimer > 5)
+            if (endTimer > 10)
             {
                 SceneManager.LoadScene("Meny");
             }

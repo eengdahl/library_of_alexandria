@@ -59,6 +59,7 @@ public class MakeHuschSound : MonoBehaviour
 
             lenghtOfHusch = chargedHush;
             chargedHush = 0;
+            playerController1.karinCantMove = true;
 
         }
         //Makes standard hush
@@ -75,7 +76,6 @@ public class MakeHuschSound : MonoBehaviour
         if (doesHuschSound)
         {
             huschTimer += Time.deltaTime;
-            playerController1.karinCantMove = true;
 
             if (huschTimer >= lenghtOfHusch)
             {
@@ -101,5 +101,6 @@ public class MakeHuschSound : MonoBehaviour
         audioSource.Stop();
         doesHuschSound = false;
         collider2D.radius = standardRadius;
+        
     }
 }

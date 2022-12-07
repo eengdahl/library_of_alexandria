@@ -69,6 +69,10 @@ public class PlayerController1 : MonoBehaviour
     }
     private void flip()
     {
+        if (karinCantMove)
+        {
+            return;
+        }
         facingRight = !facingRight;
 
         //assigns a the scale component to a variable temporarily
