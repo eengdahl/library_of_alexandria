@@ -22,8 +22,14 @@ public class SwayBooksList : MonoBehaviour
     }
     private void Update()
     {
-        
-        if (registrationScript.registeredBooks.Count >= maxAmountOfBooks)
+        for (int i = 0; i < registrationScript.registeredBooks.Count; i++)
+        {
+            SpriteRenderer spriteRenderer = registrationScript.registeredBooks[i].GetComponent<SpriteRenderer>();
+            spriteRenderer.sortingOrder = i - 2;
+            Debug.Log("SpriteOrder should be fixed");
+        }
+
+            if (registrationScript.registeredBooks.Count >= maxAmountOfBooks)
         {
             toMany = true;
         }
@@ -50,6 +56,9 @@ public class SwayBooksList : MonoBehaviour
 
                 finalSway = startAngle.x + Mathf.Sin(timer * swaySpeedThis) * maxSwayThis;
                 registrationScript.registeredBooks[i].transform.position = new Vector3(finalSway, startAngle.y + 0.1f, startAngle.z);
+             
+
+
             }
             timer += Time.deltaTime;
         }

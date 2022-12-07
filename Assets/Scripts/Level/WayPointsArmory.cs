@@ -12,19 +12,33 @@ public class WayPointsArmory : MonoBehaviour
     public Transform[] fithArray;
     public Transform[] sixthArray;
     public Transform[] seventhArray;
+
+
+    //The lists of transforms
     List<Transform[]> listOfWalkningTransformArrays;
     List<Transform[]> listOfExitArrays;
+    List<Transform[]> listOfReasercherArrays;
+
 
     //Exit arrays
     public Transform[] firstExitArray;
     public Transform[] secondExitArray;
     public Transform[] thirdExitArray;
     public Transform[] forthExitArray;
+    //Researcher arrays
+    public Transform[] researcherArrayOne;
+    public Transform[] researcherArrayTwo;
 
     // Start is called before the first frame update
 
     private void Awake()
     {
+        //Researcher Arrays
+        listOfReasercherArrays = new List<Transform[]>();
+        listOfReasercherArrays.Add(researcherArrayOne);
+        listOfReasercherArrays.Add(researcherArrayTwo);
+
+
         //Normal walking
         listOfWalkningTransformArrays = new List<Transform[]>();
         listOfWalkningTransformArrays.Add(firstArray);
@@ -45,7 +59,13 @@ public class WayPointsArmory : MonoBehaviour
     {
        
     }
-    
+    public Transform[] ResearcherGetArray(int index)
+    {
+        Transform[] returnArray;
+        returnArray = listOfReasercherArrays[index];
+
+        return returnArray;
+    }
     public Transform[] GetArray(int index)
     {
         Transform[] returnArray;

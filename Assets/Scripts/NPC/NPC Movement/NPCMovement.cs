@@ -27,8 +27,8 @@ public class NPCMovement : MonoBehaviour
     float[] distanceBetween;
 
     //Tables flip sprite
-    GameObject[] tables;
-
+    Vector3 whenBookIsPickedUpSpot;
+    bool gotFacingDirection = false;
 
     //Chairs
     int chairPicker = 0;
@@ -142,10 +142,7 @@ public class NPCMovement : MonoBehaviour
                 }
             }
         }
-        if (gameObject.tag == "Researcher")
-        {
-            Move();
-        }
+
 
     }
     void CheckIfChairsEmpty()
@@ -190,10 +187,18 @@ public class NPCMovement : MonoBehaviour
     }
     void MoveToChair()
     {
+        if (!gotFacingDirection)
+        {
+            whenBookIsPickedUpSpot = transform.position;
+            gotFacingDirection = true;
+        }
+        
 
         transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position, moveSpeed * Time.deltaTime);
         if(transform.position == chairs[chairPicker].transform.position) // if at chair
         {
+
+            FlipSpriteWhenSittingAtTable();
             isSeated = true;
             thisAnimator.SetBool("isWalking", false);
             redSpriteAnimator.SetBool("isWalking", false);
@@ -272,7 +277,16 @@ public class NPCMovement : MonoBehaviour
 
     void FlipSpriteWhenSittingAtTable()
     {
-        //Sprint 2
+        if (transform.position.x > whenBookIsPickedUpSpot.x)
+        {
+            if (transform.localScale.x > 0)
+                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        }
+        else if (transform.position.x< whenBookIsPickedUpSpot.x)
+        {
+            if (transform.localScale.x < 0)
+                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        }
     }
     void ExitMove()
     {
@@ -319,7 +333,11 @@ public class NPCMovement : MonoBehaviour
     void Move()
     {
         thisAnimator.SetBool("isWalking", true);
-        redSpriteAnimator.SetBool("isWalking", true);
+        if (gameObject.tag == ("NPC"))
+        {
+            redSpriteAnimator.SetBool("isWalking", true);
+        }
+        
 
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         currentWaypoint = wayPoints[waypointIndex];
@@ -386,4 +404,5 @@ public class NPCMovement : MonoBehaviour
         }
         return index;
     }
+
 }

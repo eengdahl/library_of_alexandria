@@ -46,7 +46,7 @@ public class Registration : MonoBehaviour
                 
                 GameObject book = Instantiate(books[UnityEngine.Random.Range(0, books.Count)], thisSpawnPoint, Quaternion.identity);
                 registeredBooks.Add(book);
-                //registeredBooks[registeredBooks.IndexOf(book)].GetComponent<Collider2D>().enabled = false;
+                
 
                 amountRegistered += 1;
                 deliverBooks.AddBookToTable(-1);
