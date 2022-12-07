@@ -101,5 +101,6 @@ public class MakeHuschSound : MonoBehaviour
         audioSource.Stop();
         doesHuschSound = false;
         collider2D.radius = standardRadius;
+        
     }
 }
