@@ -7,7 +7,7 @@ public class NPCMovement : MonoBehaviour
 
     //Animations
     Animator thisAnimator;
-    [SerializeField]Animator redSpriteAnimator;
+    [SerializeField] Animator redSpriteAnimator;
 
 
     //BasicMovement
@@ -89,14 +89,14 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
-    
+
     void Update()
     {
         if (gameObject.tag == "NPC")
         { //If NPC havent picked up a book yet
             if (nPCbookPickUp.haveBook == false && isLeaving == false)
             {
-                
+
                 CanMove();
             }
             else if (isLeaving == true)
@@ -128,7 +128,7 @@ public class NPCMovement : MonoBehaviour
                             canMove = true;
                         }
                     }
-                    
+
                     LeaveChair();
 
                 }
@@ -166,7 +166,7 @@ public class NPCMovement : MonoBehaviour
         {
             seatedTimer += Time.deltaTime;
         }
-        
+
         if (seatedTimer > willBeSeatedFor && nPCbookPickUp.haveBook == true)
         { //Reset everything that have anything to do with books
             isSeated = false;
@@ -190,10 +190,10 @@ public class NPCMovement : MonoBehaviour
             whenBookIsPickedUpSpot = transform.position;
             gotFacingDirection = true;
         }
-        
+
 
         transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position, moveSpeed * Time.deltaTime);
-        if(transform.position == chairs[chairPicker].transform.position) // if at chair
+        if (transform.position == chairs[chairPicker].transform.position) // if at chair
         {
 
             FlipSpriteWhenSittingAtTable();
@@ -216,7 +216,7 @@ public class NPCMovement : MonoBehaviour
             //Idle animators
             thisAnimator.SetBool("isWalking", false);
             redSpriteAnimator.SetBool("isWalking", false);
-            
+
             stopTimer += Time.deltaTime;
             if (stopTimer > stillAfterHusch)
             {
@@ -235,13 +235,13 @@ public class NPCMovement : MonoBehaviour
         distanceStart = Vector3.Distance(transform.position, exitStartTF[0].position);
         for (int i = 0; i < exitStartTF.Length; i++) // exitStartTF.Length
         {
-            
-            if (havepicked== false)
+
+            if (havepicked == false)
             {
                 distance = Vector3.Distance(transform.position, exitStartTF[i].position);
                 if (distanceStart < distance)
                 {
-                   
+
                     indexPickerExitArray = i;
                     havepicked = true;
                 }
@@ -253,12 +253,12 @@ public class NPCMovement : MonoBehaviour
         }
 
         exitWaypoints = wayPointsArmory.GetExitArray(indexPickerExitArray);// Get the array of waypoints for exiting
-        
+
         transform.position = Vector3.MoveTowards(transform.position, exitWaypoints[ExitWayPointIndex].transform.position, moveSpeed * Time.deltaTime);
         currentTransformExitDebugRemoveLater = exitWaypoints[ExitWayPointIndex];//Debug Thingy
         currentWaypoint = exitWaypoints[ExitWayPointIndex]; //For NPC flip
         FlipFacingDirection();
-        
+
         //If NPC reach waypoint, change that waypoint
         if (transform.position == exitWaypoints[ExitWayPointIndex].transform.position)
         {
@@ -266,11 +266,11 @@ public class NPCMovement : MonoBehaviour
         }
         if (ExitWayPointIndex == exitWaypoints.Length)//If reaches the last waypoint delete the npc
         {
-            
+
             Destroy(this.gameObject);
 
         }
-        
+
     }
 
     void FlipSpriteWhenSittingAtTable()
@@ -280,7 +280,7 @@ public class NPCMovement : MonoBehaviour
             if (transform.localScale.x > 0)
                 transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         }
-        else if (transform.position.x< whenBookIsPickedUpSpot.x)
+        else if (transform.position.x < whenBookIsPickedUpSpot.x)
         {
             if (transform.localScale.x < 0)
                 transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
@@ -289,7 +289,7 @@ public class NPCMovement : MonoBehaviour
     void ExitMove()
     {
 
-        
+
         bool havepicked = false;
         float distanceStart;
         float distance;
@@ -307,7 +307,7 @@ public class NPCMovement : MonoBehaviour
                     havepicked = true;
                 }
 
-                
+
             }
 
 
@@ -335,7 +335,7 @@ public class NPCMovement : MonoBehaviour
         {
             redSpriteAnimator.SetBool("isWalking", true);
         }
-        
+
 
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         currentWaypoint = wayPoints[waypointIndex];
@@ -367,6 +367,12 @@ public class NPCMovement : MonoBehaviour
     }
     void SpawnBook()
     {
+        float chanceOfNotDroppingBook;
+        chanceOfNotDroppingBook = Random.Range(0, 10);
+        if (chanceOfNotDroppingBook > 7)
+        {
+            return;
+        }
         GameObject[] tables; //tables gameObjects
         tables = GameObject.FindGameObjectsWithTag("Table");
         distanceBetween = new float[tables.Length];

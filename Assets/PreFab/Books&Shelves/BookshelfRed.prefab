@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2073380338820963034, guid: 3aa93d84b1d97cb4a82870e63edbcb92, type: 3}
       propertyPath: m_Name
-      value: BookshelfRed (2)
+      value: BookshelfRed
       objectReference: {fileID: 0}
     - target: {fileID: 2073380338820963034, guid: 3aa93d84b1d97cb4a82870e63edbcb92, type: 3}
       propertyPath: m_TagString

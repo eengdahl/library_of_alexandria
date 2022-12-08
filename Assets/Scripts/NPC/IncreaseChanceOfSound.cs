@@ -9,7 +9,7 @@ public class IncreaseChanceOfSound : MonoBehaviour
     public OtherNPCMakeSoundChecker otherNPcsScript;
     NPCClutterCheckerScript clutterScript;
     [SerializeField]NPCMakeNoise npcMakeNoiseScript;
-    public float makeSoundChanceNoBooks = 3;
+    public float makeSoundChanceNoBooks = 2.5f;
 
     float booksInArea;
     float NPCsMakingNoiseInArea;

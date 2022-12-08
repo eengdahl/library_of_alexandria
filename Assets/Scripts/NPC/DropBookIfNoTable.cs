@@ -30,7 +30,6 @@ public class DropBookIfNoTable : MonoBehaviour
                 dropBookPicker = Random.Range(1, 11);
                 if(dropBookPicker >= 5)
                 {
-                    Debug.Log("Should drop book");
                     Instantiate(blankBookObject,transform.position,transform.rotation);
                     npcBookPickUpScript.haveBook = false;       
                 }
