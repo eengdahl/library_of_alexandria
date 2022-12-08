@@ -161,7 +161,7 @@ public class NPCMovement : MonoBehaviour
     void LeaveChair()
     {
 
-        willBeSeatedFor = Random.Range(25f, 30f); //Decides how long the NPC will be seated (starts when book is picked up)
+        willBeSeatedFor = Random.Range(30f, 35f); //Decides how long the NPC will be seated (starts when book is picked up)
         if (isSeated)// start timer when at chair
         {
             seatedTimer += Time.deltaTime;

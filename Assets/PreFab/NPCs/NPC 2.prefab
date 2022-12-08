@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherNPcsScript: {fileID: 847817223}
   npcMakeNoiseScript: {fileID: 709626101}
-  makeSoundChanceNoBooks: 1
+  makeSoundChanceNoBooks: 2
 --- !u!1 &5865293537661773346
 GameObject:
   m_ObjectHideFlags: 0

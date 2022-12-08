@@ -18,7 +18,7 @@ public class NoiseHandeler : MonoBehaviour
 
     private void Start()
     {
-        noiseSlider.maxValue = 200;
+        noiseSlider.maxValue = 100;
     }
 
     // Update is called once per frame
