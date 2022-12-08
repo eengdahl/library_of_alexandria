@@ -26,7 +26,6 @@ public class SwayBooksList : MonoBehaviour
         {
             SpriteRenderer spriteRenderer = registrationScript.registeredBooks[i].GetComponent<SpriteRenderer>();
             spriteRenderer.sortingOrder = i - 2;
-            Debug.Log("SpriteOrder should be fixed");
         }
 
             if (registrationScript.registeredBooks.Count >= maxAmountOfBooks)

@@ -115,11 +115,9 @@ public class NPCMovement : MonoBehaviour
                     {
                         stopTimer = 0;
                         MoveToChair();
-                        Debug.Log("should move to chair");
                     }
                     else if (canMove == false)
                     {
-                        Debug.Log("Should not move");
                         //Idle animators
                         thisAnimator.SetBool("isWalking", false);
                         redSpriteAnimator.SetBool("isWalking", false);
