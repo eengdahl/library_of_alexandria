@@ -9,8 +9,9 @@ public class NPCResearcherMovement : MonoBehaviour
     [SerializeField]
     float moveSpeed;
 
+    
     bool isAtPoint;
-
+    public bool gotBook = false;
 
     //Order UI
     private NPCInventory npcInventory;
@@ -26,20 +27,25 @@ public class NPCResearcherMovement : MonoBehaviour
     public int movementArrayPickerIndex;
     Transform currentWaypoint;
 
+    InventoryPlayer inventoryPlayer;
 
     //Make noise
     NPCMakeNoise npcMakeNoise;
 
     private void Start()
     {
+
+
+        inventoryPlayer = GameObject.FindGameObjectWithTag("BookPickUpZone").GetComponent<InventoryPlayer>();
+
         //Make noise
         npcMakeNoise = GetComponent<NPCMakeNoise>();
 
         //UI
-        uiImageBackground.enabled = false;       
+        uiImageBackground.enabled = false;
         bookPicker = Random.Range(0, 3);
         npcInventory = GetComponent<NPCInventory>();
-        
+
         //bookColorUi.enabled = false;
         //Waypoints
         wayPointsArmory = FindObjectOfType<WayPointsArmory>(); // Get the waypoints armory component
@@ -50,17 +56,24 @@ public class NPCResearcherMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (!isAtPoint)
+        if (!gotBook)
         {
-            MoveToSpot(); // Move to the point where it should display its order
-        }
-        
-        if (isAtPoint)
-        {
-            StartScreaming();
-            MakeOrder(); //Make order
-        }
+            if (!isAtPoint)
+            {
+                MoveToSpot(); // Move to the point where it should display its order
+            }
 
+            if (isAtPoint)
+            {
+                StartScreaming();
+                MakeOrder(); //Make order
+            }
+        }
+        if (gotBook)
+        {
+            uiImageBackground.enabled = false;
+            npcInventory.ReturnBooks(bookUI.tag);
+        }
 
     }
 
@@ -73,14 +86,14 @@ public class NPCResearcherMovement : MonoBehaviour
     {
         //Enable sprite of bakground of orderbook
         uiImageBackground.enabled = true;
-         for (int i = 0; i < npcInventory.slots.Length; i++)
-         {
+        for (int i = 0; i < npcInventory.slots.Length; i++)
+        {
             if (npcInventory.isFull[i] == false)
             {
                 bookUI = booksUI[bookPicker];
                 //BOOK CAN BE ADDED TO INVENTORY
                 npcInventory.isFull[i] = true;
-                Instantiate(bookUI, npcInventory.slots[i].transform, false);               
+                Instantiate(bookUI, npcInventory.slots[i].transform, false);
                 break; //Stop the for loop if empty spot in inventory is found
             }
         }
@@ -94,13 +107,13 @@ public class NPCResearcherMovement : MonoBehaviour
 
         if (transform.position == wayPoints[waypointIndex].transform.position)//Move to next waypointIndex
         {
-            if (waypointIndex != wayPoints.Length-1)
+            if (waypointIndex != wayPoints.Length - 1)
             {
 
                 waypointIndex += 1;
             }
         }
-        if (waypointIndex == wayPoints.Length-1)
+        if (waypointIndex == wayPoints.Length - 1)
         {
             isAtPoint = true;
         }
@@ -121,18 +134,19 @@ public class NPCResearcherMovement : MonoBehaviour
 
     void GiveResearcherTagEqualToBook()
     {
-        if(bookUI.CompareTag("Book Red"))
+        if (bookUI.CompareTag("Book Red"))
         {
-            this.gameObject.tag = "Bookshelf Red";
+            this.gameObject.tag = "Researcher Red";
         }
-        else if (bookUI.CompareTag ("Book Blue"))
+        else if (bookUI.CompareTag("Book Blue"))
         {
-            this.gameObject.tag = "Bookshelf Blue";
+            this.gameObject.tag = "Researcher Blue";
         }
-        else if (bookUI.CompareTag ("Book Green"))
+        else if (bookUI.CompareTag("Book Green"))
         {
-            this.gameObject.tag = "Bookshelf Green";
+            this.gameObject.tag = "Researcher Green";
         }
     }
-    
+
+   
 }

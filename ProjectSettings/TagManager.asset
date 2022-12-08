@@ -3,7 +3,30 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Table
+  - Book Blue
+  - Book Green
+  - Book Red
+  - Bookshelf Red
+  - Bookshelf Blue
+  - Chair
+  - BookPickUpZone
+  - Husch
+  - Book
+  - Bookshelf Green
+  - Book White
+  - ExitStart
+  - ItemSlot
+  - NPC
+  - OtherNPCmakeSoundChecker
+  - Researcher
+  - Registration
+  - Deliver
+  - Bookshelf White
+  - Researcher Blue
+  - Researcher Red
+  - Researcher Green
   layers:
   - Default
   - TransparentFX

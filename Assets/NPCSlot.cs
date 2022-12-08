@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slot : MonoBehaviour
+public class NPCSlot : MonoBehaviour
 {
-    private InventoryPlayer inventory;
+    private NPCInventory inventory;
     public int i;
     private void Start()
     {
-      
-        inventory = GameObject.FindGameObjectWithTag("BookPickUpZone").GetComponent<InventoryPlayer>();
+
+        inventory = GameObject.FindGameObjectWithTag("Researcher").GetComponent<NPCInventory>();
     }
 
     private void Update()
     {
-        if(transform.childCount <= 0)
+        if (transform.childCount <= 0)
         {
             inventory.isFull[i] = false;
         }

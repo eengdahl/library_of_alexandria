@@ -7,8 +7,10 @@ public class InventoryPlayer : MonoBehaviour
     public bool[] isFull;
     public GameObject[] slots;
     GameObject kid;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //If collision with Bookshelf
         if (collision.tag == "Bookshelf Red")
         {
             ReturnBooks("Book Red");
@@ -26,6 +28,63 @@ public class InventoryPlayer : MonoBehaviour
             ReturnBooks("Book White");
         }
 
+        //If collision with researcher
+        if (collision.tag == "Researcher Red" )
+        {
+            bool returnedBook = false;
+            NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
+             //Only if ReturnBooks is done!!!
+            GiveNPCBook("Book Red",1,returnedBook); //Returned book doesnt change
+            if (returnedBook)
+            {
+
+                nPCResearcher.gotBook = true; 
+                collision.tag = "Researcher";
+            }
+
+        }
+        else if (collision.tag == "Researcher Blue" )
+        {
+            bool returnedBook = false;
+            NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
+            
+            GiveNPCBook("Book Blue",1,returnedBook);
+            
+            if (returnedBook)
+            {
+
+                nPCResearcher.gotBook = true;
+                collision.tag = "Researcher";
+            }
+        }
+        else if (collision.tag == "Researcher Green" )
+        {
+            bool returnedBook = false;
+            NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
+            
+            GiveNPCBook("Book Green",1,returnedBook);
+            
+            if (returnedBook)
+            {
+
+                nPCResearcher.gotBook = true;
+                collision.tag = "Researcher";
+            }
+        }
+        else if (collision.tag == "Researcher White")
+        {
+            bool returnedBook = false;
+            NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
+            GiveNPCBook("Book White",1,returnedBook);
+
+
+            if (returnedBook)
+            {
+
+            nPCResearcher.gotBook = true;
+            collision.tag = "Researcher";
+            }
+        }
     }
     public GameObject FindChildWithTag(GameObject parent, string tag)
     {
@@ -53,6 +112,7 @@ public class InventoryPlayer : MonoBehaviour
             {
                 Slot slot = slots[i].GetComponent<Slot>();
                 slot.DestroyBook();
+                
             }
         }
     }
@@ -76,6 +136,30 @@ public class InventoryPlayer : MonoBehaviour
 
             //Om funktionen är callad för att förstöra en book, avbryts loopen när en book är destroyad
             if(counter >= amount)
+            {
+                break;
+            }
+
+        }
+    }
+    void GiveNPCBook(string bookColour, int amount,bool gaveBook)
+    {
+        int counter = 0;
+        for (int i = 0; i < slots.Length; i++)
+        {
+
+            kid = FindChildWithTag(slots[i], bookColour);
+            //If book med färg finns -radera den
+            if (kid != null && kid.tag == bookColour)
+            {
+                counter++;
+                Slot slot = slots[i].GetComponent<Slot>();
+                slot.DestroyBook();
+                gaveBook = true;
+            }
+
+            //Om funktionen är callad för att förstöra en book, avbryts loopen när en book är destroyad
+            if (counter >= amount)
             {
                 break;
             }
