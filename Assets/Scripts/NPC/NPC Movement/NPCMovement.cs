@@ -192,8 +192,8 @@ public class NPCMovement : MonoBehaviour
         }
 
 
-        transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position, moveSpeed * Time.deltaTime);
-        if (transform.position == chairs[chairPicker].transform.position) // if at chair
+        transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position-new Vector3(0,0.03f,0), moveSpeed * Time.deltaTime);
+        if (transform.position == chairs[chairPicker].transform.position - new Vector3(0, 0.03f, 0)) // if at chair
         {
 
             FlipSpriteWhenSittingAtTable();
