@@ -18,8 +18,11 @@ public class NPCMakeNoise : MonoBehaviour
         //Setting Diffrent Noiceclipp
         Random.Range(0, nosie.Length);
         aS.clip = nosie[Random.Range(0, nosie.Length)];
+        if(gameObject.tag == ("NPC"))
+        {
 
         npcMovement = GetComponent<NPCMovement>();
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +34,9 @@ public class NPCMakeNoise : MonoBehaviour
 
         if (timer >= 2f)
         {
+            if (gameObject.CompareTag("NPC")) //Only do this on NPC and not researchers
+            {
+
             float startMakingSoundPicker = Random.Range(1f, 10f);
             if (npcMovement.isSeated == true)
             {
@@ -45,6 +51,7 @@ public class NPCMakeNoise : MonoBehaviour
                 {
                     makingNosie = true;
                 }
+            }
             }
 
 

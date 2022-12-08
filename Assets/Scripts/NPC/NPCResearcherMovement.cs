@@ -25,10 +25,16 @@ public class NPCResearcherMovement : MonoBehaviour
     int waypointIndex = 0;
     public int movementArrayPickerIndex;
     Transform currentWaypoint;
-    
+
+
+    //Make noise
+    NPCMakeNoise npcMakeNoise;
 
     private void Start()
     {
+        //Make noise
+        npcMakeNoise = GetComponent<NPCMakeNoise>();
+
         //UI
         uiImageBackground.enabled = false;       
         bookPicker = Random.Range(0, 3);
@@ -46,19 +52,22 @@ public class NPCResearcherMovement : MonoBehaviour
     {
         if (!isAtPoint)
         {
-            MoveToSpot();
+            MoveToSpot(); // Move to the point where it should display its order
         }
         
         if (isAtPoint)
         {
-            MakeOrder();
+            StartScreaming();
+            MakeOrder(); //Make order
         }
+
+
     }
 
 
     void StartScreaming()
     {
-
+        npcMakeNoise.makingNosie = true; //Start making noise when at point
     }
     void MakeOrder()
     {
@@ -75,8 +84,7 @@ public class NPCResearcherMovement : MonoBehaviour
                 break; //Stop the for loop if empty spot in inventory is found
             }
         }
-
-        
+        GiveResearcherTagEqualToBook();
     }
     void MoveToSpot()
     {
@@ -94,7 +102,6 @@ public class NPCResearcherMovement : MonoBehaviour
         }
         if (waypointIndex == wayPoints.Length-1)
         {
-            Debug.Log("Is at point");
             isAtPoint = true;
         }
     }
@@ -111,4 +118,21 @@ public class NPCResearcherMovement : MonoBehaviour
                 transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         }
     }
+
+    void GiveResearcherTagEqualToBook()
+    {
+        if(bookUI.CompareTag("Book Red"))
+        {
+            this.gameObject.tag = "Bookshelf Red";
+        }
+        else if (bookUI.CompareTag ("Book Blue"))
+        {
+            this.gameObject.tag = "Bookshelf Blue";
+        }
+        else if (bookUI.CompareTag ("Book Green"))
+        {
+            this.gameObject.tag = "Bookshelf Green";
+        }
+    }
+    
 }
