@@ -360,7 +360,6 @@ GameObject:
   - component: {fileID: 4355956085948609701}
   - component: {fileID: 4355956085948609700}
   - component: {fileID: 1558703677}
-  - component: {fileID: 1558703681}
   - component: {fileID: 1558703682}
   - component: {fileID: 1558703683}
   - component: {fileID: 2636352877850139011}
@@ -388,7 +387,7 @@ Transform:
   - {fileID: 3804539513904997578}
   - {fileID: 1907163853}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4355956085948609703
 SpriteRenderer:
@@ -489,20 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89afad45e6e9dc8418d47296a217e8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1558703681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4355956085948609704}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf10f1accb17e6468795ecedb85ea4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  huschSprite: {fileID: 1140367319, guid: a1cbb35c99d87e843905f0081a79fb5b, type: 3}
-  makeHuschSoundScript: {fileID: 4355956086700047636}
 --- !u!70 &1558703682
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -567,7 +552,6 @@ GameObject:
   - component: {fileID: 4355956086700047636}
   - component: {fileID: 4355956086700047640}
   - component: {fileID: 4355956086700047637}
-  - component: {fileID: 886697117}
   m_Layer: 0
   m_Name: Husch
   m_TagString: Husch
@@ -724,17 +708,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &886697117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4355956086700047642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894cf11e5aeceaf46b743bc31902ba12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dust: {fileID: 0}
-  makeHuschSoundScript: {fileID: 4355956086700047636}
