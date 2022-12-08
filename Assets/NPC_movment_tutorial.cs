@@ -11,6 +11,9 @@ public class NPC_movment_tutorial : MonoBehaviour
 
     public GameObject redchild;
     public GameObject pickedNPC;
+    public GameObject pickedNPC2;
+
+    public GameObject emergency_text;
 
     //waypoint target
     public Transform target1;
@@ -25,6 +28,8 @@ public class NPC_movment_tutorial : MonoBehaviour
     float timer;
     float timerOnTrigger;
     //bool playSound;
+
+    //the diffrentparts of the tutorial
     bool active_1 = false;
 
     bool active_2 = false;
@@ -53,17 +58,22 @@ public class NPC_movment_tutorial : MonoBehaviour
             }
             
             //npc walk out
-            if (active_2 == false && timer >= 15)
+            if (active_2 == false && timer >= 18)
             {   
                 Debug.Log(timer);
                 Walk_out();
+                emergency_text.SetActive(true);
             }
             //many npc walks in
-            if (active_3 == false && timer >= 20)
+            if (active_3 == false && timer >= 22)
             {   
                 Debug.Log(timer);
                 
-                if (timer >= 20)
+                if (timer >= 25 && active_3 == false)
+                {
+                    //noiceNPCs();
+                }
+                if (timer >= 25)
                 {
                     Walk_to_book();
                 }
@@ -134,7 +144,7 @@ public class NPC_movment_tutorial : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, target2.position, speed * Time.deltaTime);
 
-            if (timer >= 20)
+            if (timer >= 25)
             {
             active_2 = true;
             }
@@ -142,7 +152,12 @@ public class NPC_movment_tutorial : MonoBehaviour
 
         public void noiceNPCs()
         {
-            Instantiate(pickedNPC, transform.position,Quaternion.identity);
-            active_2 = true;
+            Vector3 temp = new Vector3(0.3f,-9.4f,0);
+            Vector3 temp2 = new Vector3(-0.2f,-9.4f,0);
+
+            Instantiate (pickedNPC, temp, transform.rotation);
+            Instantiate (pickedNPC2, temp2, transform.rotation);
+            active_3 = true;
+            emergency_text.SetActive(true);
         }
 }
