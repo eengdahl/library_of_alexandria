@@ -7274,7 +7274,7 @@ PrefabInstance:
       objectReference: {fileID: 2570604}
     - target: {fileID: 990194451, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: timer_between_NPCSpawns
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2264900311570635475, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
