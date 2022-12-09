@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("scene_main");
+        SceneManager.LoadScene("scene_main_preTest");
     }
 
     public void Credits()
