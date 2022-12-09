@@ -3663,6 +3663,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+--- !u!1 &1193998808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4355956085948609704, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+  m_PrefabInstance: {fileID: 1193998807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1194664257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6529540992961897010, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
@@ -6443,6 +6448,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 413671019, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1193998808}
     - target: {fileID: 990194449, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6533,7 +6542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6176864221267170185, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.0000305
+      value: -5.000038
       objectReference: {fileID: 0}
     - target: {fileID: 6176864221342469635, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -6607,7 +6616,7 @@ MonoBehaviour:
     at the reception to find out their color\n\nColored books should be returned
     to co-responding bookshelfs\n\nIf the pile of books on the reception is to tall
     it falls over and you lose\n\nKeep the library nice and quiet for the duration
-    of the round! \n\nClick enter to start the game!"
+    of the round! \n\nClick K to start the game!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

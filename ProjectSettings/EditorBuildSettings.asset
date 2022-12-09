@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scene_main_preTest.unity
     guid: 37ad4eaddb43c734a90ab5dbc97a3326
+  - enabled: 1
+    path: Assets/Scenes/scene_main_julia.unity
+    guid: 197caf66d12e4434b8025d2079593bf4
   m_configObjects: {}
