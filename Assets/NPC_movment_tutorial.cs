@@ -26,7 +26,9 @@ public class NPC_movment_tutorial : MonoBehaviour
 
     float opacity;
     float timer;
+    float timer2;
     float timerOnTrigger;
+    bool if_space_is_presssed = true;
     //bool playSound;
 
     //the diffrentparts of the tutorial
@@ -34,6 +36,8 @@ public class NPC_movment_tutorial : MonoBehaviour
 
     bool active_2 = false;
     bool active_3 = false;
+
+    bool walkout = false;
 
     SpriteRenderer red;
 
@@ -54,32 +58,57 @@ public class NPC_movment_tutorial : MonoBehaviour
                 Walk_to_book();
                 activate_spechbubbel_madNPC();
                 activate_sound_and_spechbubbel_pickup_book();
-                Debug.Log(timer);
             }
             
+            
             //npc walk out
-            if (active_2 == false && timer >= 18)
+            walkout = true;
+            if (active_2 == false && timer >= 18 && walkout == false)
             {   
                 Debug.Log(timer);
                 Walk_out();
                 emergency_text.SetActive(true);
+                walkout = true;
             }
             //many npc walks in
-            if (active_3 == false && timer >= 22)
-            {   
-                Debug.Log(timer);
-                
-                if (timer >= 25 && active_3 == false)
+            if (active_3 == false && timer >= 30)
+            {  
+                if (active_3 == false && walkout == true)
                 {
                     //noiceNPCs();
                 }
                 if (timer >= 25)
                 {
                     Walk_to_book();
+                    
+                }
+                if (timer >= 32)
+                {
+                    Mad_NPC_text.SetActive(false);
+                    information_about_pick_up_book.SetActive(false);
+                    emergency_text.SetActive(true);
                 }
             }
-                //noiceNPCs();
-     
+            
+            //fixa bool som görs i uppdate som gör att när vi klickar space spelas heal funktionen.
+            if (Input.GetKeyUp("space"))
+            {
+                timer2 += Time.deltaTime;
+                if_space_is_presssed = true;
+                if (timer2 >= 10 && timer2 < 15)
+                {
+                    Mad_NPC_text.SetActive(false);
+                    information_about_pick_up_book.SetActive(false);
+                    Walk_out();
+                    walkout = true;
+                }  
+                if_space_is_presssed = false;
+            }
+
+            if (Input.GetKeyDown("Enter"))
+            {
+                 Debug.Log("Enter");
+            }
         }
         
         //when npc colides with book
@@ -138,6 +167,7 @@ public class NPC_movment_tutorial : MonoBehaviour
             {
               information_about_pick_up_book.SetActive(true);
               active_1= true;
+
             }
         }
         public void Walk_out()
