@@ -79,7 +79,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601193036781939174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 5.84, z: 0}
+  m_LocalPosition: {x: 0.6, y: 5.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146,7 +146,7 @@ Transform:
   - {fileID: 5845930726740027457}
   - {fileID: 1798742245}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1656196505347658495
 GameObject:
@@ -366,12 +366,17 @@ MonoBehaviour:
   - {fileID: 763113735659017791}
   - {fileID: 7405932779714820687}
   - {fileID: 3266398703039846381}
-  - {fileID: 403129990830604889}
-  - {fileID: 3959040682525294963}
-  - {fileID: 5070983584041039756}
-  - {fileID: 3266398703039846381}
-  - {fileID: 3269079991959792442}
-  - {fileID: 3359307753017000114}
+  - {fileID: 6488108430191829393}
+  - {fileID: 4176600590249783011}
+  - {fileID: 8297148014436974408}
+  - {fileID: 5828291135401572370}
+  - {fileID: 5690293343389175680}
+  - {fileID: 1254176839590283798}
+  - {fileID: 2935090843908095731}
+  - {fileID: 6821076694609557080}
+  - {fileID: 4236151635163559349}
+  - {fileID: 3359307753071562788}
+  - {fileID: 3359307752743133254}
   secondArray:
   - {fileID: 3359307752710643749}
   - {fileID: 3359307752743133254}
@@ -379,10 +384,16 @@ MonoBehaviour:
   - {fileID: 4236151635163559349}
   - {fileID: 6821076694609557080}
   - {fileID: 2935090843908095731}
-  - {fileID: 3267820852464213762}
-  - {fileID: 4543553136455598417}
-  - {fileID: 3266398703039846381}
+  - {fileID: 403129990830604889}
+  - {fileID: 1779771311011707062}
+  - {fileID: 4650498753859767275}
+  - {fileID: 4021469187050349531}
+  - {fileID: 1702617193194563596}
+  - {fileID: 3047993607784457052}
+  - {fileID: 7405932779714820687}
+  - {fileID: 5051831536019438082}
   - {fileID: 3269079991959792442}
+  - {fileID: 3359307752743133254}
   thirdArray:
   - {fileID: 3359307752710643749}
   - {fileID: 3359307753071562788}
@@ -417,6 +428,8 @@ MonoBehaviour:
   - {fileID: 3359307752710643749}
   thirdExitArray: []
   forthExitArray: []
+  researcherArrayOne: []
+  researcherArrayTwo: []
 --- !u!1001 &33152335
 PrefabInstance:
   m_ObjectHideFlags: 0
