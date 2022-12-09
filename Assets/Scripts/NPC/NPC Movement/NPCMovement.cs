@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class NPCMovement : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class NPCMovement : MonoBehaviour
     //Chairs
     int chairPicker = 0;
     public GameObject[] chairs;
+    public GameObject[] chairsLeft;
+    public GameObject[] chairsRight;
     ChairOccupied chairOccupiedScript;
     public bool hasChair = false;
     float seatedTimer = 0;
@@ -81,7 +84,9 @@ public class NPCMovement : MonoBehaviour
 
         exitStartsGO = GameObject.FindGameObjectsWithTag("ExitStart");
         exitStartTF = new Transform[exitStartsGO.Length];
-        chairs = GameObject.FindGameObjectsWithTag("Chair");
+        chairsLeft = GameObject.FindGameObjectsWithTag("Chair Face Left");
+        chairsRight = GameObject.FindGameObjectsWithTag("Chair Face Right");
+        chairs = chairsRight.Concat(chairsLeft).ToArray();
         //Store the gameobjects transforms into a transform array
         for (int i = 0; i < exitStartsGO.Length; i++)
         {
@@ -198,8 +203,17 @@ public class NPCMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position-new Vector3(0,0.03f,0), moveSpeed * Time.deltaTime);
         if (transform.position == chairs[chairPicker].transform.position - new Vector3(0, 0.03f, 0)) // if at chair
         {
-
-            FlipSpriteWhenSittingAtTable();
+            if (chairs[chairPicker].tag =="Chair Face Left")
+            {
+                if (transform.localScale.x < 0)
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            }
+            if (chairs[chairPicker].tag == "Chair Face Right")
+            {
+                if (transform.localScale.x > 0)
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            }
+            
             isSeated = true;
 
             redSpriteAnimator.SetBool("isWalking", false);
