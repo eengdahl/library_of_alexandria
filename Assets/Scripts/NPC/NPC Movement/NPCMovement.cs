@@ -193,15 +193,16 @@ public class NPCMovement : MonoBehaviour
     }
     void MoveToChair()
     {
+        FlipFacingDirection();
         if (!gotFacingDirection)
         {
             whenBookIsPickedUpSpot = transform.position;
             gotFacingDirection = true;
         }
+        
 
-
-        transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position+new Vector3(0f,0.2f,0), moveSpeed * Time.deltaTime);
-        if (transform.position == chairs[chairPicker].transform.position + new Vector3(0f, 0.2f, 0)) // if at chair
+        transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position+new Vector3(00.1f,0.2f,0), moveSpeed * Time.deltaTime);
+        if (transform.position == chairs[chairPicker].transform.position + new Vector3(0.1f, 0.2f, 0)) // if at chair
         {
             if (chairs[chairPicker].tag =="Chair Face Left")
             {
@@ -218,8 +219,12 @@ public class NPCMovement : MonoBehaviour
 
             redSpriteAnimator.SetBool("isWalking", false);
         }
-        currentWaypoint = chairs[chairPicker].transform;
-        FlipFacingDirection();
+        if (transform.position != chairs[chairPicker].transform.position + new Vector3(0.1f, 0.2f, 0))
+        {
+            //FlipFacingDirection();
+        }
+            currentWaypoint = chairs[chairPicker].transform;
+        
     }
     void CanMove()
     {

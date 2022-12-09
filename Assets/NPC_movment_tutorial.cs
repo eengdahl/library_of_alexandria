@@ -83,7 +83,7 @@ public class NPC_movment_tutorial : MonoBehaviour
                 Walk_to_book();
 
             }
-            if (timer >= 32)
+            if (timer >= 28)//Ändrat från 35
             {
                 Mad_NPC_text.SetActive(false);
                 information_about_pick_up_book.SetActive(false);
