@@ -10,11 +10,15 @@ public class NPCMakeNoise : MonoBehaviour
     public bool makingNosie = false;
     public float chanceOfMakingSound;//if smaller or same than this number make sound
     public NPCMovement npcMovement;
+    [SerializeField] SpriteRenderer exclamationMark;
     void Start()
     {
         aS = GetComponent<AudioSource>();
         timer = 0;
-        
+
+        exclamationMark = transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>();
+        exclamationMark.enabled = false;
+
         //Setting Diffrent Noiceclipp
         Random.Range(0, nosie.Length);
         aS.clip = nosie[Random.Range(0, nosie.Length)];
@@ -62,6 +66,7 @@ public class NPCMakeNoise : MonoBehaviour
         {
             timer = 0;
             aS.enabled = true;
+            exclamationMark.enabled = true;
             //Calling Meters and adjusting noisemeter
             // meters.UpdateNoise(10);
 
@@ -69,7 +74,12 @@ public class NPCMakeNoise : MonoBehaviour
         else if (makingNosie == false)
         {
             aS.enabled = false;
+            exclamationMark.enabled = false;
         }
     }
 
+
+  
+   
+    
 }

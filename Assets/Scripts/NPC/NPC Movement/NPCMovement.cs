@@ -165,6 +165,8 @@ public class NPCMovement : MonoBehaviour
         if (isSeated)// start timer when at chair
         {
             seatedTimer += Time.deltaTime;
+           
+            thisAnimator.SetFloat("isSitting", seatedTimer);
         }
 
         if (seatedTimer > willBeSeatedFor && nPCbookPickUp.haveBook == true)
@@ -175,6 +177,7 @@ public class NPCMovement : MonoBehaviour
             chairOccupiedScript.chairOccupied = false;
             hasChair = false;
             seatedTimer = 0;
+            thisAnimator.SetFloat("isSitting", seatedTimer);
             isLeaving = true;//Bool to start looking for exit arrays
         }
 
@@ -198,7 +201,7 @@ public class NPCMovement : MonoBehaviour
 
             FlipSpriteWhenSittingAtTable();
             isSeated = true;
-            thisAnimator.SetBool("isWalking", false);
+
             redSpriteAnimator.SetBool("isWalking", false);
         }
         currentWaypoint = chairs[chairPicker].transform;
@@ -331,6 +334,7 @@ public class NPCMovement : MonoBehaviour
     void Move()
     {
         thisAnimator.SetBool("isWalking", true);
+       
         if (gameObject.tag == ("NPC"))
         {
             redSpriteAnimator.SetBool("isWalking", true);

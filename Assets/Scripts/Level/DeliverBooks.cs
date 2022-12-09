@@ -9,6 +9,7 @@ public class DeliverBooks : MonoBehaviour
     public Image[] visibleBooksOnTable;
     public bool tableFull;
     public bool tableEmpty;
+    public Animator thisAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class DeliverBooks : MonoBehaviour
     public void AddBookToTable(int books)
     {
         booksOnTable = booksOnTable +   books;
+        thisAnimator.SetFloat("registrating", booksOnTable);
 
         if (books > 0 && !tableFull)
         {
