@@ -17,7 +17,7 @@ public class PickUpRegisteredBooks : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "BookPickUpZone")
+        if (collision.tag == "BookPickUpZone" && Input.GetKey(KeyCode.E))
         {
             if (registrationScript.registeredBooks.Count > 0)
             {
