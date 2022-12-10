@@ -9,6 +9,7 @@ public class NPCMovement : MonoBehaviour
     //Animations
     Animator thisAnimator;
     [SerializeField] Animator redSpriteAnimator;
+    SpriteRenderer spriteRenderer;
 
 
     //BasicMovement
@@ -27,9 +28,7 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] GameObject blankBook;
     float[] distanceBetween;
 
-    //Tables flip sprite
-    Vector3 whenBookIsPickedUpSpot;
-    bool gotFacingDirection = false;
+
 
     //Chairs
     int chairPicker = 0;
@@ -68,6 +67,8 @@ public class NPCMovement : MonoBehaviour
     void Start()
     {
 
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         //Tables
         //tables = GameObject.FindGameObjectsWithTag("Table");
 
@@ -99,7 +100,7 @@ public class NPCMovement : MonoBehaviour
     {
         if (gameObject.tag == "NPC")
         { //If NPC havent picked up a book yet
-            if (nPCbookPickUp.haveBook == false && isLeaving == false)
+            if (nPCbookPickUp.haveBook == false && isLeaving == false && isSeated == false)
             {
 
                 CanMove();
@@ -172,6 +173,19 @@ public class NPCMovement : MonoBehaviour
             seatedTimer += Time.deltaTime;
            
             thisAnimator.SetFloat("isSitting", seatedTimer);
+            if (chairs[chairPicker].tag == "Chair Face Left")
+            {
+
+                transform.localScale = new Vector2(-2, transform.localScale.y);
+                Debug.Log("Face Left chair");
+            }
+            else if (chairs[chairPicker].tag == "Chair Face Right")
+            {
+                Debug.Log("Face Right chair");
+                transform.localScale = new Vector2(2, transform.localScale.y);
+            }
+
+
         }
 
         if (seatedTimer > willBeSeatedFor && nPCbookPickUp.haveBook == true)
@@ -193,36 +207,34 @@ public class NPCMovement : MonoBehaviour
     }
     void MoveToChair()
     {
-        FlipFacingDirection();
-        if (!gotFacingDirection)
+        if(!isSeated)
         {
-            whenBookIsPickedUpSpot = transform.position;
-            gotFacingDirection = true;
+            FlipFacingDirection();
         }
         
+       
+        
 
-        transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position+new Vector3(00.1f,0.2f,0), moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position+new Vector3(0.1f,0.2f,0), moveSpeed * Time.deltaTime);
         if (transform.position == chairs[chairPicker].transform.position + new Vector3(0.1f, 0.2f, 0)) // if at chair
         {
-            if (chairs[chairPicker].tag =="Chair Face Left")
-            {
-                if (transform.localScale.x < 0)
-                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-            }
-            if (chairs[chairPicker].tag == "Chair Face Right")
-            {
-                if (transform.localScale.x > 0)
-                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-            }
+            //if(chairs[chairPicker].tag =="Chair Face Left")
+            //{
+            
+            //    transform.localScale = new Vector2(2, transform.localScale.y);
+            //    Debug.Log("Face Left chair");
+            //}
+            //else if(chairs[chairPicker].tag == "Chair Face Right")
+            //{
+            //    Debug.Log("Face Right chair");
+            //    transform.localScale = new Vector2( -2 , transform.localScale.y);
+            //}
             
             isSeated = true;
 
             redSpriteAnimator.SetBool("isWalking", false);
         }
-        if (transform.position != chairs[chairPicker].transform.position + new Vector3(0.1f, 0.2f, 0))
-        {
-            //FlipFacingDirection();
-        }
+       
             currentWaypoint = chairs[chairPicker].transform;
         
     }
@@ -295,61 +307,7 @@ public class NPCMovement : MonoBehaviour
 
     }
 
-    void FlipSpriteWhenSittingAtTable()
-    {
-        if (transform.position.x > whenBookIsPickedUpSpot.x)
-        {
-            if (transform.localScale.x > 0)
-                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        }
-        else if (transform.position.x < whenBookIsPickedUpSpot.x)
-        {
-            if (transform.localScale.x < 0)
-                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        }
-    }
-    void ExitMove()
-    {
-
-
-        bool havepicked = false;
-        float distanceStart;
-        float distance;
-        distanceStart = Vector3.Distance(transform.position, exitStartTF[0].position);
-        for (int i = 0; i < exitStartTF.Length; i++)
-        {
-            Debug.Log("Inside the for loop now :) ");
-            if (!havepicked)
-            {
-                distance = Vector3.Distance(transform.position, exitStartTF[i].position);
-                if (distanceStart > distance)
-                {
-                    Debug.Log("Should have picked the closest");
-                    indexPickerExitArray = i;
-                    havepicked = true;
-                }
-
-
-            }
-
-
-        }
-        wayPoints = wayPointsArmory.GetExitArray(indexPickerExitArray);//Make it change this index
-        transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
-        currentWaypoint = wayPoints[waypointIndex];
-        FlipFacingDirection();
-
-        if (transform.position == wayPoints[waypointIndex].transform.position)
-        {
-            waypointIndex += 1;
-
-        }
-        if (waypointIndex == wayPoints.Length)
-        {
-            Destroy(this.gameObject);
-
-        }
-    }
+ 
     void Move()
     {
         thisAnimator.SetBool("isWalking", true);

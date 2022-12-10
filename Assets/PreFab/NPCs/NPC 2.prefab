@@ -436,7 +436,7 @@ Transform:
   - {fileID: 847817221}
   - {fileID: 5761785685582972776}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5865293537661773344
 SpriteRenderer:
@@ -509,6 +509,8 @@ MonoBehaviour:
   nPCbookPickUp: {fileID: 606453319}
   blankBook: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
   chairs: []
+  chairsLeft: []
+  chairsRight: []
   hasChair: 0
   isSeated: 0
   wayPoints:

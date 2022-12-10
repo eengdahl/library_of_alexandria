@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChairOccupied : MonoBehaviour
 {
+    public GameObject table;
     public bool chairOccupied;
     // Start is called before the first frame update
     void Start()

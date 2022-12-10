@@ -17,7 +17,7 @@ public class BirdHusched : MonoBehaviour
     {
         if (collision.tag == "Husch" && makeHuschSound.doesHuschSound == true)
         {
-            Debug.Log("should top sound");
+            
             audioSource.volume = 0;
         }
     }
