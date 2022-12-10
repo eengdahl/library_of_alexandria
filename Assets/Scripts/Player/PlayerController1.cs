@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController1 : MonoBehaviour
 {
-    [SerializeField] float speed;
-
+    public float speed;
+    float halfSpeed;
+    float fullSpeed;
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
     Vector2 inputAxis;
@@ -15,6 +16,8 @@ public class PlayerController1 : MonoBehaviour
     Animator animator;
     private void Start()
     {
+        halfSpeed = speed / 2;
+        fullSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -80,5 +83,7 @@ public class PlayerController1 : MonoBehaviour
         tmpScale.x *= -1;
         gameObject.transform.localScale = tmpScale;
     }
+
+
 }
 
