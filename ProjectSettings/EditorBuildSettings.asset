@@ -18,16 +18,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Meny.unity
     guid: bd5840158d85a154f8b2c1909022a4e9
   - enabled: 0
-    path: Assets/Scenes/JULIA.unity
+    path: Assets/Scenes/Graveyard/JULIA.unity
     guid: 51417c000b1f7ba4596a50c92c45cd36
   - enabled: 0
-    path: Assets/Scenes/scene_main.unity
+    path: Assets/Scenes/Graveyard/scene_main_old.unity
     guid: b4e7d702e94905846be71f81729dc3bf
   - enabled: 0
-    path: Assets/Scenes/scene_main_preTest_emil.unity
+    path: Assets/Scenes/Graveyard/scene_main_preTest_emil.unity
     guid: f6245c2d710056f4fb93799a0a4b2c01
   - enabled: 1
-    path: Assets/Scenes/scene_main_preTest.unity
+    path: Assets/Scenes/scene_main.unity
     guid: 37ad4eaddb43c734a90ab5dbc97a3326
   - enabled: 1
     path: Assets/Scenes/scene_main_julia.unity
