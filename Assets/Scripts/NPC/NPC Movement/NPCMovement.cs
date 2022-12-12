@@ -58,6 +58,17 @@ public class NPCMovement : MonoBehaviour
     List<Transform> listOfExitStarts;
     Transform[] exitWayPoints;
     bool atExitSpot = false;
+
+    //Move to table
+
+    int tableWayPointIndex = 0;
+    int indexPickerTableArray;
+    TableStart tableStartScript;
+    List<Transform> listOfToTableStarts;
+    bool havePickedTablePath = false;
+    bool atTableStart = false;
+    bool atTableFinish = false;
+    public Transform[] toTableWayPoints;
     private void Awake()
     {
 
@@ -65,15 +76,16 @@ public class NPCMovement : MonoBehaviour
     }
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+
         //Exit
         exitStartScript = FindObjectOfType<ExitStart>();
         listOfExitStarts = exitStartScript.exitTransforms;
-        
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
 
         //Tables
-        //tables = GameObject.FindGameObjectsWithTag("Table");
+        tableStartScript = FindObjectOfType<TableStart>();
+        listOfToTableStarts = tableStartScript.moveToTableTransforms;
 
         //Animators
         thisAnimator = GetComponent<Animator>();
@@ -135,10 +147,16 @@ public class NPCMovement : MonoBehaviour
 
                 }
                 //If dont have chair
-                else if (!hasChair)
+                else if (!hasChair && !atTableFinish)
+                {
+                    //CheckIfChairsEmpty();
+                    //CanMove();
+                    MoveToChairCheckerArea();
+                   
+                }
+                if (atTableFinish)
                 {
                     CheckIfChairsEmpty();
-                    CanMove();
                 }
             }
         }
@@ -207,32 +225,13 @@ public class NPCMovement : MonoBehaviour
         {
             FlipFacingDirection();
         }
-        
-       
-        
 
         transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position+new Vector3(0f,0.2f,0), moveSpeed * Time.deltaTime);
         if (transform.position == chairs[chairPicker].transform.position + new Vector3(0, 0.2f, 0)) // if at chair
         {
-            //if(chairs[chairPicker].tag =="Chair Face Left")
-            //{
-            
-            //    transform.localScale = new Vector2(2, transform.localScale.y);
-            //    Debug.Log("Face Left chair");
-            //}
-            //else if(chairs[chairPicker].tag == "Chair Face Right")
-            //{
-            //    Debug.Log("Face Right chair");
-            //    transform.localScale = new Vector2( -2 , transform.localScale.y);
-            //}
-            
             isSeated = true;
-
-           // redSpriteAnimator.SetBool("isWalking", false);
-        }
-       
-            currentWaypoint = chairs[chairPicker].transform;
-        
+        }      
+            currentWaypoint = chairs[chairPicker].transform;      
     }
     void CanMove()
     {
@@ -255,7 +254,57 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
+    void MoveToChairCheckerArea()
+    {
+        thisAnimator.SetBool("isWalking", true);
+        float distanceFinal = Vector3.Distance(transform.position, listOfToTableStarts[0].position);
+        //Loop through all moveToTableStarts and find the closest one;
+        if (!havePickedTablePath)
+        {
+            for (int i = 0; i < listOfToTableStarts.Count; i++)
+            {
+                float distance = Vector3.Distance(transform.position, listOfToTableStarts[i].position);
+                if (distanceFinal > distance)
+                {
+                    indexPickerTableArray = i;
+                    distanceFinal = distance;
+                }
+                if (i == listOfToTableStarts.Count - 1)
+                {
+                    havePickedTablePath = true;
+                }
+            }
+        }
+        //Move to path start
+        if(!atTableStart)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, listOfToTableStarts[indexPickerTableArray].transform.position, moveSpeed * Time.deltaTime);
+        }
+        if (!atTableStart && transform.position == listOfToTableStarts[indexPickerTableArray].transform.position)
+        {
+            atTableStart = true;
+        }
+        //Get array of waypoints to move to table area
+        toTableWayPoints = wayPointsArmory.GetMoveToTableArray(indexPickerTableArray);
+        //NPC sprite flip
+        //currentWaypoint = toTableWayPoints[tableWayPointIndex];
+        FlipFacingDirection();
+        //Move to table area;
+        if (atTableStart)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, toTableWayPoints[tableWayPointIndex].transform.position, moveSpeed * Time.deltaTime);
+        }
+        if (transform.position == toTableWayPoints[tableWayPointIndex].transform.position)
+        {
+            tableWayPointIndex += 1;
+        }
+        if (tableWayPointIndex == toTableWayPoints.Length)//If reaches the last waypoint set a bool to true so it starts searching for chair
+        {
 
+            atTableFinish = true;
+
+        }
+    }
     void ExitMove3()
     {
         //Pick the closest waypoint
@@ -277,11 +326,10 @@ public class NPCMovement : MonoBehaviour
             }
             if (i == listOfExitStarts.Count-1)
             {
-                    Debug.Log("have Picked bool changed");
                 havePickedExit = true;
             }
-
         }
+
         }
         //Move to exit spot
         if (!atExitSpot)

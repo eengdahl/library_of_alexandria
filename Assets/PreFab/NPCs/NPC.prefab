@@ -47,9 +47,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.053413868}
+  m_Offset: {x: 0, y: 0.29784602}
   serializedVersion: 2
-  m_Radius: 0.631606
+  m_Radius: 0.39854282
 --- !u!114 &606453319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f4594ff7909594f8dfa8195f314b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerMax: 5
+  timerMax: 20
   blankBookObject: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
 --- !u!1 &655782996
 GameObject:
@@ -436,7 +436,7 @@ Transform:
   - {fileID: 847817221}
   - {fileID: 7893681252455256094}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5865293537661773344
 SpriteRenderer:
@@ -521,6 +521,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   numberOfPaths: 1
+  toTableWayPoints: []
 --- !u!82 &709626102
 AudioSource:
   m_ObjectHideFlags: 0

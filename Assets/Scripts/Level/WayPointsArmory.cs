@@ -15,17 +15,29 @@ public class WayPointsArmory : MonoBehaviour
 
 
     //The lists of transforms
-    List<Transform[]> listOfWalkningTransformArrays;
-    List<Transform[]> listOfExitArrays;
-    List<Transform[]> listOfReasercherArrays;
-
+     List<Transform[]> listOfWalkningTransformArrays;
+     List<Transform[]> listOfExitArrays;
+     List<Transform[]> listOfReasercherArrays;
+     List<Transform[]> listOfToTableArrays;
+    //Move to table Area arrays
+    public Transform[] firstToTableArray;
+    public Transform[] secondToTableArray;
+    public Transform[] thirdToTableArray;
+    public Transform[] forthToTableArray;
+    public Transform[] fithToTableArray;
+    public Transform[] sixthToTableArray;
+    public Transform[] seventhToTableArray;
+    public Transform[] eightToTableArray;
 
     //Exit arrays
     public Transform[] firstExitArray;
     public Transform[] secondExitArray;
     public Transform[] thirdExitArray;
     public Transform[] forthExitArray;
-
+    public Transform[] fithExitArray;
+    public Transform[] sixthExitArray;
+    public Transform[] seventhExitArray;
+    public Transform[] eightExitArray;
     //Researcher arrays
     public Transform[] researcherArrayOne;
     public Transform[] researcherArrayTwo;
@@ -55,11 +67,26 @@ public class WayPointsArmory : MonoBehaviour
         listOfExitArrays.Add(secondExitArray);
         listOfExitArrays.Add(thirdExitArray);
         listOfExitArrays.Add(forthExitArray);
+        listOfExitArrays.Add(fithExitArray);
+        listOfExitArrays.Add(sixthExitArray);
+        listOfExitArrays.Add(seventhExitArray);
+        //listOfExitArrays.Add(eightExitArray);
+
+        //To table arrays
+        listOfToTableArrays = new List<Transform[]>();
+        listOfToTableArrays.Add(firstToTableArray);
+        listOfToTableArrays.Add(secondToTableArray);
+        listOfToTableArrays.Add(thirdToTableArray);
+        listOfToTableArrays.Add(forthToTableArray);
+        listOfToTableArrays.Add(fithToTableArray);
+        listOfToTableArrays.Add(sixthToTableArray);
+        listOfToTableArrays.Add(seventhToTableArray);
+        listOfToTableArrays.Add(eightToTableArray);
+        
+
+
     }
-    void Start()
-    {
-       
-    }
+
     public Transform[] ResearcherGetArray(int index)
     {
         Transform[] returnArray;
@@ -81,9 +108,14 @@ public class WayPointsArmory : MonoBehaviour
 
         return returnArray;
     }
-    // Update is called once per frame
-    void Update()
+
+    public Transform[] GetMoveToTableArray (int index)
     {
-        
+        Transform[] returnArray;
+        returnArray = listOfToTableArrays[index];
+
+        return returnArray;
     }
+
+
 }
