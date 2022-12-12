@@ -232,7 +232,7 @@ public class NPCMovement : MonoBehaviour
             
             isSeated = true;
 
-            redSpriteAnimator.SetBool("isWalking", false);
+           // redSpriteAnimator.SetBool("isWalking", false);
         }
        
             currentWaypoint = chairs[chairPicker].transform;
