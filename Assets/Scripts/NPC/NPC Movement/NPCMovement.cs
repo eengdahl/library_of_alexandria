@@ -52,13 +52,12 @@ public class NPCMovement : MonoBehaviour
     int ExitWayPointIndex = 0;
 
     //Exit
-    public GameObject[] exitStartsGO;
-    public Transform[] exitStartTF;
-    public Transform[] exitWaypoints;//2
-    public int numberOfExitArrays;
-    int indexPickerExitArray = 0;
-    bool havepicked = false;
-    public Transform currentTransformExitDebugRemoveLater;
+    bool havePickedExit = false;
+    int indexPickerExitArray;
+    ExitStart exitStartScript;
+    List<Transform> listOfExitStarts;
+    Transform[] exitWayPoints;
+    bool atExitSpot = false;
     private void Awake()
     {
 
@@ -66,6 +65,10 @@ public class NPCMovement : MonoBehaviour
     }
     void Start()
     {
+        //Exit
+        exitStartScript = FindObjectOfType<ExitStart>();
+        listOfExitStarts = exitStartScript.exitTransforms;
+        
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -82,17 +85,10 @@ public class NPCMovement : MonoBehaviour
 
         wayPoints = wayPointsArmory.GetArray(movementArrayPickerIndex);
         transform.position = wayPoints[waypointIndex].transform.position; // Set location to
-
-        exitStartsGO = GameObject.FindGameObjectsWithTag("ExitStart");
-        exitStartTF = new Transform[exitStartsGO.Length];
         chairsLeft = GameObject.FindGameObjectsWithTag("Chair Face Left");
         chairsRight = GameObject.FindGameObjectsWithTag("Chair Face Right");
         chairs = chairsRight.Concat(chairsLeft).ToArray();
-        //Store the gameobjects transforms into a transform array
-        for (int i = 0; i < exitStartsGO.Length; i++)
-        {
-            exitStartTF[i] = exitStartsGO[i].transform;
-        }
+
     }
 
 
@@ -108,7 +104,7 @@ public class NPCMovement : MonoBehaviour
             else if (isLeaving == true)
             {
 
-                ExitMove2();
+                ExitMove3();
             }
             //If NPC have picked up a book
             else if (nPCbookPickUp.haveBook == true)
@@ -126,7 +122,7 @@ public class NPCMovement : MonoBehaviour
                     {
                         //Idle animators
                         thisAnimator.SetBool("isWalking", false);
-                        redSpriteAnimator.SetBool("isWalking", false);
+                        
 
                         stopTimer += Time.deltaTime;
                         if (stopTimer > stillAfterHusch)
@@ -258,66 +254,72 @@ public class NPCMovement : MonoBehaviour
             }
         }
     }
-    void ExitMove2()
-    {
 
+
+    void ExitMove3()
+    {
         //Pick the closest waypoint
         thisAnimator.SetBool("isWalking", true);
-        redSpriteAnimator.SetBool("isWalking", true);
-        float distanceStart;
-        float distance;
-        distanceStart = Vector3.Distance(transform.position, exitStartTF[0].position);
-        for (int i = 0; i < exitStartTF.Length; i++) // exitStartTF.Length
+        
+        float distanceFinal = Vector3.Distance(transform.position, listOfExitStarts[0].position); //Start getting the distance between one exit and the npc
+        
+        //Loop through all exit paths and find the closest one;
+        if (!havePickedExit)
         {
 
-            if (havepicked == false)
+        for (int i = 0; i < listOfExitStarts.Count; i++)
+        {
+            float distance = Vector3.Distance(transform.position, listOfExitStarts[i].position);
+            if (distanceFinal > distance)
             {
-                distance = Vector3.Distance(transform.position, exitStartTF[i].position);
-                if (distanceStart < distance)
-                {
-
-                    indexPickerExitArray = i;
-                    havepicked = true;
-                }
-
-
+                indexPickerExitArray = i;
+                distanceFinal = distance;
+            }
+            if (i == listOfExitStarts.Count-1)
+            {
+                    Debug.Log("have Picked bool changed");
+                havePickedExit = true;
             }
 
-
         }
+        }
+        //Move to exit spot
+        if (!atExitSpot)
+        {
+        transform.position = Vector3.MoveTowards(transform.position, listOfExitStarts[indexPickerExitArray].transform.position, moveSpeed * Time.deltaTime);
+        }
+        if (!atExitSpot && transform.position == listOfExitStarts[indexPickerExitArray].transform.position)
+        {
+            atExitSpot = true;
+        }
+        // Get the array of waypoints for exiting
+        exitWayPoints = wayPointsArmory.GetExitArray(indexPickerExitArray);
 
-        exitWaypoints = wayPointsArmory.GetExitArray(indexPickerExitArray);// Get the array of waypoints for exiting
-
-        transform.position = Vector3.MoveTowards(transform.position, exitWaypoints[ExitWayPointIndex].transform.position, moveSpeed * Time.deltaTime);
-        currentTransformExitDebugRemoveLater = exitWaypoints[ExitWayPointIndex];//Debug Thingy
-        currentWaypoint = exitWaypoints[ExitWayPointIndex]; //For NPC flip
+        //For NPC flip
+        currentWaypoint = exitWayPoints[ExitWayPointIndex];
         FlipFacingDirection();
 
-        //If NPC reach waypoint, change that waypoint
-        if (transform.position == exitWaypoints[ExitWayPointIndex].transform.position)
+        //Move out of library
+        if (atExitSpot)
+        {
+        transform.position = Vector3.MoveTowards(transform.position, exitWayPoints[ExitWayPointIndex].transform.position, moveSpeed * Time.deltaTime);
+        }
+
+        if (transform.position == exitWayPoints[ExitWayPointIndex].transform.position)
         {
             ExitWayPointIndex += 1;
         }
-        if (ExitWayPointIndex == exitWaypoints.Length)//If reaches the last waypoint delete the npc
+        if (ExitWayPointIndex == exitWayPoints.Length)//If reaches the last waypoint delete the npc
         {
 
             Destroy(this.gameObject);
 
         }
-
+        
     }
-
- 
     void Move()
     {
         thisAnimator.SetBool("isWalking", true);
-       
-        //if (gameObject.tag == ("NPC"))
-        //{
-        //    redSpriteAnimator.SetBool("isWalking", true);
-        //}
-
-
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
         currentWaypoint = wayPoints[waypointIndex];
         FlipFacingDirection();
