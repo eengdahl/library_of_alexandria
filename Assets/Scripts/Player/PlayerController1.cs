@@ -8,6 +8,8 @@ public class PlayerController1 : MonoBehaviour
     public float speed;
     float halfSpeed;
     float fullSpeed;
+
+
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
     Vector2 inputAxis;
