@@ -10,6 +10,7 @@ public class DeliverBooks : MonoBehaviour
     public bool tableFull;
     public bool tableEmpty;
     public Animator thisAnimator;
+    public Animator bellAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,10 @@ public class DeliverBooks : MonoBehaviour
     {
         booksOnTable = booksOnTable +   books;
         thisAnimator.SetFloat("registrating", booksOnTable);
+        bellAnimator.SetBool("Bell",true);
+       
+        Invoke("BellStop", 0.5f);
+
 
         if (books > 0 && !tableFull)
         {
@@ -46,36 +51,12 @@ public class DeliverBooks : MonoBehaviour
             tableFull = true;
 
         }
+      
+    }
+
+    private void BellStop()
+    {
+        bellAnimator.SetBool("Bell", false);
     }
 }
 
-
-//for (int i = 0; i <= books; i++)
-//{
-//    booksOnTable++;
-//    if (books > 0 && !tableFull)
-//    {
-//        ////Turning sprite on on books on table
-//        //for (int j = 0; j <= i; j++)
-//        //{
-//            visibleBooksOnTable[booksOnTable - 1].enabled = true;
-//       // }
-//    }
-
-//    else if (books < 0)
-//    {
-//        ////Disable sprite on books on table when removed
-//        //for (int k = 0; k <= Mathf.Abs(books); k++)
-//        //{
-//            visibleBooksOnTable[booksOnTable - 1].enabled = false;
-//            tableFull = false;
-//        //}
-//    }
-//}
-
-
-//if (booksOnTable >= 10)
-//{
-//    tableFull = true;
-
-//}

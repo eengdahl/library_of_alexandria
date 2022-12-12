@@ -312,10 +312,10 @@ public class NPCMovement : MonoBehaviour
     {
         thisAnimator.SetBool("isWalking", true);
        
-        if (gameObject.tag == ("NPC"))
-        {
-            redSpriteAnimator.SetBool("isWalking", true);
-        }
+        //if (gameObject.tag == ("NPC"))
+        //{
+        //    redSpriteAnimator.SetBool("isWalking", true);
+        //}
 
 
         transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
