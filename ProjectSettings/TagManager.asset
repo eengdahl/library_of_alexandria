@@ -27,6 +27,12 @@ TagManager:
   - Researcher Blue
   - Researcher Red
   - Researcher Green
+  - Waypoint npc buddy2
+  - Hush information
+  - Waypoint npc buddy1
+  - Water
+  - WaterInside
+  - Chair Face Left
   layers:
   - Default
   - TransparentFX

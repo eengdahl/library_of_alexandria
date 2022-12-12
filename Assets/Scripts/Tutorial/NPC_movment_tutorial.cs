@@ -5,20 +5,44 @@ using UnityEngine.SceneManagement;
 
 public class NPC_movment_tutorial : MonoBehaviour
 {
+
+    bool collidingWithPlayer;
+    
     // speech bubble when NPC is mad
-    public GameObject Mad_NPC_text;
-
-    public GameObject information_about_pick_up_book;
-
+    public GameObject deactivate_timer;
+    public GameObject exclamation_talkbubbel;
     public GameObject redchild;
     public GameObject pickedNPC;
     public GameObject pickedNPC2;
 
+    /////////////////
+    //   UI text   //  
+    /////////////////
     public GameObject emergency_text;
+    public GameObject information_about_pick_up_book;
+    public GameObject Mad_NPC_text;
+    public GameObject deactivate_information_WASD;
+    public GameObject New_Hush_information;
+
+    ///////////////////////
+    //  waypoint target  //  
+    ///////////////////////
 
     //waypoint target
     public Transform target1;
     public Transform target2;
+
+    /////////////////
+    // is pressed  //  
+    /////////////////
+
+    bool W_is_pressed = false;
+    bool A_is_pressed = false;
+    bool S_is_pressed = false;
+    bool D_is_pressed = false;
+    bool All_movebuttons_pressed = false;
+
+    //other
 
     AudioSource audio1;
 
@@ -26,84 +50,120 @@ public class NPC_movment_tutorial : MonoBehaviour
     float speed = 2;
 
     float opacity;
+
+    bool walking_is_done = false; //.................................................
+
+    ///////////////
+    //   timer   //  
+    ///////////////
     float timer;
     float timer2;
     float timerOnTrigger;
-    bool if_space_is_presssed = true;
-    //bool playSound;
 
+    //bool playSound;
+    bool if_space_is_presssed = true;
     //the diffrentparts of the tutorial
     bool active_1 = false;
 
     bool active_2 = false;
     bool active_3 = false;
 
-    bool walkout = false;
-
     SpriteRenderer red;
 
     void Start()
     {
+        // deactivate timer
+        deactivate_timer.SetActive(false);
+
+        //get sound and child
         audio1 = GetComponent<AudioSource>();
         red = redchild.GetComponent<SpriteRenderer>();
+        //exclamation_talkbubbel = exclamation_talkbubbel.GetComponent<GameObject>();
+
         opacity = 0;
     }
 
     void Update()
     {
-        //walk to book and activates spechbubbel and sound
-        timer += Time.deltaTime;
+         //looks if the player pressed all movebuttons to continue
+        if (Input.GetKeyDown(KeyCode.W))
+        {  
+            W_is_pressed = true;  
+        }
 
-        if (active_1 == false)
+        if (Input.GetKeyDown(KeyCode.A))
+        {   
+            A_is_pressed = true;  
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {   
+            S_is_pressed = true;  
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+ 
+            D_is_pressed = true;  
+        }
+        if (  W_is_pressed == true && A_is_pressed == true && S_is_pressed == true && D_is_pressed == true && walking_is_done == false)
+        {
+            All_movebuttons_pressed = true;
+            walking_is_done = true;
+            deactivate_information_WASD.SetActive(false);
+        }
+
+        //now have all buttons been pressed and first npc walks in
+        if (All_movebuttons_pressed == true && walking_is_done)
         {
             Walk_to_book();
-            activate_spechbubbel_madNPC();
-            activate_sound_and_spechbubbel_pickup_book();
+            exclamation_talkbubbel.SetActive(true);
+            
+            timer += Time.deltaTime;
+            if (timer >= 2 && timer <= 2.1)
+            {
+            audio1.Play();
+            New_Hush_information.SetActive(true);
+            }
         }
 
-
-        //npc walk out
-        walkout = true;
-        if (active_2 == false && timer >= 18 && walkout == false)
-        {
-            Debug.Log(timer);
-            Walk_out();
-            emergency_text.SetActive(true);
-            walkout = true;
+        //if you collide with player and space pressed
+        //npc shuts up and talkbubble disappears
+        if (collidingWithPlayer == true && Input.GetKeyDown(KeyCode.Space))
+        { 
+            All_movebuttons_pressed = false;
+            audio1.Stop(); 
+            walking_is_done = true;
+            exclamation_talkbubbel.SetActive(false);
+            New_Hush_information.SetActive(false);
+            active_2 = true;
         }
+            /////////////
+            //walks out//
+            /////////////
+
+            if (active_2 == true)
+            {
+                Invoke("Walk_Out", 1.5f); // start function after 1,5 seconds
+                active_3 =true;
+            }
+        
         //many npc walks in
-        if (active_3 == false && timer >= 30)
+        if (active_3 == true)
         {
-            if (active_3 == false && walkout == true)
+            timer2 += Time.deltaTime;
+            if (timer2 >= 2 && timer2 <= 2.01)
             {
-                //noiceNPCs();
+            noiceNPCs();
+            //Walk_to_book();
             }
-            if (timer >= 25)
-            {
-                Walk_to_book();
-
-            }
+                
             if (timer >= 28)//Ändrat från 35
             {
                 Mad_NPC_text.SetActive(false);
                 information_about_pick_up_book.SetActive(false);
-                emergency_text.SetActive(true);
+                //emergency_text.SetActive(true);
             }
-        }
-
-        //fixa bool som görs i uppdate som gör att när vi klickar space spelas heal funktionen.
-        if (Input.GetKeyUp("space"))
-        {
-            timer2 += Time.deltaTime;
-            if_space_is_presssed = true;
-            if (timer2 >= 10 && timer2 < 15)
-            {
-                Mad_NPC_text.SetActive(false);
-                information_about_pick_up_book.SetActive(false);
-                Walk_out();
-                walkout = true;
-            }
-            if_space_is_presssed = false;
         }
 
         if (Input.GetKeyDown(KeyCode.K))
@@ -114,7 +174,7 @@ public class NPC_movment_tutorial : MonoBehaviour
     }
 
     //when npc colides with book
-    private void OnTriggerStay2D(Collider2D other)
+    /* private void OnTriggerStay2D(Collider2D other)
     {
         timerOnTrigger += Time.deltaTime;
         if (other.tag == ("Book White") && opacity <= 0.75f)
@@ -122,11 +182,25 @@ public class NPC_movment_tutorial : MonoBehaviour
             opacity = timerOnTrigger / 10;
             red.color = new Color(1, 0, 0, opacity);
         }
-    }
+    } */
 
     //when player pick upp books NPC stops making noice and being
-    private void OnTriggerExit2D(Collider2D other)
+    
+    private void OnTriggerStay2D(Collider2D other) 
     {
+        if (other.CompareTag ("Player"))
+        {
+                collidingWithPlayer = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {   
+        if (other.CompareTag ("Player"))
+        {
+            collidingWithPlayer = false;
+        }
+        
+           
         if (other.tag == ("Book White"))
         {
             opacity = 0;
@@ -145,6 +219,10 @@ public class NPC_movment_tutorial : MonoBehaviour
     public void Walk_to_book()
     {
         transform.position = Vector3.MoveTowards(transform.position, target1.position, speed * Time.deltaTime);
+    }
+    public void Walk_Out()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target2.position, speed * Time.deltaTime);
     }
 
     //activates spechbubbel
@@ -172,7 +250,7 @@ public class NPC_movment_tutorial : MonoBehaviour
 
         }
     }
-    public void Walk_out()
+    /* public void Walk_out()
     {
         transform.position = Vector3.MoveTowards(transform.position, target2.position, speed * Time.deltaTime);
 
@@ -180,7 +258,7 @@ public class NPC_movment_tutorial : MonoBehaviour
         {
             active_2 = true;
         }
-    }
+    } */
 
     public void noiceNPCs()
     {
@@ -190,6 +268,6 @@ public class NPC_movment_tutorial : MonoBehaviour
         Instantiate(pickedNPC, temp, transform.rotation);
         Instantiate(pickedNPC2, temp2, transform.rotation);
         active_3 = true;
-        emergency_text.SetActive(true);
+        //emergency_text.SetActive(true);
     }
 }

@@ -9,6 +9,7 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     public Transform target_Buddys22;
     SpriteRenderer red;
     GameObject target_Buddys2_2;
+    public GameObject exclamation_talkbubbel;
     public GameObject redchild;
     public GameObject hush_information;
     //hush_information_1
@@ -29,8 +30,6 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
         target_Buddys2_2 = GameObject.FindGameObjectWithTag("Waypoint npc buddy2");
         target_Buddys2 = target_Buddys2_2.transform;
 
-        red = redchild.GetComponent<SpriteRenderer>();
-
         audio2_2 = GetComponent<AudioSource>();
         opacity = 0;
 
@@ -41,34 +40,18 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hush_information = GameObject.FindGameObjectWithTag("Hush information");
         timer += Time.deltaTime;
         
-        if (timer >= 1 && active_1== false)
+        if (active_1== false)
         {
         transform.position = Vector3.MoveTowards(transform.position, target_Buddys2.position, speed * Time.deltaTime);
+        audio2_2.Play();
+        exclamation_talkbubbel.SetActive(true);
         }
 
-        if (timer >= 5 && timer<5.1f && active_2 == false)
-        {
-            audio2_2.Play();
-            active_1 = true;
-        }
-        if (timer >= 15)
-            {
-              active_2= true;
-            }
         }
     private void OnTriggerStay2D(Collider2D other)
         {
-            timerOnTrigger += Time.deltaTime;
-             Debug.Log(timerOnTrigger);
-           if (other.tag == ("Waypoint npc buddy2") && opacity <= 0.75f)
-           {
-                Debug.Log("ja.................................");
-                opacity = timerOnTrigger/10;
-                red.color = new Color (1,0,0,opacity);
-               
-           } 
+
         }
 }
