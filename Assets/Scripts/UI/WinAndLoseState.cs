@@ -9,9 +9,9 @@ public class WinAndLoseState : MonoBehaviour
 {
     public Slider noiseSlider;
     public Slider timeSlider;
-    public TMP_Text fellOver;
-    public TMP_Text toLoud;
-    public TMP_Text youWon;
+    public SpriteRenderer fellOver;
+    public SpriteRenderer toLoud;
+    public SpriteRenderer winScreen;
    
     float endTimer;
     SwayBooksList swayBooksList;
@@ -24,7 +24,7 @@ public class WinAndLoseState : MonoBehaviour
         if(timeSlider.value >= timeSlider.maxValue)
         {
             endTimer += Time.deltaTime;
-            youWon.enabled = true;
+            winScreen.enabled = true;
             if (endTimer > 10)
             {
                 SceneManager.LoadScene("Meny");
