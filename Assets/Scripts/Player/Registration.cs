@@ -29,7 +29,7 @@ public class Registration : MonoBehaviour
         deliverBooks = FindObjectOfType<DeliverBooks>();
         inventoryPlayer = FindObjectOfType<InventoryPlayer>();
         aS = GetComponent<AudioSource>();
-
+        
     }
     private void Update()
     {
