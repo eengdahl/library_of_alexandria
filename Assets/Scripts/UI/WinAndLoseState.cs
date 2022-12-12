@@ -12,7 +12,7 @@ public class WinAndLoseState : MonoBehaviour
     public SpriteRenderer fellOver;
     public SpriteRenderer toLoud;
     public SpriteRenderer winScreen;
-   
+
     float endTimer;
     SwayBooksList swayBooksList;
     private void Start()
@@ -21,10 +21,14 @@ public class WinAndLoseState : MonoBehaviour
     }
     private void Update()
     {
-        if(timeSlider.value >= timeSlider.maxValue)
+        if (timeSlider.value >= timeSlider.maxValue)
         {
             endTimer += Time.deltaTime;
             winScreen.enabled = true;
+            //shuting down the other win/fail conditions
+            noiseSlider.value = 0;
+            swayBooksList.toMany = false;
+
             if (endTimer > 10)
             {
                 SceneManager.LoadScene("Meny");
@@ -33,8 +37,14 @@ public class WinAndLoseState : MonoBehaviour
 
         if (noiseSlider.value >= noiseSlider.maxValue)
         {
-            endTimer += Time.deltaTime;
+
+            timeSlider.enabled = false;
             toLoud.enabled = true;
+            endTimer += Time.deltaTime;
+            //shuting down the other win/fail conditions
+            timeSlider.value = 0;
+            swayBooksList.toMany = false;
+
             if (endTimer > 10)
             {
                 SceneManager.LoadScene("Meny");
@@ -42,10 +52,16 @@ public class WinAndLoseState : MonoBehaviour
         }
         if (swayBooksList.toMany == true)
         {
+ 
             endTimer += Time.deltaTime;
             fellOver.enabled = true;
+            //shuting down the other win/fail conditions
+            timeSlider.value = 0;
+            noiseSlider.value = 0;
+
             if (endTimer > 10)
             {
+
                 SceneManager.LoadScene("Meny");
             }
         }

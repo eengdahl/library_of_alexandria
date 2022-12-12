@@ -26,6 +26,7 @@ public class PlayerController1 : MonoBehaviour
 
     private void Update()
     {
+        //Freezing karin from script MakeHushSound if longhushing
         if (karinCantMove)
         {
             return;
@@ -33,19 +34,6 @@ public class PlayerController1 : MonoBehaviour
 
         inputAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = inputAxis.normalized * speed;
-
-        //Added a quick way to get to menu by pressing esc
-        //if (Input.GetButton("Cancel"))
-        //{
-            //SceneManager.LoadScene("Meny");
-        //}
-
-        ////Added a quick way to reset game 
-        //if (Input.GetKey("r"))
-        //{
-        //    SceneManager.LoadScene("scene_main");
-        //    SceneManager.
-        //}
 
 
     }
@@ -61,6 +49,7 @@ public class PlayerController1 : MonoBehaviour
             flip();
         }
 
+        //Freezing karin from script MakeHushSound if longhushing
         if (karinCantMove)
         {
             rb.velocity = new Vector2(0, 0);
@@ -69,11 +58,10 @@ public class PlayerController1 : MonoBehaviour
         rb.velocity = moveVelocity;
         animator.SetFloat("IsMoving",rb.velocity.magnitude);
         
-
-        //rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
     private void flip()
     {
+        //Freezing karin from script MakeHushSound if longhushing
         if (karinCantMove)
         {
             return;
