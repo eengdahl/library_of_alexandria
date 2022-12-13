@@ -15,6 +15,7 @@ public class MakeHuschSound : MonoBehaviour
     Animator animatorKarin;
     CircleCollider2D collider2D;
     PlayerController1 playerController1;
+    float startSize = 1;
 
 
     // Start is called before the first frame update
@@ -31,20 +32,27 @@ public class MakeHuschSound : MonoBehaviour
     void Update()
     {
         //Om du trycker på  activate spela husch ljudet och gör om boolen doesHuschSound till true
-        if (Input.GetKey("space"))
+        if (Input.GetKey("space") && !doesHuschSound)
         {
-            if (chargedHush < 1.5f)
+            if (chargedHush < 1f)//1.5
             {
                 chargedHush += Time.deltaTime;
+                //chargedHush += startSize + (Time.deltaTime/2);
+                //gameObject.transform.localScale = new Vector3(1, 1, 1);
             }
-            
+            else if (chargedHush > 1 && chargedHush < 5)
+            {
+                    chargedHush += 3 * Time.deltaTime;
+                gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
+
+            }
 
         }
         //Makes a chargedHush
-        if (Input.GetKeyUp("space") && chargedHush > 1f)
+        if (Input.GetKeyUp("space") && chargedHush > 1.5f)
         {
             //finetunear hur effektiv chargehush ska vara, work in progress
-            chargedHush /= 1.50f;
+            //chargedHush /= 1.50f;
             Invoke("StopAudio", chargedHush);
 
             doesHuschSound = true;
@@ -55,9 +63,13 @@ public class MakeHuschSound : MonoBehaviour
             animatorKarin.SetBool("IsHushing", true);
 
             //Setting hushradius after how long hush was charged
-            collider2D.radius = chargedHush;
+            // collider2D.radius = chargedHush;
+            gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
+            if(chargedHush > 1)
+            {
+                lenghtOfHusch = 1.5f;
 
-            lenghtOfHusch = chargedHush;
+            }
             chargedHush = 0;
             playerController1.karinCantMove = true;
 
@@ -65,11 +77,12 @@ public class MakeHuschSound : MonoBehaviour
         //Makes standard hush
         else if (Input.GetKeyUp("space") && !doesHuschSound)
         {
+            chargedHush = 1;
             doesHuschSound = true;
             audioSource.clip = schhSound[Random.Range(0, schhSound.Length)];
             audioSource.Play();
             animatorKarin.SetBool("IsHushing", true);
-
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
 
         }
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
@@ -83,6 +96,7 @@ public class MakeHuschSound : MonoBehaviour
                 lenghtOfHusch = 0.5f;
                 chargedHush = 0;
                 doesHuschSound = false;
+                StopAudio();
             }
         }
         //Om vi inte huschar ska husch timern vara på 0
@@ -90,7 +104,7 @@ public class MakeHuschSound : MonoBehaviour
         {
             animatorKarin.SetBool("IsHushing", false);
             huschTimer = 0;
-
+            
             playerController1.karinCantMove = false;
         }
     }
@@ -100,7 +114,8 @@ public class MakeHuschSound : MonoBehaviour
     {
         audioSource.Stop();
         doesHuschSound = false;
-        collider2D.radius = standardRadius;
+        //collider2D.radius = standardRadius;
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
         
     }
 }

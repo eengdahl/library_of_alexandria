@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class sizeMeUp : MonoBehaviour
 {
-    float size;
+    //float size;
     MakeHuschSound makeHuschSoundScript;
     SpriteRenderer spriteRenderer;
     private void Start()
@@ -16,7 +16,9 @@ public class sizeMeUp : MonoBehaviour
     private void Update()
     {
 
-        if(makeHuschSoundScript.chargedHush <= 0.35f)
+
+        //gameObject.transform.localScale = makeHuschSoundScript.gameObject.transform.localScale;
+        if (makeHuschSoundScript.chargedHush <= 0)//.chargedHush
         {
             spriteRenderer.enabled = false;
         }
@@ -24,8 +26,8 @@ public class sizeMeUp : MonoBehaviour
         {
             spriteRenderer.enabled = true;
         }
-        size = makeHuschSoundScript.chargedHush+0.3f;
+        //size = makeHuschSoundScript.chargedHush + 0.3f;
 
-        transform.localScale = new Vector3(size, size, 0);
+        //transform.localScale = new Vector3(size, size, 0);
     }
 }
