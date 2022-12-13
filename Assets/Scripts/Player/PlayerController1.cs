@@ -9,7 +9,7 @@ public class PlayerController1 : MonoBehaviour
     float halfSpeed;
     float fullSpeed;
 
-
+    SpriteRenderer sprite;
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
     Vector2 inputAxis;
@@ -18,6 +18,7 @@ public class PlayerController1 : MonoBehaviour
     Animator animator;
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         halfSpeed = speed / 2;
         fullSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
@@ -67,11 +68,20 @@ public class PlayerController1 : MonoBehaviour
             return;
         }
         facingRight = !facingRight;
+        if (sprite.flipX == false)
+        {
+            Debug.Log("sprite flip");
+            sprite.flipX = true;
+        }
 
-        //assigns a the scale component to a variable temporarily
-        Vector3 tmpScale = gameObject.transform.localScale;
-        tmpScale.x *= -1;
-        gameObject.transform.localScale = tmpScale;
+        else if (sprite.flipX == true){
+            sprite.flipX = false;
+        }
+        //sprite.flipX = !sprite.flipX;
+        ////assigns a the scale component to a variable temporarily
+        //Vector3 tmpScale = gameObject.transform.localScale;
+        //tmpScale.x *= -1;
+        //gameObject.transform.localScale = tmpScale;
     }
 
 

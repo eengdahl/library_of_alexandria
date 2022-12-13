@@ -43,10 +43,10 @@ public class MakeHuschSound : MonoBehaviour
             else if (chargedHush > 1 && chargedHush < 5)
             {
                     chargedHush += 3 * Time.deltaTime;
-                gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
+                //gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
 
             }
-
+            gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
         }
         //Makes a chargedHush
         if (Input.GetKeyUp("space") && chargedHush > 1.5f)
