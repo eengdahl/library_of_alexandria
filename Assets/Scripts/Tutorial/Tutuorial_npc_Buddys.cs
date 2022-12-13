@@ -8,7 +8,13 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
     public Transform target_Buddys11;
     SpriteRenderer red;
     GameObject target_Buddys1_1;
+
+    /////////////////
+    //   UI text   //  
+    /////////////////
+    public GameObject Long_hush_information;
     public GameObject exclamation_talkbubbel;
+    
     float timerOnTrigger;
     float speed = 2;
     float timer;
@@ -36,8 +42,11 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
         if (active_1== false)
         {
         transform.position = Vector3.MoveTowards(transform.position, target_Buddys1.position, speed * Time.deltaTime);
-        audio1_1.Play();
         exclamation_talkbubbel.SetActive(true);
+        if (timer >= 1 && timer <= 2)
+        {
+            audio1_1.Play();
+        }
         }
 
         if (active_2 == false)

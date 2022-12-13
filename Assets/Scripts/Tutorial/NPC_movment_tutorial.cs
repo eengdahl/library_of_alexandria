@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class NPC_movment_tutorial : MonoBehaviour
 {
 
-    bool collidingWithPlayer;
+    bool collidingWithPlayer = true;
     
     // speech bubble when NPC is mad
     public GameObject deactivate_timer;
@@ -23,6 +23,7 @@ public class NPC_movment_tutorial : MonoBehaviour
     public GameObject Mad_NPC_text;
     public GameObject deactivate_information_WASD;
     public GameObject New_Hush_information;
+    public GameObject Long_Hush_information;
 
     ///////////////////////
     //  waypoint target  //  
@@ -131,6 +132,7 @@ public class NPC_movment_tutorial : MonoBehaviour
         //npc shuts up and talkbubble disappears
         if (collidingWithPlayer == true && Input.GetKeyDown(KeyCode.Space))
         { 
+            Debug.Log("hello");
             All_movebuttons_pressed = false;
             audio1.Stop(); 
             walking_is_done = true;
@@ -138,6 +140,10 @@ public class NPC_movment_tutorial : MonoBehaviour
             New_Hush_information.SetActive(false);
             active_2 = true;
         }
+       /*  if (Input.GetKey(KeyCode.Space))
+        { 
+            
+        } */
             /////////////
             //walks out//
             /////////////
@@ -148,24 +154,22 @@ public class NPC_movment_tutorial : MonoBehaviour
                 active_3 =true;
             }
         
-        //many npc walks in
+        
+            ///////////////////////
+            // many npc walks in //
+            ///////////////////////
         if (active_3 == true)
         {
             timer2 += Time.deltaTime;
             if (timer2 >= 2 && timer2 <= 2.01)
             {
             noiceNPCs();
-            //Walk_to_book();
-            }
-                
-            if (timer >= 28)//Ändrat från 35
-            {
-                Mad_NPC_text.SetActive(false);
-                information_about_pick_up_book.SetActive(false);
-                //emergency_text.SetActive(true);
             }
         }
 
+            /////////////////////
+            //start game button//
+            /////////////////////
         if (Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("Enter");
@@ -173,19 +177,9 @@ public class NPC_movment_tutorial : MonoBehaviour
         }
     }
 
-    //when npc colides with book
-    /* private void OnTriggerStay2D(Collider2D other)
-    {
-        timerOnTrigger += Time.deltaTime;
-        if (other.tag == ("Book White") && opacity <= 0.75f)
-        {
-            opacity = timerOnTrigger / 10;
-            red.color = new Color(1, 0, 0, opacity);
-        }
-    } */
-
-    //when player pick upp books NPC stops making noice and being
-    
+            //////////////////////////////
+            //bool when collide with npc//
+            //////////////////////////////
     private void OnTriggerStay2D(Collider2D other) 
     {
         if (other.CompareTag ("Player"))
@@ -193,21 +187,12 @@ public class NPC_movment_tutorial : MonoBehaviour
                 collidingWithPlayer = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {   
         if (other.CompareTag ("Player"))
         {
             collidingWithPlayer = false;
-        }
-        
-           
-        if (other.tag == ("Book White"))
-        {
-            opacity = 0;
-            red.color = new Color(1, 0, 0, opacity);
-            audio1.Stop();
-            Mad_NPC_text.SetActive(false);
-            information_about_pick_up_book.SetActive(false);
         }
     }
 
@@ -267,7 +252,10 @@ public class NPC_movment_tutorial : MonoBehaviour
 
         Instantiate(pickedNPC, temp, transform.rotation);
         Instantiate(pickedNPC2, temp2, transform.rotation);
+        Long_Hush_information.SetActive(true);
         active_3 = true;
         //emergency_text.SetActive(true);
     }
+
+
 }
