@@ -16,8 +16,7 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     //public GameObject Long_hush_information;
     public GameObject exclamation_talkbubbel;
 
-    
-
+    public bool collision_between_buddy2_player = false;
 
     float timerOnTrigger;
     float speed = 2;
@@ -57,19 +56,34 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
         if (active_1== false)
         {
         transform.position = Vector3.MoveTowards(transform.position, target_Buddys2.position, speed * Time.deltaTime);
-        audio2_2.Play();
-        exclamation_talkbubbel.SetActive(true);
-        long_hush_information2.SetActive(true);
         if (timer >= 1 && timer <= 2)
         {
             audio2_2.Play();
-            //Long_hush_information2.SetActive(true);
+        exclamation_talkbubbel.SetActive(true);
         }
         }
 
+       if(collision_between_buddy2_player == true && Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            exclamation_talkbubbel.SetActive(false);
+            audio2_2.Pause();
         }
+
+
+    }
     private void OnTriggerStay2D(Collider2D other)
         {
-
+           if (other.CompareTag ("Player"))
+            {
+                collision_between_buddy2_player = true;
+            }
+           
+        }
+    private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag ("Player"))
+            {
+                collision_between_buddy2_player = false;
+            }
         }
 }

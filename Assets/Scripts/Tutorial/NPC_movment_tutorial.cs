@@ -140,10 +140,10 @@ public class NPC_movment_tutorial : MonoBehaviour
             New_Hush_information.SetActive(false);
             active_2 = true;
         }
-       /*  if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         { 
             
-        } */
+        }
             /////////////
             //walks out//
             /////////////

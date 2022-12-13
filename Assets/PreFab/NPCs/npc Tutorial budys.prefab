@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 7997969848239026148}
   m_Layer: 0
   m_Name: npc Tutorial budys
-  m_TagString: Untagged
+  m_TagString: Tutorial buddy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,6 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target_Buddys1: {fileID: 0}
   target_Buddys11: {fileID: 0}
+  collision_between_buddys2_player: {fileID: 0}
   exclamation_talkbubbel: {fileID: 7005683173684856940}
 --- !u!82 &2278183644403649700
 AudioSource:
