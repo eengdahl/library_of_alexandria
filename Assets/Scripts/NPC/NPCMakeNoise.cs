@@ -11,9 +11,11 @@ public class NPCMakeNoise : MonoBehaviour
     public float chanceOfMakingSound;//if smaller or same than this number make sound
     public NPCMovement npcMovement;
     [SerializeField] SpriteRenderer exclamationMark;
+    Animator myAnimator;
     void Start()
     {
         aS = GetComponent<AudioSource>();
+        myAnimator = GetComponent<Animator>();
         timer = 0;
 
         exclamationMark = transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>();
@@ -66,15 +68,17 @@ public class NPCMakeNoise : MonoBehaviour
         {
             timer = 0;
             aS.enabled = true;
-            exclamationMark.enabled = true;
-            //Calling Meters and adjusting noisemeter
-            // meters.UpdateNoise(10);
+            myAnimator.SetBool("noise", true);
+
+
+
 
         }
         else if (makingNosie == false)
         {
+            myAnimator.SetBool("muchNoise", false);
+            myAnimator.SetBool("noise", false);
             aS.enabled = false;
-            exclamationMark.enabled = false;
         }
     }
 

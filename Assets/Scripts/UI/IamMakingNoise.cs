@@ -16,6 +16,7 @@ public class IamMakingNoise : MonoBehaviour
     public bool hasBeenAdded;
     private float maxLevelOfSound;
     NPCMovement npcMovement;
+    Animator myAnimator;
 
 
     void Start()
@@ -28,8 +29,8 @@ public class IamMakingNoise : MonoBehaviour
         hasBeenAdded = false;
         npcMovement = GetComponent<NPCMovement>();
         maxLevelOfSound = 40;
-        
 
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,11 +42,11 @@ public class IamMakingNoise : MonoBehaviour
         {
             levelOfSound += noiseinc;
             //Should smooth the process later 
-            
 
 
             if (levelOfSound > maxLevelOfSound)
             {
+                myAnimator.SetBool("muchNoise",true);
                 levelOfSound = maxLevelOfSound;
             }
 
@@ -55,7 +56,11 @@ public class IamMakingNoise : MonoBehaviour
                 hasBeenAdded = true;
             }
 
+
             timer = 0;
+
+         
+          
 
 
         }

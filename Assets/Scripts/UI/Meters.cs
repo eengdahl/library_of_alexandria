@@ -23,10 +23,12 @@ public class Meters : MonoBehaviour
 
     private void Start()
     {
-        maxTime = 180;
+        
+        maxTime = 180; 
         clock.sprite = clockpictures[0];
         tickOfClock = maxTime / clockpictures.Length;
         winAndLoseState = FindObjectOfType<WinAndLoseState>();
+
 
     }
 
