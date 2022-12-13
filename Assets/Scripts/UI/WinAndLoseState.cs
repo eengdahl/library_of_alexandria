@@ -21,19 +21,19 @@ public class WinAndLoseState : MonoBehaviour
     }
     private void Update()
     {
-        if (timeSlider.value >= timeSlider.maxValue)
-        {
-            endTimer += Time.deltaTime;
-            winScreen.enabled = true;
-            //shuting down the other win/fail conditions
-            noiseSlider.value = 0;
-            swayBooksList.toMany = false;
+        //if (timeSlider.value >= timeSlider.maxValue)
+        //{
+        //    endTimer += Time.deltaTime;
+        //    winScreen.enabled = true;
+        //    //shuting down the other win/fail conditions
+        //    noiseSlider.value = 0;
+        //    swayBooksList.toMany = false;
 
-            if (endTimer > 10)
-            {
-                SceneManager.LoadScene("Meny");
-            }
-        }
+        //    if (endTimer > 10)
+        //    {
+        //        SceneManager.LoadScene("Meny");
+        //    }
+        //}
 
         if (noiseSlider.value >= noiseSlider.maxValue)
         {
@@ -64,6 +64,19 @@ public class WinAndLoseState : MonoBehaviour
 
                 SceneManager.LoadScene("Meny");
             }
+        }
+    }
+    public void TimeIsUp()
+    {
+        endTimer += Time.deltaTime;
+        winScreen.enabled = true;
+        //shuting down the other win/fail conditions
+        noiseSlider.value = 0;
+        swayBooksList.toMany = false;
+
+        if (endTimer > 10)
+        {
+            SceneManager.LoadScene("Meny");
         }
     }
 }

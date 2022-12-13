@@ -11,12 +11,24 @@ using Unity.VisualScripting;
 
 public class Meters : MonoBehaviour
 {
-    public Slider showTimeLeft;
     //public Slider noiseMeter;
     private float timer;
     public float timer2;
-    
- 
+    public SpriteRenderer clock;
+    public Sprite[] clockpictures;
+    private int timePast;
+    private int maxTime;
+    private float tickOfClock;
+    WinAndLoseState winAndLoseState;
+
+    private void Start()
+    {
+        maxTime = 180;
+        clock.sprite = clockpictures[0];
+        tickOfClock = maxTime / clockpictures.Length;
+        winAndLoseState = FindObjectOfType<WinAndLoseState>();
+
+    }
 
 
     void Update()
@@ -24,26 +36,22 @@ public class Meters : MonoBehaviour
         //Creating a timer and counting down from full time to no time 
         timer += Time.deltaTime;
 
-        if (timer > 1)
+        if (timer > tickOfClock)
         {
 
-            showTimeLeft.value++;
+            timePast++;
 
-            if (showTimeLeft.value >= showTimeLeft.maxValue)
+            if (timePast >= clockpictures.Length)
             {
-                
-                 
-                //SceneManager.LoadScene("Meny");
+                winAndLoseState.TimeIsUp();
+                return;
             }
-
-            //Making noisemeter decreses always, NOT a good solution'
-            //UpdateNoise(-8);
-
+            clock.sprite = clockpictures[timePast];
             timer = 0;
         }
 
     }
 
 
-  
+
 }
