@@ -1334,7 +1334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &990194450
 Transform:
   m_ObjectHideFlags: 0
@@ -2281,7 +2281,7 @@ Transform:
   - {fileID: 274233334}
   - {fileID: 333530327}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6176864220609053189
 MonoBehaviour:
@@ -2339,7 +2339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noiseSlider: {fileID: 6176864220257201132}
-  timeSlider: {fileID: 0}
   fellOver: {fileID: 1714732223}
   toLoud: {fileID: 130281339}
   winScreen: {fileID: 1784124354}
@@ -2762,7 +2761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06034483, y: 0.81577563}
   m_AnchorMax: {x: 0.09632685, y: 0.87732524}
-  m_AnchoredPosition: {x: 0.19995117, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.19561768}
   m_SizeDelta: {x: 1.4130001, y: 2.1504998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &6400592937918061868

@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class WinAndLoseState : MonoBehaviour
 {
     public Slider noiseSlider;
-    public Slider timeSlider;
     public SpriteRenderer fellOver;
     public SpriteRenderer toLoud;
     public SpriteRenderer winScreen;
@@ -38,11 +37,9 @@ public class WinAndLoseState : MonoBehaviour
         if (noiseSlider.value >= noiseSlider.maxValue)
         {
 
-            timeSlider.enabled = false;
             toLoud.enabled = true;
             endTimer += Time.deltaTime;
             //shuting down the other win/fail conditions
-            timeSlider.value = 0;
             swayBooksList.toMany = false;
 
             if (endTimer > 10)
@@ -56,12 +53,10 @@ public class WinAndLoseState : MonoBehaviour
             endTimer += Time.deltaTime;
             fellOver.enabled = true;
             //shuting down the other win/fail conditions
-            timeSlider.value = 0;
             noiseSlider.value = 0;
 
             if (endTimer > 10)
             {
-
                 SceneManager.LoadScene("Meny");
             }
         }
