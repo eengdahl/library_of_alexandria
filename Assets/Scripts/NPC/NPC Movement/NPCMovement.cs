@@ -260,7 +260,7 @@ public class NPCMovement : MonoBehaviour
             Debug.Log("Should reset occupied bool");
             chairOccupiedScript.chairOccupied = false;
             isSeated = false;
-            SpawnBook();//Spawn book 
+            SpawnBook2();//Spawn book 
             nPCbookPickUp.haveBook = false;
             hasChair = false;
             seatedTimer = 0;
@@ -466,6 +466,34 @@ public class NPCMovement : MonoBehaviour
             if (transform.localScale.x < 0)
                 transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         }
+    }
+
+    void SpawnBook2()
+    {
+        GameObject[] tables; //tables gameObjects
+        tables = GameObject.FindGameObjectsWithTag("Table");
+        distanceBetween = new float[tables.Length];
+        //Calculate the distance between the NPC position and the tables
+        for (int i = 0; i < tables.Length; i++)
+        {
+            float distance = Vector3.Distance(transform.position, tables[i].transform.position);
+
+            distanceBetween[i] = distance;
+
+        }
+        //Find the lowest value in distance array
+        int lowestIndex;
+        lowestIndex = GetIndexOfLowestValue(distanceBetween);
+        //SpawnBook
+        if (tables[lowestIndex].transform.position.x < transform.position.x)
+        {
+            Instantiate(blankBook, transform.position - new Vector3(0.5f, 0, 0), tables[lowestIndex].transform.rotation);
+        }
+        else if (tables[lowestIndex].transform.position.x > transform.position.x)
+        {
+            Instantiate(blankBook, transform.position + new Vector3(0.5f, 0, 0), tables[lowestIndex].transform.rotation);
+        }
+        //Instantiate(blankBook, tables[lowestIndex].transform.position + new Vector3(randomX, randomY, 0), tables[lowestIndex].transform.rotation);
     }
     void SpawnBook()
     {
