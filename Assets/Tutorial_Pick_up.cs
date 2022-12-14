@@ -8,6 +8,8 @@ public class Tutorial_Pick_up : MonoBehaviour
     public GameObject BookColour;
     public GameObject Tutorialbook_pick_up_information;
     public GameObject Leave_on_desk_information;
+
+    public GameObject activate_Waypoint_deliver;
     float timer;
 
     private void Start()
@@ -28,6 +30,7 @@ public class Tutorial_Pick_up : MonoBehaviour
                     Instantiate(BookColour, inventoryPlayer.slots[i].transform, false);
                     Tutorialbook_pick_up_information.SetActive(false);
                     Leave_on_desk_information.SetActive(true);
+                    activate_Waypoint_deliver.SetActive(true);
                     Destroy(gameObject);
 
                     break; //Stop the for loop if empty spot in inventory is found

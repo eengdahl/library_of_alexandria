@@ -33,6 +33,17 @@ TagManager:
   - Water
   - WaterInside
   - Chair Face Left
+  - Long hush information
+  - ExitStart2
+  - Tutorial buddy
+  - Tutorial buddy2
+  - Waypoint npc buddy2goback
+  - tutorial first NPC
+  - Chair Face Right
+  - Chairs Middle Right
+  - Chairs Right (Right)
+  - Waypoint deliver
+  - tutorial red bookshelf1
   layers:
   - Default
   - TransparentFX
