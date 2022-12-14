@@ -8,17 +8,26 @@ public class FireHusched : MonoBehaviour
     FireGrow fireGrowScript;
     bool beingHusched;
     MakeHuschSound makeHuschSoundScriptPlayer;
+    AudioSource aS;
+    public AudioClip sorry;
     private void Start()
     {
         makeHuschSoundScriptPlayer = FindObjectOfType<MakeHuschSound>();
         fireGrowScript = fireParent.GetComponent<FireGrow>();
+        aS = GetComponentInParent<AudioSource>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Husch" && makeHuschSoundScriptPlayer.doesHuschSound == true)
         {
-            fireParent.transform.localScale = fireGrowScript.minSize;          
+            fireParent.transform.localScale = fireGrowScript.minSize;
+
+            aS.Play();
+         
+           
         }
     }
+
+
 }

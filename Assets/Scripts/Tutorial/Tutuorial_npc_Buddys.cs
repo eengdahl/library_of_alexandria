@@ -9,7 +9,7 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
     ///////////////////
     public bool beingHusched = false;
 
-     /////////////////
+    /////////////////
     //   .......   //  
     /////////////////
     public Transform target_Buddys1;
@@ -23,7 +23,8 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
     public GameObject exclamation_talkbubbel;
 
     bool collision_between_buddy_player = false;
-    
+
+
     float timerOnTrigger;
     float speed = 2;
     float timer;
@@ -37,7 +38,10 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
     GameObject target_Buddys1_1goback;
     float timer2;
 
-    float collisiontimer;
+    Tutuorial_npc_Buddys2 budy2;
+    MakeHuschSound makeHuschSound;
+
+    public float collisiontimer;
     bool walk_out = false;
     bool has_been_hushed = false;
     // Start is called before the first frame update
@@ -46,12 +50,15 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
         target_Buddys1_1 = GameObject.FindGameObjectWithTag("Waypoint npc buddy1");
         target_Buddys1 = target_Buddys1_1.transform;
 
-        target_Buddys1_1goback = GameObject.FindGameObjectWithTag("Waypoint npc buddy2goback");
-        target_Buddys11= target_Buddys1_1goback.transform;
+        target_Buddys1_1goback = GameObject.FindGameObjectWithTag("Waypoint npc buddygoback");
+        target_Buddys11 = target_Buddys1_1goback.transform;
 
         audio1_1 = GetComponent<AudioSource>();
         opacity = 0;
-  
+
+        budy2 = FindObjectOfType<Tutuorial_npc_Buddys2>();
+        makeHuschSound = FindObjectOfType<MakeHuschSound>();
+
     }
 
     // Update is called once per frame
@@ -59,15 +66,16 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (active_1== false)
+        if (active_1 == false)
         {
-        transform.position = Vector3.MoveTowards(transform.position, target_Buddys1.position, speed * Time.deltaTime);
-        
-        if (timer >= 1 && timer <= 2 && has_been_hushed == false)
-        {   
-            audio1_1.Play();
-            exclamation_talkbubbel.SetActive(true);
-        }
+   
+            transform.position = Vector3.MoveTowards(transform.position, target_Buddys1.position, speed * Time.deltaTime);
+
+            if (timer >= 1 && timer <= 2 && has_been_hushed == false)
+            {
+                audio1_1.Play();
+                exclamation_talkbubbel.SetActive(true);
+            }
         }
 
         if (walk_out == true)
@@ -76,17 +84,34 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
         }
     }
     //if buddy 1 collidar med player && buddy 2 collidar med player
-	//stop adio
-	//avaktivera pratbublor
-        private void OnTriggerStay2D(Collider2D collision)
+    //stop adio
+    //avaktivera pratbublor
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Husch")
+        if (collision.tag == "Husch" && makeHuschSound.doesHuschSound == true)
         {
             collisiontimer += Time.deltaTime;
+           // audio1_1.Stop();
+          //  has_been_hushed = true;
+           // exclamation_talkbubbel.SetActive(false);
+           active_1 = true;
+        }
+
+        if (collision.tag == "Husch" && budy2.collisiontimer>0.1f && makeHuschSound.doesHuschSound == true)
+        {
             audio1_1.Stop();
             has_been_hushed = true;
             exclamation_talkbubbel.SetActive(false);
+
+            walk_out = true;
         }
 
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Husch")
+        {
+            collisiontimer = 0;
+        }
     }
 }

@@ -18,7 +18,7 @@ public class Tutorial_book_pick_up : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -29,24 +29,23 @@ public class Tutorial_book_pick_up : MonoBehaviour
             Walk_Out();
         }
     }
-    private void OnTriggerStay2D(Collider2D other) 
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag ("tutorial first NPC"))
+        if (other.CompareTag("tutorial first NPC"))
         {
             timer += Time.deltaTime;
-            //Debug.Log("colides");
-            Debug.Log("timer");
-            deactivate_information_Long_hush.SetActive(false); 
-           activate_information_book_pick_up.SetActive(true);
-           Tutorialbook_pop_up.SetActive(true);
-           Go_away = true;
+     
+           // deactivate_information_Long_hush.SetActive(false);
+           // activate_information_book_pick_up.SetActive(true);
+            Tutorialbook_pop_up.SetActive(true);
+            Go_away = true;
 
-           Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag ("tutorial first NPC"))
+        if (other.CompareTag("tutorial first NPC"))
         {
             Walk_Out();
         }

@@ -480,6 +480,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e999f2d899263d4ba8acdacabfcfb7b, type: 3}
+--- !u!1 &55927543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1996661669, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+  m_PrefabInstance: {fileID: 1784124352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &84293341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5449406020605534304, guid: 2e4ae7bd5e175654a89aa3cc71fe066a, type: 3}
@@ -1071,7 +1076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &182986789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1173,7 +1178,7 @@ GameObject:
   - component: {fileID: 229866844}
   m_Layer: 0
   m_Name: Waypointexit npc byddy tutorial 1 (1)
-  m_TagString: Untagged
+  m_TagString: Waypoint npc buddygoback
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1264,6 +1269,10 @@ PrefabInstance:
     - target: {fileID: 7349438753114596915, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_Name
       value: Registration
+      objectReference: {fileID: 0}
+    - target: {fileID: 7349438753114596915, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8429481477575907518, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_RootOrder
@@ -1683,7 +1692,7 @@ GameObject:
   - component: {fileID: 364239419}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: KAOSBOK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1715,7 +1724,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364239417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3783,7 +3792,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855105187}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8dd4c906d4fcec34b98ca5f9ce3bd927, type: 2}
   m_CullingMode: 0
@@ -4768,7 +4777,7 @@ GameObject:
   - component: {fileID: 1046626512}
   m_Layer: 0
   m_Name: Waypointexit npc byddy2 tutorial 1 (1)
-  m_TagString: Untagged
+  m_TagString: Waypoint npc buddy2goback
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5006,6 +5015,10 @@ PrefabInstance:
     - target: {fileID: 2093386167364340608, guid: 7344677f635e6b049b9131d41c359cc3, type: 3}
       propertyPath: m_Name
       value: npc Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093386167364340608, guid: 7344677f635e6b049b9131d41c359cc3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4712364854629058233, guid: 7344677f635e6b049b9131d41c359cc3, type: 3}
       propertyPath: m_Color.a
@@ -5370,7 +5383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1181232087
 Transform:
   m_ObjectHideFlags: 0
@@ -5403,7 +5416,10 @@ MonoBehaviour:
   timer: 0
   spawnrate: 0
   rb: {fileID: 1558703688}
-  slots: []
+  slots:
+  - {fileID: 1834271605}
+  - {fileID: 55927543}
+  - {fileID: 2071613193}
   buffer: 0
   bookSpawnPoint: {fileID: 716024556}
   amountRegistered: 0
@@ -5558,15 +5574,15 @@ PrefabInstance:
     - target: {fileID: 1630847188, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: slots.Array.data[0]
       value: 
-      objectReference: {fileID: 360891677}
+      objectReference: {fileID: 1834271605}
     - target: {fileID: 1630847188, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: slots.Array.data[1]
       value: 
-      objectReference: {fileID: 1787929808}
+      objectReference: {fileID: 55927543}
     - target: {fileID: 1630847188, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: slots.Array.data[2]
       value: 
-      objectReference: {fileID: 976586065}
+      objectReference: {fileID: 2071613193}
     - target: {fileID: 1664763972554779679, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -9300,6 +9316,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1834271605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 850093856, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+  m_PrefabInstance: {fileID: 1784124352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1841550001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9355,6 +9376,10 @@ PrefabInstance:
     - target: {fileID: 7984624211845513063, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
       propertyPath: m_Name
       value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984624212201860675, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -10864,6 +10889,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 150d85d4cb4c2704f8021613ccc62a1d, type: 3}
+--- !u!1 &2071613193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1541473339, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+  m_PrefabInstance: {fileID: 1784124352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2090556654
 GameObject:
   m_ObjectHideFlags: 0
@@ -11118,7 +11148,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101927210}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8dd4c906d4fcec34b98ca5f9ce3bd927, type: 2}
   m_CullingMode: 0

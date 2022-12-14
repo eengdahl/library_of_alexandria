@@ -7,7 +7,7 @@ public class NPC_movment_tutorial : MonoBehaviour
 {
 
     bool collidingWithPlayer = true;
-    
+
     // speech bubble when NPC is mad
     public GameObject deactivate_timer;
     public GameObject exclamation_talkbubbel;
@@ -68,6 +68,7 @@ public class NPC_movment_tutorial : MonoBehaviour
 
     bool active_2 = false;
     bool active_3 = false;
+    bool once = true;
 
     SpriteRenderer red;
 
@@ -86,28 +87,28 @@ public class NPC_movment_tutorial : MonoBehaviour
 
     void Update()
     {
-         //looks if the player pressed all movebuttons to continue
+        //looks if the player pressed all movebuttons to continue
         if (Input.GetKeyDown(KeyCode.W))
-        {  
-            W_is_pressed = true;  
+        {
+            W_is_pressed = true;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
-        {   
-            A_is_pressed = true;  
+        {
+            A_is_pressed = true;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
-        {   
-            S_is_pressed = true;  
+        {
+            S_is_pressed = true;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
- 
-            D_is_pressed = true;  
+
+            D_is_pressed = true;
         }
-        if ( W_is_pressed == true && A_is_pressed == true && S_is_pressed == true && D_is_pressed == true && walking_is_done == false)
+        if (W_is_pressed == true && A_is_pressed == true && S_is_pressed == true && D_is_pressed == true && walking_is_done == false)
         {
             All_movebuttons_pressed = true;
             walking_is_done = true;
@@ -119,76 +120,79 @@ public class NPC_movment_tutorial : MonoBehaviour
         {
             Walk_to_book();
             exclamation_talkbubbel.SetActive(true);
-            
+
             timer += Time.deltaTime;
             if (timer >= 2 && timer <= 2.1)
             {
-            audio1.Play();
-            New_Hush_information.SetActive(true);
+                audio1.Play();
+                New_Hush_information.SetActive(true);
             }
         }
 
         //if you collide with player and space pressed
         //npc shuts up and talkbubble disappears
         if (collidingWithPlayer == true && Input.GetKeyDown(KeyCode.Space))
-        { 
+        {
             All_movebuttons_pressed = false;
-            audio1.Stop(); 
+            audio1.Stop();
             walking_is_done = true;
             exclamation_talkbubbel.SetActive(false);
             New_Hush_information.SetActive(false);
             active_2 = true;
         }
         if (Input.GetKey(KeyCode.Space))
-        { 
-            
-        }
-            /////////////
-            //walks out//
-            /////////////
+        {
 
-            if (active_2 == true)
-            {
-                Invoke("Walk_Out", 1.5f); // start function after 1,5 seconds
-                active_3 =true;
-            }
-        
-        
-            ///////////////////////
-            // many npc walks in //
-            ///////////////////////
+        }
+        /////////////
+        //walks out//
+        /////////////
+
+        if (active_2 == true)
+        {
+            Invoke("Walk_Out", 1.5f); // start function after 1,5 seconds
+            active_3 = true;
+        }
+
+
+        ///////////////////////
+        // many npc walks in //
+        ///////////////////////
         if (active_3 == true)
         {
+            
             timer2 += Time.deltaTime;
-            if (timer2 >= 2 && timer2 <= 2.01)
+            if (timer2 > 2 && once==true)
             {
-            noiceNPCs();
+                Debug.Log("Enter");
+                noiceNPCs();
+                once = false;
             }
         }
 
-            /////////////////////
-            //start game button//
-            /////////////////////
+        /////////////////////
+        //start game button//
+        /////////////////////
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Debug.Log("Enter");
+           
             SceneManager.LoadScene("scene_main_preTest");
         }
     }
 
-            //////////////////////////////
-            //bool when collide with npc//
-            //////////////////////////////
-    private void OnTriggerStay2D(Collider2D other) 
+    //////////////////////////////
+    //bool when collide with npc//
+    //////////////////////////////
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag ("Player"))
+        if (other.CompareTag("Player"))
         {
-                collidingWithPlayer = true;
+            collidingWithPlayer = true;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
-    {   
-        if (other.CompareTag ("Player"))
+    {
+        if (other.CompareTag("Player"))
         {
             collidingWithPlayer = false;
         }
@@ -213,8 +217,10 @@ public class NPC_movment_tutorial : MonoBehaviour
         Vector3 temp = new Vector3(0.3f, -9.4f, 0);
         Vector3 temp2 = new Vector3(-0.2f, -9.4f, 0);
 
-        //Instantiate(pickedNPC, temp, transform.rotation);
-        //Instantiate(pickedNPC2, temp2, transform.rotation);
+
+        Instantiate(pickedNPC, temp, transform.rotation);
+        Instantiate(pickedNPC2, temp2, transform.rotation);
+
         Long_Hush_information.SetActive(true);
         active_3 = true;
         //emergency_text.SetActive(true);

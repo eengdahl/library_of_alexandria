@@ -44,6 +44,11 @@ TagManager:
   - Chairs Right (Right)
   - Waypoint deliver
   - tutorial red bookshelf1
+  - Fire
+  - FireDestroyChecker
+  - FireDestroy
+  - Waypoint npc buddygoback
+  - KAOSBOK
   layers:
   - Default
   - TransparentFX
