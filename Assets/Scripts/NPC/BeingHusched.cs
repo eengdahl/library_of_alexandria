@@ -40,9 +40,6 @@ public class BeingHusched : MonoBehaviour
             iMakeNoise.levelOfSound = 0;
         }
 
-
-
-
     }
 
 }

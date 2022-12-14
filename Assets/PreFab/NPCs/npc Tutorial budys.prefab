@@ -367,10 +367,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db085ba910d41244da4eee7720859398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beingHusched: 0
+  iMakeNoise: {fileID: 0}
   target_Buddys1: {fileID: 0}
   target_Buddys11: {fileID: 0}
-  collision_between_buddys2_player: {fileID: 0}
   exclamation_talkbubbel: {fileID: 7005683173684856940}
+  buddy2: {fileID: 0}
 --- !u!82 &2278183644403649700
 AudioSource:
   m_ObjectHideFlags: 0

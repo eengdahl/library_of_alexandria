@@ -107,7 +107,7 @@ public class NPC_movment_tutorial : MonoBehaviour
  
             D_is_pressed = true;  
         }
-        if (  W_is_pressed == true && A_is_pressed == true && S_is_pressed == true && D_is_pressed == true && walking_is_done == false)
+        if ( W_is_pressed == true && A_is_pressed == true && S_is_pressed == true && D_is_pressed == true && walking_is_done == false)
         {
             All_movebuttons_pressed = true;
             walking_is_done = true;
@@ -132,7 +132,6 @@ public class NPC_movment_tutorial : MonoBehaviour
         //npc shuts up and talkbubble disappears
         if (collidingWithPlayer == true && Input.GetKeyDown(KeyCode.Space))
         { 
-            Debug.Log("hello");
             All_movebuttons_pressed = false;
             audio1.Stop(); 
             walking_is_done = true;
@@ -187,7 +186,6 @@ public class NPC_movment_tutorial : MonoBehaviour
                 collidingWithPlayer = true;
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {   
         if (other.CompareTag ("Player"))
@@ -210,52 +208,16 @@ public class NPC_movment_tutorial : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target2.position, speed * Time.deltaTime);
     }
 
-    //activates spechbubbel
-    public void activate_spechbubbel_madNPC()
-    {
-        if (transform.position == target1.position)
-        {
-            Mad_NPC_text.SetActive(true);
-        }
-    }
-
-    //playSound when npc is in front of the book
-    public void activate_sound_and_spechbubbel_pickup_book()
-    {
-        if (timer >= 2 && timer < 2.1f)
-        {
-            //playSound = true;
-            audio1.Play();
-
-        }
-        if (timer >= 6)
-        {
-            information_about_pick_up_book.SetActive(true);
-            active_1 = true;
-
-        }
-    }
-    /* public void Walk_out()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, target2.position, speed * Time.deltaTime);
-
-        if (timer >= 25)
-        {
-            active_2 = true;
-        }
-    } */
-
     public void noiceNPCs()
     {
         Vector3 temp = new Vector3(0.3f, -9.4f, 0);
         Vector3 temp2 = new Vector3(-0.2f, -9.4f, 0);
 
-        Instantiate(pickedNPC, temp, transform.rotation);
-        Instantiate(pickedNPC2, temp2, transform.rotation);
+        //Instantiate(pickedNPC, temp, transform.rotation);
+        //Instantiate(pickedNPC2, temp2, transform.rotation);
         Long_Hush_information.SetActive(true);
         active_3 = true;
         //emergency_text.SetActive(true);
     }
-
 
 }

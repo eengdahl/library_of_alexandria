@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class Tutuorial_npc_Buddys2 : MonoBehaviour
 {
+    ///////////////////
+    // BeingHusched  //  
+    ///////////////////
+    public bool beingHusched = false;
+
+     /////////////////
+    //   .......   //  
+    /////////////////
     public Transform target_Buddys2;
     public Transform target_Buddys22;
     SpriteRenderer red;
     GameObject target_Buddys2_2;
+    GameObject target_Buddys2_2goback;
 
     /////////////////
     //   UI text   //  
     /////////////////
-    //public GameObject Long_hush_information;
     public GameObject exclamation_talkbubbel;
 
     public bool collision_between_buddy2_player = false;
@@ -29,6 +37,9 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     bool active_2 = false;
     bool active_3 = false;
     GameObject long_hush_information2;
+    bool has_been_hushed = false;
+
+    bool walk_out = false;
 
     //public Long_hush_information Long_hush_information2;
     // Start is called before the first frame update
@@ -36,6 +47,9 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     {
         target_Buddys2_2 = GameObject.FindGameObjectWithTag("Waypoint npc buddy2");
         target_Buddys2 = target_Buddys2_2.transform;
+
+        target_Buddys2_2goback = GameObject.FindGameObjectWithTag("Waypoint npc buddy2goback");
+        target_Buddys22= target_Buddys2_2goback.transform;
 
         long_hush_information2 = GameObject.FindGameObjectWithTag("Long hush information");
       
@@ -45,9 +59,6 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
         long_hush_information2.SetActive(true);
 
     }
-        
-
-    // Update is called once per frame
     void Update()
     {
         
@@ -56,34 +67,27 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
         if (active_1== false)
         {
         transform.position = Vector3.MoveTowards(transform.position, target_Buddys2.position, speed * Time.deltaTime);
-        if (timer >= 1 && timer <= 2)
+        
+        if (timer >= 1 && timer <= 2 && has_been_hushed ==  false)
         {
             audio2_2.Play();
-        exclamation_talkbubbel.SetActive(true);
+            exclamation_talkbubbel.SetActive(true);
         }
         }
-
-       if(collision_between_buddy2_player == true && Input.GetKeyDown(KeyCode.Space) == true)
+        if (walk_out == true)
         {
-            exclamation_talkbubbel.SetActive(false);
-            audio2_2.Pause();
+            transform.position = Vector3.MoveTowards(transform.position, target_Buddys22.position, speed * Time.deltaTime);
         }
-
-
     }
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Husch")
         {
-           if (other.CompareTag ("Player"))
-            {
-                collision_between_buddy2_player = true;
-            }
-           
+            audio2_2.Stop();
+            has_been_hushed = true;
+            exclamation_talkbubbel.SetActive(false);
+            active_1 = false;
+            walk_out = true;
         }
-    private void OnTriggerExit2D(Collider2D other)
-        {
-            if (other.CompareTag ("Player"))
-            {
-                collision_between_buddy2_player = false;
-            }
-        }
+    }
 }
