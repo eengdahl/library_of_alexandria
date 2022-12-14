@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireBoundries : MonoBehaviour
 {
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.tag == "Fire")
         {

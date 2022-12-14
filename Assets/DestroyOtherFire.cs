@@ -10,7 +10,7 @@ public class DestroyOtherFire : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Destroy smaller fires in contact when fully grown
-        if(collision.tag == "FireDestroyChecker" && fireGrowScript.isMaxSize == true )
+        if(collision.tag == "FireDestroyChecker" && collision.gameObject.transform.localScale.x<transform.localScale.x )
         {
             spawnNewFiresScript.SpawnNewFire();
             Debug.Log("Fire Destroyed");
