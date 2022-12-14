@@ -10,7 +10,6 @@ public class NPCMakeNoise : MonoBehaviour
     public bool makingNosie = false;
     public float chanceOfMakingSound;//if smaller or same than this number make sound
     public NPCMovement npcMovement;
-    [SerializeField] SpriteRenderer exclamationMark;
     Animator myAnimator;
     void Start()
     {
@@ -18,8 +17,6 @@ public class NPCMakeNoise : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         timer = 0;
 
-        exclamationMark = transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>();
-        exclamationMark.enabled = false;
 
         //Setting Diffrent Noiceclipp
         Random.Range(0, nosie.Length);

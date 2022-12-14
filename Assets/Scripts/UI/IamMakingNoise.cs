@@ -45,7 +45,7 @@ public class IamMakingNoise : MonoBehaviour
 
 
             //might want to adjust this value in future
-            if (levelOfSound >= 10)
+            if (levelOfSound >= 7)
             {
                 myAnimator.SetBool("muchNoise", true);
             }
@@ -64,9 +64,6 @@ public class IamMakingNoise : MonoBehaviour
 
 
             timer = 0;
-
-
-
 
 
         }
