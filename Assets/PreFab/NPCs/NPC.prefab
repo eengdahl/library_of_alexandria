@@ -488,7 +488,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &5865293537661773347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +524,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   numberOfPaths: 1
+  isLeaving: 0
   toTableWayPoints: []
 --- !u!82 &709626102
 AudioSource:
