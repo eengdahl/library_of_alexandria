@@ -20,14 +20,17 @@ public class Meters : MonoBehaviour
     private int maxTime;
     private float tickOfClock;
     WinAndLoseState winAndLoseState;
+    NPCMovement nPCMovement;
+    GameObject[] npc;
 
     private void Start()
     {
-        
-        maxTime = 180; 
+
+        maxTime = 180;
         clock.sprite = clockpictures[0];
         tickOfClock = maxTime / clockpictures.Length;
         winAndLoseState = FindObjectOfType<WinAndLoseState>();
+        nPCMovement = FindObjectOfType<NPCMovement>();
 
 
     }
@@ -45,11 +48,27 @@ public class Meters : MonoBehaviour
 
             if (timePast >= clockpictures.Length)
             {
+                SearchForAllNPC();
                 winAndLoseState.TimeIsUp();
+
+               
+                
                 return;
             }
             clock.sprite = clockpictures[timePast];
             timer = 0;
+        }
+
+    }
+
+    //making all npc leav room when level is done 
+    public void SearchForAllNPC()
+    {
+        var NPCs = GameObject.FindGameObjectsWithTag("NPC");
+
+        for (int i = 0; i < NPCs.Length; i++)
+        {
+            NPCs[i].GetComponent<NPCMovement>().isLeaving = true;
         }
 
     }

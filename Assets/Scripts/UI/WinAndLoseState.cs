@@ -69,7 +69,7 @@ public class WinAndLoseState : MonoBehaviour
         noiseSlider.value = 0;
         swayBooksList.toMany = false;
 
-        if (endTimer > 10)
+        if (endTimer > 15)
         {
             SceneManager.LoadScene("Meny");
         }

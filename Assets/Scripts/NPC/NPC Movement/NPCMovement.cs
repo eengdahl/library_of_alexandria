@@ -61,7 +61,7 @@ public class NPCMovement : MonoBehaviour
     int movementArrayPickerIndex;
     public int numberOfPaths;
     Transform currentWaypoint;
-    bool isLeaving = false;
+    public bool isLeaving = false;
     int ExitWayPointIndex = 0;
 
     //Exit
