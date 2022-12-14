@@ -4189,6 +4189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: longHush
+      value: 
+      objectReference: {fileID: 8300000, guid: a83176c9293e873408a9c1eeddf324ed, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
@@ -6289,7 +6293,7 @@ PrefabInstance:
       objectReference: {fileID: 2570604}
     - target: {fileID: 6176864220257201133, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.41000175
+      value: -0.40999985
       objectReference: {fileID: 0}
     - target: {fileID: 6176864220609053188, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_RootOrder
