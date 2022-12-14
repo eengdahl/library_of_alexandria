@@ -226,16 +226,7 @@ public class NPCMovement : MonoBehaviour
                 ChairPicker();
             }
         }
-        //chairOccupiedScript = chairs[chairPicker].GetComponent<ChairOccupied>();
-        //if (chairOccupiedScript.chairOccupied == false)
-        //{
-        //    chairOccupiedScript.chairOccupied = true;
-        //    hasChair = true;
-        //}
-        //else if (chairOccupiedScript.chairOccupied == true && !hasChair)
-        //{
-        //    ChairPicker();
-        //}
+
     }
     void LeaveChair()
     {
