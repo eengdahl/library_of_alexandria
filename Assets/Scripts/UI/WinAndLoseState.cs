@@ -12,10 +12,16 @@ public class WinAndLoseState : MonoBehaviour
     public SpriteRenderer toLoud;
     public SpriteRenderer winScreen;
 
+    string sceneName;
+    Scene currentScene;
+
+
     float endTimer;
     SwayBooksList swayBooksList;
     private void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         swayBooksList = FindObjectOfType<SwayBooksList>();
     }
     private void Update()
@@ -71,7 +77,15 @@ public class WinAndLoseState : MonoBehaviour
 
         if (endTimer > 15)
         {
-            SceneManager.LoadScene("Meny");
+            if (sceneName == "scene_main")
+            {
+                SceneManager.LoadScene("scene_main_Jovin");
+            }
+            if (sceneName == "scene_main_Jovin")
+            {
+                SceneManager.LoadScene("Meny");
+            }
+            //SceneManager.LoadScene("Meny");
         }
     }
 }

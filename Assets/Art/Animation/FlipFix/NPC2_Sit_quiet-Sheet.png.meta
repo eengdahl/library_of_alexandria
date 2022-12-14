@@ -114,8 +114,8 @@ TextureImporter:
         y: 0
         width: 23
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -135,8 +135,8 @@ TextureImporter:
         y: 0
         width: 23
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -156,8 +156,8 @@ TextureImporter:
         y: 0
         width: 23
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -177,8 +177,8 @@ TextureImporter:
         y: 0
         width: 23
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -198,8 +198,8 @@ TextureImporter:
         y: 0
         width: 23
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -219,8 +219,8 @@ TextureImporter:
         y: 0
         width: 23
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -240,8 +240,8 @@ TextureImporter:
         y: 0
         width: 23
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,8 +261,8 @@ TextureImporter:
         y: 0
         width: 23
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -285,14 +285,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NPC2_Sit_quiet-Sheet_5: -1022878272
+      NPC2_Sit_quiet-Sheet_2: 2024562342
       NPC2_Sit_quiet-Sheet_1: 1997699751
       NPC2_Sit_quiet-Sheet_3: 460228420
       NPC2_Sit_quiet-Sheet_0: 1983204086
       NPC2_Sit_quiet-Sheet_6: -1851460507
       NPC2_Sit_quiet-Sheet_7: 140507329
       NPC2_Sit_quiet-Sheet_4: 137309912
-      NPC2_Sit_quiet-Sheet_2: 2024562342
+      NPC2_Sit_quiet-Sheet_5: -1022878272
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

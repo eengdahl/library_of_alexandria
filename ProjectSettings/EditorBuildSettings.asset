@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scene_main_julia.unity
     guid: 197caf66d12e4434b8025d2079593bf4
+  - enabled: 1
+    path: Assets/Scenes/scene_main_Jovin.unity
+    guid: c39d7033fa20f8c499ffdfe7398bf2d6
   m_configObjects: {}
