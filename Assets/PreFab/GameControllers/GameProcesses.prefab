@@ -2311,6 +2311,7 @@ MonoBehaviour:
   - {fileID: 189447636, guid: 3d5b3d0e0a8ecb84b8f192ce768d31be, type: 3}
   - {fileID: -1566461643, guid: 3d5b3d0e0a8ecb84b8f192ce768d31be, type: 3}
   - {fileID: 1158487518, guid: 3d5b3d0e0a8ecb84b8f192ce768d31be, type: 3}
+  npcSpawner: {fileID: 990194449}
 --- !u!114 &1016374378
 MonoBehaviour:
   m_ObjectHideFlags: 0

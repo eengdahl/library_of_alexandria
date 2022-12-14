@@ -22,6 +22,7 @@ public class Meters : MonoBehaviour
     WinAndLoseState winAndLoseState;
     NPCMovement nPCMovement;
     GameObject[] npc;
+    public GameObject npcSpawner;
 
     private void Start()
     {
@@ -51,8 +52,8 @@ public class Meters : MonoBehaviour
                 SearchForAllNPC();
                 winAndLoseState.TimeIsUp();
 
-               
-                
+
+
                 return;
             }
             clock.sprite = clockpictures[timePast];
@@ -64,11 +65,13 @@ public class Meters : MonoBehaviour
     //making all npc leav room when level is done 
     public void SearchForAllNPC()
     {
-        var NPCs = GameObject.FindGameObjectsWithTag("NPC");
+        npcSpawner.SetActive(false);
 
+        var NPCs = GameObject.FindGameObjectsWithTag("NPC");
         for (int i = 0; i < NPCs.Length; i++)
         {
             NPCs[i].GetComponent<NPCMovement>().isLeaving = true;
+            NPCs[i].GetComponent<Animator>().SetBool("isLeaving", true);
         }
 
     }
