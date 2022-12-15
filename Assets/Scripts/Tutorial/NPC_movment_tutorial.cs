@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class NPC_movment_tutorial : MonoBehaviour
 {
 
-    bool collidingWithPlayer = true;
+    bool collidingWithPlayer = false;
 
     // speech bubble when NPC is mad
     public GameObject deactivate_timer;
@@ -214,8 +214,8 @@ public class NPC_movment_tutorial : MonoBehaviour
 
     public void noiceNPCs()
     {
-        Vector3 temp = new Vector3(0.3f, -9.4f, 0);
-        Vector3 temp2 = new Vector3(-0.2f, -9.4f, 0);
+        Vector3 temp = new Vector3(0.1f, -5.5f, 0);
+        Vector3 temp2 = new Vector3(-0.1f, -5.5f, 0);
 
 
         Instantiate(pickedNPC, temp, transform.rotation);

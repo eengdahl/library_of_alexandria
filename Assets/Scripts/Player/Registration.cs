@@ -21,6 +21,8 @@ public class Registration : MonoBehaviour
     public List <GameObject> registeredBooks;
     public SwayBooksList swayBookScript;
     AudioSource aS;
+
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,7 @@ public class Registration : MonoBehaviour
                         registeredBooks.Add(booktut);
                         amountRegistered += 1;
                         deliverBooks.AddBookToTable(-1);
+                     
                         timer = 0;
                         return;
                     }
