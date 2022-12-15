@@ -219,8 +219,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05800409, y: 0.013462578}
-  m_Size: {x: 0.61600584, y: 0.84742326}
+  m_Offset: {x: -0.027480043, y: 0.008491081}
+  m_Size: {x: 0.6770497, y: 0.8891832}
   m_Direction: 0
 --- !u!1 &837037537671434742
 GameObject:
@@ -975,5 +975,5 @@ Transform:
   - {fileID: 837037537258986754}
   - {fileID: 837037537495759264}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
