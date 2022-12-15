@@ -75,7 +75,7 @@ public class MakeHuschSound : MonoBehaviour
 
         }
         //Makes standard hush
-        else if (Input.GetKeyUp("space") && !doesHuschSound)
+        else if (Input.GetKeyUp("space") && !doesHuschSound && chargedHush<=0.6f)
         {
             chargedHush = 1;
             doesHuschSound = true;
@@ -83,6 +83,7 @@ public class MakeHuschSound : MonoBehaviour
             audioSource.Play();
             animatorKarin.SetBool("IsHushing", true);
             gameObject.transform.localScale = new Vector3(1, 1, 1);
+            playerController1.karinCantMove = true;
 
         }
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
