@@ -487,7 +487,7 @@ public class NPCMovement : MonoBehaviour
         //if on left side of table
         else if (tables[lowestIndex].transform.position.x > transform.position.x)
         {
-            Vector3 instantiateBookVector = transform.position - new Vector3(0.5f, 0, 0);
+            Vector3 instantiateBookVector = transform.position + new Vector3(0.5f, 0, 0);
             Instantiate(blankBook, instantiateBookVector + new Vector3(0, 0.5f, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
             //Instantiate(blankBook, transform.position + new Vector3(0.5f, 0, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
         }
