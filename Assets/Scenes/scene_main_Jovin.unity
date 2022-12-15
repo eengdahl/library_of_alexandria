@@ -1930,6 +1930,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2570604}
+    - target: {fileID: 6176864220257201135, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6176864220609053188, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -1984,11 +1988,15 @@ PrefabInstance:
       objectReference: {fileID: 429673035}
     - target: {fileID: 6176864220920934428, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6176864221107140044, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176864221267170185, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.000002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
