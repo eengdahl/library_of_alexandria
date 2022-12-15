@@ -11,6 +11,7 @@ public class WinAndLoseState : MonoBehaviour
     public SpriteRenderer fellOver;
     public SpriteRenderer toLoud;
     public SpriteRenderer winScreen;
+    NoiseHandeler noiseHandeler;
 
     string sceneName;
     Scene currentScene;
@@ -20,6 +21,7 @@ public class WinAndLoseState : MonoBehaviour
     SwayBooksList swayBooksList;
     private void Start()
     {
+        noiseHandeler = FindObjectOfType<NoiseHandeler>();
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         swayBooksList = FindObjectOfType<SwayBooksList>();
@@ -40,9 +42,9 @@ public class WinAndLoseState : MonoBehaviour
         //    }
         //}
 
-        if (noiseSlider.value >= noiseSlider.maxValue)
+        if (noiseHandeler.soundLevelInRoom >= 100)
         {
-
+            
             toLoud.enabled = true;
             endTimer += Time.deltaTime;
             //shuting down the other win/fail conditions
