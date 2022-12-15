@@ -23,7 +23,7 @@ public class FireHusched : MonoBehaviour
         {
             fireParent.transform.localScale = fireGrowScript.minSize;
 
-            aS.Play();
+            //aS.Play();
          
            
         }

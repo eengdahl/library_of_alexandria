@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4018815666387630682}
   - component: {fileID: -607556497891285802}
   - component: {fileID: 3463792092136192926}
+  - component: {fileID: 2964422865552800703}
   m_Layer: 0
   m_Name: FireNew
   m_TagString: Fire
@@ -37,7 +38,7 @@ Transform:
   - {fileID: 1457546390569188750}
   - {fileID: 1978450837621865832}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2004648301186197813
 MonoBehaviour:
@@ -158,6 +159,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0065977266, y: 0.09659675}
   m_Size: {x: 0.38680497, y: 0.20680703}
   m_Direction: 1
+--- !u!114 &2964422865552800703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004648301186197819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a8059d2852f8344acef93232582722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5285996200380992133
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,3 +403,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireParent: {fileID: 2004648301186197819}
+  sorry: {fileID: 0}

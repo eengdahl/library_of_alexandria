@@ -11,7 +11,7 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] Animator redSpriteAnimator;
     SpriteRenderer spriteRenderer;
 
-
+   
     //BasicMovement
     [SerializeField]
     float moveSpeed;
@@ -82,9 +82,10 @@ public class NPCMovement : MonoBehaviour
     bool atTableStart = false;
     bool atTableFinish = false;
     public Transform[] toTableWayPoints;
+
     private void Awake()
     {
-
+      
 
     }
     void Start()
