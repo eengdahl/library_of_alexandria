@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     
     void Start()
     {
-        
+        Cursor.visible = false;
     }
     void Update()
     {
@@ -18,11 +18,13 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isGamePaused == false)
-            {   
+            {
+                Cursor.visible = true;
                 PauseGame();
             }
             else
             {
+                Cursor.visible = false;
                 ResumeGame();
             }
         }  
