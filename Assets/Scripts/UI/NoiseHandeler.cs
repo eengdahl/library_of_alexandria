@@ -68,7 +68,7 @@ public class NoiseHandeler : MonoBehaviour
         noiseSlider.value = soundLevelInRoom;
 
 
-        if (soundLevelInRoom >= 1 && soundLevelInRoom < 33)
+        if (soundLevelInRoom >= 0 && soundLevelInRoom < 33)
         {
             green.enabled = true;
             greenChild.enabled = true;
@@ -78,7 +78,7 @@ public class NoiseHandeler : MonoBehaviour
             yellow.enabled = false;
             yellowChild.enabled = false;
         }
-        if (soundLevelInRoom >= 33 && soundLevelInRoom < 66)
+        if (soundLevelInRoom >= 20 && soundLevelInRoom < 66)
         {
             yellow.enabled = true;
             yellowChild.enabled = true;
@@ -104,7 +104,7 @@ public class NoiseHandeler : MonoBehaviour
             yellow.enabled = false;
             yellowChild.enabled = false;
 
-            green.enabled = false;
+          //  green.enabled = false;
             greenChild.enabled = false;
 
         }
