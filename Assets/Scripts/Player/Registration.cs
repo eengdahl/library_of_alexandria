@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Registration : MonoBehaviour
 {
@@ -42,12 +43,28 @@ public class Registration : MonoBehaviour
 
             if (timer > spawnrate)
             {
-                Vector3 thisSpawnPoint = bookSpawnPoint.transform.position + new Vector3(0, amountRegistered / 10f);
-                
-                GameObject book = Instantiate(books[UnityEngine.Random.Range(0, books.Count)], thisSpawnPoint, Quaternion.identity);
-                registeredBooks.Add(book);
-                
+                    Vector3 thisSpawnPoint = bookSpawnPoint.transform.position + new Vector3(0, amountRegistered / 10f);
 
+                    //If tutorial, do special spawn
+                    // Retrieve the name of this scene.
+                    Scene currentScene = SceneManager.GetActiveScene();
+                    string sceneName = currentScene.name;
+                    if (sceneName == "scene_main_julia")
+                    {
+                        GameObject booktut = Instantiate(books[2], thisSpawnPoint, Quaternion.identity);
+                        registeredBooks.Add(booktut);
+                        amountRegistered += 1;
+                        deliverBooks.AddBookToTable(-1);
+                        timer = 0;
+                        return;
+                    }
+
+
+
+                //Regular registration of books 
+                GameObject book = Instantiate(books[UnityEngine.Random.Range(0, books.Count)], thisSpawnPoint, Quaternion.identity);
+
+                registeredBooks.Add(book);
                 amountRegistered += 1;
                 deliverBooks.AddBookToTable(-1);
                 timer = 0;

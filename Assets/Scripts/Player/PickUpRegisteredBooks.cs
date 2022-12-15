@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickUpRegisteredBooks : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class PickUpRegisteredBooks : MonoBehaviour
                 {
                     if (inventoryPlayer.isFull[i] == false)
                     {
+
+                  
                         //BOOK CAN BE ADDED TO INVENTORY
                         inventoryPlayer.isFull[i] = true;
                         Instantiate(bookcolor, inventoryPlayer.slots[i].transform, false);
