@@ -67,7 +67,7 @@ public class MakeHuschSound : MonoBehaviour
             gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
             if(chargedHush > 1)
             {
-                lenghtOfHusch = 3f;
+                lenghtOfHusch = chargedHush/2;
 
             }
             chargedHush = 0;

@@ -477,13 +477,19 @@ public class NPCMovement : MonoBehaviour
         int lowestIndex;
         lowestIndex = GetIndexOfLowestValue(distanceBetween);
         //SpawnBook
+        //If on right side of table
         if (tables[lowestIndex].transform.position.x < transform.position.x)
         {
-            Instantiate(blankBook, transform.position - new Vector3(0.5f, 0, 0), tables[lowestIndex].transform.rotation);
+            Vector3 instantiateBookVector = transform.position - new Vector3(0.5f, 0, 0);
+            //Instantiate(blankBook, transform.position - new Vector3(0.5f, 0, 0) , tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
+            Instantiate(blankBook, instantiateBookVector + new Vector3(0, 0.5f, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
         }
+        //if on left side of table
         else if (tables[lowestIndex].transform.position.x > transform.position.x)
         {
-            Instantiate(blankBook, transform.position + new Vector3(0.5f, 0, 0), tables[lowestIndex].transform.rotation);
+            Vector3 instantiateBookVector = transform.position - new Vector3(0.5f, 0, 0);
+            Instantiate(blankBook, instantiateBookVector + new Vector3(0, 0.5f, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
+            //Instantiate(blankBook, transform.position + new Vector3(0.5f, 0, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
         }
         //Instantiate(blankBook, tables[lowestIndex].transform.position + new Vector3(randomX, randomY, 0), tables[lowestIndex].transform.rotation);
     }
