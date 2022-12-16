@@ -10,6 +10,9 @@ public class Menu : MonoBehaviour
     public GameObject ButtonPanelOnOff;
     public GameObject CreditsOnOff;
     public GameObject SettingsOnOff;
+
+    public Sprite newbuttonimage;
+    public Button button;
     public void Quit()
     {
 #if UNITY_EDITOR
@@ -19,6 +22,10 @@ public class Menu : MonoBehaviour
 #endif
     }
 
+    public void Changebuttonimage()
+    {
+        button.image.sprite = newbuttonimage;
+    }
     public void StartGame()
     {
         SceneManager.LoadScene("scene_main_julia");
