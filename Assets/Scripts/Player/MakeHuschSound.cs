@@ -16,6 +16,7 @@ public class MakeHuschSound : MonoBehaviour
     CircleCollider2D collider2D;
     PlayerController1 playerController1;
     float startSize = 1;
+    Vector3 startSizeCharged = new Vector3(1f, 1f, 0);
 
 
     // Start is called before the first frame update
@@ -46,7 +47,7 @@ public class MakeHuschSound : MonoBehaviour
                 //gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
 
             }
-            gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
+            gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1) + startSizeCharged;
         }
         //Makes a chargedHush
         if (Input.GetKeyUp("space") && chargedHush > 0.6f)
@@ -64,7 +65,7 @@ public class MakeHuschSound : MonoBehaviour
 
             //Setting hushradius after how long hush was charged
             // collider2D.radius = chargedHush;
-            gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
+            gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1) + startSizeCharged;
             if(chargedHush > 1)
             {
                 lenghtOfHusch = chargedHush/2;
@@ -75,7 +76,7 @@ public class MakeHuschSound : MonoBehaviour
 
         }
         //Makes standard hush
-        else if (Input.GetKeyUp("space") && !doesHuschSound && chargedHush<=0.6f)
+        else if (Input.GetKeyUp("space") && !doesHuschSound && chargedHush<=0.3f)
         {
             chargedHush = 1;
             doesHuschSound = true;
