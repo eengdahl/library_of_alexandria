@@ -7,6 +7,7 @@ public class EarShake : MonoBehaviour
     public NoiseHandeler noiseHandlerScript;
     bool shaking;
     public float shakeAmount;
+    float timer;
     //public float shakeSpeed;
     Vector2 earStartPos;
     void Start()
@@ -18,7 +19,7 @@ public class EarShake : MonoBehaviour
     void Update()
     {
         //start shaking the ear if only 10% before losing of sound
-        if (noiseHandlerScript.soundLevelInRoom >= 90)
+        if (noiseHandlerScript.soundLevelInRoom >= 95)
         {
             shaking = true;
         }
@@ -29,7 +30,13 @@ public class EarShake : MonoBehaviour
         }
         if (shaking)
         {
-            transform.position = earStartPos + Random.insideUnitCircle * shakeAmount;
+            timer += Time.deltaTime;
+            
+            if (timer > 0.05)
+            { 
+                transform.position = earStartPos + Random.insideUnitCircle * shakeAmount;
+                timer = 0;
+            }
         }
 
         
