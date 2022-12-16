@@ -50,7 +50,7 @@ public class MakeHuschSound : MonoBehaviour
             gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1) + startSizeCharged;
         }
         //Makes a chargedHush
-        if (Input.GetKeyUp("space") && chargedHush > 0.6f)
+        if (Input.GetKeyUp("space") && chargedHush > 0.3f)
         {
             //finetunear hur effektiv chargehush ska vara, work in progress
             //chargedHush /= 1.50f;

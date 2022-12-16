@@ -58,6 +58,7 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
            set_books_in_bookshelf_information.SetActive(false);
            End_of_tutorial_text.SetActive(true);
            continueButton.SetActive(true);
+            Cursor.visible = true;
            Debug.Log("test.............jjjgggggggggg..........");
         }
     }

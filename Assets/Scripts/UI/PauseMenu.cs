@@ -7,7 +7,11 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isGamePaused = false;
     [SerializeField] GameObject PauseMenunow;
-    
+
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
     void Start()
     {
         
@@ -20,12 +24,12 @@ public class PauseMenu : MonoBehaviour
         {
             if (isGamePaused == false)
             {
-                //Cursor.visible = true;
+                Cursor.visible = true;
                 PauseGame();
             }
             else
             {
-                //Cursor.visible = false;
+                Cursor.visible = false;
                 ResumeGame();
             }
         }  
