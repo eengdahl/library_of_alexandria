@@ -28,7 +28,7 @@ public class WinAndLoseState : MonoBehaviour
     }
     private void Update()
     {
-        if (noiseHandeler.soundLevelInRoom >= 100)
+        if (noiseHandeler.soundLevelInRoom >= 100 && swayBooksList.toMany == false && winScreen.enabled == false)
         {
 
             toLoud.enabled = true;
@@ -41,7 +41,7 @@ public class WinAndLoseState : MonoBehaviour
                 SceneManager.LoadScene("Meny");
             }
         }
-        if (swayBooksList.toMany == true)
+        if (swayBooksList.toMany == true&& toLoud.enabled == false && winScreen.enabled == false)
         {
 
             endTimer += Time.deltaTime;
