@@ -2855,8 +2855,6 @@ MonoBehaviour:
   ButtonPanelOnOff: {fileID: 253633186}
   CreditsOnOff: {fileID: 940642072}
   SettingsOnOff: {fileID: 1430769405}
-  newbuttonimage: {fileID: 0}
-  button: {fileID: 0}
 --- !u!4 &1616258482
 Transform:
   m_ObjectHideFlags: 0
