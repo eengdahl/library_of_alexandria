@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     
     void Start()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
     void Update()
     {
@@ -19,12 +19,12 @@ public class PauseMenu : MonoBehaviour
         {
             if (isGamePaused == false)
             {
-                Cursor.visible = true;
+                //Cursor.visible = true;
                 PauseGame();
             }
             else
             {
-                Cursor.visible = false;
+                //Cursor.visible = false;
                 ResumeGame();
             }
         }  

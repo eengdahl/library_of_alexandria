@@ -204,7 +204,7 @@ Transform:
   - {fileID: 1798742245}
   - {fileID: 1694558326}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &399778598
 MonoBehaviour:
@@ -516,12 +516,12 @@ MonoBehaviour:
   seventhArray: []
   leftCheckerSpotsArray:
   - {fileID: 751693817119872133}
-  - {fileID: 8621857657826231894}
   - {fileID: 953785073201580504}
+  - {fileID: 8621857657826231894}
   rightCheckerSpotsArray:
   - {fileID: 6821076694609557080}
-  - {fileID: 8857526428157197780}
   - {fileID: 8632649995959659432}
+  - {fileID: 8857526428157197780}
   firstToTableArray:
   - {fileID: 3359307752661708009}
   - {fileID: 3359307752484258580}
@@ -559,12 +559,15 @@ MonoBehaviour:
   - {fileID: 403129990830604889}
   - {fileID: 6805894555604231660}
   - {fileID: 6821076694609557080}
-  leftL: []
-  leftM: []
-  leftR: []
-  rightL: []
-  rightM: []
-  rightR: []
+  checkerLeftL:
+  - {fileID: 8621857657826231894}
+  checkerLeftM:
+  - {fileID: 751693817119872133}
+  checkerLeftR:
+  - {fileID: 953785073201580504}
+  checkerRightL: []
+  checkerRightM: []
+  checkerRightR: []
   firstExitArray:
   - {fileID: 6821076694609557080}
   - {fileID: 6805894555604231660}

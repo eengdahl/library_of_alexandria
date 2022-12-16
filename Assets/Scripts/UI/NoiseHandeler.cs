@@ -25,7 +25,7 @@ public class NoiseHandeler : MonoBehaviour
 
     private void Start()
     {
-        noiseSlider.maxValue = 100;
+        noiseSlider.maxValue = 10000000;
 
     }
 

@@ -19,7 +19,8 @@ public class WayPointsArmory : MonoBehaviour
      List<Transform[]> listOfExitArrays;
      List<Transform[]> listOfReasercherArrays;
      List<Transform[]> listOfToTableArrays;
-    List<Transform[]> listOfCheckerSpotsLeft;
+     //List<Transform[]> listOfCheckerSpotsLeft;
+    //List<Transform[]> listOfCheckerSpotsRight;
     //Checker spots
     public Transform[] leftCheckerSpotsArray;
     public Transform[] rightCheckerSpotsArray;
@@ -33,12 +34,12 @@ public class WayPointsArmory : MonoBehaviour
     public Transform[] seventhToTableArray;
     public Transform[] eightToTableArray;
     //Chair checker spots
-    public Transform[] leftL;
-    public Transform[] leftM;
-    public Transform[] leftR;
-    public Transform[] rightL;
-    public Transform[] rightM;
-    public Transform[] rightR;
+    public Transform[] checkerLeftL;
+    public Transform[] checkerLeftM;
+    public Transform[] checkerLeftR;
+    public Transform[] checkerRightL;
+    public Transform[] checkerRightM;
+    public Transform[] checkerRightR;
 
     //Exit arrays
     public Transform[] firstExitArray;
@@ -93,22 +94,6 @@ public class WayPointsArmory : MonoBehaviour
         listOfToTableArrays.Add(sixthToTableArray);
         listOfToTableArrays.Add(seventhToTableArray);
         listOfToTableArrays.Add(eightToTableArray);
-
-        //Chair Checker spots
-        //left
-        listOfCheckerSpotsLeft = new List<Transform[]>();
-        listOfCheckerSpotsLeft.Add(leftL);
-        listOfCheckerSpotsLeft.Add(leftM);
-        listOfCheckerSpotsLeft.Add(leftR);
-
-
-
-    //public Transform[] leftL;
-    //public Transform[] leftM;
-    //public Transform[] leftR;
-    //public Transform[] rightL;
-    //public Transform[] rightM;
-    //public Transform[] rightR;
 }
 
     public Transform[] ResearcherGetArray(int index)

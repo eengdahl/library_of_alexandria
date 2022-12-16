@@ -11,7 +11,7 @@ public class NPCMovement : MonoBehaviour
     [SerializeField] Animator redSpriteAnimator;
     SpriteRenderer spriteRenderer;
 
-   
+
     //BasicMovement
     [SerializeField]
     float moveSpeed;
@@ -39,12 +39,6 @@ public class NPCMovement : MonoBehaviour
 
     //Chairs arrays
     ChairLists chairListScript;
-    public GameObject[] chairsLeftR;
-    public GameObject[] chairsRightR;
-    public GameObject[] chairsMiddleR;
-    public GameObject[] chairsLeftL;
-    public GameObject[] chairsRightL;
-    public GameObject[] chairsMiddleL;
 
 
     bool onLeftSide = false;
@@ -53,6 +47,10 @@ public class NPCMovement : MonoBehaviour
     float seatedTimer = 0;
     float willBeSeatedFor;
     public bool isSeated = false;
+    //Chair checker Spots
+    Vector3 nextCheckerSpot;
+    int chairCheckerIndex = 0;
+    int chairSpotIndex = 0;
 
     //Waypoints
     WayPointsArmory wayPointsArmory;
@@ -72,6 +70,9 @@ public class NPCMovement : MonoBehaviour
     Transform[] exitWayPoints;
     bool atExitSpot = false;
 
+
+
+
     //Move to table
 
     int tableWayPointIndex = 0;
@@ -85,7 +86,7 @@ public class NPCMovement : MonoBehaviour
 
     private void Awake()
     {
-      
+
 
     }
     void Start()
@@ -113,121 +114,211 @@ public class NPCMovement : MonoBehaviour
         transform.position = wayPoints[waypointIndex].transform.position; // Set location to
 
         //Chairs 
-        
+
         chairListScript = FindObjectOfType<ChairLists>();
-        //Left side:
-        chairsLeftL = chairListScript.chairsLeftLeft;
-        chairsRightL = chairListScript.chairsLeftRight;
-        chairsMiddleL = chairListScript.chairsLeftMiddle;
-        //Right side:
-        chairsRightR = chairListScript.chairsRightRight;
-        chairsLeftR = chairListScript.chairsRightLeft;
-        chairsMiddleR = chairListScript.chairsRightMiddle;
 
 
-        //chairsLeft = GameObject.FindGameObjectsWithTag("Chair Face Left");
-        //chairsRight = GameObject.FindGameObjectsWithTag("Chair Face Right");
-        //chairs = chairsRight.Concat(chairsLeft).ToArray();
 
     }
 
 
     void Update()
     {
-        if (gameObject.tag == "NPC")
-        { //If NPC havent picked up a book yet
-            if (nPCbookPickUp.haveBook == false && isLeaving == false && isSeated == false)
-            {
+        //To se if NPC is on left or right side of map
+        if (transform.position.x < 0)
+        {
+            onLeftSide = true;
+        }
+        if (transform.position.x >= 0)
+        {
+            onLeftSide = false;
+        }
 
-                CanMove();
+
+
+
+        //If NPC havent picked up a book yet
+        if (nPCbookPickUp.haveBook == false && isLeaving == false && isSeated == false)
+        {
+
+            CanMove();
+        }
+        else if (isLeaving == true)
+        {
+
+            ExitMove3();
+        }
+        //If NPC have picked up a book
+        else if (nPCbookPickUp.haveBook == true)
+        {
+
+            //If has chair
+            if (hasChair)
+            {
+                if (canMove == true)
+                {
+                    stopTimer = 0;
+                    MoveToChair();
+                }
+                else if (canMove == false)
+                {
+                    //Idle animators
+                    thisAnimator.SetBool("isWalking", false);
+
+
+                    stopTimer += Time.deltaTime;
+                    if (stopTimer > stillAfterHusch)
+                    {
+                        canMove = true;
+                    }
+                }
+
+                LeaveChair();
+
             }
-            else if (isLeaving == true)
+            //If dont have chair
+            else if (!hasChair && !atTableFinish)
             {
+                //CheckIfChairsEmpty();
+                //CanMove();
+                MoveToChairCheckerArea();
 
-                ExitMove3();
             }
-            //If NPC have picked up a book
-            else if (nPCbookPickUp.haveBook == true)
+            if (atTableFinish && !hasChair) // start moving back and forth if no seats found
             {
-
-                //If has chair
-                if (hasChair)
-                {
-                    if (canMove == true)
-                    {
-                        stopTimer = 0;
-                        MoveToChair();
-                    }
-                    else if (canMove == false)
-                    {
-                        //Idle animators
-                        thisAnimator.SetBool("isWalking", false);
-                        
-
-                        stopTimer += Time.deltaTime;
-                        if (stopTimer > stillAfterHusch)
-                        {
-                            canMove = true;
-                        }
-                    }
-
-                    LeaveChair();
-
-                }
-                //If dont have chair
-                else if (!hasChair && !atTableFinish)
-                {
-                    //CheckIfChairsEmpty();
-                    //CanMove();
-                    MoveToChairCheckerArea();
-                   
-                }
-                if (atTableFinish)
-                {
-                    CheckIfChairsEmpty();
-                    if (hasChair)
-                    {
-                        atTableFinish = false;
-                    }
-                }
+                
+                LookingForFreeSeats();
             }
         }
+
 
 
     }
-    void CheckIfChairsEmpty()
+    void LookingForFreeSeats()
     {
+
+      
+        transform.position = Vector3.MoveTowards(transform.position, nextCheckerSpot, moveSpeed * Time.deltaTime);
+
         if (onLeftSide)
         {
-            chairs = chairsMiddleL;
-            chairOccupiedScript = chairsMiddleL[chairPicker].GetComponent<ChairOccupied>();
-            
-            if (chairOccupiedScript.chairOccupied == false)
-            {
-                chairOccupiedScript.chairOccupied = true;
-                hasChair = true;
-            }
-            else if (chairOccupiedScript.chairOccupied == true && !hasChair)
-            {
-                ChairPicker();
-            }
-        }
-        else if (!onLeftSide)
-        {
-            chairs = chairsMiddleR;
-            chairOccupiedScript = chairsMiddleR[chairPicker].GetComponent<ChairOccupied>();
-            
-            if (chairOccupiedScript.chairOccupied == false)
-            {
-                chairOccupiedScript.chairOccupied = true;
-                hasChair = true;
-            }
-            else if (chairOccupiedScript.chairOccupied == true && !hasChair)
-            {
-                ChairPicker();
-            }
-        }
+           
+            chairs = chairListScript.listOfLeftChairArrays[chairCheckerIndex];
 
+            CheckIfChairsEmpty();
+            
+            //If npc reaches the spot where it should check;
+            
+            if (transform.position == nextCheckerSpot)
+            {
+                chairPicker = 0;
+                //Check if any chair is empty
+                //change what chairs its checking when reaching checker spots
+                if (chairCheckerIndex < chairListScript.listOfLeftChairArrays.Count)
+                {
+                    chairCheckerIndex += 1;
+
+                }
+                if (chairCheckerIndex >= chairListScript.listOfLeftChairArrays.Count)
+                {
+                    chairCheckerIndex = 0;
+                }
+                if (chairSpotIndex < wayPointsArmory.leftCheckerSpotsArray.Length)
+                {
+                    chairSpotIndex += 1;
+                }
+                if (chairSpotIndex >= wayPointsArmory.leftCheckerSpotsArray.Length)
+                {
+                    chairSpotIndex = 0;
+                }
+
+                nextCheckerSpot = wayPointsArmory.leftCheckerSpotsArray[chairSpotIndex].position;
+                //NPC sprite flip
+                currentWaypoint = wayPointsArmory.leftCheckerSpotsArray[chairSpotIndex];
+                FlipFacingDirection();
+                
+            }
+
+
+
+            }
+            //Debug.Log("Hello can you see me? On left side bool: "+onLeftSide);
+            if (onLeftSide == false)
+            {
+                
+                chairs = chairListScript.listOfRightChairArrays[chairCheckerIndex];
+
+                CheckIfChairsEmpty();
+            //If npc reaches the spot where it should check;
+           
+
+            if (transform.position == nextCheckerSpot)//(transform.position == nextCheckerSpot)
+                    {
+
+                    chairPicker = 0;
+                    //Check if any chair is empty
+                    //change what chairs its checking when reaching checker spots
+                    if (chairCheckerIndex < chairListScript.listOfRightChairArrays.Count)
+                    {
+                        chairCheckerIndex += 1;
+
+                    }
+                    else if (chairCheckerIndex >= chairListScript.listOfRightChairArrays.Count)
+                    {
+                        chairCheckerIndex = 0;
+                    }
+                    if (chairSpotIndex < wayPointsArmory.rightCheckerSpotsArray.Length)
+                    {
+                        chairSpotIndex += 1;
+                    }
+                    if (chairSpotIndex >= wayPointsArmory.rightCheckerSpotsArray.Length)
+                    {
+                        chairSpotIndex = 0;
+                    }
+                    nextCheckerSpot = wayPointsArmory.rightCheckerSpotsArray[chairSpotIndex].position;
+                    
+                    //NPC sprite flip
+                    currentWaypoint = wayPointsArmory.rightCheckerSpotsArray[chairSpotIndex];
+                    FlipFacingDirection();
+                    
+                }
+        }
+        void CheckIfChairsEmpty()
+        {
+            if (onLeftSide)
+            {
+                chairs = chairListScript.listOfLeftChairArrays[chairCheckerIndex];
+                chairOccupiedScript = chairs[chairPicker].GetComponent<ChairOccupied>();//chairsMiddleL[chairPicker].GetComponent<ChairOccupied>();
+
+                if (chairOccupiedScript.chairOccupied == false)
+                {
+                    chairOccupiedScript.chairOccupied = true;
+                    hasChair = true;
+                    atTableFinish = false;
+                }
+                else if (chairOccupiedScript.chairOccupied == true && !hasChair)
+                {
+                    ChairPicker();
+                }
+            }
+            else if (onLeftSide == false)
+            {
+                chairs = chairListScript.listOfRightChairArrays[chairCheckerIndex];
+                chairOccupiedScript = chairs[chairPicker].GetComponent<ChairOccupied>();
+
+                if (chairOccupiedScript.chairOccupied == false)
+                {
+                    chairOccupiedScript.chairOccupied = true;
+                    hasChair = true;
+                    atTableFinish = false;
+                }
+                else if (chairOccupiedScript.chairOccupied == true && !hasChair)
+                {
+                    ChairPicker();
+                }
+            }
+
+        }
     }
     void LeaveChair()
     {
@@ -235,14 +326,14 @@ public class NPCMovement : MonoBehaviour
         if (isSeated)// start timer when at chair
         {
             seatedTimer += Time.deltaTime;
-           
+
             thisAnimator.SetFloat("isSitting", seatedTimer);
             if (chairs[chairPicker].tag == "Chair Face Left")
             {
-                transform.localScale = new Vector2(-2, transform.localScale.y);               
+                transform.localScale = new Vector2(-2, transform.localScale.y);
             }
             else if (chairs[chairPicker].tag == "Chair Face Right")
-            {               
+            {
                 transform.localScale = new Vector2(2, transform.localScale.y);
             }
         }
@@ -263,11 +354,11 @@ public class NPCMovement : MonoBehaviour
     }
     void ChairPicker()
     {
-        if (chairPicker < chairs.Length-1)
+        if (chairPicker < chairs.Length - 1)
         {
             chairPicker += 1;
         }
-        else if (chairPicker >= chairs.Length)
+        if (chairPicker >= chairs.Length)
         {
             chairPicker = 0;
         }
@@ -275,17 +366,17 @@ public class NPCMovement : MonoBehaviour
     }
     void MoveToChair()
     {
-        if(!isSeated)
+        if (!isSeated)
         {
             FlipFacingDirection();
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position-new Vector3(0f,0.4f,0), moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position - new Vector3(0f, 0.4f, 0), moveSpeed * Time.deltaTime);
         if (transform.position == chairs[chairPicker].transform.position - new Vector3(0, 0.4f, 0)) // if at chair
         {
             isSeated = true;
-        }      
-        currentWaypoint = chairs[chairPicker].transform;      
+        }
+        currentWaypoint = chairs[chairPicker].transform;
     }
     void CanMove()
     {
@@ -298,7 +389,7 @@ public class NPCMovement : MonoBehaviour
         {
             //Idle animators
             thisAnimator.SetBool("isWalking", false);
-            
+
 
             stopTimer += Time.deltaTime;
             if (stopTimer > stillAfterHusch)
@@ -310,6 +401,15 @@ public class NPCMovement : MonoBehaviour
 
     void MoveToChairCheckerArea()
     {
+        ////To se if NPC is on left or right side of map
+        //if (transform.position.x < 0)
+        //{
+        //    onLeftSide = true;
+        //}
+        //else if (transform.position.x > 0)
+        //{
+        //    onLeftSide = false;
+        //}
         thisAnimator.SetBool("isWalking", true);
         float distanceFinal = Vector3.Distance(transform.position, listOfToTableStarts[0].position);
         //Loop through all moveToTableStarts and find the closest one;
@@ -317,11 +417,11 @@ public class NPCMovement : MonoBehaviour
         {
             for (int i = 0; i < listOfToTableStarts.Count; i++)
             {
-                float distance = Vector3.Distance(transform.position, listOfToTableStarts[i].position);
-                if (distanceFinal > distance)
+                float distanceCheck = Vector3.Distance(transform.position, listOfToTableStarts[i].position);
+                if (distanceFinal > distanceCheck)
                 {
                     indexPickerTableArray = i;
-                    distanceFinal = distance;
+                    distanceFinal = distanceCheck;
                 }
                 if (i == listOfToTableStarts.Count - 1)
                 {
@@ -330,12 +430,13 @@ public class NPCMovement : MonoBehaviour
             }
         }
         //Move to path start
-        if(!atTableStart)
+        if (!atTableStart)
         {
             transform.position = Vector3.MoveTowards(transform.position, listOfToTableStarts[indexPickerTableArray].transform.position, moveSpeed * Time.deltaTime);
         }
         if (!atTableStart && transform.position == listOfToTableStarts[indexPickerTableArray].transform.position)
         {
+
             atTableStart = true;
         }
         //Get array of waypoints to move to table area
@@ -348,56 +449,58 @@ public class NPCMovement : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, toTableWayPoints[tableWayPointIndex].transform.position, moveSpeed * Time.deltaTime);
         }
-        if (transform.position == toTableWayPoints[tableWayPointIndex].transform.position)
+        float distance = Vector3.Distance(transform.position, toTableWayPoints[tableWayPointIndex].transform.position);
+        if (distance<0.2f)//(transform.position == toTableWayPoints[tableWayPointIndex].transform.position)
         {
             tableWayPointIndex += 1;
         }
         if (tableWayPointIndex == toTableWayPoints.Length)//If reaches the last waypoint set a bool to true so it starts searching for chair
         {
 
-            atTableFinish = true;
+            if (onLeftSide)
+            {
+                nextCheckerSpot = wayPointsArmory.leftCheckerSpotsArray[0].position;
+            }
+            if (!onLeftSide)
+            {
+                nextCheckerSpot = wayPointsArmory.rightCheckerSpotsArray[0].position;
+            }
 
+
+            atTableFinish = true;
         }
-        //To se if NPC is on left or right side of map
-        if(transform.position.x < 0)
-        {
-            onLeftSide = true;
-        }
-        else if (transform.position.x > 0)
-        {
-            onLeftSide = false;
-        }
+
     }
     void ExitMove3()
     {
         //Pick the closest waypoint
         thisAnimator.SetBool("isWalking", true);
-        
+
         float distanceFinal = Vector3.Distance(transform.position, listOfExitStarts[0].position); //Start getting the distance between one exit and the npc
-        
+
         //Loop through all exit paths and find the closest one;
         if (!havePickedExit)
         {
 
-        for (int i = 0; i < listOfExitStarts.Count; i++)
-        {
-            float distance = Vector3.Distance(transform.position, listOfExitStarts[i].position);
-            if (distanceFinal > distance)
+            for (int i = 0; i < listOfExitStarts.Count; i++)
             {
-                indexPickerExitArray = i;
-                distanceFinal = distance;
+                float distance = Vector3.Distance(transform.position, listOfExitStarts[i].position);
+                if (distanceFinal > distance)
+                {
+                    indexPickerExitArray = i;
+                    distanceFinal = distance;
+                }
+                if (i == listOfExitStarts.Count - 1)
+                {
+                    havePickedExit = true;
+                }
             }
-            if (i == listOfExitStarts.Count-1)
-            {
-                havePickedExit = true;
-            }
-        }
 
         }
         //Move to exit spot
         if (!atExitSpot)
         {
-        transform.position = Vector3.MoveTowards(transform.position, listOfExitStarts[indexPickerExitArray].transform.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, listOfExitStarts[indexPickerExitArray].transform.position, moveSpeed * Time.deltaTime);
         }
         if (!atExitSpot && transform.position == listOfExitStarts[indexPickerExitArray].transform.position)
         {
@@ -413,7 +516,7 @@ public class NPCMovement : MonoBehaviour
         //Move out of library
         if (atExitSpot)
         {
-        transform.position = Vector3.MoveTowards(transform.position, exitWayPoints[ExitWayPointIndex].transform.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, exitWayPoints[ExitWayPointIndex].transform.position, moveSpeed * Time.deltaTime);
         }
 
         if (transform.position == exitWayPoints[ExitWayPointIndex].transform.position)
@@ -426,7 +529,7 @@ public class NPCMovement : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-        
+
     }
     void Move()
     {
@@ -480,15 +583,17 @@ public class NPCMovement : MonoBehaviour
         //If on right side of table
         if (tables[lowestIndex].transform.position.x < transform.position.x)
         {
-            Vector3 instantiateBookVector = transform.position - new Vector3(0.5f, 0, 0);
+            float randomPlacement = Random.Range(0, 0.07f);
+            Vector3 instantiateBookVector = transform.position - new Vector3(0.5f, randomPlacement, 0);
             //Instantiate(blankBook, transform.position - new Vector3(0.5f, 0, 0) , tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
-            Instantiate(blankBook, instantiateBookVector + new Vector3(0, 0.5f, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
+            Instantiate(blankBook, instantiateBookVector + new Vector3(randomPlacement, 0.5f, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
         }
         //if on left side of table
         else if (tables[lowestIndex].transform.position.x > transform.position.x)
         {
-            Vector3 instantiateBookVector = transform.position + new Vector3(0.5f, 0, 0);
-            Instantiate(blankBook, instantiateBookVector + new Vector3(0, 0.5f, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
+            float randomPlacement = Random.Range(0, 0.07f);
+            Vector3 instantiateBookVector = transform.position + new Vector3(0.5f, randomPlacement, 0);
+            Instantiate(blankBook, instantiateBookVector + new Vector3(randomPlacement, 0.5f, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
             //Instantiate(blankBook, transform.position + new Vector3(0.5f, 0, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
         }
         //Instantiate(blankBook, tables[lowestIndex].transform.position + new Vector3(randomX, randomY, 0), tables[lowestIndex].transform.rotation);
