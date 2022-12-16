@@ -18,7 +18,7 @@ public class RedLightTurnOnOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(noiseHandlerScript.soundLevelInRoom > 1)
+        if(noiseHandlerScript.soundLevelInRoom > 90)
         {
             
             timer += Time.deltaTime;

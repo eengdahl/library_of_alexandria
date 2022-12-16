@@ -28,42 +28,28 @@ public class WinAndLoseState : MonoBehaviour
     }
     private void Update()
     {
-        //if (timeSlider.value >= timeSlider.maxValue)
-        //{
-        //    endTimer += Time.deltaTime;
-        //    winScreen.enabled = true;
-        //    //shuting down the other win/fail conditions
-        //    noiseSlider.value = 0;
-        //    swayBooksList.toMany = false;
-
-        //    if (endTimer > 10)
-        //    {
-        //        SceneManager.LoadScene("Meny");
-        //    }
-        //}
-
         if (noiseHandeler.soundLevelInRoom >= 100)
         {
-            
+
             toLoud.enabled = true;
             endTimer += Time.deltaTime;
             //shuting down the other win/fail conditions
             swayBooksList.toMany = false;
 
-            if (endTimer > 10)
+            if (endTimer > 15)
             {
                 SceneManager.LoadScene("Meny");
             }
         }
         if (swayBooksList.toMany == true)
         {
- 
+
             endTimer += Time.deltaTime;
             fellOver.enabled = true;
             //shuting down the other win/fail conditions
             noiseSlider.value = 0;
 
-            if (endTimer > 10)
+            if (endTimer > 15)
             {
                 SceneManager.LoadScene("Meny");
             }
@@ -72,22 +58,24 @@ public class WinAndLoseState : MonoBehaviour
     public void TimeIsUp()
     {
         endTimer += Time.deltaTime;
-        winScreen.enabled = true;
         //shuting down the other win/fail conditions
         noiseSlider.value = 0;
         swayBooksList.toMany = false;
-
-        if (endTimer > 15)
+        if (fellOver.enabled == false && toLoud.enabled == false)
         {
-            if (sceneName == "scene_main")
+            winScreen.enabled = true;
+            if (endTimer > 15)
             {
-                SceneManager.LoadScene("scene_main_Jovin");
+                if (sceneName == "scene_main")
+                {
+                    SceneManager.LoadScene("scene_main_Jovin");
+                }
+                if (sceneName == "scene_main_Jovin")
+                {
+                    SceneManager.LoadScene("Meny");
+                }
+                //SceneManager.LoadScene("Meny");
             }
-            if (sceneName == "scene_main_Jovin")
-            {
-                SceneManager.LoadScene("Meny");
-            }
-            //SceneManager.LoadScene("Meny");
         }
     }
 }
