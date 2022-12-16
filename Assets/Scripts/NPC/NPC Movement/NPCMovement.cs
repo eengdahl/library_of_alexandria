@@ -108,7 +108,7 @@ public class NPCMovement : MonoBehaviour
 
         wayPointsArmory = FindObjectOfType<WayPointsArmory>();
         //Waypoint Picker
-        movementArrayPickerIndex = Random.Range(0, 2);
+        movementArrayPickerIndex = Random.Range(0, 4);
 
         wayPoints = wayPointsArmory.GetArray(movementArrayPickerIndex);
         transform.position = wayPoints[waypointIndex].transform.position; // Set location to
