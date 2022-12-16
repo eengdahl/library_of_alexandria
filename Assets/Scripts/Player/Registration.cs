@@ -28,7 +28,7 @@ public class Registration : MonoBehaviour
     {
         swayBookScript = FindObjectOfType<SwayBooksList>();
         amountRegistered = 0;
-        spawnrate = 5;
+        spawnrate = 4;
         deliverBooks = FindObjectOfType<DeliverBooks>();
         inventoryPlayer = FindObjectOfType<InventoryPlayer>();
         aS = GetComponent<AudioSource>();
