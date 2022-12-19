@@ -56,6 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSize: {x: 0.3, y: 0.3, z: 1}
   isMaxSize: 0
+  fireHuschedScript: {fileID: 1884350436145350995}
   timerEnd: 1
 --- !u!212 &2004648301186197812
 SpriteRenderer:
@@ -1013,3 +1014,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireParent: {fileID: 2004648301186197819}
   sorry: {fileID: 0}
+  fireIsHusched: 0

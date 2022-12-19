@@ -3177,6 +3177,7 @@ GameObject:
   - component: {fileID: 6176864220609053189}
   - component: {fileID: 1016374378}
   - component: {fileID: 6251720632631648105}
+  - component: {fileID: 2644934372659296123}
   m_Layer: 0
   m_Name: GameProcesses
   m_TagString: Untagged
@@ -3274,6 +3275,19 @@ MonoBehaviour:
   fellOver: {fileID: 1714732223}
   toLoud: {fileID: 130281339}
   winScreen: {fileID: 1784124354}
+  playerController: {fileID: 0}
+--- !u!114 &2644934372659296123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176864220609053191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5135d334fcc1fd740a5086878c3e3ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6176864220612409773
 GameObject:
   m_ObjectHideFlags: 0

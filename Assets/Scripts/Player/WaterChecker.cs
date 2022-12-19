@@ -5,13 +5,13 @@ using UnityEngine;
 public class WaterChecker : MonoBehaviour
 {
     float halfSpeed;
-    float fullSpeed;
+    float normalSpeed;
     public PlayerController1 playerMovement;
     public SpriteMask spriteMask;
 
     private void Start()
     {
-        fullSpeed = playerMovement.speed;
+        normalSpeed = playerMovement.speed;
         halfSpeed = playerMovement.speed / 2;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,7 +32,7 @@ public class WaterChecker : MonoBehaviour
         if (collision.CompareTag("Water"))
         {
             
-            playerMovement.speed = fullSpeed;
+            playerMovement.speed = normalSpeed;
         }
         if (collision.CompareTag("WaterInside"))
         {

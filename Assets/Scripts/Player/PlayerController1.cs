@@ -12,10 +12,11 @@ public class PlayerController1 : MonoBehaviour
     SpriteRenderer sprite;
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
-    Vector2 inputAxis;
+    public Vector2 inputAxis;
     bool facingRight = false;
     public bool karinCantMove = false;
     Animator animator;
+    public bool isMoving;
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -35,6 +36,14 @@ public class PlayerController1 : MonoBehaviour
 
         inputAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = inputAxis.normalized * speed;
+        if (inputAxis.x>0 || inputAxis.x < 0 || inputAxis.y < 0|| inputAxis.y > 0)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
 
 
     }

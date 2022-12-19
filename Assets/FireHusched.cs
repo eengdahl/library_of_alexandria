@@ -10,6 +10,7 @@ public class FireHusched : MonoBehaviour
     MakeHuschSound makeHuschSoundScriptPlayer;
     AudioSource aS;
     public AudioClip sorry;
+    public bool fireIsHusched;
     private void Start()
     {
         makeHuschSoundScriptPlayer = FindObjectOfType<MakeHuschSound>();
@@ -22,10 +23,8 @@ public class FireHusched : MonoBehaviour
         if (collision.tag == "Husch" && makeHuschSoundScriptPlayer.doesHuschSound == true)
         {
             fireParent.transform.localScale = fireGrowScript.minSize;
-
             //aS.Play();
-         
-           
+            fireIsHusched = true;        
         }
     }
 

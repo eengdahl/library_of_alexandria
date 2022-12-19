@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class BeingHusched : MonoBehaviour
 {
+
+
+    
     //Should be placed on huschZone on NPCs
     public bool beingHusched = false;
     NPCMakeNoise npcMakeNoise;
@@ -21,6 +24,13 @@ public class BeingHusched : MonoBehaviour
         //iMakeNoise = GetComponent<IamMakingNoise>();
 
     }
+    private void Update()
+    {
+        if (npcMakeNoise.makingNosie == false)
+        {
+            beingHusched = false;
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
 
@@ -36,8 +46,7 @@ public class BeingHusched : MonoBehaviour
             //Stop momvement of NPC
             npcMovement.canMove = false;
 
-
-
+            beingHusched = true;
             iMakeNoise.levelOfSound = 0;
         }
 

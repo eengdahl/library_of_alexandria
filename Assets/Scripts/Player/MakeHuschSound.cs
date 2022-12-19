@@ -16,12 +16,15 @@ public class MakeHuschSound : MonoBehaviour
     CircleCollider2D collider2D;
     PlayerController1 playerController1;
     float startSize = 1;
-    Vector3 startSizeCharged = new Vector3(1f, 1f, 0);
+    SpriteRenderer spriteRenderer;
+    Vector3 startSizeCharged = new Vector3(0.3f, 0.3f, 0);
 
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false;
         audioSource = GetComponent<AudioSource>();
         animatorKarin = GetComponentInParent<Animator>();
         collider2D = GetComponent<CircleCollider2D>();
@@ -35,29 +38,30 @@ public class MakeHuschSound : MonoBehaviour
         //Om du trycker på  activate spela husch ljudet och gör om boolen doesHuschSound till true
         if (Input.GetKey("space") && !doesHuschSound)
         {
+            spriteRenderer.enabled = true;
             if (chargedHush < 1f)//1.5
             {
                 chargedHush += Time.deltaTime;
                 //chargedHush += startSize + (Time.deltaTime/2);
                 //gameObject.transform.localScale = new Vector3(1, 1, 1);
             }
-            else if (chargedHush > 1 && chargedHush < 5)
+            else if (chargedHush > 1 && chargedHush < 3)
             {
-                    chargedHush += 3 * Time.deltaTime;
+                    chargedHush += 1 * Time.deltaTime;
                 //gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
 
             }
             gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1) + startSizeCharged;
         }
         //Makes a chargedHush
-        if (Input.GetKeyUp("space") && chargedHush > 0.3f)
+        if (Input.GetKeyUp("space") && chargedHush > 0.6f)
         {
             //finetunear hur effektiv chargehush ska vara, work in progress
             //chargedHush /= 1.50f;
             Invoke("StopAudio", chargedHush);
 
             doesHuschSound = true;
-
+            
             //picking long hush
             audioSource.clip = longHush;
             audioSource.Play();
@@ -76,7 +80,7 @@ public class MakeHuschSound : MonoBehaviour
 
         }
         //Makes standard hush
-        else if (Input.GetKeyUp("space") && !doesHuschSound && chargedHush<=0.3f)
+        else if (Input.GetKeyUp("space") && !doesHuschSound && chargedHush<=0.6f)
         {
             chargedHush = 1;
             doesHuschSound = true;
@@ -90,6 +94,7 @@ public class MakeHuschSound : MonoBehaviour
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
         if (doesHuschSound)
         {
+            spriteRenderer.enabled = false;
             huschTimer += Time.deltaTime;
 
             if (huschTimer >= lenghtOfHusch)

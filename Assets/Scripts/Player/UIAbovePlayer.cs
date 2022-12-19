@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIAbovePlayer : MonoBehaviour
 {
+    public float yAxis = 1.7f;
     public GameObject player;
     void Start()
     {
@@ -15,6 +16,6 @@ public class UIAbovePlayer : MonoBehaviour
     {
 
 
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1.7f, 0);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + yAxis, 0);
     }
 }

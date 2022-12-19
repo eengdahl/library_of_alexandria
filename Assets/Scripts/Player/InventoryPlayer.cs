@@ -1,13 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryPlayer : MonoBehaviour
 {
     public bool[] isFull;
     public GameObject[] slots;
     GameObject kid;
-    
+    [SerializeField] Image[] inventorySlotsImages; 
+    public bool inventoryFull;
+    public int invSpotsUsed;
+    int spotsWhileInLoop;
+    private void Update()
+    {
+        //Loop for inventory hide and book magnet to work
+        for (int i = 0; i < isFull.Length; i++)
+        {
+            int usedSpots;
+            if (isFull[i] == true)
+            {
+                inventorySlotsImages[i].enabled = true;
+                usedSpots = 1;
+            }
+            else
+            {
+                inventorySlotsImages[i].enabled = false;
+                usedSpots = 0;
+            }
+            spotsWhileInLoop += usedSpots;
+        }
+        invSpotsUsed = spotsWhileInLoop;
+        spotsWhileInLoop = 0;
+        if(invSpotsUsed >= 3)
+        {
+            inventoryFull = true;
+        }
+        else
+        {
+            inventoryFull = false;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //If collision with Bookshelf
@@ -85,6 +118,10 @@ public class InventoryPlayer : MonoBehaviour
             collision.tag = "Researcher";
             }
         }
+    }
+    private void HideInventory()
+    {
+
     }
     public GameObject FindChildWithTag(GameObject parent, string tag)
     {
