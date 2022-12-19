@@ -19,8 +19,7 @@ public class NPC_movment_tutorial : MonoBehaviour
     //   UI text   //  
     /////////////////
     public GameObject emergency_text;
-    public GameObject information_about_pick_up_book;
-    public GameObject Mad_NPC_text;
+    //public GameObject information_about_pick_up_book;
     public GameObject deactivate_information_WASD;
     public GameObject New_Hush_information;
     public GameObject Long_Hush_information;

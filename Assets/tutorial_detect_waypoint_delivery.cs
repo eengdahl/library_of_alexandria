@@ -10,6 +10,8 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
     public GameObject Waypoint_deliver;
     public GameObject End_of_tutorial_text;
     public GameObject continueButton;
+    public GameObject Show_Clock;
+    public GameObject Show_noicemeter;
 
     bool playerHaveRedBook = false;
     GameObject redBookChecker;
@@ -58,6 +60,8 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
            set_books_in_bookshelf_information.SetActive(false);
            End_of_tutorial_text.SetActive(true);
            continueButton.SetActive(true);
+           Show_Clock.SetActive(true);
+           Show_noicemeter.SetActive(true);
             Cursor.visible = true;
            Debug.Log("test.............jjjgggggggggg..........");
         }

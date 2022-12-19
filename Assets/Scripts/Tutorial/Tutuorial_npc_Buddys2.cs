@@ -41,6 +41,9 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     GameObject bookspart;
     Image bookspartImage;
 
+    GameObject findbook;
+    Image findbookimage;
+
     public float collisiontimer;
 
     bool active_1 = false;
@@ -122,7 +125,10 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
                 exclamation_talkbubbel.SetActive(false);
                 //  active_1 = false;
                 walk_out = true;
-                long_hush_information2.SetActive(false);
+                Tutorialbook_pop_up.SetActive(true);
+                
+                //Tutorialbook_pop_up.SetActive(true);
+                //long_hush_information2.SetActive(false);
                 // Tutorialbook_pop_up = GameObject.FindGameObjectWithTag("Book_pick_up_information");
                 // bookspart = GameObject.FindGameObjectWithTag("KAOSBOK");
                 bookspart = GameObject.FindGameObjectWithTag("KAOSBOK");

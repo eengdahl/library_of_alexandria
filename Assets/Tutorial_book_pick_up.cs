@@ -37,10 +37,10 @@ public class Tutorial_book_pick_up : MonoBehaviour
      
            // deactivate_information_Long_hush.SetActive(false);
            // activate_information_book_pick_up.SetActive(true);
-            Tutorialbook_pop_up.SetActive(true);
+            //Tutorialbook_pop_up.SetActive(true);
             Go_away = true;
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
