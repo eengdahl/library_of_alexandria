@@ -84,7 +84,7 @@ public class MakeHuschSound : MonoBehaviour
             chargedHush = 0;
             //playerController1.karinCantMove = true;
             playerController1.speed = playerController1.speed / 2;
-            
+            Invoke("StandardSpeed", lenghtOfHusch);
 
         }
         //Makes standard hush
