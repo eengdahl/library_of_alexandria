@@ -19,7 +19,7 @@ public class EarShake : MonoBehaviour
     void Update()
     {
         //start shaking the ear if only 10% before losing of sound
-        if (noiseHandlerScript.soundLevelInRoom >= 95)
+        if (noiseHandlerScript.soundLevelInRoom >= 85)
         {
             shaking = true;
         }

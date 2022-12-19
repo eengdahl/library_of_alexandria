@@ -20,12 +20,17 @@ public class Spawnerscript : MonoBehaviour
     {
         difficulty = FindObjectOfType<Difficulty>();
 
+        Invoke("StartSpawn", 1);
+
+
+    }
+
+    void StartSpawn()
+    {
         maxNPC_ = difficulty.maxNPC;
         spawnRate = difficulty.spawnrateNPC;
 
-
         InvokeRepeating("SerchForNPC", 5f, spawnRate) ;
-
     }
 
     //// Update is called once per frame
@@ -51,7 +56,6 @@ public class Spawnerscript : MonoBehaviour
         if (NPCs.Length < maxNPC_)
         {
             SpawnNPC();
-            Debug.Log("spawn");
         }
     }
     public void SpawnNPC()
