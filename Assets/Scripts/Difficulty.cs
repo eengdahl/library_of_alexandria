@@ -35,7 +35,7 @@ public class Difficulty : MonoBehaviour
         string sceneName = currentScene.name;
 
 
-        if (sceneName == "scene_main")
+        if (sceneName == "scene_main" || sceneName == "scene_main_emil" || sceneName == "scene_main_julia" || sceneName == "scene_main_Jovin" || sceneName == "scene_main_wildandfun")
         {
             Level1();
         }

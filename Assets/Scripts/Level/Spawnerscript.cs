@@ -34,10 +34,6 @@ public class Spawnerscript : MonoBehaviour
 
 
 
-
-
-
-
     //    timer += Time.deltaTime;
 
     //    if (timer >= timer_between_NPCSpawns)
