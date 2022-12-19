@@ -9,15 +9,15 @@ public class MapQuickSelect : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("[7]"))
+        if (Input.GetKeyDown("7"))
         {
             SceneManager.LoadScene("scene_main_julia");
         }
-        if (Input.GetKeyDown("[8]"))
+        if (Input.GetKeyDown("8"))
         {
             SceneManager.LoadScene("scene_main");
         }
-        if (Input.GetKeyDown("[9]"))
+        if (Input.GetKeyDown("9"))
         {
             SceneManager.LoadScene("scene_main_Jovin");
         }
