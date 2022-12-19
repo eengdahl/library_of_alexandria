@@ -26,26 +26,27 @@ public class AllPlayerUpgradeables : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pondusLevel = 1;
-        makeHuschSoundScript = FindObjectOfType<MakeHuschSound>();
-        staminaScript = FindObjectOfType<Stamina>();
+        magnetArea.radius = pickUpMagnetRadius;
+        ////pondusLevel = 1;
+        //makeHuschSoundScript = FindObjectOfType<MakeHuschSound>();
+        //staminaScript = FindObjectOfType<Stamina>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        magnetArea.radius = pickUpMagnetRadius;
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            makeHuschSoundScript.chargedHuschMax += 0.3f;
-            magnetArea.radius += 0.1f;
-            pondusLevel += 1;
-        }
+    //void Update()
+    //{
+    //    magnetArea.radius = pickUpMagnetRadius;
+    //    if (Input.GetKeyDown(KeyCode.G))
+    //    {
+    //        makeHuschSoundScript.chargedHuschMax += 0.3f;
+    //        magnetArea.radius += 0.1f;
+    //        pondusLevel += 1;
+    //    }
 
-        if (Input.GetKeyDown(KeyCode.X)) // example for how to upgrade stamina
-        {
-            staminaScript.staminaMax += 20;
-            staminaScript.staminaSlider.maxValue += 20;
-        }
-    }
+    //    if (Input.GetKeyDown(KeyCode.X)) // example for how to upgrade stamina
+    //    {
+    //        staminaScript.staminaMax += 20;
+    //        staminaScript.staminaSlider.maxValue += 20;
+    //    }
+    //}
 }

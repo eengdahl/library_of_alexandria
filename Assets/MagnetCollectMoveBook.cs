@@ -12,12 +12,14 @@ public class MagnetCollectMoveBook : MonoBehaviour
     float speed = 1;
     float timer;
     int emptyInvSpots;
-    int amountsOfSpots = 3;
+    int amountsOfSpots;
+    AllPlayerUpgradeables playerUpgradeables;
     private void Start()
     {
+        playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
         invPlayer = FindObjectOfType<InventoryPlayer>();
         player = GameObject.FindGameObjectWithTag("Player");
-
+        amountsOfSpots = playerUpgradeables.numberOfSlot;
     }
     void Update()
     {//Om inventory är fullt kör inte detta på böcker

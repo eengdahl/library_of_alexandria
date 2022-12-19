@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlantTiltScript : MonoBehaviour
 {
     
-    float tiltSpeed = 10f;
+    float tiltSpeed = 20f;
     float angle;
     float targetAngle;
     // Start is called before the first frame update
@@ -26,12 +26,12 @@ public class PlantTiltScript : MonoBehaviour
         {
             if(collision.transform.position.x > transform.position.x)
             {
-                targetAngle = 4;
+                targetAngle = 6;
                 //transform.eulerAngles = new Vector3(0, 0, angle);
             }
             if (collision.transform.position.x < transform.position.x)
             {
-                targetAngle = -4;
+                targetAngle = -6;
                 //transform.eulerAngles = new Vector3(0, 0, angle);
             }
 
