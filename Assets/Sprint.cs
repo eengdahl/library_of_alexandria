@@ -9,8 +9,10 @@ public class Sprint : MonoBehaviour
     float normalSpeed;
     Stamina staminaScript;
     AllPlayerUpgradeables playerUpgradeables;
+    WaterChecker waterCheckerScript;
     private void Start()
     {
+        waterCheckerScript = FindObjectOfType<WaterChecker>();
         playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
         staminaScript = GetComponent<Stamina>();
         playerController = GetComponent<PlayerController1>();
@@ -18,22 +20,38 @@ public class Sprint : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && playerController.isMoving )
+        if (Input.GetKey(KeyCode.LeftShift) && playerController.isMoving)
         {
-            staminaScript.stamina -= 8 * Time.deltaTime;
-            if (staminaScript.stamina <= 0)
+            if (!waterCheckerScript.inWater)
             {
-                playerController.speed = normalSpeed;
-            }
-            else if (staminaScript.stamina > 0)
-            {
+                staminaScript.stamina -= 8 * Time.deltaTime;
+                if (staminaScript.stamina <= 0)
+                {
+                    playerController.speed = normalSpeed;
+                }
+                else if (staminaScript.stamina > 0)
+                {
 
-                playerController.speed = playerUpgradeables.sprintSpeed;
+                    playerController.speed = playerUpgradeables.sprintSpeed;
+                }
+
             }
+            else if (waterCheckerScript.inWater)
+            {
+                playerController.speed = normalSpeed / 2;
+            }
+
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            playerController.speed = playerUpgradeables.normalSpeed;
+            if (!waterCheckerScript.inWater)
+            {
+                playerController.speed = playerUpgradeables.normalSpeed;
+            }
+            else if (waterCheckerScript.inWater)
+            {
+                playerController.speed = playerUpgradeables.normalSpeed / 2;
+            }
         }
     }
 }

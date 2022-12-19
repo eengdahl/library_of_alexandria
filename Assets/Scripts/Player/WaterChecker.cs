@@ -9,22 +9,24 @@ public class WaterChecker : MonoBehaviour
     public PlayerController1 playerMovement;
     public SpriteMask spriteMask;
     AllPlayerUpgradeables playerUpgradeables;
+    public bool inWater = false;
     private void Start()
     {
         playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
         normalSpeed = playerUpgradeables.normalSpeed;
-        halfSpeed = normalSpeed / 2;
+        halfSpeed = normalSpeed / 3;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Water"))
         {
             
-            playerMovement.speed = halfSpeed;
         }
         if (collision.CompareTag("WaterInside"))
         {
+            playerMovement.speed = halfSpeed;
             spriteMask.enabled = true;
+            inWater = true;
             
         }
     }
@@ -37,6 +39,7 @@ public class WaterChecker : MonoBehaviour
         }
         if (collision.CompareTag("WaterInside"))
         {
+            inWater = false;
             spriteMask.enabled = false;
             
         }
