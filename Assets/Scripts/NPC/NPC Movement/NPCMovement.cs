@@ -14,7 +14,8 @@ public class NPCMovement : MonoBehaviour
 
     //BasicMovement
     [SerializeField]
-    float moveSpeed;
+    Difficulty difficulty;
+   public float moveSpeed;
     public bool canMove = true;
     float stopTimer;
     public float stillAfterHusch = 2;
@@ -116,6 +117,10 @@ public class NPCMovement : MonoBehaviour
         //Chairs 
 
         chairListScript = FindObjectOfType<ChairLists>();
+
+        //Level specific movespeed
+        difficulty = FindObjectOfType<Difficulty>();
+        moveSpeed = difficulty.levelSpeed;
 
 
 

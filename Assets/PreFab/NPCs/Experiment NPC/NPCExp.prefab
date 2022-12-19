@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redSpriteAnimator: {fileID: 1895433057}
-  moveSpeed: 1.5
+  moveSpeed: 0
   canMove: 1
   stillAfterHusch: 2
   nPCbookPickUp: {fileID: 606453319}
@@ -638,6 +638,7 @@ MonoBehaviour:
   makingNosie: 0
   chanceOfMakingSound: 0
   npcMovement: {fileID: 0}
+  npcNoiseDifficulty: 0
 --- !u!50 &1398966624
 Rigidbody2D:
   serializedVersion: 4

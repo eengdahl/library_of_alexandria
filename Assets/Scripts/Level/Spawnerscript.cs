@@ -11,25 +11,53 @@ public class Spawnerscript : MonoBehaviour
     int NPCPicker = 0;
     float timer;
     [SerializeField] float timer_between_NPCSpawns = 5f;
-    // Start is called before the first frame update
+
+    Difficulty difficulty;
+
+    public int maxNPC_;
+    float spawnRate;
     void Start()
     {
+        difficulty = FindObjectOfType<Difficulty>();
+
+        maxNPC_ = difficulty.maxNPC;
+        spawnRate = difficulty.spawnrateNPC;
+
+
+        InvokeRepeating("SerchForNPC", 5f, spawnRate) ;
 
     }
 
-    // Update is called once per frame
-    void Update()
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+
+
+
+
+
+
+    //    timer += Time.deltaTime;
+
+    //    if (timer >= timer_between_NPCSpawns)
+    //    {
+    //        timer = 0;
+    //        SpawnNPC();
+
+    //    }
+    //}
+
+    public void SerchForNPC()
     {
-        timer += Time.deltaTime;
+        var NPCs = GameObject.FindGameObjectsWithTag("NPC");
 
-        if (timer >= timer_between_NPCSpawns)
+        if (NPCs.Length < maxNPC_)
         {
-            timer = 0;
             SpawnNPC();
-
+            Debug.Log("spawn");
         }
     }
-
     public void SpawnNPC()
     {
         NPCPicker = Random.Range(0, standardNpcs.Length);
@@ -38,4 +66,6 @@ public class Spawnerscript : MonoBehaviour
         Instantiate(pickedNPC, transform.position, Quaternion.identity);
 
     }
+
+
 }

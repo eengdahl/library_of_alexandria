@@ -17,7 +17,7 @@ public class Meters : MonoBehaviour
     public SpriteRenderer clock;
     public Sprite[] clockpictures;
     private int timePast;
-    private int maxTime;
+    public int maxTime;
     private float tickOfClock;
     WinAndLoseState winAndLoseState;
     NPCMovement nPCMovement;
@@ -27,7 +27,7 @@ public class Meters : MonoBehaviour
     private void Start()
     {
 
-        maxTime = 180;
+       
         clock.sprite = clockpictures[0];
         tickOfClock = maxTime / clockpictures.Length;
         winAndLoseState = FindObjectOfType<WinAndLoseState>();

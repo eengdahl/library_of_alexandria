@@ -11,12 +11,18 @@ public class NPCMakeNoise : MonoBehaviour
     public float chanceOfMakingSound;//if smaller or same than this number make sound
     public NPCMovement npcMovement;
     Animator myAnimator;
+    public float npcNoiseDifficulty;
+
+    Difficulty difficulty;
     void Start()
     {
         aS = GetComponent<AudioSource>();
         myAnimator = GetComponent<Animator>();
         timer = 0;
 
+        //Should change from script Difficulty
+        difficulty = FindObjectOfType<Difficulty>();
+        npcNoiseDifficulty = difficulty.levelDificulty;
 
         //Setting Diffrent Noiceclipp
         Random.Range(0, nosie.Length);
@@ -40,7 +46,7 @@ public class NPCMakeNoise : MonoBehaviour
             if (gameObject.CompareTag("NPC")) //Only do this on NPC and not researchers
             {
 
-            float startMakingSoundPicker = Random.Range(1f, 10f);
+            float startMakingSoundPicker = Random.Range(1f, npcNoiseDifficulty);
             if (npcMovement.isSeated == true)
             {
                 if (startMakingSoundPicker <= chanceOfMakingSound)
