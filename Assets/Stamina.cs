@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class Stamina : MonoBehaviour
 {
-    public float staminaMax = 100;
+    public float staminaMax;
     public float staminaMin = 0;
     public float stamina;
     public Slider staminaSlider;
     [SerializeField] Image fillImage;
     [SerializeField] Image bkgImage;
-    
+    AllPlayerUpgradeables playerUpgradeables;
     private void Start()
     {
-        staminaSlider.maxValue = staminaMax;
+        playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
+        staminaMax = playerUpgradeables.staminaMax;
+        staminaSlider.maxValue = playerUpgradeables.staminaMax;
         stamina = staminaMin;
     }
     private void Update()

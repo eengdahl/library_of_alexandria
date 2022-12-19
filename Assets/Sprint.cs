@@ -8,11 +8,13 @@ public class Sprint : MonoBehaviour
     PlayerController1 playerController;
     float normalSpeed;
     Stamina staminaScript;
+    AllPlayerUpgradeables playerUpgradeables;
     private void Start()
     {
+        playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
         staminaScript = GetComponent<Stamina>();
         playerController = GetComponent<PlayerController1>();
-        normalSpeed = playerController.speed;
+        normalSpeed = playerUpgradeables.normalSpeed;
     }
     private void Update()
     {
@@ -26,12 +28,12 @@ public class Sprint : MonoBehaviour
             else if (staminaScript.stamina > 0)
             {
 
-                playerController.speed = sprintSpeed;
+                playerController.speed = playerUpgradeables.sprintSpeed;
             }
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            playerController.speed = normalSpeed;
+            playerController.speed = playerUpgradeables.normalSpeed;
         }
     }
 }

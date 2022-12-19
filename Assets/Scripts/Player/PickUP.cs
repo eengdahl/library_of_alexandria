@@ -6,16 +6,19 @@ public class PickUP : MonoBehaviour
 {
     private InventoryPlayer inventoryPlayer;
     public GameObject BookColour;
+    AllPlayerUpgradeables playerUpgrades;
 
     private void Start()
     {
+        playerUpgrades = FindObjectOfType<AllPlayerUpgradeables>();
         inventoryPlayer = GameObject.FindGameObjectWithTag ("BookPickUpZone").GetComponent<InventoryPlayer>();
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("BookPickUpZone")) 
         {
-            for (int i = 0; i < inventoryPlayer.slots.Length; i++)
+            for (int i = 0; i < playerUpgrades.numberOfSlot; i++)
             {
                 if (inventoryPlayer.isFull[i] == false)
                 {

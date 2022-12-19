@@ -12,10 +12,16 @@ public class InventoryPlayer : MonoBehaviour
     public bool inventoryFull;
     public int invSpotsUsed;
     int spotsWhileInLoop;
+    AllPlayerUpgradeables upgradesScript;
+
+    private void Start()
+    {
+        upgradesScript = FindObjectOfType<AllPlayerUpgradeables>();
+    }
     private void Update()
     {
         //Loop for inventory hide and book magnet to work
-        for (int i = 0; i < isFull.Length; i++)
+        for (int i = 0; i < isFull.Length; i++) //isFull.Length
         {
             int usedSpots;
             if (isFull[i] == true)
@@ -32,7 +38,7 @@ public class InventoryPlayer : MonoBehaviour
         }
         invSpotsUsed = spotsWhileInLoop;
         spotsWhileInLoop = 0;
-        if(invSpotsUsed >= 3)
+        if(invSpotsUsed >= isFull.Length)
         {
             inventoryFull = true;
         }
@@ -119,10 +125,7 @@ public class InventoryPlayer : MonoBehaviour
             }
         }
     }
-    private void HideInventory()
-    {
 
-    }
     public GameObject FindChildWithTag(GameObject parent, string tag)
     {
         GameObject child = null;
@@ -141,7 +144,7 @@ public class InventoryPlayer : MonoBehaviour
 
     public void ReturnBooks(string bookColour)
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < upgradesScript.numberOfSlot; i++) //slots.Length
         {
             kid = FindChildWithTag(slots[i], bookColour);
 
@@ -159,7 +162,7 @@ public class InventoryPlayer : MonoBehaviour
     public void ReturnBooksToReception(string bookColour,int amount)
     {
         int counter = 0;
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < upgradesScript.numberOfSlot; i++)
         {
 
             kid = FindChildWithTag(slots[i], bookColour);
@@ -182,7 +185,7 @@ public class InventoryPlayer : MonoBehaviour
     void GiveNPCBook(string bookColour, int amount,bool gaveBook)
     {
         int counter = 0;
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < upgradesScript.numberOfSlot; i++)
         {
 
             kid = FindChildWithTag(slots[i], bookColour);

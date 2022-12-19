@@ -17,13 +17,18 @@ public class PlayerController1 : MonoBehaviour
     public bool karinCantMove = false;
     Animator animator;
     public bool isMoving;
+    AllPlayerUpgradeables playerUpgradeables;
     private void Start()
     {
+        playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
         sprite = GetComponent<SpriteRenderer>();
-        halfSpeed = speed / 2;
-        fullSpeed = speed;
+        
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        speed = playerUpgradeables.normalSpeed;
+        halfSpeed = speed / 2;
+        fullSpeed = speed;
+
     }
 
     private void Update()

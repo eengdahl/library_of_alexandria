@@ -19,11 +19,15 @@ public class MakeHuschSound : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Vector3 startSizeCharged = new Vector3(0.3f, 0.3f, 0);
     [SerializeField] float smallHuschCharged = 0.4f;
+    AllPlayerUpgradeables playerUpgradeables;
 
+    public float chargedHuschMax;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
+        chargedHuschMax = playerUpgradeables.chargedHuschMax;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
         audioSource = GetComponent<AudioSource>();
@@ -44,7 +48,7 @@ public class MakeHuschSound : MonoBehaviour
             spriteRenderer.enabled = true;
 
             }
-            if (chargedHush < 3f)//1.5
+            if (chargedHush < chargedHuschMax)
             {
                 chargedHush += Time.deltaTime;
                 //chargedHush += startSize + (Time.deltaTime/2);

@@ -8,11 +8,12 @@ public class WaterChecker : MonoBehaviour
     float normalSpeed;
     public PlayerController1 playerMovement;
     public SpriteMask spriteMask;
-
+    AllPlayerUpgradeables playerUpgradeables;
     private void Start()
     {
-        normalSpeed = playerMovement.speed;
-        halfSpeed = playerMovement.speed / 2;
+        playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
+        normalSpeed = playerUpgradeables.normalSpeed;
+        halfSpeed = normalSpeed / 2;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

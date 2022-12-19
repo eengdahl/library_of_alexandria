@@ -81,18 +81,6 @@ public class Registration : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        //If player holds left shift books are beeing registrated and put on the table
-        //if (collision.tag == "Registration" && Input.GetKey(KeyCode.LeftShift) && deliverBooks.booksOnTable >= 1)
-        //{
-        //    timer += Time.deltaTime;
-
-        //    if (timer > spawnrate)
-        //    {
-        //        Instantiate(books[UnityEngine.Random.Range(0, books.Count)], bookSpawnPoint.transform.position, Quaternion.identity);
-        //        deliverBooks.AddBookToTable(-1);
-        //        timer = 0;
-        //    }
-        //}
 
         //Checking if player can drop book in reception
         if (collision.tag == "Deliver")
