@@ -61,12 +61,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f200766acce2661458f0f07103a63cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 000000
+  isFull: 000000000000
   slots:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   inventorySlotsImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -275,7 +281,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.25
 --- !u!1 &1907163852
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +491,9 @@ MonoBehaviour:
   spawnrate: 0
   rb: {fileID: 4355956085948609700}
   slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -699,6 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  fullSpeed: 0
   inputAxis: {x: 0, y: 0}
   karinCantMove: 0
   isMoving: 0
@@ -860,6 +870,8 @@ MonoBehaviour:
   chargedHush: 0
   standardRadius: 0.4697719
   doesHuschSound: 0
+  smallHuschCharged: 0.4
+  chargedHuschMax: 0
 --- !u!82 &4355956086700047637
 AudioSource:
   m_ObjectHideFlags: 0

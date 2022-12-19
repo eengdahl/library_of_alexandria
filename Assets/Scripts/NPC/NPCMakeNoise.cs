@@ -12,14 +12,20 @@ public class NPCMakeNoise : MonoBehaviour
     public NPCMovement npcMovement;
     Animator myAnimator;
     public float npcNoiseDifficulty;
-
+    AllPlayerUpgradeables upgrades;
+    public float pondusLevel;
+    public float timerAfterBeingHusched;
     Difficulty difficulty;
     void Start()
     {
+
+        upgrades = FindObjectOfType<AllPlayerUpgradeables>();
+        pondusLevel = upgrades.pondusLevel;
+
         aS = GetComponent<AudioSource>();
         myAnimator = GetComponent<Animator>();
         timer = 0;
-
+        timerAfterBeingHusched = 10;
         //Should change from script Difficulty
         difficulty = FindObjectOfType<Difficulty>();
         npcNoiseDifficulty = difficulty.levelDificulty;
@@ -27,45 +33,49 @@ public class NPCMakeNoise : MonoBehaviour
         //Setting Diffrent Noiceclipp
         Random.Range(0, nosie.Length);
         aS.clip = nosie[Random.Range(0, nosie.Length)];
-        if(gameObject.tag == ("NPC"))
+        if (gameObject.tag == ("NPC"))
         {
 
-        npcMovement = GetComponent<NPCMovement>();
+            npcMovement = GetComponent<NPCMovement>();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timerAfterBeingHusched += Time.deltaTime;
+        if (timerAfterBeingHusched > pondusLevel)
+        {
+            if (timer >= 2f)
+            {
+                if (gameObject.CompareTag("NPC")) //Only do this on NPC and not researchers
+                {
+
+                    float startMakingSoundPicker = Random.Range(1f, npcNoiseDifficulty);
+                    if (npcMovement.isSeated == true)
+                    {
+                        if (startMakingSoundPicker <= chanceOfMakingSound)
+                        {
+                            makingNosie = true;
+                        }
+                    }
+                    if (npcMovement.isSeated == false)
+                    {
+                        if (startMakingSoundPicker * 2 <= chanceOfMakingSound)
+                        {
+                            makingNosie = true;
+                        }
+                    }
+                }
+
+
+                timer = 0;
+            }
+
+        }
         //Make the timer increase chance of making noise 
         timer += Time.deltaTime;
 
-        if (timer >= 2f)
-        {
-            if (gameObject.CompareTag("NPC")) //Only do this on NPC and not researchers
-            {
-
-            float startMakingSoundPicker = Random.Range(1f, npcNoiseDifficulty);
-            if (npcMovement.isSeated == true)
-            {
-                if (startMakingSoundPicker <= chanceOfMakingSound)
-                {
-                    makingNosie = true;
-                }
-            }
-            if(npcMovement.isSeated == false)
-            {
-                if (startMakingSoundPicker * 2  <= chanceOfMakingSound)
-                {
-                    makingNosie = true;
-                }
-            }
-            }
-
-
-            timer = 0;
-        }
 
         if (makingNosie == true)
         {
@@ -86,7 +96,7 @@ public class NPCMakeNoise : MonoBehaviour
     }
 
 
-  
-   
-    
+
+
+
 }
