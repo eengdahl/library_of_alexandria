@@ -2336,6 +2336,7 @@ MonoBehaviour:
   - {fileID: 5865293537661773346, guid: 651b9a4afdc7feb458fd4946bbb28d58, type: 3}
   - {fileID: 5865293537661773346, guid: 0f49831973b2f464f9277cff52b0f621, type: 3}
   timer_between_NPCSpawns: 5
+  maxNPC_: 0
 --- !u!1 &1054192833
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,6 +3690,7 @@ GameObject:
   - component: {fileID: 1016374378}
   - component: {fileID: 6251720632631648105}
   - component: {fileID: 2644934372659296123}
+  - component: {fileID: 4161427384591519964}
   m_Layer: 0
   m_Name: GameProcesses
   m_TagString: Untagged
@@ -3748,6 +3750,7 @@ MonoBehaviour:
   - {fileID: 189447636, guid: 3d5b3d0e0a8ecb84b8f192ce768d31be, type: 3}
   - {fileID: -1566461643, guid: 3d5b3d0e0a8ecb84b8f192ce768d31be, type: 3}
   - {fileID: 1158487518, guid: 3d5b3d0e0a8ecb84b8f192ce768d31be, type: 3}
+  maxTime: 0
   npcSpawner: {fileID: 990194449}
 --- !u!114 &1016374378
 MonoBehaviour:
@@ -3800,6 +3803,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5135d334fcc1fd740a5086878c3e3ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4161427384591519964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176864220609053191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c6b8e880bf2604280816b93e9bcfd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelTime: 0
+  levelSpeed: 0
+  levelDificulty: 0
+  spawnrateNPC: 0
+  maxNPC: 0
 --- !u!1 &6176864220612409773
 GameObject:
   m_ObjectHideFlags: 0
