@@ -9,10 +9,11 @@ public class FireGrow : MonoBehaviour
     public Vector3 minSize = new Vector3(0.5f, 0.5f, 1);
     Vector3 maxSize = new Vector3(2, 2, 1);
     Collider2D collider;
-
+    [SerializeField]Animator ashesAnimator;
     public bool isMaxSize;
-    SpriteRenderer spriteRenderer;
-
+    SpriteRenderer spriteRendererFire;
+    [SerializeField]SpriteRenderer spriteAshes;
+    [SerializeField]GameObject fireLight;
     [SerializeField] FireHusched fireHuschedScript;
 
     //husched timer
@@ -25,7 +26,9 @@ public class FireGrow : MonoBehaviour
     public float timerEnd = 5;
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        spriteAshes.enabled = false;
+        spriteRendererFire = GetComponent<SpriteRenderer>();
         timerExtra = Random.Range(0, 0.5f);
         collider = GetComponent<Collider2D>();
         gameObject.transform.localScale = minSize;
@@ -37,7 +40,10 @@ public class FireGrow : MonoBehaviour
         //fireHuschedScript make the fire not grow after being husched for a little while
         if (fireHuschedScript.fireIsHusched)
         {
-            spriteRenderer.enabled = false;
+            fireLight.SetActive(false);
+            ashesAnimator.SetBool("ashesOn", true);
+            spriteAshes.enabled = true;
+            spriteRendererFire.enabled = false;
             timerHusched += Time.deltaTime;
             if (timerHusched > timerEndHusched)
             {
@@ -58,7 +64,10 @@ public class FireGrow : MonoBehaviour
         //Timer for size increase
         if (!fireHuschedScript.fireIsHusched)
         {
-            spriteRenderer.enabled = true;
+            fireLight.SetActive(true);
+            //spriteAshes.enabled = false;
+            ashesAnimator.SetBool("ashesOn", false);
+            spriteRendererFire.enabled = true;
             timer += Time.deltaTime;
             if (timer > timerEnd && gameObject.transform.localScale.x < maxSize.x)
             {

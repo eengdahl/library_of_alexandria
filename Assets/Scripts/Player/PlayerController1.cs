@@ -11,7 +11,7 @@ public class PlayerController1 : MonoBehaviour
 
     SpriteRenderer sprite;
     private Rigidbody2D rb;
-    private Vector2 moveVelocity;
+    public Vector2 moveVelocity;
     public Vector2 inputAxis;
     bool facingRight = false;
     public bool karinCantMove = false;
