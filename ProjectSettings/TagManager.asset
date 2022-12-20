@@ -49,6 +49,8 @@ TagManager:
   - FireDestroy
   - Waypoint npc buddygoback
   - KAOSBOK
+  - PickUpMagnet
+  - Orb
   layers:
   - Default
   - TransparentFX
@@ -59,8 +61,8 @@ TagManager:
   - Background
   - NPC
   - Books
-  - 
-  - 
+  - PondFlowerBlocker
+  - PondFlower
   - 
   - 
   - 

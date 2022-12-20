@@ -8,11 +8,11 @@ public class PickUpRegisteredBooks : MonoBehaviour
     Registration registrationScript; //Get the amount registered from this script and remove amount when book is picked up + get registered book list and remove from there
     private InventoryPlayer inventoryPlayer;
     public List <GameObject> bookColours;
-
-
+    AllPlayerUpgradeables playerUpgradeables;
 
     private void Start()
     {
+        playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
         registrationScript = FindObjectOfType<Registration>();
         inventoryPlayer = GameObject.FindGameObjectWithTag("BookPickUpZone").GetComponent<InventoryPlayer>();
     }
@@ -27,12 +27,11 @@ public class PickUpRegisteredBooks : MonoBehaviour
                 GameObject bookcolor = bookcolorScript.bookColour;//Get the colour of the book
                 //Add that colour to the inventory
 
-                for (int i = 0; i < inventoryPlayer.slots.Length; i++)
+                for (int i = 0; i < playerUpgradeables.numberOfSlot; i++) //inventoryPlayer.slots.Length
                 {
                     if (inventoryPlayer.isFull[i] == false)
                     {
 
-                  
                         //BOOK CAN BE ADDED TO INVENTORY
                         inventoryPlayer.isFull[i] = true;
                         Instantiate(bookcolor, inventoryPlayer.slots[i].transform, false);
