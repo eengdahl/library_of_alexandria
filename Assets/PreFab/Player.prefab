@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 4355956085948609701}
   spriteMask: {fileID: 1620064004}
+  inWater: 0
 --- !u!1 &1620064002
 GameObject:
   m_ObjectHideFlags: 0
