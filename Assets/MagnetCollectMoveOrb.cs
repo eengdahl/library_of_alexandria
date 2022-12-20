@@ -27,31 +27,31 @@ public class MagnetCollectMoveOrb : MonoBehaviour
 
             if (timer < 0.2)
             {
-            transform.position = Vector3.MoveTowards(transform.position, playerPosition, -1 * speed * Time.deltaTime);         
+                transform.position = Vector3.MoveTowards(transform.position, playerPosition, -1 * speed * Time.deltaTime);
             }
             else
             {
                 destroyTimer += Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, playerMagnet.transform.position, 30 * Time.deltaTime);
                 if (transform.position == playerMagnet.transform.position && destroyTimer > 0.2f)
-                {                  
+                {
                     staminaScript.stamina += 5;
                     Destroy(gameObject);
                 }
             }
         }
     }
+}
 
 //    private void OnTriggerEnter2D(Collider2D collision)
 //    {
 //        if (collision.CompareTag("PickUpMagnet"))
 //        {
-            
+
 //            playerMagnet = collision.gameObject;
 //            playerPosition = collision.transform.position;
 //            moveAway = true;
-            
+
 //        }
 //    }
 //}
-         
