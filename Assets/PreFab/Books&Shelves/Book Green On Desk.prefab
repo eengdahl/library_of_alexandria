@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 5566522443767887575}
   - component: {fileID: -6865002161187433972}
   - component: {fileID: 8768510134649935210}
+  - component: {fileID: 5356605743247827495}
   m_Layer: 0
   m_Name: Book Green On Desk
   m_TagString: Book Green
@@ -197,3 +198,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bookColour: {fileID: 6176176296137580510, guid: d882963c38aa35c4e936f1941ef4e361, type: 3}
+--- !u!114 &5356605743247827495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315467735399731171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eead9b0d2f1a837479e57f2852d842dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  me: {fileID: 0}

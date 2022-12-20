@@ -51,7 +51,12 @@ public class WinAndLoseState : MonoBehaviour
             playerController.enabled =false;
 
             endTimer += Time.deltaTime;
+
+            if (endTimer>4)
+            {
             fellOver.enabled = true;
+
+            }
             //shuting down the other win/fail conditions
             noiseSlider.value = 0;
 

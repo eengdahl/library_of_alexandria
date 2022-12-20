@@ -36,6 +36,7 @@ public class PlayerController1 : MonoBehaviour
         //Freezing karin from script MakeHushSound if longhushing
         if (karinCantMove)
         {
+            rb.velocity = new Vector2(0, 0);
             return;
         }
 
@@ -79,6 +80,7 @@ public class PlayerController1 : MonoBehaviour
         //Freezing karin from script MakeHushSound if longhushing
         if (karinCantMove)
         {
+            rb.velocity = new Vector2(0, 0);
             return;
         }
         facingRight = !facingRight;

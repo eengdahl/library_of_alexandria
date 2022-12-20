@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 429673035}
   - component: {fileID: 429673034}
   - component: {fileID: 429673037}
+  - component: {fileID: 429673038}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -505,6 +506,39 @@ MonoBehaviour:
   minPositionY: -2
   minPositionX: 0
   maxPositionX: 0
+--- !u!114 &429673038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429673033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &563841009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 431926666, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
@@ -978,10 +1012,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: longHush
-      value: 
-      objectReference: {fileID: 8300000, guid: 70b4c37b68444d545ad65159b7e5d2ff, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
@@ -1148,6 +1178,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5191929328648151982, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6529540992961897010, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1211,6 +1245,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2570604}
+    - target: {fileID: 389369694, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 413671019, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: player
       value: 
@@ -1225,7 +1263,7 @@ PrefabInstance:
       objectReference: {fileID: 1524435000}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: staminaMax
-      value: 50
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: normalSpeed
@@ -1233,7 +1271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: pondusLevel
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: sprintSpeed
@@ -1244,12 +1282,24 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: chargedHuschMax
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: chanceOfSpawningOrbs
-      value: 75
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1946906730, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264900311570635475, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.649994
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176864220257201133, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.41000366
       objectReference: {fileID: 0}
     - target: {fileID: 6176864220609053188, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_RootOrder
