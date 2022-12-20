@@ -12,6 +12,9 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
     public GameObject continueButton;
     public GameObject Show_Clock;
     public GameObject Show_noicemeter;
+    public GameObject close_pick_up_information;
+    public GameObject close_long_hush_information;
+
 
     bool playerHaveRedBook = false;
     GameObject redBookChecker;
@@ -46,24 +49,29 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
                     
                 // }
             }
-
+        if (other.CompareTag ("Book White"))
+        {
+            Leave_at_desk_information.SetActive(true);
+            Waypoint_deliver.SetActive(true);
+        }
         if (other.CompareTag ("Waypoint deliver"))
         {
            Leave_at_desk_information.SetActive(false);
            set_books_in_bookshelf_information.SetActive(true);
            red_bookshelf.SetActive(true);
            //Waypoint_deliver.SetActive(false);
-           Debug.Log("test.........................................");
         }
         if (other.CompareTag ("tutorial red bookshelf1") && playerHaveRedBook)
         {
+           Waypoint_deliver.SetActive(false);
+           close_long_hush_information.SetActive(false);
+           close_pick_up_information.SetActive(false);
            set_books_in_bookshelf_information.SetActive(false);
            End_of_tutorial_text.SetActive(true);
            continueButton.SetActive(true);
            Show_Clock.SetActive(true);
            Show_noicemeter.SetActive(true);
             Cursor.visible = true;
-           Debug.Log("test.............jjjgggggggggg..........");
         }
     }
 

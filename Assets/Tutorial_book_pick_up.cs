@@ -34,10 +34,6 @@ public class Tutorial_book_pick_up : MonoBehaviour
         if (other.CompareTag("tutorial first NPC"))
         {
             timer += Time.deltaTime;
-     
-           // deactivate_information_Long_hush.SetActive(false);
-           // activate_information_book_pick_up.SetActive(true);
-            //Tutorialbook_pop_up.SetActive(true);
             Go_away = true;
 
             //Destroy(gameObject);

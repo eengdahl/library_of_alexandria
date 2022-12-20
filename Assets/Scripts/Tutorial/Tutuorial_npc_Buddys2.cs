@@ -39,10 +39,14 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     GameObject long_hush_information2;
     GameObject Tutorialbook_pop_up;
     GameObject bookspart;
+    public GameObject book;
     Image bookspartImage;
 
     GameObject findbook;
     Image findbookimage;
+
+    GameObject arrow_at_book;
+    SpriteRenderer arrow_at_bookImage;
 
     public float collisiontimer;
 
@@ -53,6 +57,10 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     bool has_been_hushed = false;
 
     bool walk_out = false;
+
+    bool pop_up_one_book = false;
+
+    float timer2;
     private void Awake()
     {
     }
@@ -87,7 +95,6 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     }
     void Update()
     {
-
         timer += Time.deltaTime;
 
         if (active_1 == false)
@@ -104,7 +111,21 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
         if (walk_out == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, target_Buddys22.position, speed * Time.deltaTime);
+            pop_up_one_book = true;
+            timer2 += Time.deltaTime;   
         }
+        if (pop_up_one_book == true && timer2 > 2)
+        {
+            walk_out = false;
+            Vector3 temp = new Vector3(7f,0.2f, 0);
+            Instantiate(book, temp, transform.rotation);
+            arrow_at_book = GameObject.FindGameObjectWithTag("arrow_at_book");
+            arrow_at_bookImage = arrow_at_book.GetComponent<SpriteRenderer>();
+            arrow_at_bookImage.enabled = true;
+            timer2 = 0;
+
+        }
+        
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -125,7 +146,7 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
                 exclamation_talkbubbel.SetActive(false);
                 //  active_1 = false;
                 walk_out = true;
-                Tutorialbook_pop_up.SetActive(true);
+                //Tutorialbook_pop_up.SetActive(true);
                 
                 //Tutorialbook_pop_up.SetActive(true);
                 //long_hush_information2.SetActive(false);
@@ -133,8 +154,16 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
                 // bookspart = GameObject.FindGameObjectWithTag("KAOSBOK");
                 bookspart = GameObject.FindGameObjectWithTag("KAOSBOK");
                 bookspartImage = bookspart.GetComponent<Image>();
+
                 //Tutorialbook_pop_up.SetActive(true);
                 bookspartImage.enabled = true;
+
+                //findbook = GameObject.FindGameObjectWithTag("Book White");
+                //findbookimage = bookspart.GetComponent<Image>();
+                //findbook.SetActive(true);
+
+                //instansiera boken
+                
             }
         }
     }

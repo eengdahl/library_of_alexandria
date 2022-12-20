@@ -367,10 +367,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3184b66d038baa04f9831078e1290985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beingHusched: 0
   target_Buddys2: {fileID: 0}
   target_Buddys22: {fileID: 0}
   exclamation_talkbubbel: {fileID: 4224815788543865113}
   collision_between_buddy2_player: 0
+  book: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
+  collisiontimer: 0
 --- !u!82 &-6210049908114698849
 AudioSource:
   m_ObjectHideFlags: 0
