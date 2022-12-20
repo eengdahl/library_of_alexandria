@@ -10,6 +10,7 @@ public class Sprint : MonoBehaviour
     Stamina staminaScript;
     AllPlayerUpgradeables playerUpgradeables;
     WaterChecker waterCheckerScript;
+    Animator self;
     private void Start()
     {
         waterCheckerScript = FindObjectOfType<WaterChecker>();
@@ -17,6 +18,7 @@ public class Sprint : MonoBehaviour
         staminaScript = GetComponent<Stamina>();
         playerController = GetComponent<PlayerController1>();
         normalSpeed = playerUpgradeables.normalSpeed;
+        self= GetComponent<Animator>();
     }
     private void Update()
     {
@@ -31,7 +33,7 @@ public class Sprint : MonoBehaviour
                 }
                 else if (staminaScript.stamina > 0)
                 {
-
+                    self.SetBool("Sprint", true);
                     playerController.speed = playerUpgradeables.sprintSpeed;
                 }
 
@@ -47,10 +49,12 @@ public class Sprint : MonoBehaviour
             if (!waterCheckerScript.inWater)
             {
                 playerController.speed = playerUpgradeables.normalSpeed;
+                self.SetBool("Sprint", false);
             }
             else if (waterCheckerScript.inWater)
             {
                 playerController.speed = playerUpgradeables.normalSpeed / 2;
+                self.SetBool("Sprint", false);
             }
         }
     }
