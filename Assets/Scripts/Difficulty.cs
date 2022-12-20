@@ -47,10 +47,10 @@ public class Difficulty : MonoBehaviour
     {
         //Standard valuees for all stats
         SetTimeOfLevel(180);
-        SetNPCNoiseChance(10);
-        SetNPCMovespeed(1.7f);
+        SetNPCNoiseChance(9);
+        SetNPCMovespeed(1.25f);
         MaxNPCOnMap(12);
-        SpawnRateNPC(5);
+        SpawnRateNPC(3);
     }
 
 

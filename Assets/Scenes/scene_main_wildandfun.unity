@@ -3420,15 +3420,15 @@ PrefabInstance:
       objectReference: {fileID: 296491680}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: staminaMax
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: normalSpeed
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: pondusLevel
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: sprintSpeed
@@ -3436,7 +3436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: numberOfSlot
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: chargedHuschMax
