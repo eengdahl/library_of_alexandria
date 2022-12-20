@@ -7,7 +7,7 @@ public class MagnetCollectMoveOrb : MonoBehaviour
     GameObject playerMagnet;
     GameObject player;
     Vector3 playerPosition;
-    bool moveAway = false;
+    bool moveAway = true;
     Stamina staminaScript;
     float speed = 1;
     float timer;
@@ -15,6 +15,7 @@ public class MagnetCollectMoveOrb : MonoBehaviour
 
     private void Start()
     {
+        playerMagnet = GameObject.FindGameObjectWithTag("PickUpMagnet");
         player = GameObject.FindGameObjectWithTag("Player");
         staminaScript = player.GetComponent<Stamina>();
     }
@@ -41,16 +42,16 @@ public class MagnetCollectMoveOrb : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("PickUpMagnet"))
-        {
+//    private void OnTriggerEnter2D(Collider2D collision)
+//    {
+//        if (collision.CompareTag("PickUpMagnet"))
+//        {
             
-            playerMagnet = collision.gameObject;
-            playerPosition = collision.transform.position;
-            moveAway = true;
+//            playerMagnet = collision.gameObject;
+//            playerPosition = collision.transform.position;
+//            moveAway = true;
             
-        }
-    }
-}
+//        }
+//    }
+//}
          
