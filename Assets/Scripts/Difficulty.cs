@@ -20,7 +20,7 @@ public class Difficulty : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         meters = FindObjectOfType<Meters>();
         nPCMakeNoise = FindObjectOfType<NPCMakeNoise>();
@@ -35,13 +35,13 @@ public class Difficulty : MonoBehaviour
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
-        if (sceneName == "scene_main_julia")
+        if (sceneName == "scene_main_julia" || sceneName == "Scene_tutorial")
         {
             Tutorial();
         }
 
 
-        if (sceneName == "scene_main" || sceneName == "scene_main_emil"  || sceneName == "scene_main_Jovin" || sceneName == "scene_main_wildandfun")
+        if (sceneName == "scene_main" || sceneName == "scene_main_emil"  || sceneName == "scene_main_Jovin" || sceneName == "scene_main_wildandfun" )
         {
             Level1();
         }
@@ -55,6 +55,25 @@ public class Difficulty : MonoBehaviour
         if (sceneName== "scene_main_1.1")
         {
             Level2();
+        }
+
+        if (sceneName =="scene_main_1.2")
+        {
+            Level3();
+        }
+
+        if (sceneName == "scene_main_2.0")
+        {
+            Level4();
+        }
+
+        if (sceneName == "scene_main_2.1")
+        {
+            Level5();
+        }
+        if (sceneName == "scene_main_2.2")
+        {
+            Level6();
         }
     }
 
@@ -78,6 +97,43 @@ public class Difficulty : MonoBehaviour
         MaxNPCOnMap(17);
         SpawnRateNPC(3);
     }
+
+    void Level3()
+    {
+        SetTimeOfLevel(140);
+        SetNPCNoiseChance(8);
+        SetNPCMovespeed(1.25f);
+        MaxNPCOnMap(25);
+        SpawnRateNPC(6);
+    }
+
+    void Level4()
+    {
+        SetTimeOfLevel(180);
+        SetNPCNoiseChance(9);
+        SetNPCMovespeed(1.4f);
+        MaxNPCOnMap(17);
+        SpawnRateNPC(3);
+    }
+
+    void Level5()
+    {
+        SetTimeOfLevel(180);
+        SetNPCNoiseChance(8);
+        SetNPCMovespeed(1.4f);
+        MaxNPCOnMap(15);
+        SpawnRateNPC(3);
+    }
+
+    void Level6()
+    {
+        SetTimeOfLevel(180);
+        SetNPCNoiseChance(8);
+        SetNPCMovespeed(1.6f);
+        MaxNPCOnMap(19);
+        SpawnRateNPC(4);
+    }
+
     void Tutorial()
     {
         SetTimeOfLevel(9999999);

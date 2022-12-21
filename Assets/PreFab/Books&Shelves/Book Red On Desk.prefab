@@ -105,6 +105,10 @@ PrefabInstance:
       value: Book Red On Desk
       objectReference: {fileID: 0}
     - target: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
       propertyPath: m_TagString
       value: Book Red
       objectReference: {fileID: 0}
