@@ -63,6 +63,7 @@ public class WinAndLoseState : MonoBehaviour
             if (endTimer > 15)
             {
                 SceneManager.LoadScene("Meny");
+
             }
         }
     }
@@ -76,17 +77,19 @@ public class WinAndLoseState : MonoBehaviour
         if (fellOver.enabled == false && toLoud.enabled == false)
         {
             winScreen.enabled = true;
-            if (endTimer > 15)
+            if (endTimer > 10)
             {
-                if (sceneName == "scene_main")
-                {
-                    SceneManager.LoadScene("scene_main_Jovin");
-                }
-                if (sceneName == "scene_main_Jovin")
+                if (sceneName == "scene_main_2.2")
                 {
                     SceneManager.LoadScene("Meny");
+                    return;
                 }
-                //SceneManager.LoadScene("Meny");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //if (sceneName == "scene_main_Jovin")
+                //{
+                //    SceneManager.LoadScene("Meny");
+                //}
+                ////SceneManager.LoadScene("Meny");
             }
         }
     }

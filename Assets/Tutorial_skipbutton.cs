@@ -18,6 +18,6 @@ public class Tutorial_skipbutton : MonoBehaviour
     }
     public void skipptutorial()
     {
-            SceneManager.LoadScene("scene_main");  
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

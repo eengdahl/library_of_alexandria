@@ -18,24 +18,45 @@ EditorBuildSettings:
     path: Assets/Scenes/Meny.unity
     guid: bd5840158d85a154f8b2c1909022a4e9
   - enabled: 1
+    path: Assets/Scenes/scene_tutorial.unity
+    guid: 40efb495a4e32cb4083042e129ac5f84
+  - enabled: 1
+    path: Assets/Scenes/scene_main_1.0.unity
+    guid: 9b56b15d79c50a64bb6351d85b67d54d
+  - enabled: 1
+    path: Assets/Scenes/scene_main_1.1.unity
+    guid: 5baff27a39219da43926b1bcea5ffc77
+  - enabled: 1
+    path: Assets/Scenes/scene_main_1.2.unity
+    guid: 17dbcb4a2a764af41a807837985cd4bb
+  - enabled: 1
+    path: Assets/Scenes/scene_main_2.0.unity
+    guid: cac24a36a0bff7645a273952f7dc0dbc
+  - enabled: 1
+    path: Assets/Scenes/scene_main_2.1.unity
+    guid: e3c6ccd38db4e9d43a1d2b697452273b
+  - enabled: 1
+    path: Assets/Scenes/scene_main_2.2.unity
+    guid: 5ba6ec4159ebdb34bae13f7e1416d35d
+  - enabled: 0
     path: Assets/Scenes/Graveyard/JULIA.unity
     guid: 51417c000b1f7ba4596a50c92c45cd36
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Graveyard/scene_main_old.unity
     guid: b4e7d702e94905846be71f81729dc3bf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Graveyard/scene_main_preTest_emil.unity
     guid: f6245c2d710056f4fb93799a0a4b2c01
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/scene_main.unity
     guid: 37ad4eaddb43c734a90ab5dbc97a3326
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/scene_main_julia.unity
     guid: 197caf66d12e4434b8025d2079593bf4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/scene_main_Jovin.unity
     guid: c39d7033fa20f8c499ffdfe7398bf2d6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/scene_main_wildandfun.unity
     guid: e3e2f4172c02b1444a7db326bfdf269c
   m_configObjects: {}

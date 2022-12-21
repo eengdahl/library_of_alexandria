@@ -710,6 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   fullSpeed: 0
+  moveVelocity: {x: 0, y: 0}
   inputAxis: {x: 0, y: 0}
   karinCantMove: 0
   isMoving: 0
@@ -789,7 +790,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4355956085948609704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ed3d4b29345a954eb36f9ab16a57af9, type: 3}
   m_Name: 

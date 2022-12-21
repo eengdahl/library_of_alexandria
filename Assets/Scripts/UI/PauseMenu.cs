@@ -63,30 +63,33 @@ public class PauseMenu : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene ();
         string sceneName = currentScene.name;
-
-        if (sceneName == "scene_main_julia") //if we are in tutorial
-        {
-        SceneManager.LoadScene("scene_main_julia");
+        SceneManager.LoadScene(sceneName);
         Time.timeScale = 1f;
         AudioListener.volume = 1f;
         isGamePaused = false;
-        }
+        //if (sceneName == "scene_main_julia") //if we are in tutorial
+        //{
+        //SceneManager.LoadScene("scene_main_julia");
+        //Time.timeScale = 1f;
+        //AudioListener.volume = 1f;
+        //isGamePaused = false;
+        //}
 
-        if (sceneName == "scene_main") //if we are in first lvl
-        {
-        SceneManager.LoadScene("scene_main");
-        Time.timeScale = 1f;
-        AudioListener.volume = 1f;
-        isGamePaused = false;
-        }
-        
-        if (sceneName == "scene_main_Jovin")//if we are in fire scene
-        {
-        SceneManager.LoadScene("scene_main_Jovin");
-        Time.timeScale = 1f;
-        AudioListener.volume = 1f;
-        isGamePaused = false;  
-        }
+        //if (sceneName == "scene_main") //if we are in first lvl
+        //{
+        //SceneManager.LoadScene("scene_main");
+        //Time.timeScale = 1f;
+        //AudioListener.volume = 1f;
+        //isGamePaused = false;
+        //}
+
+        //if (sceneName == "scene_main_Jovin")//if we are in fire scene
+        //{
+        //SceneManager.LoadScene("scene_main_Jovin");
+        //Time.timeScale = 1f;
+        //AudioListener.volume = 1f;
+        //isGamePaused = false;  
+        //}
     }
 }
 
