@@ -3460,7 +3460,7 @@ PrefabInstance:
       objectReference: {fileID: 296491680}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: staminaMax
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: normalSpeed
@@ -3480,7 +3480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: chargedHuschMax
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: pickUpMagnetRadius

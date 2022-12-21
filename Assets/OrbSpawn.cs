@@ -21,12 +21,12 @@ public class OrbSpawn : MonoBehaviour
     void Update()
     {
         //Instantiate the stamina orb
-        if (beingHuschedScript.beingHusched == true && !orbSpawned)
+        if (beingHuschedScript.beingHusched == true)//&& !orbSpawned
         {
             if( playerUpgradeables.chanceOfSpawningOrbs > randomNumber)
             {
             Instantiate(staminaOrb, transform.position, transform.rotation);
-            orbSpawned = true;
+            //orbSpawned = true;
 
             }
         }
