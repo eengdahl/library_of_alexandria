@@ -5,18 +5,13 @@ using DG.Tweening;
 
 public class Shake : MonoBehaviour
 {
-    //private float timer;
-    //private float magnitude;
-    //private Vector3 startPos;
-    //private bool isShaking;
-    //private float limit;
-    //private float limitTimer;
-    public float timer;
-    public float magnitude;
-    public Vector3 startPos;
-    public bool isShaking;
-    public float limit;
-    public float limitTimer;
+    private float timer;
+    private float magnitude;
+    private Vector3 startPos;
+    private bool isShaking;
+    private float limit;
+    private float limitTimer;
+    
 
     public void StartShake(float time, float str, Vector3 startPosition, float limiter = 0)
     {
@@ -24,13 +19,13 @@ public class Shake : MonoBehaviour
         timer = time;
         magnitude = str;
         limit = limiter;
-        startPos = startPosition; //Why not transform.position??
+        startPos = startPosition; // transform.position
     }
 
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.O)) StartShake(1, 0.1f, this.transform.position, 0.05f);//kommentera bort och och använd för att calla funktionen
-
+  
         if (timer <= 0) return;//
         if (!isShaking) return;
 

@@ -18,11 +18,11 @@ public class RedLightTurnOnOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(noiseHandlerScript.soundLevelInRoom > 90)
+        if(noiseHandlerScript.soundLevelInRoom > 80)
         {
             
             timer += Time.deltaTime;
-            if (timer > 0.5)
+            if (timer > 0.3)
             {
                 activated = !activated;
                 redLight.SetActive(activated);
