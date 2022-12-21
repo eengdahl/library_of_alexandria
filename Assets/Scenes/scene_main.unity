@@ -482,6 +482,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c6b8e880bf2604280816b93e9bcfd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelTime: 0
+  levelSpeed: 0
+  levelDificulty: 0
+  spawnrateNPC: 0
+  maxNPC: 0
 --- !u!1001 &399482806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1401,6 +1406,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5191929328648151982, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
+      propertyPath: Sprite_Pic.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191929328648151982, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
+      propertyPath: Sprite_Pic.Array.data[0]
+      value: 
+      objectReference: {fileID: -1726883355, guid: 5fa4f7f1420e26746a04491b1878f259, type: 3}
+    - target: {fileID: 5191929328648151982, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
+      propertyPath: Sprite_Pic.Array.data[1]
+      value: 
+      objectReference: {fileID: -314968856, guid: 5fa4f7f1420e26746a04491b1878f259, type: 3}
     - target: {fileID: 6529540992961897010, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
       propertyPath: m_RootOrder
       value: 12
