@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ShakeEar : MonoBehaviour
 {
-    bool returnToStartPosition;
+    float shakeTimer;
+
     Vector3 startPosition;
     Shake shakeScript;
     NoiseHandeler noiseHandelerScript;
@@ -30,13 +31,18 @@ public class ShakeEar : MonoBehaviour
 
         if(noiseHandelerScript.soundLevelInRoom > 80)
         {
-            returnToStartPosition = false;
+
+            shakeTimer += Time.deltaTime;
+            if (shakeTimer > 0.05)
+            {
             transform.position = startPosition;
             transform.position += (Vector3)(Random.insideUnitCircle * 0.1f);
+                shakeTimer = 0;
+            }
         }
         else
         {
-            returnToStartPosition = true;
+            transform.position = startPosition;
         }
 
     }
