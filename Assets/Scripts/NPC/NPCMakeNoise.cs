@@ -83,9 +83,6 @@ public class NPCMakeNoise : MonoBehaviour
             aS.enabled = true;
             myAnimator.SetBool("noise", true);
 
-
-
-
         }
         else if (makingNosie == false)
         {

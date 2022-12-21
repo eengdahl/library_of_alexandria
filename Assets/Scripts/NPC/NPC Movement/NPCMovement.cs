@@ -591,14 +591,14 @@ public class NPCMovement : MonoBehaviour
             float randomPlacement = Random.Range(0, 0.07f);
             Vector3 instantiateBookVector = transform.position - new Vector3(0.5f, randomPlacement, 0);
             //Instantiate(blankBook, transform.position - new Vector3(0.5f, 0, 0) , tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
-            Instantiate(blankBook, instantiateBookVector + new Vector3(randomPlacement, 0.5f, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
+            Instantiate(blankBook, instantiateBookVector + new Vector3(randomPlacement, 0.5f, 0), Quaternion.Euler(0, 0, 90));//+ new Vector3(0,2,0)//* new Quaternion(0, 0, -45, 0)//tables[lowestIndex].transform.rotation
         }
         //if on left side of table
         else if (tables[lowestIndex].transform.position.x > transform.position.x)
         {
             float randomPlacement = Random.Range(0, 0.07f);
             Vector3 instantiateBookVector = transform.position + new Vector3(0.5f, randomPlacement, 0);
-            Instantiate(blankBook, instantiateBookVector + new Vector3(randomPlacement, 0.5f, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
+            Instantiate(blankBook, instantiateBookVector + new Vector3(randomPlacement, 0.5f, 0), Quaternion.Euler(0, 0, -90));//+ new Vector3(0,2,0)//* new Quaternion(0,0,45,0) //tables[lowestIndex].transform.rotation * 
             //Instantiate(blankBook, transform.position + new Vector3(0.5f, 0, 0), tables[lowestIndex].transform.rotation);//+ new Vector3(0,2,0)
         }
         //Instantiate(blankBook, tables[lowestIndex].transform.position + new Vector3(randomX, randomY, 0), tables[lowestIndex].transform.rotation);
