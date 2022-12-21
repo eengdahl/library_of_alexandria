@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,10 +35,26 @@ public class Difficulty : MonoBehaviour
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
+        if (sceneName == "scene_main_julia")
+        {
+            Tutorial();
+        }
 
-        if (sceneName == "scene_main" || sceneName == "scene_main_emil" || sceneName == "scene_main_julia" || sceneName == "scene_main_Jovin" || sceneName == "scene_main_wildandfun")
+
+        if (sceneName == "scene_main" || sceneName == "scene_main_emil"  || sceneName == "scene_main_Jovin" || sceneName == "scene_main_wildandfun")
         {
             Level1();
+        }
+
+
+        if (sceneName == "scene_main_1.0")
+        {
+            Level1();
+        }
+
+        if (sceneName== "scene_main_1.1")
+        {
+            Level2();
         }
     }
 
@@ -46,11 +63,28 @@ public class Difficulty : MonoBehaviour
     void Level1()
     {
         //Standard valuees for all stats
-        SetTimeOfLevel(180);
+        SetTimeOfLevel(120);
         SetNPCNoiseChance(9);
         SetNPCMovespeed(1.25f);
         MaxNPCOnMap(14);
         SpawnRateNPC(3);
+    }
+
+    void Level2()
+    {
+        SetTimeOfLevel(120);
+        SetNPCNoiseChance(9);
+        SetNPCMovespeed(1.25f);
+        MaxNPCOnMap(17);
+        SpawnRateNPC(3);
+    }
+    void Tutorial()
+    {
+        SetTimeOfLevel(9999999);
+       // SetNPCNoiseChance(9);
+       // SetNPCMovespeed(1.25f);
+        MaxNPCOnMap(0);
+      //  SpawnRateNPC(3);
     }
 
 
