@@ -70,6 +70,7 @@ public class NoiseHandeler : MonoBehaviour
 
         if (soundLevelInRoom >= 0 && soundLevelInRoom < 33)
         {
+            //Green
             green.enabled = true;
             greenChild.enabled = true;
 
@@ -80,16 +81,19 @@ public class NoiseHandeler : MonoBehaviour
         }
         if (soundLevelInRoom >= 20 && soundLevelInRoom < 66)
         {
+            //Yellow
             yellow.enabled = true;
             yellowChild.enabled = true;
             green.enabled = true;
             greenChild.enabled = false;
             red.enabled = false;
             redChild.enabled = false;
+            
         }
 
         if (soundLevelInRoom >= 66 && soundLevelInRoom < 100)
         {
+            //Red
             red.enabled = true;
             redChild.enabled = true;
             greenChild.enabled = false;
