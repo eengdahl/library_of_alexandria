@@ -14,6 +14,9 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
     public GameObject Show_noicemeter;
     public GameObject close_pick_up_information;
     public GameObject close_long_hush_information;
+    public GameObject stopArrowbook;
+    public GameObject stopstart_Arrowreception;
+    public GameObject start_can_hush;
 
 
     bool playerHaveRedBook = false;
@@ -53,13 +56,18 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
         {
             Leave_at_desk_information.SetActive(true);
             Waypoint_deliver.SetActive(true);
+            stopstart_Arrowreception.SetActive(true);
+            //start_can_hush.SetActive(true);
+            stopArrowbook.SetActive(false);
         }
         if (other.CompareTag ("Waypoint deliver"))
         {
-           Leave_at_desk_information.SetActive(false);
-           set_books_in_bookshelf_information.SetActive(true);
-           red_bookshelf.SetActive(true);
-           //Waypoint_deliver.SetActive(false);
+            start_can_hush.SetActive(true);
+            stopstart_Arrowreception.SetActive(false);
+            Leave_at_desk_information.SetActive(false);
+            set_books_in_bookshelf_information.SetActive(true);
+            red_bookshelf.SetActive(true);
+            //Waypoint_deliver.SetActive(false);
         }
         if (other.CompareTag ("tutorial red bookshelf1") && playerHaveRedBook)
         {

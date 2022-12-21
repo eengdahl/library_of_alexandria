@@ -64,6 +64,7 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         Debug.Log(collisiontimer);
         timer += Time.deltaTime;
 
         if (active_1 == false)
@@ -99,6 +100,8 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
 
         if (collision.tag == "Husch" && budy2.collisiontimer>0.1f && makeHuschSound.doesHuschSound == true)
         {
+            collisiontimer += Time.deltaTime;
+           
             audio1_1.Stop();
             has_been_hushed = true;
             exclamation_talkbubbel.SetActive(false);
