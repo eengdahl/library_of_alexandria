@@ -35,7 +35,7 @@ public class MakeHuschSound : MonoBehaviour
         collider2D = GetComponent<CircleCollider2D>();
         audioSource.clip = schhSound[Random.Range(0, schhSound.Length)];
         playerController1 = GetComponentInParent<PlayerController1>();
-       
+
     }
 
     void Update()
@@ -45,7 +45,7 @@ public class MakeHuschSound : MonoBehaviour
         {
             if (chargedHush > smallHuschCharged)
             {
-            spriteRenderer.enabled = true;
+                spriteRenderer.enabled = true;
 
             }
             if (chargedHush < chargedHuschMax)
@@ -71,7 +71,7 @@ public class MakeHuschSound : MonoBehaviour
             Invoke("StopAudio", chargedHush);
 
             doesHuschSound = true;
-            
+
             //picking long hush
             audioSource.clip = longHush;
             audioSource.Play();
@@ -80,19 +80,19 @@ public class MakeHuschSound : MonoBehaviour
             //Setting hushradius after how long hush was charged
             // collider2D.radius = chargedHush;
             gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1) + startSizeCharged;
-            if(chargedHush > 1)
+            if (chargedHush > 1)
             {
-                lenghtOfHusch = chargedHush /2;
+                lenghtOfHusch = chargedHush / 2;
 
             }
             chargedHush = 0;
             //playerController1.karinCantMove = true;
-            playerController1.speed = playerController1.speed / 4;
+            playerController1.speed = playerController1.speed * 4;
             Invoke("StandardSpeed", lenghtOfHusch);
 
         }
         //Makes standard hush
-        else if (Input.GetKeyUp("space") && !doesHuschSound && chargedHush<=0.6f)
+        else if (Input.GetKeyUp("space") && !doesHuschSound && chargedHush <= 0.6f)
         {
             spriteRenderer.enabled = false;
             chargedHush = smallHuschCharged;
@@ -102,7 +102,7 @@ public class MakeHuschSound : MonoBehaviour
             animatorKarin.SetBool("IsHushing", true);
             gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
             //playerController1.karinCantMove = true;
-            playerController1.speed = playerController1.speed / 2f;
+            playerController1.speed = playerController1.speed * 2f;
             Invoke("StandardSpeed", smallHuschCharged);
         }
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
@@ -125,7 +125,7 @@ public class MakeHuschSound : MonoBehaviour
         {
             animatorKarin.SetBool("IsHushing", false);
             huschTimer = 0;
-            
+
             playerController1.karinCantMove = false;
         }
     }
@@ -137,7 +137,7 @@ public class MakeHuschSound : MonoBehaviour
         doesHuschSound = false;
         //collider2D.radius = standardRadius;
         gameObject.transform.localScale = new Vector3(1, 1, 1);
-        
+
     }
     void StandardSpeed()
     {
