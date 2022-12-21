@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShakeEar : MonoBehaviour
 {
+    bool returnToStartPosition;
+    Vector3 startPosition;
     Shake shakeScript;
     NoiseHandeler noiseHandelerScript;
     public bool superRedBool;
@@ -12,6 +14,7 @@ public class ShakeEar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPosition = transform.position;
         shakeScript = GetComponent<Shake>();
         noiseHandelerScript = FindObjectOfType<NoiseHandeler>();
     }
@@ -19,7 +22,7 @@ public class ShakeEar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        superRedBool = ResetShake(100, superRedBool);
+
         shouldShakeYellow = ShakeDaBooty(shouldShakeYellow,20);
         shouldShakeYellow = ResetShake(20, shouldShakeYellow);
         shouldShakeRed = ResetShake(66, shouldShakeRed);
@@ -27,16 +30,15 @@ public class ShakeEar : MonoBehaviour
 
         if(noiseHandelerScript.soundLevelInRoom > 80)
         {
-            shakeScript.StartShake(0.1f, 0.3f, this.transform.position, 0.05f);
+            returnToStartPosition = false;
+            transform.position = startPosition;
+            transform.position += (Vector3)(Random.insideUnitCircle * 0.1f);
         }
-        
+        else
+        {
+            returnToStartPosition = true;
+        }
 
-
-        //if (noiseHandelerScript.soundLevelInRoom > 20 &&  shouldShakeYellow) // noiseHandelerScript.soundLevelInRoom <= 22 &&
-        //{
-        //    shakeScript.StartShake(2, 0.1f, this.transform.position, 0.05f);
-        //    shouldShakeYellow = false;
-        //}
     }
     private bool ResetShake(int resetValue,bool colourBool)
     {
