@@ -116,6 +116,7 @@ public class MakeHuschSound : MonoBehaviour
             //playerController1.karinCantMove = true;
             playerController1.speed = playerController1.speed * 2f;
             Invoke("StandardSpeed", smallHuschCharged);
+            animatorKarin.SetBool("makeBreath", true);
         }
         if (Input.GetKeyUp("space"))
         {
