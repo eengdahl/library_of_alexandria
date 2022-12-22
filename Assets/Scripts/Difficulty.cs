@@ -104,13 +104,13 @@ public class Difficulty : MonoBehaviour
         SetNPCNoiseChance(8);
         SetNPCMovespeed(1.25f);
         MaxNPCOnMap(25);
-        SpawnRateNPC(6);
+        SpawnRateNPC(5);
     }
 
     void Level4()
     {
         SetTimeOfLevel(180);
-        SetNPCNoiseChance(9);
+        SetNPCNoiseChance(8);
         SetNPCMovespeed(1.4f);
         MaxNPCOnMap(17);
         SpawnRateNPC(3);
