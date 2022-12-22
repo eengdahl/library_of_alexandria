@@ -112,6 +112,10 @@ public class MakeHuschSound : MonoBehaviour
             playerController1.speed = playerController1.speed * 2f;
             Invoke("StandardSpeed", smallHuschCharged);
         }
+        if (Input.GetKeyUp("space"))
+        {
+            spriteRenderer.enabled = false;
+        }
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
         if (doesHuschSound)
         {

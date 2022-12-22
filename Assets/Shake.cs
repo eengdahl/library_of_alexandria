@@ -24,9 +24,9 @@ public class Shake : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.O)) StartShake(1, 0.1f, this.transform.position, 0.05f);//kommentera bort och och använd för att calla funktionen
+        
   
-        if (timer <= 0) return;//
+        if (timer <= 0) return;
         if (!isShaking) return;
 
         timer -= Time.deltaTime;

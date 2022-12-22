@@ -11,7 +11,7 @@ public class ShakeEar : MonoBehaviour
     NoiseHandeler noiseHandelerScript;
     public bool superRedBool;
     public bool shouldShakeYellow = true;
-    bool shouldShakeRed = true;
+    public bool shouldShakeRed = true;
     // Start is called before the first frame update
     void Start()
     {

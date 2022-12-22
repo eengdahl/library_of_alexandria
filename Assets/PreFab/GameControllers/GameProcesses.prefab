@@ -2570,6 +2570,7 @@ GameObject:
   - component: {fileID: 7069164516524050731}
   - component: {fileID: 590359447325975898}
   - component: {fileID: 429227070468635490}
+  - component: {fileID: 2328239030814302626}
   m_Layer: 5
   m_Name: NoiseEar
   m_TagString: Untagged
@@ -2585,7 +2586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214117565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -249.27, y: -179.65, z: 0}
+  m_LocalPosition: {x: -250.4, y: -180.2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2684,6 +2685,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e99eaa3ed3ff0e49904e64058145ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  superRedBool: 0
+  shouldShakeYellow: 1
+  shouldShakeRed: 1
+--- !u!114 &2328239030814302626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214117565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a439d82ba374e43b6b188e83b79fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1373795004
@@ -4118,14 +4134,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c503f2269b96edb4aa4f41e09217251f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfSlot: 4
+  numberOfSlot: 3
   staminaMax: 100
-  normalSpeed: 3
-  sprintSpeed: 6
-  pickUpMagnetRadius: 0.3
-  pondusLevel: 5
-  chargedHuschMax: 0.5
-  chanceOfSpawningOrbs: 5
+  normalSpeed: 2.5
+  sprintSpeed: 5
+  pickUpMagnetRadius: 0.4
+  pondusLevel: 8
+  chargedHuschMax: 3
+  chanceOfSpawningOrbs: 12
   magnetArea: {fileID: 0}
 --- !u!1 &6176864220612409773
 GameObject:
