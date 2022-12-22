@@ -55,6 +55,7 @@ public class MakeHuschSound : MonoBehaviour
             if (chargedHush > smallHuschCharged)
             {
                 spriteRenderer.enabled = true;
+            animatorKarin.SetBool("breath", true);
 
             }
             if (chargedHush < chargedHuschMax && staminaScript.stamina > 0)
@@ -65,7 +66,7 @@ public class MakeHuschSound : MonoBehaviour
                 }
                 chargedHush += Time.deltaTime;
             }
-
+            
             gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1) + startSizeCharged;
         }
         //Makes a chargedHush
@@ -81,7 +82,11 @@ public class MakeHuschSound : MonoBehaviour
             //picking long hush
             audioSource.clip = longHush;
             audioSource.Play();
-            animatorKarin.SetBool("IsHushing", true);
+
+            animatorKarin.SetBool("breath", false);
+            animatorKarin.SetBool("makeBreath", true);
+
+            // animatorKarin.SetBool("IsHushing", true);
 
             //Setting hushradius after how long hush was charged
             gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1) + startSizeCharged;
@@ -145,6 +150,7 @@ public class MakeHuschSound : MonoBehaviour
     {
         audioSource.Stop();
         doesHuschSound = false;
+        animatorKarin.SetBool("makeBreath", false);
         gameObject.transform.localScale = new Vector3(1, 1, 1);
     }
     void StandardSpeed()

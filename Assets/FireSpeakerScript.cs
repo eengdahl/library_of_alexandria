@@ -15,16 +15,12 @@ public class FireSpeakerScript : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
 
-        if (sceneName == "scene_main_Jovin")
+        if (sceneName == "scene_main_2.2"|| sceneName == "scene_main_2.1"|| sceneName == "scene_main_2.0")
         {
             aS = GetComponent<AudioSource>();
             aS.Play();
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+  
 }
