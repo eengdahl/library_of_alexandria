@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tutorial_book_swicher : MonoBehaviour
 {
     public int i = 1;
+    public int x = 1;
     public GameObject [] books;
     public GameObject start_continue_button;
      Animator m_Animator;
@@ -32,8 +33,10 @@ public class Tutorial_book_swicher : MonoBehaviour
     void disableanimation()
     {
         i ++;
+        x=x-1;
         m_Animator.enabled=false;
         books[i].SetActive(true);
+        books[x].SetActive(false);
         Debug.Log(i);
     }
     void nextbook()

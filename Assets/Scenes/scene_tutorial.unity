@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 8
+  x: 1
   books:
   - {fileID: 228954035}
   - {fileID: 1166005336}
@@ -463,6 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 0
+  x: 1
   books:
   - {fileID: 228954035}
   - {fileID: 1166005336}
@@ -597,6 +599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 10
+  x: 1
   books:
   - {fileID: 228954035}
   - {fileID: 1166005336}
@@ -734,6 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 6
+  x: 1
   books:
   - {fileID: 228954035}
   - {fileID: 1166005336}
@@ -1777,6 +1781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 4
+  x: 3
   books:
   - {fileID: 228954035}
   - {fileID: 1166005336}
@@ -1914,6 +1919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 12
+  x: 1
   books:
   - {fileID: 228954035}
   - {fileID: 1166005336}
@@ -2186,6 +2192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 2
+  x: 3
   books:
   - {fileID: 228954035}
   - {fileID: 1166005336}
@@ -2888,6 +2895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 0
+  x: 1
   books:
   - {fileID: 228954035}
   - {fileID: 1166005336}
@@ -3054,6 +3062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 14
+  x: 1
   books:
   - {fileID: 228954035}
   - {fileID: 1166005336}
