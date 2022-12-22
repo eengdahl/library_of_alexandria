@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MagnetCollectMoveOrb : MonoBehaviour
 {
+    AudioSource aS;
     GameObject playerMagnet;
     GameObject player;
     Vector3 playerPosition;
@@ -12,9 +13,11 @@ public class MagnetCollectMoveOrb : MonoBehaviour
     float speed = 1;
     float timer;
     float destroyTimer;
-
+    PickUpSoundsStamina pickUpSounds;
     private void Start()
     {
+        aS = GetComponent<AudioSource>();
+        pickUpSounds = FindObjectOfType<PickUpSoundsStamina>();
         playerMagnet = GameObject.FindGameObjectWithTag("PickUpMagnet");
         player = GameObject.FindGameObjectWithTag("Player");
         staminaScript = player.GetComponent<Stamina>();
@@ -36,6 +39,10 @@ public class MagnetCollectMoveOrb : MonoBehaviour
                 if (transform.position == playerMagnet.transform.position && destroyTimer > 0.2f)
                 {
                     staminaScript.stamina += 5;
+                    int indexPicker;
+                    indexPicker = Random.Range(0, pickUpSounds.audioClipList.Count);
+                    AudioSource.PlayClipAtPoint(pickUpSounds.audioClipList[indexPicker], transform.position, 0.8f);
+                    //pickUpSounds.PlayPickUpSoundStamina();
                     Destroy(gameObject);
                 }
             }
@@ -43,15 +50,3 @@ public class MagnetCollectMoveOrb : MonoBehaviour
     }
 }
 
-//    private void OnTriggerEnter2D(Collider2D collision)
-//    {
-//        if (collision.CompareTag("PickUpMagnet"))
-//        {
-
-//            playerMagnet = collision.gameObject;
-//            playerPosition = collision.transform.position;
-//            moveAway = true;
-
-//        }
-//    }
-//}

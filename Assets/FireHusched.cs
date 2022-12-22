@@ -22,7 +22,7 @@ public class FireHusched : MonoBehaviour
     {
         if (collision.tag == "Husch" && makeHuschSoundScriptPlayer.doesHuschSound == true)
         {
-            fireParent.transform.localScale = fireGrowScript.minSize;
+            //fireParent.transform.localScale = fireGrowScript.minSize;
             //aS.Play();
             fireIsHusched = true;        
         }
