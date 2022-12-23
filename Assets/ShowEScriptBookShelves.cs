@@ -11,12 +11,15 @@ public class ShowEScriptBookShelves : MonoBehaviour
     GameObject kid;
     bool canReturn = false;
     string colourOfTheBook;
+    GameObject player;
+    public GameObject[] magnetBooks;
     void Start()
     {
         inventoryPlayerScript = FindObjectOfType<InventoryPlayer>();
         eButton.SetActive(false);
         upgradesScript = FindObjectOfType<AllPlayerUpgradeables>();
         ColourOfBooks();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -25,7 +28,7 @@ public class ShowEScriptBookShelves : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && canReturn)
         {
-            inventoryPlayerScript.ReturnBooks(colourOfTheBook);
+            ReturnBooksMagnet(colourOfTheBook);
         }
 
     }
@@ -91,6 +94,30 @@ public class ShowEScriptBookShelves : MonoBehaviour
         else if (gameObject.tag == "Bookshelf Green")
         {
             colourOfTheBook = "Book Green";
+        }
+    }
+    
+    void SpawnBookMagnetMove(string bookColour, Vector3 position)
+    {
+        
+            Instantiate(magnetBooks[0], position, magnetBooks[0].transform.rotation);
+            //Make a script on the book that finds the closest book shelf with tag
+            //then make that transform its target
+     
+    }
+    public void ReturnBooksMagnet(string bookColour)
+    {
+        for (int i = 0; i < upgradesScript.numberOfSlot; i++) //slots.Length
+        {
+            kid = FindChildWithTag(inventoryPlayerScript.slots[i], bookColour);
+
+            if (kid != null && kid.tag == bookColour)
+            {
+                SpawnBookMagnetMove(bookColour,inventoryPlayerScript.slots[i].transform.position);
+                Slot slot = inventoryPlayerScript.slots[i].GetComponent<Slot>();
+                slot.DestroyBook();
+
+            }
         }
     }
 }

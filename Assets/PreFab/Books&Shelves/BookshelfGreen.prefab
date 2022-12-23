@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eButton: {fileID: 7502654889912909019}
+  magnetBooks:
+  - {fileID: 3433120219766039062, guid: 330f584c66c873b4bbd9aee05e782c9c, type: 3}
 --- !u!1 &4195498938894577522
 GameObject:
   m_ObjectHideFlags: 0

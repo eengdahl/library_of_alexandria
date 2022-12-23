@@ -217,3 +217,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eButton: {fileID: 1386383129023451305}
+  magnetBooks:
+  - {fileID: 3433120219766039062, guid: a32a7d1b9214fd341bfea653ae62f8f0, type: 3}
