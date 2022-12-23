@@ -8,9 +8,11 @@ public class ShowEScript : MonoBehaviour
     [SerializeField] GameObject eButton;
     Registration registrationScript;
     InventoryPlayer inventoryPlayerScript;
+    AllPlayerUpgradeables playerUpgrades;
     bool shouldDisplayE;
     void Start()
     {
+        playerUpgrades = FindObjectOfType<AllPlayerUpgradeables>();
         shouldDisplayE = false;
         inventoryPlayerScript = FindObjectOfType<InventoryPlayer>();
         registrationScript = FindObjectOfType<Registration>();
@@ -23,7 +25,7 @@ public class ShowEScript : MonoBehaviour
     {
 
         shouldDisplayE = false;
-        for (int i = 0; i < inventoryPlayerScript.isFull.Length; i++)
+        for (int i = 0; i < playerUpgrades.numberOfSlot; i++)
         {       
            if( inventoryPlayerScript.isFull[i] == false)
             {

@@ -14,12 +14,18 @@ public class MagnetCollectMoveBook : MonoBehaviour
     int emptyInvSpots;
     int amountsOfSpots;
     AllPlayerUpgradeables playerUpgradeables;
+    ShakeInventory shakeInventroyScript;
+    AudioSource aS;
+    ShakeInventoryRotate inventoryRotate;
     private void Start()
     {
+        aS = GetComponent<AudioSource>();
+        shakeInventroyScript = FindObjectOfType<ShakeInventory>();
         playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
         invPlayer = FindObjectOfType<InventoryPlayer>();
         player = GameObject.FindGameObjectWithTag("Player");
         amountsOfSpots = playerUpgradeables.numberOfSlot;
+        inventoryRotate = FindObjectOfType<ShakeInventoryRotate>();
     }
     void Update()
     {//Om inventory är fullt kör inte detta på böcker
@@ -60,6 +66,14 @@ public class MagnetCollectMoveBook : MonoBehaviour
             playerMagnet = collision.gameObject;
             playerPosition = collision.transform.position;
             moveAway = true;
+
+        }
+        if (collision.CompareTag("PickUpMagnet") && invPlayer.inventoryFull)
+        {
+            aS.Play();
+            //shakeInventroyScript.StartShake(0.1f, 0.05f);
+            inventoryRotate.RotateInventory();
+
 
         }
     }

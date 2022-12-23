@@ -13,7 +13,7 @@ public class InventoryPlayer : MonoBehaviour
     public int invSpotsUsed;
     int spotsWhileInLoop;
     AllPlayerUpgradeables upgradesScript;
-
+    //Make a list of all child of slots
     private void Start()
     {
         upgradesScript = FindObjectOfType<AllPlayerUpgradeables>();
@@ -38,8 +38,9 @@ public class InventoryPlayer : MonoBehaviour
         }
         invSpotsUsed = spotsWhileInLoop;
         spotsWhileInLoop = 0;
-        if(invSpotsUsed >= isFull.Length)
+        if(invSpotsUsed >= upgradesScript.numberOfSlot) // isFull.Length
         {
+            Debug.Log("Inventroy is fulll!");
             inventoryFull = true;
         }
         else
@@ -49,81 +50,81 @@ public class InventoryPlayer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //If collision with Bookshelf
-        if (collision.tag == "Bookshelf Red")
-        {
-            ReturnBooks("Book Red");
-        }
-        else if (collision.tag == "Bookshelf Blue")
-        {
-            ReturnBooks("Book Blue");
-        }
-        else if (collision.tag == "Bookshelf Green")
-        {
-            ReturnBooks("Book Green");
-        }
-        else if (collision.tag == "Bookshelf White")
-        {
-            ReturnBooks("Book White");
-        }
+        ////If collision with Bookshelf
+        //if (collision.tag == "Bookshelf Red")
+        //{
+        //    ReturnBooks("Book Red");
+        //}
+        //else if (collision.tag == "Bookshelf Blue")
+        //{
+        //    ReturnBooks("Book Blue");
+        //}
+        //else if (collision.tag == "Bookshelf Green")
+        //{
+        //    ReturnBooks("Book Green");
+        //}
+        //else if (collision.tag == "Bookshelf White")
+        //{
+        //    ReturnBooks("Book White");
+        //}
 
-        //If collision with researcher
-        if (collision.tag == "Researcher Red" )
-        {
-            bool returnedBook = false;
-            NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
-             //Only if ReturnBooks is done!!!
-            GiveNPCBook("Book Red",1,returnedBook); //Returned book doesnt change
-            if (returnedBook)
-            {
+        ////If collision with researcher
+        //if (collision.tag == "Researcher Red" )
+        //{
+        //    bool returnedBook = false;
+        //    NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
+        //     //Only if ReturnBooks is done!!!
+        //    GiveNPCBook("Book Red",1,returnedBook); //Returned book doesnt change
+        //    if (returnedBook)
+        //    {
 
-                nPCResearcher.gotBook = true; 
-                collision.tag = "Researcher";
-            }
+        //        nPCResearcher.gotBook = true; 
+        //        collision.tag = "Researcher";
+        //    }
 
-        }
-        else if (collision.tag == "Researcher Blue" )
-        {
-            bool returnedBook = false;
-            NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
+        //}
+        //else if (collision.tag == "Researcher Blue" )
+        //{
+        //    bool returnedBook = false;
+        //    NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
             
-            GiveNPCBook("Book Blue",1,returnedBook);
+        //    GiveNPCBook("Book Blue",1,returnedBook);
             
-            if (returnedBook)
-            {
+        //    if (returnedBook)
+        //    {
 
-                nPCResearcher.gotBook = true;
-                collision.tag = "Researcher";
-            }
-        }
-        else if (collision.tag == "Researcher Green" )
-        {
-            bool returnedBook = false;
-            NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
+        //        nPCResearcher.gotBook = true;
+        //        collision.tag = "Researcher";
+        //    }
+        //}
+        //else if (collision.tag == "Researcher Green" )
+        //{
+        //    bool returnedBook = false;
+        //    NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
             
-            GiveNPCBook("Book Green",1,returnedBook);
+        //    GiveNPCBook("Book Green",1,returnedBook);
             
-            if (returnedBook)
-            {
+        //    if (returnedBook)
+        //    {
 
-                nPCResearcher.gotBook = true;
-                collision.tag = "Researcher";
-            }
-        }
-        else if (collision.tag == "Researcher White")
-        {
-            bool returnedBook = false;
-            NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
-            GiveNPCBook("Book White",1,returnedBook);
+        //        nPCResearcher.gotBook = true;
+        //        collision.tag = "Researcher";
+        //    }
+        //}
+        //else if (collision.tag == "Researcher White")
+        //{
+        //    bool returnedBook = false;
+        //    NPCResearcherMovement nPCResearcher = collision.gameObject.GetComponent<NPCResearcherMovement>();
+        //    GiveNPCBook("Book White",1,returnedBook);
 
 
-            if (returnedBook)
-            {
+        //    if (returnedBook)
+        //    {
 
-            nPCResearcher.gotBook = true;
-            collision.tag = "Researcher";
-            }
-        }
+        //    nPCResearcher.gotBook = true;
+        //    collision.tag = "Researcher";
+        //    }
+        //}
     }
 
     public GameObject FindChildWithTag(GameObject parent, string tag)
@@ -206,4 +207,5 @@ public class InventoryPlayer : MonoBehaviour
 
         }
     }
+
 }
