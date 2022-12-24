@@ -14,7 +14,7 @@ public class WinAndLoseState : MonoBehaviour
 
     public PlayerController1 playerController;
     NoiseHandeler noiseHandeler;
-
+    AllPlayerUpgradeables playerUpgrades;
     string sceneName;
     Scene currentScene;
 
@@ -23,6 +23,7 @@ public class WinAndLoseState : MonoBehaviour
     SwayBooksList swayBooksList;
     private void Start()
     {
+        playerUpgrades = FindObjectOfType<AllPlayerUpgradeables>();
         noiseHandeler = FindObjectOfType<NoiseHandeler>();
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
@@ -34,6 +35,7 @@ public class WinAndLoseState : MonoBehaviour
     {
         if (noiseHandeler.soundLevelInRoom >= 100 && swayBooksList.toMany == false && winScreen.enabled == false)
         {
+            playerController.karinCantMove = true;
             playerController.enabled =false;
 
             toLoud.enabled = true;
@@ -48,6 +50,7 @@ public class WinAndLoseState : MonoBehaviour
         }
         if (swayBooksList.toMany == true&& toLoud.enabled == false && winScreen.enabled == false)
         {
+            playerController.karinCantMove = true;
             playerController.enabled =false;
 
             endTimer += Time.deltaTime;
@@ -69,6 +72,7 @@ public class WinAndLoseState : MonoBehaviour
     }
     public void TimeIsUp()
     {
+        playerController.karinCantMove = true;
         playerController.enabled =false;
         endTimer += Time.deltaTime;
         //shuting down the other win/fail conditions
