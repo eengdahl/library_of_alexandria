@@ -62,7 +62,7 @@ public class MakeHuschSound : MonoBehaviour
             {
                 if(chargedHush > 0.6f)
                 {
-                staminaScript.stamina -= chargedHush;
+                staminaScript.stamina -= chargedHush * Time.deltaTime;
                 }
                 chargedHush += Time.deltaTime;
             }

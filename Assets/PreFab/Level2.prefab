@@ -5329,6 +5329,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookshelfBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 5418360911065418249, guid: e04d5d76a33e07b4f87fd11146454aa2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418360911065418249, guid: e04d5d76a33e07b4f87fd11146454aa2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.155
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e04d5d76a33e07b4f87fd11146454aa2, type: 3}
@@ -5404,6 +5412,14 @@ PrefabInstance:
     - target: {fileID: 4018419694614967606, guid: e04d5d76a33e07b4f87fd11146454aa2, type: 3}
       propertyPath: m_Name
       value: BookshelfBlue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418360911065418249, guid: e04d5d76a33e07b4f87fd11146454aa2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418360911065418249, guid: e04d5d76a33e07b4f87fd11146454aa2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.029
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
