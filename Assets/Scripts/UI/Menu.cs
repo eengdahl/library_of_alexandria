@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     public GameObject ButtonPanelOnOff;
     public GameObject CreditsOnOff;
     public GameObject SettingsOnOff;
+    public Button start;
 
     public void Quit()
     {
@@ -29,12 +30,14 @@ public class Menu : MonoBehaviour
     {
         ButtonPanelOnOff.SetActive(false);
         CreditsOnOff.SetActive(true);
+
     }
 
     public void MainMenu()
     {
         ButtonPanelOnOff.SetActive(true);
         CreditsOnOff.SetActive(false);
+        start.Select();
     }
 
     public void Settings()
@@ -47,5 +50,6 @@ public class Menu : MonoBehaviour
     {
         ButtonPanelOnOff.SetActive(true);
         SettingsOnOff.SetActive(false);
+        start.Select();
     }
 }

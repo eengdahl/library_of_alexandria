@@ -257,7 +257,7 @@ MonoBehaviour:
   - {fileID: 1795963690}
   - {fileID: 1988944368}
   - {fileID: 17515136}
-  start_continue_button: {fileID: 0}
+  start_continue_button: {fileID: 1625117053}
 --- !u!95 &153339019
 Animator:
   serializedVersion: 4
@@ -482,7 +482,7 @@ MonoBehaviour:
   - {fileID: 1795963690}
   - {fileID: 1988944368}
   - {fileID: 17515136}
-  start_continue_button: {fileID: 0}
+  start_continue_button: {fileID: 1625117053}
 --- !u!1 &300036400
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +617,7 @@ MonoBehaviour:
   - {fileID: 1795963690}
   - {fileID: 1988944368}
   - {fileID: 17515136}
-  start_continue_button: {fileID: 0}
+  start_continue_button: {fileID: 1625117053}
 --- !u!95 &410084895
 Animator:
   serializedVersion: 4
@@ -755,7 +755,7 @@ MonoBehaviour:
   - {fileID: 1795963690}
   - {fileID: 1988944368}
   - {fileID: 17515136}
-  start_continue_button: {fileID: 0}
+  start_continue_button: {fileID: 1625117053}
 --- !u!95 &414267198
 Animator:
   serializedVersion: 4
@@ -1799,7 +1799,7 @@ MonoBehaviour:
   - {fileID: 1795963690}
   - {fileID: 1988944368}
   - {fileID: 17515136}
-  start_continue_button: {fileID: 0}
+  start_continue_button: {fileID: 1625117053}
 --- !u!95 &1230538202
 Animator:
   serializedVersion: 4
@@ -1937,7 +1937,7 @@ MonoBehaviour:
   - {fileID: 1795963690}
   - {fileID: 1988944368}
   - {fileID: 17515136}
-  start_continue_button: {fileID: 0}
+  start_continue_button: {fileID: 1625117053}
 --- !u!95 &1328791917
 Animator:
   serializedVersion: 4
@@ -2210,7 +2210,7 @@ MonoBehaviour:
   - {fileID: 1795963690}
   - {fileID: 1988944368}
   - {fileID: 17515136}
-  start_continue_button: {fileID: 0}
+  start_continue_button: {fileID: 1625117053}
 --- !u!95 &1519010658
 Animator:
   serializedVersion: 4

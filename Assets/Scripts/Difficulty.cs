@@ -41,7 +41,7 @@ public class Difficulty : MonoBehaviour
         }
 
 
-        if (sceneName == "scene_main" || sceneName == "scene_main_emil"  || sceneName == "scene_main_Jovin" || sceneName == "scene_main_wildandfun" )
+        if (sceneName == "scene_main" || sceneName == "scene_main_emil" || sceneName == "scene_main_Jovin" || sceneName == "scene_main_wildandfun")
         {
             Level1();
         }
@@ -52,12 +52,12 @@ public class Difficulty : MonoBehaviour
             Level1();
         }
 
-        if (sceneName== "scene_main_1.1")
+        if (sceneName == "scene_main_1.1")
         {
             Level2();
         }
 
-        if (sceneName =="scene_main_1.2")
+        if (sceneName == "scene_main_1.2")
         {
             Level3();
         }
@@ -75,6 +75,10 @@ public class Difficulty : MonoBehaviour
         {
             Level6();
         }
+        if (sceneName == "scene_main_2.3")
+        {
+            Level7();
+        }
     }
 
 
@@ -86,7 +90,7 @@ public class Difficulty : MonoBehaviour
         SetNPCNoiseChance(9);
         SetNPCMovespeed(1.25f);
         MaxNPCOnMap(14);
-        SpawnRateNPC(3);
+        SpawnRateNPC(4);
     }
 
     void Level2()
@@ -100,7 +104,7 @@ public class Difficulty : MonoBehaviour
 
     void Level3()
     {
-        SetTimeOfLevel(140);
+        SetTimeOfLevel(160);
         SetNPCNoiseChance(8);
         SetNPCMovespeed(1.25f);
         MaxNPCOnMap(25);
@@ -109,7 +113,7 @@ public class Difficulty : MonoBehaviour
 
     void Level4()
     {
-        SetTimeOfLevel(180);
+        SetTimeOfLevel(190);
         SetNPCNoiseChance(8);
         SetNPCMovespeed(1.4f);
         MaxNPCOnMap(17);
@@ -118,7 +122,7 @@ public class Difficulty : MonoBehaviour
 
     void Level5()
     {
-        SetTimeOfLevel(180);
+        SetTimeOfLevel(140);
         SetNPCNoiseChance(8);
         SetNPCMovespeed(1.4f);
         MaxNPCOnMap(15);
@@ -127,26 +131,35 @@ public class Difficulty : MonoBehaviour
 
     void Level6()
     {
-        SetTimeOfLevel(180);
-        SetNPCNoiseChance(8);
-        SetNPCMovespeed(1.6f);
-        MaxNPCOnMap(19);
+        SetTimeOfLevel(110);
+        SetNPCNoiseChance(5);
+        SetNPCMovespeed(1.4f);
+        MaxNPCOnMap(12);
+        SpawnRateNPC(4);
+    }
+
+    void Level7()
+    {
+        SetTimeOfLevel(100);
+        SetNPCNoiseChance(7);
+        SetNPCMovespeed(1.4f);
+        MaxNPCOnMap(30);
         SpawnRateNPC(4);
     }
 
     void Tutorial()
     {
         SetTimeOfLevel(9999999);
-       // SetNPCNoiseChance(9);
-       // SetNPCMovespeed(1.25f);
+        // SetNPCNoiseChance(9);
+        // SetNPCMovespeed(1.25f);
         MaxNPCOnMap(0);
-      //  SpawnRateNPC(3);
+        //  SpawnRateNPC(3);
     }
 
 
     public void SetTimeOfLevel(int time)
     {
-        levelTime = time;   
+        levelTime = time;
         meters.maxTime = time;
     }
 
