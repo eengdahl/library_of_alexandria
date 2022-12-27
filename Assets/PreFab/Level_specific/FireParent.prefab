@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 145752753925987695}
   - component: {fileID: 145752753925987692}
   - component: {fileID: 145752753925987693}
+  - component: {fileID: 21738754850755462}
   m_Layer: 0
   m_Name: FireBurningOutside_1 (8)
   m_TagString: Untagged
@@ -105,6 +106,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &21738754850755462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752753925987666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752753931824163
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +129,7 @@ GameObject:
   - component: {fileID: 145752753931824188}
   - component: {fileID: 145752753931824189}
   - component: {fileID: 145752753931824162}
+  - component: {fileID: 8627203338722178046}
   m_Layer: 0
   m_Name: FireBurningOutside_1 (1)
   m_TagString: Untagged
@@ -210,6 +224,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8627203338722178046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752753931824163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752754167802025
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +247,7 @@ GameObject:
   - component: {fileID: 145752754167802026}
   - component: {fileID: 145752754167802027}
   - component: {fileID: 145752754167802024}
+  - component: {fileID: 5175254346957960690}
   m_Layer: 0
   m_Name: FireBurningOutside_1 (5)
   m_TagString: Untagged
@@ -315,6 +342,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5175254346957960690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752754167802025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752754386433443
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +365,7 @@ GameObject:
   - component: {fileID: 145752754386433468}
   - component: {fileID: 145752754386433469}
   - component: {fileID: 145752754386433442}
+  - component: {fileID: 102530612799739781}
   m_Layer: 0
   m_Name: FireBurningOutside (3)
   m_TagString: Untagged
@@ -420,6 +460,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &102530612799739781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752754386433443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752754395353550
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +483,7 @@ GameObject:
   - component: {fileID: 145752754395353547}
   - component: {fileID: 145752754395353544}
   - component: {fileID: 145752754395353545}
+  - component: {fileID: 2126430074975733409}
   m_Layer: 0
   m_Name: FireBurningOutside_1 (4)
   m_TagString: Untagged
@@ -525,6 +578,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2126430074975733409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752754395353550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752754602728622
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +601,7 @@ GameObject:
   - component: {fileID: 145752754602728619}
   - component: {fileID: 145752754602728616}
   - component: {fileID: 145752754602728617}
+  - component: {fileID: 1990826551914864143}
   m_Layer: 0
   m_Name: FireBurningOutside
   m_TagString: Untagged
@@ -630,6 +696,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1990826551914864143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752754602728622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752754639281275
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +719,7 @@ GameObject:
   - component: {fileID: 145752754639281268}
   - component: {fileID: 145752754639281269}
   - component: {fileID: 145752754639281274}
+  - component: {fileID: 4270122940640509995}
   m_Layer: 0
   m_Name: FireBurningOutside (10)
   m_TagString: Untagged
@@ -735,6 +814,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4270122940640509995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752754639281275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752754941874350
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +837,7 @@ GameObject:
   - component: {fileID: 145752754941874347}
   - component: {fileID: 145752754941874344}
   - component: {fileID: 145752754941874345}
+  - component: {fileID: 1349919721180325887}
   m_Layer: 0
   m_Name: FireBurningOutside_1 (3)
   m_TagString: Untagged
@@ -840,6 +932,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1349919721180325887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752754941874350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755060112848
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +955,7 @@ GameObject:
   - component: {fileID: 145752755060112877}
   - component: {fileID: 145752755060112850}
   - component: {fileID: 145752755060112851}
+  - component: {fileID: 5679512030905310087}
   m_Layer: 0
   m_Name: FireBurningOutside (1)
   m_TagString: Untagged
@@ -945,6 +1050,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5679512030905310087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755060112848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755081138677
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +1073,7 @@ GameObject:
   - component: {fileID: 145752755081138678}
   - component: {fileID: 145752755081138679}
   - component: {fileID: 145752755081138676}
+  - component: {fileID: 3437424316673312660}
   m_Layer: 0
   m_Name: FireBurningOutside (8)
   m_TagString: Untagged
@@ -1050,6 +1168,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3437424316673312660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755081138677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755275187409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,6 +1191,7 @@ GameObject:
   - component: {fileID: 145752755275187410}
   - component: {fileID: 145752755275187411}
   - component: {fileID: 145752755275187408}
+  - component: {fileID: 3126001324622600050}
   m_Layer: 0
   m_Name: FireBurningOutside (5)
   m_TagString: Untagged
@@ -1155,6 +1286,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3126001324622600050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755275187409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755302346759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1309,7 @@ GameObject:
   - component: {fileID: 145752755302346752}
   - component: {fileID: 145752755302346753}
   - component: {fileID: 145752755302346758}
+  - component: {fileID: 4971096345151656491}
   m_Layer: 0
   m_Name: FireBurningOutside (9)
   m_TagString: Untagged
@@ -1260,6 +1404,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4971096345151656491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755302346759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755477856117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1427,7 @@ GameObject:
   - component: {fileID: 145752755477856118}
   - component: {fileID: 145752755477856119}
   - component: {fileID: 145752755477856116}
+  - component: {fileID: 2699174629095651527}
   m_Layer: 0
   m_Name: FireBurningOutside_1 (6)
   m_TagString: Untagged
@@ -1365,6 +1522,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2699174629095651527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755477856117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755478558416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1545,7 @@ GameObject:
   - component: {fileID: 145752755478558445}
   - component: {fileID: 145752755478558418}
   - component: {fileID: 145752755478558419}
+  - component: {fileID: 8063990772830974664}
   m_Layer: 0
   m_Name: FireBurningOutside_1 (7)
   m_TagString: Untagged
@@ -1470,6 +1640,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8063990772830974664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755478558416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755496662713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1663,7 @@ GameObject:
   - component: {fileID: 145752755496662714}
   - component: {fileID: 145752755496662715}
   - component: {fileID: 145752755496662712}
+  - component: {fileID: 6834895534762211848}
   m_Layer: 0
   m_Name: FireBurningOutside_1 (2)
   m_TagString: Untagged
@@ -1575,6 +1758,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6834895534762211848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755496662713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755519410896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1781,7 @@ GameObject:
   - component: {fileID: 145752755519410925}
   - component: {fileID: 145752755519410898}
   - component: {fileID: 145752755519410899}
+  - component: {fileID: 7191830001709581712}
   m_Layer: 0
   m_Name: FireBurningOutside_1
   m_TagString: Untagged
@@ -1680,6 +1876,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7191830001709581712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755519410896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755690785317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,6 +1899,7 @@ GameObject:
   - component: {fileID: 145752755690785318}
   - component: {fileID: 145752755690785319}
   - component: {fileID: 145752755690785316}
+  - component: {fileID: 9092604364957583237}
   m_Layer: 0
   m_Name: FireBurningOutside (4)
   m_TagString: Untagged
@@ -1785,6 +1994,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9092604364957583237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755690785317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755793815568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,6 +2017,7 @@ GameObject:
   - component: {fileID: 145752755793815597}
   - component: {fileID: 145752755793815570}
   - component: {fileID: 145752755793815571}
+  - component: {fileID: 6244062280389925938}
   m_Layer: 0
   m_Name: FireBurningOutside (2)
   m_TagString: Untagged
@@ -1890,6 +2112,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6244062280389925938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755793815568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755876502607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,6 +2135,7 @@ GameObject:
   - component: {fileID: 145752755876502600}
   - component: {fileID: 145752755876502601}
   - component: {fileID: 145752755876502606}
+  - component: {fileID: 8004172450497822519}
   m_Layer: 0
   m_Name: FireBurningOutside_1 (9)
   m_TagString: Untagged
@@ -1995,6 +2230,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8004172450497822519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755876502607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755877302563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2253,7 @@ GameObject:
   - component: {fileID: 145752755877302588}
   - component: {fileID: 145752755877302589}
   - component: {fileID: 145752755877302562}
+  - component: {fileID: 9004445695385591059}
   m_Layer: 0
   m_Name: FireBurningOutside (6)
   m_TagString: Untagged
@@ -2100,6 +2348,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9004445695385591059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755877302563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &145752755882619119
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,6 +2371,7 @@ GameObject:
   - component: {fileID: 145752755882619112}
   - component: {fileID: 145752755882619113}
   - component: {fileID: 145752755882619118}
+  - component: {fileID: 2686705345424947162}
   m_Layer: 0
   m_Name: FireBurningOutside (7)
   m_TagString: Untagged
@@ -2205,6 +2466,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2686705345424947162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145752755882619119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4610193bd0e08e41b452307532cc463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9016894312026624827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,5 +2528,5 @@ Transform:
   - {fileID: 145752753925987695}
   - {fileID: 145752755876502600}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -2238,7 +2238,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979445696}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc669a49fa633914e8c2406d14a511cb, type: 3}
   m_Name: 
@@ -2479,6 +2479,10 @@ PrefabInstance:
       propertyPath: fillImage
       value: 
       objectReference: {fileID: 1946906731}
+    - target: {fileID: 1558703684, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: staminaMax
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 1558703684, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: staminaSlider
       value: 
@@ -3563,7 +3567,7 @@ PrefabInstance:
       objectReference: {fileID: 296491680}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: staminaMax
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: normalSpeed
@@ -3583,7 +3587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: chargedHuschMax
-      value: 4
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: pickUpMagnetRadius
