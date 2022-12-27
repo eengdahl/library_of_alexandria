@@ -36,7 +36,8 @@ public class WinAndLoseState : MonoBehaviour
         if (noiseHandeler.soundLevelInRoom >= 100 && swayBooksList.toMany == false && winScreen.enabled == false)
         {
             playerController.karinCantMove = true;
-            playerController.enabled =false;
+            playerController.inputAxis = new Vector2(0, 0);
+            //playerController.enabled =false;
 
             toLoud.enabled = true;
             endTimer += Time.deltaTime;
@@ -51,7 +52,8 @@ public class WinAndLoseState : MonoBehaviour
         if (swayBooksList.toMany == true&& toLoud.enabled == false && winScreen.enabled == false)
         {
             playerController.karinCantMove = true;
-            playerController.enabled =false;
+            playerController.inputAxis = new Vector2(0, 0);
+            //playerController.enabled =false;
 
             endTimer += Time.deltaTime;
 
@@ -73,7 +75,8 @@ public class WinAndLoseState : MonoBehaviour
     public void TimeIsUp()
     {
         playerController.karinCantMove = true;
-        playerController.enabled =false;
+        playerController.inputAxis = new Vector2(0, 0);
+        //playerController.enabled =false;
         endTimer += Time.deltaTime;
         //shuting down the other win/fail conditions
         noiseSlider.value = 0;
