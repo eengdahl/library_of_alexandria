@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] GameObject overLay;
+    SpriteRenderer overLaySprite;
     public static bool isGamePaused = false;
     [SerializeField] GameObject PauseMenunow;
 
     private void Awake()
     {
+        overLaySprite = overLay.GetComponent<SpriteRenderer>();
+        overLaySprite.enabled = false;
         Cursor.visible = false;
     }
     void Start()
@@ -26,11 +30,14 @@ public class PauseMenu : MonoBehaviour
             {
                 Cursor.visible = true;
                 PauseGame();
+                overLaySprite.enabled = true;
+
             }
             else
             {
                 Cursor.visible = false;
                 ResumeGame();
+                overLaySprite.enabled = false;
             }
         }  
     }

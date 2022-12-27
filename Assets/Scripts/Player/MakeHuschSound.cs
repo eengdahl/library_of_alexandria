@@ -17,8 +17,8 @@ public class MakeHuschSound : MonoBehaviour
     PlayerController1 playerController1;
     float startSize = 1;
     SpriteRenderer spriteRenderer;
-    Vector3 startSizeCharged = new Vector3(0.3f, 0.3f, 0);
     [SerializeField] float smallHuschCharged = 0.4f;
+    Vector3 startSizeCharged; 
     AllPlayerUpgradeables playerUpgradeables;
 
 
@@ -35,6 +35,7 @@ public class MakeHuschSound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startSizeCharged = new Vector3(smallHuschCharged, smallHuschCharged, 0);
         staminaScript = FindObjectOfType<Stamina>();
         playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
         chargedHuschMax = playerUpgradeables.chargedHuschMax;
@@ -55,15 +56,19 @@ public class MakeHuschSound : MonoBehaviour
         //Om du trycker på  activate spela husch ljudet och gör om boolen doesHuschSound till true
         if (Input.GetKey("space") && !doesHuschSound)
         {
+            if (chargedHush < smallHuschCharged)
+            {
+                chargedHush += Time.deltaTime;
+            }
             if (chargedHush > smallHuschCharged)
             {
                 spriteRenderer.enabled = true;
                 animatorKarin.SetBool("breath", true);
 
             }
-            if (chargedHush < chargedHuschMax && staminaScript.stamina > 0)
+            if (chargedHush < chargedHuschMax && staminaScript.stamina > 0 && chargedHush > smallHuschCharged )
             {
-                if (chargedHush > 0.6f)
+                if (chargedHush > smallHuschCharged)
                 {
                     staminaScript.stamina -= chargedHush * Time.deltaTime;
                 }
@@ -90,7 +95,7 @@ public class MakeHuschSound : MonoBehaviour
             }
         }
         //Makes a chargedHush
-        if (Input.GetKeyUp("space") && chargedHush > 0.6f)
+        if (Input.GetKeyUp("space") && chargedHush > smallHuschCharged)
         {
 
             //finetunear hur effektiv chargehush ska vara, work in progress
@@ -138,17 +143,14 @@ public class MakeHuschSound : MonoBehaviour
             Invoke("StandardSpeed", smallHuschCharged);
             animatorKarin.SetBool("makeBreath", true);
         }
-        if (Input.GetKeyUp("space"))
-        {
-            //spriteRenderer.enabled = false;
-        }
+
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
         if (doesHuschSound)
         {
             huschTimer += Time.deltaTime;
             if (huschTimer >= lenghtOfHusch)
             {
-                spriteRenderer.enabled = false;
+                
                 animatorKarin.SetBool("IsHushing", false);
                 //lenghtOfHusch = 0.5f;
                 chargedHush = 0;
@@ -159,16 +161,18 @@ public class MakeHuschSound : MonoBehaviour
         //Om vi inte huschar ska husch timern vara på 0
         else if (!doesHuschSound)
         {
+
             animatorKarin.SetBool("IsHushing", false);
             huschTimer = 0;
-
             playerController1.karinCantMove = false;
+
         }
     }
 
     //Stopps chargehush after time of charge hush
     private void StopAudio()
     {
+        spriteRenderer.enabled = false;
         audioSource.Stop();
         doesHuschSound = false;
         animatorKarin.SetBool("makeBreath", false);
