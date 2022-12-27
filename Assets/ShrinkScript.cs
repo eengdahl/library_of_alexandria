@@ -9,6 +9,12 @@ public class ShrinkScript : MonoBehaviour
     public float increaseRate = 2f;
     bool increaseSize = true;
     float timer;
+    [SerializeField] AudioClip returnSound;
+
+    private void Start()
+    {
+        AudioSource.PlayClipAtPoint(returnSound, transform.position, 0.8f);
+    }
     void Update()
     {
         if (increaseSize)

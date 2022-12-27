@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BookColour: {fileID: 5863989389636388679, guid: bd037f74b1a0a58439a069079688f2c1, type: 3}
+  pickUpSound: {fileID: 8300000, guid: a5bb24331bb91744f89aa9a452fae05e, type: 3}
 --- !u!114 &57389750
 MonoBehaviour:
   m_ObjectHideFlags: 0

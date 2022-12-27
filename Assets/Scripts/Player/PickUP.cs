@@ -7,7 +7,7 @@ public class PickUP : MonoBehaviour
     private InventoryPlayer inventoryPlayer;
     public GameObject BookColour;
     AllPlayerUpgradeables playerUpgrades;
-
+    public AudioClip pickUpSound;
     private void Start()
     {
         playerUpgrades = FindObjectOfType<AllPlayerUpgradeables>();
@@ -22,9 +22,11 @@ public class PickUP : MonoBehaviour
             {
                 if (inventoryPlayer.isFull[i] == false)
                 {
+
                     //BOOK CAN BE ADDED TO INVENTORY
                     inventoryPlayer.isFull[i] = true;
                     Instantiate(BookColour, inventoryPlayer.slots[i].transform, false);
+                    AudioSource.PlayClipAtPoint(pickUpSound, transform.position, 0.8f);
                     Destroy(gameObject);
                     break; //Stop the for loop if empty spot in inventory is found
                 }

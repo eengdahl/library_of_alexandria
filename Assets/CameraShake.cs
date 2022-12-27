@@ -24,14 +24,14 @@ public class CameraShake : MonoBehaviour
             shakeTimer += Time.deltaTime;
             if (shakeTimer > 0.05)
             {
-                transform.position = startPosition;
                 transform.position += (Vector3)(Random.insideUnitCircle * 0.1f);
                 shakeTimer = 0;
+                transform.position = startPosition;
             }
         }
-        else
-        {
-            transform.position = startPosition;
-        }
+        //else
+        //{
+        //    transform.position = startPosition;
+        //}
     }
 }
