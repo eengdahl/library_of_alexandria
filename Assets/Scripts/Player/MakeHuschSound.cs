@@ -22,6 +22,9 @@ public class MakeHuschSound : MonoBehaviour
     AllPlayerUpgradeables playerUpgradeables;
 
 
+    //"shake"
+    public float whenShake;
+
     //Stamina
     Stamina staminaScript;
     public float chargedHuschMax;
@@ -55,24 +58,41 @@ public class MakeHuschSound : MonoBehaviour
             if (chargedHush > smallHuschCharged)
             {
                 spriteRenderer.enabled = true;
-            animatorKarin.SetBool("breath", true);
+                animatorKarin.SetBool("breath", true);
 
             }
             if (chargedHush < chargedHuschMax && staminaScript.stamina > 0)
             {
-                if(chargedHush > 0.6f)
+                if (chargedHush > 0.6f)
                 {
-                staminaScript.stamina -= chargedHush * Time.deltaTime;
+                    staminaScript.stamina -= chargedHush * Time.deltaTime;
                 }
-                chargedHush += Time.deltaTime;
+                if (chargedHush >= chargedHuschMax / 2)
+                {
+                    chargedHush += Time.deltaTime / 4;
+                }
+                else
+                {
+                    chargedHush += Time.deltaTime;
+                }
             }
-            
-            gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1) + startSizeCharged;
+            //"Shake the husch"
+            if (chargedHush > chargedHuschMax/1.5f && Input.GetKey("space") && chargedHush < chargedHuschMax) //chargedHuschMax - chargedHush > whenShake
+            {
+                Debug.Log("Should shake charged husch now");
+                float scale = chargedHush + startSizeCharged.x + Mathf.Sin(Time.time * 20) * 0.05f;
+                transform.localScale = new Vector3(scale, scale, 0);
+            }
+            //Increase size
+            else
+            {
+                gameObject.transform.localScale = startSizeCharged + new Vector3(chargedHush, chargedHush, 1);
+            }
         }
         //Makes a chargedHush
         if (Input.GetKeyUp("space") && chargedHush > 0.6f)
         {
-            
+
             //finetunear hur effektiv chargehush ska vara, work in progress
 
             Invoke("StopAudio", chargedHush);
@@ -86,7 +106,7 @@ public class MakeHuschSound : MonoBehaviour
             animatorKarin.SetBool("breath", false);
             animatorKarin.SetBool("makeBreath", true);
 
-            // animatorKarin.SetBool("IsHushing", true);
+            animatorKarin.SetBool("IsHushing", true);
 
             //Setting hushradius after how long hush was charged
             gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1) + startSizeCharged;
@@ -99,7 +119,7 @@ public class MakeHuschSound : MonoBehaviour
             //playerController1.karinCantMove = true;
             playerController1.speed = playerController1.speed * 4;
             Invoke("StandardSpeed", lenghtOfHusch);
-            
+
 
         }
         //Makes standard hush
@@ -120,7 +140,7 @@ public class MakeHuschSound : MonoBehaviour
         }
         if (Input.GetKeyUp("space"))
         {
-            spriteRenderer.enabled = false;
+            //spriteRenderer.enabled = false;
         }
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
         if (doesHuschSound)
