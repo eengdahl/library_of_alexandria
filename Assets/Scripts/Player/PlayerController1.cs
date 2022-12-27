@@ -36,6 +36,7 @@ public class PlayerController1 : MonoBehaviour
         //Freezing karin from script MakeHushSound if longhushing
         if (karinCantMove)
         {
+            animator.SetFloat("IsMoving", 0);
             rb.velocity = new Vector2(0, 0);
             return;
         }
@@ -69,6 +70,7 @@ public class PlayerController1 : MonoBehaviour
         if (karinCantMove)
         {
             rb.velocity = new Vector2(0, 0);
+            animator.SetFloat("IsMoving", 0);
             return;
         }
         rb.velocity = moveVelocity;
@@ -81,6 +83,7 @@ public class PlayerController1 : MonoBehaviour
         if (karinCantMove)
         {
             rb.velocity = new Vector2(0, 0);
+            animator.SetFloat("IsMoving", 0);
             return;
         }
         facingRight = !facingRight;
