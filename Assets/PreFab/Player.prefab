@@ -512,7 +512,7 @@ AudioSource:
   m_GameObject: {fileID: 1664763972554779679}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b750363c54d87eb4da3b561c98c12658, type: 2}
   m_audioClip: {fileID: 8300000, guid: 48b03a67fafafaf4eb6193f889facafa, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.28
@@ -873,6 +873,7 @@ MonoBehaviour:
   standardRadius: 0.4697719
   doesHuschSound: 0
   smallHuschCharged: 0.4
+  whenShake: 0
   chargedHuschMax: 0
 --- !u!82 &4355956086700047637
 AudioSource:
@@ -883,7 +884,7 @@ AudioSource:
   m_GameObject: {fileID: 4355956086700047642}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b750363c54d87eb4da3b561c98c12658, type: 2}
   m_audioClip: {fileID: 8300000, guid: a98bfbb66d9c6e8429dfa83ec18527f5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

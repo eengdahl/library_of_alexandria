@@ -502,18 +502,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redSpriteAnimator: {fileID: 1895433057}
+  difficulty: {fileID: 0}
   moveSpeed: 1.25
   canMove: 1
   stillAfterHusch: 2
   nPCbookPickUp: {fileID: 606453319}
   blankBook: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
   chairs: []
-  chairsLeftR: []
-  chairsRightR: []
-  chairsMiddleR: []
-  chairsLeftL: []
-  chairsRightL: []
-  chairsMiddleL: []
   hasChair: 0
   isSeated: 0
   wayPoints:
@@ -535,7 +530,7 @@ AudioSource:
   m_GameObject: {fileID: 5865293537661773346}
   m_Enabled: 0
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b750363c54d87eb4da3b561c98c12658, type: 2}
   m_audioClip: {fileID: 8300000, guid: c9523d3d1af306043bca585df02f73bf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
@@ -643,6 +638,9 @@ MonoBehaviour:
   makingNosie: 0
   chanceOfMakingSound: 0
   npcMovement: {fileID: 0}
+  npcNoiseDifficulty: 0
+  pondusLevel: 0
+  timerAfterBeingHusched: 0
 --- !u!50 &1398966624
 Rigidbody2D:
   serializedVersion: 4

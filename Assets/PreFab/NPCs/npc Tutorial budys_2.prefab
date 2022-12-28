@@ -370,6 +370,7 @@ MonoBehaviour:
   beingHusched: 0
   target_Buddys2: {fileID: 0}
   target_Buddys22: {fileID: 0}
+  target_Buddys2_2goback: {fileID: 0}
   exclamation_talkbubbel: {fileID: 4224815788543865113}
   collision_between_buddy2_player: 0
   book: {fileID: 6529540992961897015, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
@@ -383,7 +384,7 @@ AudioSource:
   m_GameObject: {fileID: 6943790501904278775}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b750363c54d87eb4da3b561c98c12658, type: 2}
   m_audioClip: {fileID: 8300000, guid: 44b434ec0c64ea049a4ed2e66960373b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.057
