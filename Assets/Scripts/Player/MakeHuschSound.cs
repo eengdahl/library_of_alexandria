@@ -31,6 +31,8 @@ public class MakeHuschSound : MonoBehaviour
 
     //Husch cooldown;
     float coolDown;
+    //Zoom
+    public bool zoomIn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -60,14 +62,15 @@ public class MakeHuschSound : MonoBehaviour
             {
                 chargedHush += Time.deltaTime;
             }
-            if (chargedHush > smallHuschCharged)
+            if (chargedHush  > smallHuschCharged + 0.05f)
             {
                 spriteRenderer.enabled = true;
                 animatorKarin.SetBool("breath", true);
-
             }
-            if (chargedHush < chargedHuschMax && staminaScript.stamina > 0 && chargedHush > smallHuschCharged )
+
+            if (chargedHush < chargedHuschMax && staminaScript.stamina > 0 && chargedHush  > smallHuschCharged )
             {
+                
                 if (chargedHush > smallHuschCharged)
                 {
                     staminaScript.stamina -= chargedHush * Time.deltaTime;
@@ -76,15 +79,16 @@ public class MakeHuschSound : MonoBehaviour
                 {
                     chargedHush += Time.deltaTime / 4;
                 }
-                else
+                else 
                 {
                     chargedHush += Time.deltaTime;
                 }
             }
+            
             //"Shake the husch"
             if (chargedHush > chargedHuschMax/1.5f && Input.GetKey("space") && chargedHush < chargedHuschMax) //chargedHuschMax - chargedHush > whenShake
             {
-                Debug.Log("Should shake charged husch now");
+                zoomIn = true;
                 float scale = chargedHush + startSizeCharged.x + Mathf.Sin(Time.time * 20) * 0.05f;
                 transform.localScale = new Vector3(scale, scale, 0);
             }
@@ -97,7 +101,7 @@ public class MakeHuschSound : MonoBehaviour
         //Makes a chargedHush
         if (Input.GetKeyUp("space") && chargedHush > smallHuschCharged)
         {
-
+            zoomIn = false;
             //finetunear hur effektiv chargehush ska vara, work in progress
 
             Invoke("StopAudio", chargedHush);
@@ -128,7 +132,7 @@ public class MakeHuschSound : MonoBehaviour
 
         }
         //Makes standard hush
-        else if (Input.GetKeyUp("space") && !doesHuschSound && chargedHush <= 0.6f && coolDown <= 0)
+        else if (Input.GetKeyUp("space") && !doesHuschSound && chargedHush <= smallHuschCharged && coolDown <= 0)
         {
             coolDown = 1f;
             spriteRenderer.enabled = false;
@@ -172,6 +176,7 @@ public class MakeHuschSound : MonoBehaviour
     //Stopps chargehush after time of charge hush
     private void StopAudio()
     {
+        
         spriteRenderer.enabled = false;
         audioSource.Stop();
         doesHuschSound = false;
