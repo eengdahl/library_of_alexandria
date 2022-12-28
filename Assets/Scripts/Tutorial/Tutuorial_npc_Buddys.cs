@@ -69,7 +69,7 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(collisiontimer);
+        //Debug.Log(collisiontimer);
         timer += Time.deltaTime;
  
 
@@ -87,8 +87,12 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
 
         if (walk_out == true)
         {
-            Debug.Log("ut1");
+            //Debug.Log("ut1");
             transform.position = Vector3.MoveTowards(transform.position, target_Buddys11.position, speed * Time.deltaTime);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            collisiontimer = 0;
         }
     }
     //if buddy 1 collidar med player && buddy 2 collidar med player
@@ -98,7 +102,7 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
     {
 
 
-        if (collision.tag == "Husch" && makeHuschSound.doesHuschSound == true)
+        if (collision.tag == "Husch" /* && makeHuschSound.doesHuschSound == true */ && Input.GetKey(KeyCode.Space))
         {
             collisiontimer += Time.deltaTime;
             // audio1_1.Stop();
@@ -107,14 +111,13 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
             active_1 = true;
         }
 
-        if (collision.tag == "Husch" && budy2.collisiontimer > 0f && makeHuschSound.doesHuschSound == true)
+        if ( collision.tag == "Husch" &&   budy2.collisiontimer > 2f &&  Input.GetKeyUp(KeyCode.Space)/* && makeHuschSound.doesHuschSound == true */)
         {
             walk_out = true;
             collisiontimer += Time.deltaTime;
             audio1_1.Stop();
             has_been_hushed = true;
             exclamation_talkbubbel.SetActive(false);
-
         }
 
 

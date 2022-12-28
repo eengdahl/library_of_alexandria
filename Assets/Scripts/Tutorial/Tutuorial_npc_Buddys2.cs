@@ -140,25 +140,31 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
             pop_up_one_book = false;
 
         }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            collisiontimer = 0;
+        }
 
-        Debug.Log(collisiontimer);
+        //Debug.Log(collisiontimer);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
 
 
-        if (collision.tag == "Husch" && makeHuschSound.doesHuschSound == true)
+        if (collision.tag == "Husch" /* && makeHuschSound.doesHuschSound == true  */&& Input.GetKey(KeyCode.Space))
         {
             //audio2_2.Stop();
             //has_been_hushed = true;
             //exclamation_talkbubbel.SetActive(false);
             collisiontimer += Time.deltaTime;
+            Debug.Log("timerstart");
             active_1 = true;
 
         }
 
-        if (collision.tag == "Husch" && budy1.collisiontimer > 0f && makeHuschSound.doesHuschSound == true)
+        if  (collision.tag == "Husch" &&  budy1.collisiontimer > 2f && Input.GetKeyUp(KeyCode.Space)/* && makeHuschSound.doesHuschSound == true */)
         {
+            Debug.Log("timer end..............................");
             walk_out = true;
             collisiontimer += Time.deltaTime;
             audio2_2.Stop();
