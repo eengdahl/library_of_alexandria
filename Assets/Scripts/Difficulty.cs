@@ -140,7 +140,7 @@ public class Difficulty : MonoBehaviour
 
     void Level7()
     {
-        SetTimeOfLevel(100);
+        SetTimeOfLevel(10);
         SetNPCNoiseChance(7);
         SetNPCMovespeed(1.4f);
         MaxNPCOnMap(30);

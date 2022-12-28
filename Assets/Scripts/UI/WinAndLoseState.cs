@@ -12,11 +12,17 @@ public class WinAndLoseState : MonoBehaviour
     public SpriteRenderer toLoud;
     public SpriteRenderer winScreen;
 
+    public GameObject progressionScreen;
+    public Animator progressionAnimator;
+
     public PlayerController1 playerController;
     NoiseHandeler noiseHandeler;
     AllPlayerUpgradeables playerUpgrades;
     string sceneName;
     Scene currentScene;
+
+
+
 
 
     float endTimer;
@@ -49,7 +55,7 @@ public class WinAndLoseState : MonoBehaviour
                 SceneManager.LoadScene("Meny");
             }
         }
-        if (swayBooksList.toMany == true&& toLoud.enabled == false && winScreen.enabled == false)
+        if (swayBooksList.toMany == true && toLoud.enabled == false && winScreen.enabled == false)
         {
             playerController.karinCantMove = true;
             playerController.inputAxis = new Vector2(0, 0);
@@ -57,9 +63,9 @@ public class WinAndLoseState : MonoBehaviour
 
             endTimer += Time.deltaTime;
 
-            if (endTimer>4)
+            if (endTimer > 4)
             {
-            fellOver.enabled = true;
+                fellOver.enabled = true;
 
             }
             //shuting down the other win/fail conditions
@@ -74,6 +80,7 @@ public class WinAndLoseState : MonoBehaviour
     }
     public void TimeIsUp()
     {
+        bool endLock = false;
         playerController.karinCantMove = true;
         playerController.inputAxis = new Vector2(0, 0);
         //playerController.enabled =false;
@@ -84,20 +91,46 @@ public class WinAndLoseState : MonoBehaviour
         if (fellOver.enabled == false && toLoud.enabled == false)
         {
             winScreen.enabled = true;
-            if (endTimer > 10)
+
+
+            if (endTimer > 10 && endLock == false)
             {
-                if (sceneName == "scene_main_2.2")
-                {
-                    SceneManager.LoadScene("Meny");
-                    return;
-                }
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                //if (sceneName == "scene_main_Jovin")
+                Progression(SceneManager.GetActiveScene().buildIndex);
+                endLock = true;
+
+
+                //return if last scene
+                //if (sceneName == "scene_main_2.3")
                 //{
                 //    SceneManager.LoadScene("Meny");
+                //    return;
                 //}
-                ////SceneManager.LoadScene("Meny");
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
             }
         }
     }
+
+
+    //SceneManager.GetActiveScene().buildIndex;
+    public void Progression(int level)
+    {
+        progressionScreen.SetActive(true);
+        progressionAnimator.SetInteger("level", level);
+
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ReloadScene()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        SceneManager.LoadScene(sceneName);
+    }
+
+
 }

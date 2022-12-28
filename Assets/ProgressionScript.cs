@@ -2,24 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ProgressionScript : MonoBehaviour
 {
-    public Animator animator;
-    SpriteRenderer spriteRenderer;
-    
-    void Start()
+
+    // public Button retryButton;
+    // public Button continueButton;
+    public GameObject retryButton;
+    public GameObject continueButton;
+    public Animator me;
+
+    private void Awake()
     {
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        me = GetComponent<Animator>();
     }
 
-   
-
-    public void ActivateProgression()
+    public void AcvtivateButtons()
     {
-        spriteRenderer.enabled = true;
-        //animator set bool new level
-
+        me.SetInteger("level", 1);
+        retryButton.SetActive(true);
+        continueButton.SetActive(true);
     }
 }
