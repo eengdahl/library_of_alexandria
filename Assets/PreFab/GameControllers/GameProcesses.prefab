@@ -4590,6 +4590,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 6176864220609053188}
     m_Modifications:
+    - target: {fileID: 6568943748847823377, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6568943748847823391, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4650,6 +4654,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6251720632631648105}
+    - target: {fileID: 6568943749893454614, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}

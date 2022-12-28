@@ -1399,6 +1399,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1106626876, guid: 9081088c40fa54342ae4a73ba3812b89, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1641482858}
     - target: {fileID: 453569708531253322, guid: 9081088c40fa54342ae4a73ba3812b89, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -4188,7 +4192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2264900311570635475, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.649993
+      value: -4.649994
       objectReference: {fileID: 0}
     - target: {fileID: 2287091803019691935, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_LocalScale.x
@@ -4205,10 +4209,6 @@ PrefabInstance:
     - target: {fileID: 2452866671858519300, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_LocalScale.y
       value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 4161427384591519964, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: levelTime
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6176864220257201133, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4272,7 +4272,7 @@ PrefabInstance:
       objectReference: {fileID: 594419944}
     - target: {fileID: 6176864221267170185, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.9999695
+      value: -4.9999676
       objectReference: {fileID: 0}
     - target: {fileID: 6251720632631648105, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: playerController

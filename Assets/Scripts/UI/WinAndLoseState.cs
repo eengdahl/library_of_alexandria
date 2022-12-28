@@ -122,6 +122,13 @@ public class WinAndLoseState : MonoBehaviour
 
     public void NextScene()
     {
+        //Temporary to not break level load
+        //will soon be karin bathing 
+        if (sceneName == "scene_main_2.3")
+        {
+            SceneManager.LoadScene("Meny");
+            return;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
