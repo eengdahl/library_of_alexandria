@@ -10,6 +10,7 @@ public class CameraFollow : MonoBehaviour
     public float minPositionY = -18f;
     public float minPositionX = -30f;
     public float maxPositionX = 24f;
+    public float offsetY;
     void Update()
     {
 
@@ -18,7 +19,7 @@ public class CameraFollow : MonoBehaviour
 
         //Boundries for Y
         ////Om inom boundries up down
-        if (player.transform.position.y < maxPositionY && player.transform.position.y > minPositionY && player.transform.position.x < maxPositionX && player.transform.position.x > minPositionX)
+        if (player.transform.position.y  < maxPositionY && player.transform.position.y  > minPositionY && player.transform.position.x < maxPositionX && player.transform.position.x > minPositionX)
         {
             transform.position = new Vector3(player.position.x, player.position.y, -10);
         }
@@ -28,22 +29,22 @@ public class CameraFollow : MonoBehaviour
             transform.position = new Vector3(minPositionX, maxPositionY, -10);
         }
         // If outside borers up right corner
-        else if (player.transform.position.y > maxPositionY && player.transform.position.x > maxPositionX)
+        else if (player.transform.position.y  > maxPositionY && player.transform.position.x > maxPositionX)
         {
             transform.position = new Vector3(maxPositionX, maxPositionY, -10);
         }
         //If outside borders down left corner
-        else if (player.transform.position.y < minPositionY && player.transform.position.x < minPositionX)
+        else if (player.transform.position.y  < minPositionY && player.transform.position.x < minPositionX)
         {
             transform.position = new Vector3(minPositionX, minPositionY, -10);
         }
         //If outside borders down right corner
         else if (player.transform.position.y < minPositionY && player.transform.position.x > maxPositionX)
         {
-            transform.position = new Vector3(maxPositionX, minPositionY, -10);
+            transform.position = new Vector3(maxPositionX, minPositionY , -10);
         }
         //if outside of boundries up or down
-        else if (player.transform.position.y > maxPositionY || player.transform.position.y < minPositionY)
+        else if (player.transform.position.y > maxPositionY  || player.transform.position.y  < minPositionY)
         {
             transform.position = new Vector3(player.position.x, transform.position.y, -10);
         }
