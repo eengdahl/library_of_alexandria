@@ -1916,6 +1916,7 @@ GameObject:
   - component: {fileID: 429673035}
   - component: {fileID: 429673034}
   - component: {fileID: 429673037}
+  - component: {fileID: 429673038}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2007,6 +2008,39 @@ MonoBehaviour:
   minPositionX: 0
   maxPositionX: 0
   offsetY: 0
+--- !u!114 &429673038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429673033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!114 &443217315 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1946906731, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
@@ -6390,7 +6424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1327403457
 Animator:
   serializedVersion: 4
@@ -6504,7 +6538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334470031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.25, y: 6.17, z: 0}
+  m_LocalPosition: {x: 6.01, y: 5.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7724,7 +7758,7 @@ MonoBehaviour:
   close_long_hush_information: {fileID: 2033748528}
   close_pickUpStaminaOre: {fileID: 0}
   stopArrowbook: {fileID: 0}
-  stopstart_Arrowreception: {fileID: 0}
+  stopstart_Arrowreception: {fileID: 1327403456}
   start_can_hush: {fileID: 2096337312}
 --- !u!4 &1608008816 stripped
 Transform:

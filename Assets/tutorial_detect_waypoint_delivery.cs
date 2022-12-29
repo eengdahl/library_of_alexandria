@@ -37,22 +37,7 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        
-        //inventoryPlayer.ReturnBooks("Book Red");
-            for (int i = 0; i < inventoryPlayer.slots.Length; i++)
-            {
-                redBookChecker = inventoryPlayer.FindChildWithTag(inventoryPlayer.slots[i],"Book Red");
-                if (redBookChecker != null){
 
-                    playerHaveRedBook = true;
-                    Debug.Log("should have found red book in inventory");
-                }
-
-                // if (inventoryPlayer.slots[i].tag=="Book Red")
-                // {
-                    
-                // }
-            }
         if (other.CompareTag ("Book White"))
         {
             Leave_at_desk_information.SetActive(true);
@@ -69,8 +54,22 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
             set_books_in_bookshelf_information.SetActive(true);
             red_bookshelf.SetActive(true);
             //Waypoint_deliver.SetActive(false);
-        }
-        if (other.CompareTag ("tutorial red bookshelf1") && playerHaveRedBook  /* && (Input.GetKeyUp(KeyCode.E)) */)
+        }   
+    }
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+                
+        //inventoryPlayer.ReturnBooks("Book Red");
+            for (int i = 0; i < inventoryPlayer.slots.Length; i++)
+            {
+                redBookChecker = inventoryPlayer.FindChildWithTag(inventoryPlayer.slots[i],"Book Red");
+                if (redBookChecker != null){
+
+                    playerHaveRedBook = true;
+                    Debug.Log("should have found red book in inventory");
+                }
+            }
+        if (other.CompareTag ("tutorial red bookshelf1") && playerHaveRedBook && (Input.GetKeyUp(KeyCode.E)) )
         {
            Waypoint_deliver.SetActive(false);
            close_long_hush_information.SetActive(false);
