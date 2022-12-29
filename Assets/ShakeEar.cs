@@ -24,23 +24,29 @@ public class ShakeEar : MonoBehaviour
     void Update()
     {
 
-        shouldShakeYellow = ShakeDaBooty(shouldShakeYellow,20);
-        shouldShakeYellow = ResetShake(20, shouldShakeYellow);
-        shouldShakeRed = ResetShake(66, shouldShakeRed);
-        shouldShakeRed = ShakeDaBooty(shouldShakeRed,66);
+        //shouldShakeYellow = ShakeDaBooty(shouldShakeYellow,5);
+        //shouldShakeYellow = ResetShake(5, shouldShakeYellow);
+        //shouldShakeRed = ResetShake(66, shouldShakeRed);
+        //shouldShakeRed = ShakeDaBooty(shouldShakeRed,66);
+        ShouldBeShakingNow(20);
+        ShouldBeShakingNow(66);
 
         if(noiseHandelerScript.soundLevelInRoom > 80)
         {
-
             shakeTimer += Time.deltaTime;
             if (shakeTimer > 0.05)
             {
             transform.localPosition += (Vector3)(Random.insideUnitCircle * 0.1f);
-            transform.localPosition = startPosition;
+            //transform.localPosition = startPosition;
+            //    shakeTimer = 0;
+            }
+            if (shakeTimer > 0.1)
+            {
+                transform.localPosition = startPosition;
                 shakeTimer = 0;
             }
         }
-        else
+        else if (!shouldShakeYellow&&!shouldShakeRed)
         {
             transform.localPosition = startPosition;
         }
@@ -62,6 +68,8 @@ public class ShakeEar : MonoBehaviour
     {
         if (noiseHandelerScript.soundLevelInRoom > levelOfSound && colourBool) // noiseHandelerScript.soundLevelInRoom <= 22 &&
         {
+
+            
             shakeScript.StartShake(1, 0.1f, this.transform.localPosition, 0.05f);
             return colourBool = false;
         }
@@ -70,5 +78,28 @@ public class ShakeEar : MonoBehaviour
             return colourBool;
         }
 
+    }
+    void ShouldBeShakingNow(float when)
+    {
+        if (noiseHandelerScript.soundLevelInRoom > when && noiseHandelerScript.soundLevelInRoom < when + 3)
+        {
+            Debug.Log("Should be shaking now");
+            shakeTimer += Time.deltaTime;
+            if (shakeTimer > 0.05)
+            {
+                transform.localPosition += (Vector3)(Random.insideUnitCircle * 0.05f);
+                //transform.localPosition = startPosition;
+                //    shakeTimer = 0;
+            }
+            if (shakeTimer > 0.1)
+            {
+                transform.localPosition = startPosition;
+                shakeTimer = 0;
+            }
+        }
+        else if (!shouldShakeYellow && !shouldShakeRed)
+        {
+            transform.localPosition = startPosition;
+        }
     }
 }

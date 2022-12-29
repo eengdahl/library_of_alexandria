@@ -56,7 +56,7 @@ public class MakeHuschSound : MonoBehaviour
 
         coolDown -= Time.deltaTime;
         //Om du trycker på  activate spela husch ljudet och gör om boolen doesHuschSound till true
-        if (Input.GetKey("space") && !doesHuschSound)
+        if (Input.GetKey("space") && !doesHuschSound && staminaScript.stamina>0)
         {
             if (chargedHush < smallHuschCharged)
             {
@@ -73,7 +73,7 @@ public class MakeHuschSound : MonoBehaviour
                 
                 if (chargedHush > smallHuschCharged)
                 {
-                    staminaScript.stamina -= chargedHush * Time.deltaTime;
+                    staminaScript.stamina -= chargedHush * Time.deltaTime * 8;
                 }
                 if (chargedHush >= chargedHuschMax / 2)
                 {
