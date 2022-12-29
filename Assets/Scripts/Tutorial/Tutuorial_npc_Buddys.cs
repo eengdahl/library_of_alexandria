@@ -111,7 +111,7 @@ public class Tutuorial_npc_Buddys : MonoBehaviour
             active_1 = true;
         }
 
-        if ( collision.tag == "Husch" &&   budy2.collisiontimer > 2f &&  Input.GetKeyUp(KeyCode.Space)/* && makeHuschSound.doesHuschSound == true */)
+        if ( collision.tag == "Husch" &&   budy2.collisiontimer > 1f &&  Input.GetKeyUp(KeyCode.Space)/* && makeHuschSound.doesHuschSound == true */)
         {
             walk_out = true;
             collisiontimer += Time.deltaTime;

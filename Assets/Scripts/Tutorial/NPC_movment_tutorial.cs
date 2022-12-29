@@ -7,6 +7,7 @@ public class NPC_movment_tutorial : MonoBehaviour
 {
 
     bool collidingWithPlayer = false;
+    public GameObject StaminaOrb;
 
     // speech bubble when NPC is mad
     public GameObject deactivate_timer;
@@ -23,6 +24,7 @@ public class NPC_movment_tutorial : MonoBehaviour
     public GameObject deactivate_information_WASD;
     public GameObject New_Hush_information;
     public GameObject Long_Hush_information;
+    public GameObject pick_up_staminaore;
 
     ///////////////////////
     //  waypoint target  //  
@@ -67,6 +69,7 @@ public class NPC_movment_tutorial : MonoBehaviour
 
     bool active_2 = false;
     bool active_3 = false;
+    bool active_4 = false;
     bool once = true;
 
     SpriteRenderer red;
@@ -150,6 +153,13 @@ public class NPC_movment_tutorial : MonoBehaviour
         if (active_2 == true)
         {
             Invoke("Walk_Out", 1.5f); // start function after 1,5 seconds
+            if (active_4 == false)
+            {
+            Instantiate(StaminaOrb, transform.position, transform.rotation);
+            Instantiate(StaminaOrb, transform.position, transform.rotation);
+            Instantiate(StaminaOrb, transform.position, transform.rotation);
+            }
+            active_4 = true;
             active_3 = true;
         }
 
@@ -163,9 +173,9 @@ public class NPC_movment_tutorial : MonoBehaviour
             timer2 += Time.deltaTime;
             if (timer2 > 2 && once==true)
             {
+                once = false;
                 Debug.Log("Enter");
                 noiceNPCs();
-                once = false;
             }
         }
 
@@ -221,8 +231,8 @@ public class NPC_movment_tutorial : MonoBehaviour
         Instantiate(pickedNPC2, temp2, transform.rotation);
 
         Long_Hush_information.SetActive(true);
+        pick_up_staminaore.SetActive(true);
         active_3 = true;
         //emergency_text.SetActive(true);
     }
-
 }

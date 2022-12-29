@@ -37,6 +37,7 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     MakeHuschSound makeHuschSound;
 
     GameObject long_hush_information2;
+    GameObject pick_up_staminaore1;
     GameObject Tutorialbook_pop_up;
     GameObject bookspart;
     public GameObject book;
@@ -80,7 +81,8 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
         target_Buddys22 = target_Buddys2_2goback.transform;
 
         long_hush_information2 = GameObject.FindGameObjectWithTag("Long hush information");
-        long_hush_information2.SetActive(true);
+        pick_up_staminaore1 = GameObject.FindGameObjectWithTag("pick_up_staminaore");
+        //long_hush_information2.SetActive(true);
 
         budy1 = FindObjectOfType<Tutuorial_npc_Buddys>();
         makeHuschSound = FindObjectOfType<MakeHuschSound>();
@@ -162,9 +164,11 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
 
         }
 
-        if  (collision.tag == "Husch" &&  budy1.collisiontimer > 2f && Input.GetKeyUp(KeyCode.Space)/* && makeHuschSound.doesHuschSound == true */)
+        if  (collision.tag == "Husch" &&  budy1.collisiontimer > 1f && Input.GetKeyUp(KeyCode.Space)/* && makeHuschSound.doesHuschSound == true */)
         {
             Debug.Log("timer end..............................");
+            long_hush_information2.SetActive(false);
+            pick_up_staminaore1.SetActive(false);
             walk_out = true;
             collisiontimer += Time.deltaTime;
             audio2_2.Stop();
@@ -174,7 +178,8 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
             //Tutorialbook_pop_up.SetActive(true);
 
             //Tutorialbook_pop_up.SetActive(true);
-            //long_hush_information2.SetActive(false);
+
+
             // Tutorialbook_pop_up = GameObject.FindGameObjectWithTag("Book_pick_up_information");
             // bookspart = GameObject.FindGameObjectWithTag("KAOSBOK");
             bookspart = GameObject.FindGameObjectWithTag("KAOSBOK");

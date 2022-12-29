@@ -14,6 +14,7 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
     public GameObject Show_noicemeter;
     public GameObject close_pick_up_information;
     public GameObject close_long_hush_information;
+    public GameObject close_pickUpStaminaOre;
     public GameObject stopArrowbook;
     public GameObject stopstart_Arrowreception;
     public GameObject start_can_hush;
@@ -69,7 +70,7 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
             red_bookshelf.SetActive(true);
             //Waypoint_deliver.SetActive(false);
         }
-        if (other.CompareTag ("tutorial red bookshelf1") && playerHaveRedBook)
+        if (other.CompareTag ("tutorial red bookshelf1") && playerHaveRedBook  /* && (Input.GetKeyUp(KeyCode.E)) */)
         {
            Waypoint_deliver.SetActive(false);
            close_long_hush_information.SetActive(false);
