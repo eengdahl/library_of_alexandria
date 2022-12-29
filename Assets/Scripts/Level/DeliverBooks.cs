@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DeliverBooks : MonoBehaviour
 {
     public int booksOnTable;
-    public Image[] visibleBooksOnTable;
+    public SpriteRenderer[] visibleBooksOnTable;
     public bool tableFull;
     public bool tableEmpty;
     public Animator thisAnimator;
