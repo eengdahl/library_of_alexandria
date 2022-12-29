@@ -50,6 +50,8 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     GameObject stophushobject;
 
     GameObject arrow_at_book;
+    GameObject ArrowBook;
+    SpriteRenderer ArrowBookRenderer;
     SpriteRenderer arrow_at_bookImage;
 
     public float collisiontimer;
@@ -82,6 +84,11 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
 
         long_hush_information2 = GameObject.FindGameObjectWithTag("Long hush information");
         pick_up_staminaore1 = GameObject.FindGameObjectWithTag("pick_up_staminaore");
+        
+        ArrowBook = GameObject.FindGameObjectWithTag("ArrowBook");
+        ArrowBookRenderer = ArrowBook.GetComponent<SpriteRenderer>();
+        
+        
         //long_hush_information2.SetActive(true);
 
         budy1 = FindObjectOfType<Tutuorial_npc_Buddys>();
@@ -133,13 +140,14 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
         if (pop_up_one_book == true && bookSpawnedChecker == false)
         {
 
-            // walk_out = false;
+            //place white book
             Vector3 temp = new Vector3(7.4f, 0f, 0);
             Instantiate(book, temp, transform.rotation);
 
             timer2 = 0;
             bookSpawnedChecker = true;
             pop_up_one_book = false;
+            ArrowBookRenderer.enabled = true;
 
         }
         if (Input.GetKeyUp(KeyCode.Space))
@@ -174,25 +182,10 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
             audio2_2.Stop();
             has_been_hushed = true;
             exclamation_talkbubbel.SetActive(false);
-            //  active_1 = false;
-            //Tutorialbook_pop_up.SetActive(true);
 
-            //Tutorialbook_pop_up.SetActive(true);
-
-
-            // Tutorialbook_pop_up = GameObject.FindGameObjectWithTag("Book_pick_up_information");
-            // bookspart = GameObject.FindGameObjectWithTag("KAOSBOK");
             bookspart = GameObject.FindGameObjectWithTag("KAOSBOK");
             bookspartImage = bookspart.GetComponent<Image>();
             bookspartImage.enabled = true;
-
-            //stophush = GameObject.FindGameObjectWithTag("Husch");
-            //stophushobject = stophush.GetComponent<GameObject>();
-            //stophush.SetActive(false);
-
-            //findbook = GameObject.FindGameObjectWithTag("Book White");
-            //findbookimage = bookspart.GetComponent<Image>();
-            //findbook.SetActive(true); 
         }
 
     }
