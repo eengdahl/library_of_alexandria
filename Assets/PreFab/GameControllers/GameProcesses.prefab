@@ -4623,6 +4623,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6568943748847823391, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fd4dbac7a2978b54abf722ed701cddbe, type: 3}
+    - target: {fileID: 6568943748847823391, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6251720632631648105}
@@ -4678,6 +4682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Progression
       objectReference: {fileID: 0}
+    - target: {fileID: 6568943749893454612, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6876418715c8f1148a37887eb3e86fc4, type: 3}
     - target: {fileID: 6568943749893454612, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4736,3 +4744,32 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6568943749130861779, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
   m_PrefabInstance: {fileID: 7557912103486544076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3731947568962745043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6568943748847823391, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
+  m_PrefabInstance: {fileID: 7557912103486544076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3731947568962745053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3731947568962745053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6568943748847823377, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
+  m_PrefabInstance: {fileID: 7557912103486544076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7945610027844985283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3731947568962745053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7cd2c63882ca04f9bd0c05285562ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continueButton: {fileID: 3731947568962745043}

@@ -21,6 +21,8 @@ public class WinAndLoseState : MonoBehaviour
     string sceneName;
     Scene currentScene;
 
+  
+
 
 
 
@@ -95,17 +97,9 @@ public class WinAndLoseState : MonoBehaviour
 
             if (endTimer > 10 && endLock == false)
             {
+                winScreen.enabled = false;
                 Progression(SceneManager.GetActiveScene().buildIndex);
                 endLock = true;
-
-
-                //return if last scene
-                //if (sceneName == "scene_main_2.3")
-                //{
-                //    SceneManager.LoadScene("Meny");
-                //    return;
-                //}
-                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
             }
         }
@@ -115,8 +109,10 @@ public class WinAndLoseState : MonoBehaviour
     //SceneManager.GetActiveScene().buildIndex;
     public void Progression(int level)
     {
+        playerController.enabled = false;
         progressionScreen.SetActive(true);
         progressionAnimator.SetInteger("level", level);
+      
 
     }
 
