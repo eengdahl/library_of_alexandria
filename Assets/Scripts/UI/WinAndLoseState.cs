@@ -8,8 +8,11 @@ using UnityEngine.SceneManagement;
 public class WinAndLoseState : MonoBehaviour
 {
     public Slider noiseSlider;
+
     public SpriteRenderer fellOver;
+    public GameObject fellOverButton;
     public SpriteRenderer toLoud;
+    public GameObject toLoudButton;
     public SpriteRenderer winScreen;
 
     public GameObject progressionScreen;
@@ -21,7 +24,7 @@ public class WinAndLoseState : MonoBehaviour
     string sceneName;
     Scene currentScene;
 
-  
+
 
 
 
@@ -47,15 +50,16 @@ public class WinAndLoseState : MonoBehaviour
             playerController.inputAxis = new Vector2(0, 0);
             //playerController.enabled =false;
 
+
             toLoud.enabled = true;
+            toLoudButton.SetActive(true);
+
+
             endTimer += Time.deltaTime;
             //shuting down the other win/fail conditions
             swayBooksList.toMany = false;
 
-            if (endTimer > 15)
-            {
-                SceneManager.LoadScene("Meny");
-            }
+           
         }
         if (swayBooksList.toMany == true && toLoud.enabled == false && winScreen.enabled == false)
         {
@@ -68,16 +72,13 @@ public class WinAndLoseState : MonoBehaviour
             if (endTimer > 4)
             {
                 fellOver.enabled = true;
+                fellOverButton.SetActive(true);
 
             }
             //shuting down the other win/fail conditions
             noiseSlider.value = 0;
 
-            if (endTimer > 15)
-            {
-                SceneManager.LoadScene("Meny");
-
-            }
+       
         }
     }
     public void TimeIsUp()
@@ -90,16 +91,20 @@ public class WinAndLoseState : MonoBehaviour
         //shuting down the other win/fail conditions
         noiseSlider.value = 0;
         swayBooksList.toMany = false;
-        if (fellOver.enabled == false && toLoud.enabled == false)
+        Debug.Log("ping");
+        if (fellOver.enabled == false && toLoud.enabled == false && !endLock)
         {
             winScreen.enabled = true;
-
-
-            if (endTimer > 10 && endLock == false)
+            bool spacePressed = false;
+                endLock = true;
+            if (Input.GetKey("space"))
+            {
+                spacePressed = true;
+            }
+            if (endTimer > 10  || spacePressed)
             {
                 winScreen.enabled = false;
                 Progression(SceneManager.GetActiveScene().buildIndex);
-                endLock = true;
 
             }
         }
@@ -112,7 +117,7 @@ public class WinAndLoseState : MonoBehaviour
         playerController.enabled = false;
         progressionScreen.SetActive(true);
         progressionAnimator.SetInteger("level", level);
-      
+
 
     }
 
