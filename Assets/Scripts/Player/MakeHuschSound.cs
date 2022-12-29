@@ -112,8 +112,8 @@ public class MakeHuschSound : MonoBehaviour
             audioSource.clip = longHush;
             audioSource.Play();
 
-            animatorKarin.SetBool("breath", false);
             animatorKarin.SetBool("makeBreath", true);
+            animatorKarin.SetBool("breath", false);
 
             animatorKarin.SetBool("IsHushing", true);
 
@@ -140,12 +140,13 @@ public class MakeHuschSound : MonoBehaviour
             doesHuschSound = true;
             audioSource.clip = schhSound[Random.Range(0, schhSound.Length)];
             audioSource.Play();
+            animatorKarin.SetBool("makeBreath", true);
             animatorKarin.SetBool("IsHushing", true);
             gameObject.transform.localScale = new Vector3(chargedHush, chargedHush, 1);
             //playerController1.karinCantMove = true;
             playerController1.speed = playerController1.speed * 2f;
             Invoke("StandardSpeed", smallHuschCharged);
-            animatorKarin.SetBool("makeBreath", true);
+
         }
 
         //Om vi huschar håll boolen igång i längden "lengthOfHusch" sec stäng sedan av husch boolen 
