@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beingHusched: 0
   iMakeNoise: {fileID: 6829161596565585033}
+  myAnimator: {fileID: 0}
 --- !u!70 &7381977261929193512
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -636,6 +637,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c9523d3d1af306043bca585df02f73bf, type: 3}
   - {fileID: 8300000, guid: 24fbcf0acbdd12d4c9ebf22d66cc8613, type: 3}
   - {fileID: 8300000, guid: 44b434ec0c64ea049a4ed2e66960373b, type: 3}
+  - {fileID: 8300000, guid: 20aea77670b17db44b47e539ac6d883a, type: 3}
+  - {fileID: 8300000, guid: 1fea91ebf775e7540a6c18ad27bd8acf, type: 3}
+  - {fileID: 8300000, guid: 5590ecb722d0013419ee8a1b0de01367, type: 3}
+  - {fileID: 8300000, guid: c26a85c844f3a3b4e80d060545fc3875, type: 3}
+  - {fileID: 8300000, guid: 694496e257d40c6468e48fb4d970decc, type: 3}
+  - {fileID: 8300000, guid: 743aeae597097114b93a78aa378389d6, type: 3}
+  - {fileID: 8300000, guid: 099d2c3a99d38184e911442b17e87253, type: 3}
   makingNosie: 0
   chanceOfMakingSound: 0
   npcMovement: {fileID: 0}
