@@ -864,11 +864,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   schhSound:
-  - {fileID: 8300000, guid: 489473a1c58a1d44e999cf542d3508ca, type: 3}
-  - {fileID: 8300000, guid: 95f901500d7c4f9408256d731cd0198f, type: 3}
-  - {fileID: 8300000, guid: 84a5b5c144612d544afbbb1d273b26fa, type: 3}
-  - {fileID: 8300000, guid: 4e26162d084841a4a971ed39934a7c05, type: 3}
-  longHush: {fileID: 8300000, guid: 70b4c37b68444d545ad65159b7e5d2ff, type: 3}
+  - {fileID: 8300000, guid: e7893c4a9e4308d4e8652e2653efd657, type: 3}
+  - {fileID: 8300000, guid: 13e169381aca8894bb587efb4fddec00, type: 3}
+  - {fileID: 8300000, guid: 98489f703ea8c9843b090c40e8688f78, type: 3}
+  - {fileID: 8300000, guid: 44e225fe4165549409a5a8967fc4045b, type: 3}
+  - {fileID: 8300000, guid: f339863e34d86054daa8a0c3e3fa2689, type: 3}
+  - {fileID: 8300000, guid: e7893c4a9e4308d4e8652e2653efd657, type: 3}
+  - {fileID: 8300000, guid: 13e169381aca8894bb587efb4fddec00, type: 3}
+  longHush: {fileID: 8300000, guid: 9fd4ac0d43e202a48aa1fc21ed09b244, type: 3}
   lenghtOfHusch: 0.5
   chargedHush: 0
   standardRadius: 0.4697719

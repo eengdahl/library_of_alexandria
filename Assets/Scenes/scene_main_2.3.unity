@@ -2890,6 +2890,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: schhSound.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7925feb1cd3b43a4fb6b0d4eb7902852, type: 3}
+    - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: schhSound.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7925feb1cd3b43a4fb6b0d4eb7902852, type: 3}
+    - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: schhSound.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7925feb1cd3b43a4fb6b0d4eb7902852, type: 3}
+    - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: schhSound.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7925feb1cd3b43a4fb6b0d4eb7902852, type: 3}
+    - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: schhSound.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7925feb1cd3b43a4fb6b0d4eb7902852, type: 3}
+    - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: schhSound.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a3080b45d0e3f04ba599fad7c2e447b, type: 3}
+    - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: schhSound.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a3080b45d0e3f04ba599fad7c2e447b, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
@@ -3968,6 +3996,14 @@ PrefabInstance:
     - target: {fileID: 1946906730, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168209318992732211, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: Priority
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168209318992732211, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_Volume
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6176864220257201133, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y

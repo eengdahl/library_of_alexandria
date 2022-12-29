@@ -634,9 +634,6 @@ MonoBehaviour:
   timer: 0
   aS: {fileID: 0}
   nosie:
-  - {fileID: 8300000, guid: c9523d3d1af306043bca585df02f73bf, type: 3}
-  - {fileID: 8300000, guid: 24fbcf0acbdd12d4c9ebf22d66cc8613, type: 3}
-  - {fileID: 8300000, guid: 44b434ec0c64ea049a4ed2e66960373b, type: 3}
   - {fileID: 8300000, guid: 1fea91ebf775e7540a6c18ad27bd8acf, type: 3}
   - {fileID: 8300000, guid: 5590ecb722d0013419ee8a1b0de01367, type: 3}
   - {fileID: 8300000, guid: c26a85c844f3a3b4e80d060545fc3875, type: 3}

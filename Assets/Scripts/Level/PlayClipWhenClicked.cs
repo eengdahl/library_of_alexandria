@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class PlayClipWhenClicked : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource aS;
+   
 
     // Update is called once per frame
     void Update()
