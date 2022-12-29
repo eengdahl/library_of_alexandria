@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beingHusched: 0
   iMakeNoise: {fileID: 6829161596565585033}
+  myAnimator: {fileID: 1891633731}
 --- !u!70 &4576567926583486157
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -436,7 +437,7 @@ Transform:
   - {fileID: 215002210814868452}
   - {fileID: 847817221}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5865293537661773344
 SpriteRenderer:

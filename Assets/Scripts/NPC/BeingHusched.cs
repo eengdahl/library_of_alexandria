@@ -7,13 +7,14 @@ public class BeingHusched : MonoBehaviour
 {
 
 
-    
+
     //Should be placed on huschZone on NPCs
     public bool beingHusched = false;
     NPCMakeNoise npcMakeNoise;
     NPCMovement npcMovement;
     MakeHuschSound makeHuschSound;
     [SerializeField] IamMakingNoise iMakeNoise;
+    public Animator myAnimator;
 
     private void Start()
     {
@@ -22,6 +23,8 @@ public class BeingHusched : MonoBehaviour
         npcMakeNoise = GetComponentInParent<NPCMakeNoise>();
         npcMovement = GetComponentInParent<NPCMovement>();
         //iMakeNoise = GetComponent<IamMakingNoise>();
+        myAnimator = GetComponentInParent<Animator>();
+
 
     }
     private void Update()
@@ -50,8 +53,21 @@ public class BeingHusched : MonoBehaviour
 
             beingHusched = true;
             iMakeNoise.levelOfSound = 0;
+            myAnimator.SetBool("burning", false);
         }
 
+        if (collision.tag == "Fire")
+        {
+            if (Random.Range(0, 60) == 0)
+            {
+                Debug.Log("ping");
+                myAnimator.SetBool("burning", true);
+                npcMakeNoise.makingNosie = true;
+            }
+        }
     }
+
+
+
 
 }
