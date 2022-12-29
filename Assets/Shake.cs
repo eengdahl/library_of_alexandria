@@ -35,8 +35,8 @@ public class Shake : MonoBehaviour
         if (limitTimer > 0) return;
         limitTimer = limit;
 
-        transform.position = startPos;
-        transform.position += (Vector3)(Random.insideUnitCircle * magnitude);
+        transform.localPosition = startPos;
+        transform.localPosition += (Vector3)(Random.insideUnitCircle * magnitude);
 
         isShaking = !(timer <= 0); //kollar om timer inte är mindre än noll och gör isShaking till true
     }

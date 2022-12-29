@@ -11,7 +11,7 @@ public class CameraShake : MonoBehaviour
     float shakeTimer = 0.05f;
     void Start()
     {
-        startPosition = transform.position;
+        startPosition = transform.localPosition;
         noiseHandelerScript = FindObjectOfType<NoiseHandeler>();
         shakeScript = GetComponent<Shake>();
     }
@@ -24,14 +24,20 @@ public class CameraShake : MonoBehaviour
             shakeTimer += Time.deltaTime;
             if (shakeTimer > 0.05)
             {
-                transform.position += (Vector3)(Random.insideUnitCircle * 0.1f);
+                Debug.Log("Should shake Screen");
+                transform.localPosition += (Vector3)(Random.insideUnitCircle * 0.1f); //0.1f
                 shakeTimer = 0;
-                transform.position = startPosition;
+            }
+            else
+            {
+                //transform.localPosition = startPosition;
+
             }
         }
-        //else
-        //{
-        //    transform.position = startPosition;
-        //}
+        else
+        {
+            transform.localPosition = startPosition;
+
+        }
     }
 }

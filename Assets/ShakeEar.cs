@@ -15,7 +15,7 @@ public class ShakeEar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
+        startPosition = transform.localPosition;
         shakeScript = GetComponent<Shake>();
         noiseHandelerScript = FindObjectOfType<NoiseHandeler>();
     }
@@ -35,14 +35,14 @@ public class ShakeEar : MonoBehaviour
             shakeTimer += Time.deltaTime;
             if (shakeTimer > 0.05)
             {
-            transform.position = startPosition;
-            transform.position += (Vector3)(Random.insideUnitCircle * 0.1f);
+            transform.localPosition += (Vector3)(Random.insideUnitCircle * 0.1f);
+            transform.localPosition = startPosition;
                 shakeTimer = 0;
             }
         }
         else
         {
-            transform.position = startPosition;
+            transform.localPosition = startPosition;
         }
 
     }
@@ -62,7 +62,7 @@ public class ShakeEar : MonoBehaviour
     {
         if (noiseHandelerScript.soundLevelInRoom > levelOfSound && colourBool) // noiseHandelerScript.soundLevelInRoom <= 22 &&
         {
-            shakeScript.StartShake(1, 0.1f, this.transform.position, 0.05f);
+            shakeScript.StartShake(1, 0.1f, this.transform.localPosition, 0.05f);
             return colourBool = false;
         }
         else

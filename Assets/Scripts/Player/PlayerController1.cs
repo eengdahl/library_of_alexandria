@@ -96,11 +96,6 @@ public class PlayerController1 : MonoBehaviour
         else if (sprite.flipX == true){
             sprite.flipX = false;
         }
-        //sprite.flipX = !sprite.flipX;
-        ////assigns a the scale component to a variable temporarily
-        //Vector3 tmpScale = gameObject.transform.localScale;
-        //tmpScale.x *= -1;
-        //gameObject.transform.localScale = tmpScale;
     }
 
 

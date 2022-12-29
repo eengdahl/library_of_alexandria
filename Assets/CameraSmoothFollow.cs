@@ -15,7 +15,7 @@ public class CameraSmoothFollow : MonoBehaviour
     public float yMin;
     public float yMax;
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         float xClamp = Mathf.Clamp(target.position.x, xMin, xMax);
         float yClamp = Mathf.Clamp(target.position.y, yMin, yMax);
