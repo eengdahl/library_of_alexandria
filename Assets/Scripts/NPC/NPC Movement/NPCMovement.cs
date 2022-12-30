@@ -98,9 +98,6 @@ public class NPCMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
 
-        //OnFire
-        onFireSpeed = moveSpeed * 1.5f;
-        startMoveSpeed = moveSpeed;
         //Exit
         exitStartScript = FindObjectOfType<ExitStart>();
         listOfExitStarts = exitStartScript.exitTransforms;
@@ -127,8 +124,11 @@ public class NPCMovement : MonoBehaviour
         //Level specific movespeed
         difficulty = FindObjectOfType<Difficulty>();
         moveSpeed = difficulty.levelSpeed;
+        startMoveSpeed = difficulty.levelSpeed;
 
-
+        //OnFire
+        onFireSpeed = moveSpeed * 2f;
+        startMoveSpeed = moveSpeed;
 
     }
 
@@ -141,6 +141,7 @@ public class NPCMovement : MonoBehaviour
         }
         else
         {
+
             moveSpeed = startMoveSpeed;
         }
 

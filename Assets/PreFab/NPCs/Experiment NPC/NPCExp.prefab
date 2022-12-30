@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eab2102bfeeccc438a0cfb141fc82e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NPCMovementScript: {fileID: 5865293537661773347}
   beingHusched: 0
   iMakeNoise: {fileID: 6829161596565585033}
   myAnimator: {fileID: 1891633731}
@@ -522,6 +523,7 @@ MonoBehaviour:
   - {fileID: 0}
   numberOfPaths: 1
   isLeaving: 0
+  OnFire: 0
   toTableWayPoints: []
 --- !u!82 &709626102
 AudioSource:
