@@ -72,6 +72,7 @@ public class Meters : MonoBehaviour
         {
             NPCs[i].GetComponent<NPCMovement>().isLeaving = true;
             NPCs[i].GetComponent<Animator>().SetBool("isLeaving", true);
+          
         }
 
     }
