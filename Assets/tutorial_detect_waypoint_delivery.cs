@@ -15,7 +15,7 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
     public GameObject close_pick_up_information;
     public GameObject close_long_hush_information;
     public GameObject close_pickUpStaminaOre;
-    public GameObject stopArrowbook;
+    public GameObject ArrowBookRenderer_false;
     public GameObject stopstart_Arrowreception;
     public GameObject start_can_hush;
 
@@ -44,7 +44,7 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
             Waypoint_deliver.SetActive(true);
             stopstart_Arrowreception.SetActive(true);
             //start_can_hush.SetActive(true);
-            stopArrowbook.SetActive(false);
+            ArrowBookRenderer_false.SetActive(false);
         }
         if (other.CompareTag ("Waypoint deliver"))
         {

@@ -155,9 +155,10 @@ public class NPC_movment_tutorial : MonoBehaviour
             Invoke("Walk_Out", 1.5f); // start function after 1,5 seconds
             if (active_4 == false)
             {
-            Instantiate(StaminaOrb, transform.position, transform.rotation);
-            Instantiate(StaminaOrb, transform.position, transform.rotation);
-            Instantiate(StaminaOrb, transform.position, transform.rotation);
+                for (int i = 0; i < 30; i++) 
+                {
+                    Instantiate(StaminaOrb, transform.position, transform.rotation);  
+                }
             }
             active_4 = true;
             active_3 = true;
