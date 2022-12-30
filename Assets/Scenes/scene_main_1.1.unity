@@ -2120,10 +2120,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2666214300432467337, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.79
-      objectReference: {fileID: 0}
     - target: {fileID: 3215333457530646833, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.493
@@ -2151,10 +2147,6 @@ PrefabInstance:
     - target: {fileID: 5378814940619067723, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 6416325452871377601, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.8320003
       objectReference: {fileID: 0}
     - target: {fileID: 7984624211830427922, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2216,9 +2208,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2.1499999
       objectReference: {fileID: 0}
+    - target: {fileID: 7984624213164845324, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7984624213164845363, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.7738943
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984624213164845363, guid: 3314d790152db8a458f5442ac1d915fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -2807,6 +2807,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1417668390 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1670314278, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+  m_PrefabInstance: {fileID: 1193998807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1420316600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1420316600, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
@@ -3172,6 +3177,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: magnetArea
+      value: 
+      objectReference: {fileID: 1417668390}
     - target: {fileID: 1784124354, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_Enabled
       value: 0

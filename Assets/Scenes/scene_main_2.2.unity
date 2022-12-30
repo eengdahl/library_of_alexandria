@@ -254,6 +254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &78292438 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1670314278, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+  m_PrefabInstance: {fileID: 1193998807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &104354695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6529540992961897010, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
@@ -3897,6 +3902,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: magnetArea
+      value: 
+      objectReference: {fileID: 78292438}
     - target: {fileID: 1946906730, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

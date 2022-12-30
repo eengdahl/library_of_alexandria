@@ -13,6 +13,11 @@ public class ExitStart : MonoBehaviour
     public GameObject exitSixth;
     public GameObject exitSeventh;
     public GameObject exitEight;
+    public GameObject exitNine;
+    public GameObject exitTen;
+    public GameObject exitEleven;
+    public GameObject exitTwelve;
+    public GameObject exitThirteen;
     private void Start()
     {
 
@@ -24,7 +29,12 @@ public class ExitStart : MonoBehaviour
         exitTransforms.Add(exitFith.transform);
         exitTransforms.Add(exitSixth.transform);
         exitTransforms.Add(exitSeventh.transform);
-        //exitTransforms.Add(exitEight.transform);
+        exitTransforms.Add(exitEight.transform);
+        exitTransforms.Add(exitNine.transform);
+        exitTransforms.Add(exitTen.transform);
+        exitTransforms.Add(exitEleven.transform);
+        exitTransforms.Add(exitTwelve.transform);
+        exitTransforms.Add(exitThirteen.transform);
 
     }
 }
