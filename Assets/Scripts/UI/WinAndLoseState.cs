@@ -91,7 +91,7 @@ public class WinAndLoseState : MonoBehaviour
         //shuting down the other win/fail conditions
         noiseSlider.value = 0;
         swayBooksList.toMany = false;
-        Debug.Log("ping");
+
         if (fellOver.enabled == false && toLoud.enabled == false && !endLock)
         {
             winScreen.enabled = true;

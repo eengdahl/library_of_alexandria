@@ -55,7 +55,7 @@ public class WayPointsArmory : MonoBehaviour
     public Transform[] elevenExitArray;
     public Transform[] twelveExitArray;
     public Transform[] thirtheenExitArray;
-
+    public Transform[] fourteenExitArray;
     //Researcher arrays
     public Transform[] researcherArrayOne;
     public Transform[] researcherArrayTwo;
@@ -94,6 +94,7 @@ public class WayPointsArmory : MonoBehaviour
         listOfExitArrays.Add(elevenExitArray);
         listOfExitArrays.Add(twelveExitArray);
         listOfExitArrays.Add(thirtheenExitArray);
+        listOfExitArrays.Add(fourteenExitArray);
         //To table arrays
         listOfToTableArrays = new List<Transform[]>();
         listOfToTableArrays.Add(firstToTableArray);

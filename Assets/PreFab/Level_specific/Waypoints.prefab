@@ -232,6 +232,7 @@ MonoBehaviour:
   exitEleven: {fileID: 3468391943420185018}
   exitTwelve: {fileID: 5086050768257092865}
   exitThirteen: {fileID: 4789272060085785916}
+  exitFourteen: {fileID: 9047725307600600847}
 --- !u!114 &399778599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +676,7 @@ MonoBehaviour:
   - {fileID: 3359307753071562788}
   - {fileID: 3359307752743133254}
   - {fileID: 3359307752710643749}
+  fourteenExitArray: []
   researcherArrayOne: []
   researcherArrayTwo: []
 --- !u!1001 &33152335
@@ -7692,6 +7694,11 @@ PrefabInstance:
 --- !u!4 &3359307752710643749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4063748144985273824, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
+  m_PrefabInstance: {fileID: 1656196505791845829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9047725307600600847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7742822217300257482, guid: eae3c17b2c54e2743aba84166d9f3b0f, type: 3}
   m_PrefabInstance: {fileID: 1656196505791845829}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1656196505792151641
