@@ -59,7 +59,7 @@ public class NPCHushedBIgTutorial : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Husch" && playerMakesHusch.doesHuschSound && playerMakesHusch.doesBigHush && hasBeenHushed)
+        if (collision.tag == "Husch" && playerMakesHusch.doesHuschSound && playerMakesHusch.doesBigHush && hasRechedStartPosition)
         {
             hasBeenHushed = true;
             aS.Stop();
