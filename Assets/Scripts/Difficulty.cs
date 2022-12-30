@@ -86,7 +86,7 @@ public class Difficulty : MonoBehaviour
     void Level1()
     {
         //Standard valuees for all stats
-        SetTimeOfLevel(120);
+        SetTimeOfLevel(60);//120
         SetNPCNoiseChance(9);
         SetNPCMovespeed(1.25f);
         MaxNPCOnMap(14);
@@ -95,7 +95,7 @@ public class Difficulty : MonoBehaviour
 
     void Level2()
     {
-        SetTimeOfLevel(120);//120
+        SetTimeOfLevel(100);//120
         SetNPCNoiseChance(9);
         SetNPCMovespeed(1.25f);
         MaxNPCOnMap(17);
@@ -104,7 +104,7 @@ public class Difficulty : MonoBehaviour
 
     void Level3()
     {
-        SetTimeOfLevel(160); // 160
+        SetTimeOfLevel(100); // 160
         SetNPCNoiseChance(8);
         SetNPCMovespeed(1.25f);
         MaxNPCOnMap(25);
@@ -113,7 +113,7 @@ public class Difficulty : MonoBehaviour
 
     void Level4()
     {
-        SetTimeOfLevel(190); //190
+        SetTimeOfLevel(100); //190
         SetNPCNoiseChance(8);
         SetNPCMovespeed(1.4f);
         MaxNPCOnMap(17);
@@ -122,7 +122,7 @@ public class Difficulty : MonoBehaviour
 
     void Level5()
     {
-        SetTimeOfLevel(140);//140
+        SetTimeOfLevel(100);//140
         SetNPCNoiseChance(8);
         SetNPCMovespeed(1.4f);
         MaxNPCOnMap(15);
@@ -131,7 +131,7 @@ public class Difficulty : MonoBehaviour
 
     void Level6()
     {
-        SetTimeOfLevel(110);//110
+        SetTimeOfLevel(100);//110
         SetNPCNoiseChance(5);
         SetNPCMovespeed(1.4f);
         MaxNPCOnMap(12);
@@ -140,7 +140,7 @@ public class Difficulty : MonoBehaviour
 
     void Level7()
     {
-        SetTimeOfLevel(170);//170
+        SetTimeOfLevel(100);//170
         SetNPCNoiseChance(7);
         SetNPCMovespeed(1.4f);
         MaxNPCOnMap(30);
