@@ -49,7 +49,10 @@ public class NoiseHandeler : MonoBehaviour
 
 
     }
-
+    public void AddSinger(GameObject singerSingsScript)
+    {
+        ListOfNoisemakers.Add(singerSingsScript);
+    }
     public void CheckingNoise()
     {
         //Going through NPCs making noise and adding theire current noiselevel
@@ -58,7 +61,16 @@ public class NoiseHandeler : MonoBehaviour
             if (ListOfNoisemakers[i] != null)
             {
                 IamMakingNoise iamMakingNoise = ListOfNoisemakers[i].GetComponent<IamMakingNoise>();
+                SingerSings singerSings = ListOfNoisemakers[i].GetComponent<SingerSings>();
+                if (iamMakingNoise != null)
+                {
                 soundLevelWhileInLoop += iamMakingNoise.levelOfSound;
+
+                }
+                if(singerSings != null)
+                {
+                    soundLevelWhileInLoop += singerSings.levelOfSound;
+                }
             }
 
         }

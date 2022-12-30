@@ -15,6 +15,7 @@ public class FireGrow : MonoBehaviour
     [SerializeField] SpriteRenderer spriteAshes;
     [SerializeField] GameObject fireLight;
     [SerializeField] FireHusched fireHuschedScript;
+    [SerializeField] MoveFire moveFireScript;
     Animator animator;
     //husched timer
     float timerEndHusched;
@@ -31,6 +32,8 @@ public class FireGrow : MonoBehaviour
     public AudioClip sorry;
     AudioSource aS;
     bool soundPlayed = false;
+
+
     private void Start()
     {
         aS = GetComponent<AudioSource>();
@@ -99,7 +102,6 @@ public class FireGrow : MonoBehaviour
             soundPlayed = false;
             animator.SetBool("FireIsHusched", false);
             fireLight.SetActive(true);
-            //spriteAshes.enabled = false;
             ashesAnimator.SetBool("ashesOn", false);
             spriteRendererFire.enabled = true;
             timer += Time.deltaTime;
@@ -140,12 +142,16 @@ public class FireGrow : MonoBehaviour
             spriteRendererFire.enabled = false;
             timerHusched += Time.deltaTime;
             transform.localScale = minSize;
+
+            
+
             if (timerHusched > timerEndHusched)
             {
                 chill = false;
                 fireHuschedScript.fireIsHusched = false;
                 timerHusched = 0;
                 animator.SetBool("FireIsHusched", false);
+                moveFireScript.MoveFireHusched();
             }
         }
     }
