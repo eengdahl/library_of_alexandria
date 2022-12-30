@@ -59,7 +59,7 @@ public class NPCHushedBIgTutorial : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Husch" && playerMakesHusch.doesHuschSound && playerMakesHusch.doesBigHush)
+        if (collision.tag == "Husch" && playerMakesHusch.doesHuschSound && playerMakesHusch.doesBigHush && hasBeenHushed)
         {
             hasBeenHushed = true;
             aS.Stop();
@@ -81,6 +81,7 @@ public class NPCHushedBIgTutorial : MonoBehaviour
 
     void WalkOut()
     {
+        transform.position = Vector3.MoveTowards(transform.position, startPosition.position, speed * Time.deltaTime);
         myAnimator.SetBool("hushed", true);
         longHuschInformation.SetActive(false);
         staminaInformaion.SetActive(false);
@@ -101,6 +102,5 @@ public class NPCHushedBIgTutorial : MonoBehaviour
 
 
 
-        transform.position = Vector3.MoveTowards(transform.position, startPosition.position, speed * Time.deltaTime);
     }
 }
