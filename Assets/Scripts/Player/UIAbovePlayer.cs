@@ -20,7 +20,7 @@ public class UIAbovePlayer : MonoBehaviour
         if (shouldFollow)
         {
 
-       transform.position = new Vector3(player.transform.position.x, player.transform.position.y + yAxis, 0);
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y + yAxis, 0);
         }
     }
 }

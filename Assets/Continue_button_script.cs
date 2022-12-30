@@ -19,6 +19,6 @@ public class Continue_button_script : MonoBehaviour
     }
     public void Continue()
     {
-        SceneManager.LoadScene("scene_main");
+        SceneManager.LoadScene("scene_main_1.0");
     }
 }
