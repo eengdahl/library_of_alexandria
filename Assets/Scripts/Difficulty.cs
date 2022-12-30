@@ -86,7 +86,7 @@ public class Difficulty : MonoBehaviour
     void Level1()
     {
         //Standard valuees for all stats
-        SetTimeOfLevel(1);
+        SetTimeOfLevel(120);
         SetNPCNoiseChance(9);
         SetNPCMovespeed(1.25f);
         MaxNPCOnMap(14);

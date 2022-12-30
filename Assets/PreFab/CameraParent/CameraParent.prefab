@@ -152,14 +152,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6568943749130861780, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -596058869, guid: 9e4c1dea9f07b384aa94d33ed7aae38c, type: 3}
-    - target: {fileID: 6568943749130861780, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6568943749130861781, guid: 8f861b1c224cafb4386642782260a3c0, type: 3}
       propertyPath: m_Name
       value: Progression
