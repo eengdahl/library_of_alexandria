@@ -48,6 +48,10 @@ public class NPC_movment_tutorial : MonoBehaviour
 
     AudioSource audio1;
 
+
+    public NPCHushedBIgTutorial bigHushedNPC0;
+    public NPCHushedBIgTutorial bigHushedNPC1;
+
     //speed on walk
     float speed = 2;
 
@@ -155,9 +159,9 @@ public class NPC_movment_tutorial : MonoBehaviour
             Invoke("Walk_Out", 1.5f); // start function after 1,5 seconds
             if (active_4 == false)
             {
-                for (int i = 0; i < 30; i++) 
+                for (int i = 0; i < 2000; i++)
                 {
-                    Instantiate(StaminaOrb, transform.position, transform.rotation);  
+                    Instantiate(StaminaOrb, transform.position, transform.rotation);
                 }
             }
             active_4 = true;
@@ -170,9 +174,9 @@ public class NPC_movment_tutorial : MonoBehaviour
         ///////////////////////
         if (active_3 == true)
         {
-            
+
             timer2 += Time.deltaTime;
-            if (timer2 > 2 && once==true)
+            if (timer2 > 2 && once == true)
             {
                 once = false;
                 Debug.Log("Enter");
@@ -185,7 +189,7 @@ public class NPC_movment_tutorial : MonoBehaviour
         /////////////////////
         if (Input.GetKeyDown(KeyCode.K))
         {
-           
+
             SceneManager.LoadScene("scene_main_preTest");
         }
     }
@@ -219,6 +223,8 @@ public class NPC_movment_tutorial : MonoBehaviour
     }
     public void Walk_Out()
     {
+        bigHushedNPC0.startWalking = true;
+        bigHushedNPC1.startWalking = true;
         transform.position = Vector3.MoveTowards(transform.position, target2.position, speed * Time.deltaTime);
     }
 
@@ -228,8 +234,8 @@ public class NPC_movment_tutorial : MonoBehaviour
         Vector3 temp2 = new Vector3(-0.1f, -5.5f, 0);
 
 
-        Instantiate(pickedNPC, temp, transform.rotation);
-        Instantiate(pickedNPC2, temp2, transform.rotation);
+        //  Instantiate(pickedNPC, temp, transform.rotation);
+        // Instantiate(pickedNPC2, temp2, transform.rotation);
 
         Long_Hush_information.SetActive(true);
         pick_up_staminaore.SetActive(true);

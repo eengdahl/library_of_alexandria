@@ -20,6 +20,7 @@ public class MakeHuschSound : MonoBehaviour
     [SerializeField] float smallHuschCharged = 0.4f;
     Vector3 startSizeCharged; 
     AllPlayerUpgradeables playerUpgradeables;
+    public bool doesBigHush = false;
 
 
     //"shake"
@@ -101,6 +102,7 @@ public class MakeHuschSound : MonoBehaviour
         //Makes a chargedHush
         if (Input.GetKeyUp("space") && chargedHush > smallHuschCharged)
         {
+            doesBigHush = true;
             zoomIn = false;
             //finetunear hur effektiv chargehush ska vara, work in progress
 
@@ -177,7 +179,7 @@ public class MakeHuschSound : MonoBehaviour
     //Stopps chargehush after time of charge hush
     private void StopAudio()
     {
-        
+        doesBigHush = false;
         spriteRenderer.enabled = false;
         audioSource.Stop();
         doesHuschSound = false;

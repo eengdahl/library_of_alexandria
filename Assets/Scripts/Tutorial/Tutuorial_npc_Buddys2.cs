@@ -191,7 +191,7 @@ public class Tutuorial_npc_Buddys2 : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "husch" && makeHuschSound.doesHuschSound == false)
+        if (collision.tag == "husch" && !Input.GetKey(KeyCode.Space) /*makeHuschSound.doesHuschSound == false*/)
         {
             collisiontimer = 0;
         }

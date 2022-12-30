@@ -19,7 +19,6 @@ public class DontSpawnIfToMany : MonoBehaviour
     {
         if (otherFires.Count >= toMany)
         {
-            Debug.Log("Dont spawn");
             spawnNewFiresScript.canSpawn = false;
             collider.enabled = false;
         }
