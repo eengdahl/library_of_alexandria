@@ -11,6 +11,8 @@ public class Stamina : MonoBehaviour
     public Slider staminaSlider;
     [SerializeField] Image fillImage;
     [SerializeField] Image bkgImage;
+    [SerializeField] Image coverImg;
+    
     AllPlayerUpgradeables playerUpgradeables;
     private void Start()
     {
@@ -37,11 +39,13 @@ public class Stamina : MonoBehaviour
         {
             bkgImage.enabled = false;
             fillImage.enabled = false;
+            coverImg.enabled = false;
         }
         else if (staminaSlider.value > 0)
         {
             bkgImage.enabled = true;
             fillImage.enabled = true;
+            coverImg.enabled = true;
         }
 
     }

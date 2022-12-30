@@ -626,11 +626,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &296491680 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 1670314278, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-  m_PrefabInstance: {fileID: 1193998807}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &323079486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -992,17 +987,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1784124352}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431926666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &433243761 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 433243761, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-  m_PrefabInstance: {fileID: 1784124352}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -1717,6 +1701,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 02a9f41a47aa4e24391c8bbab3661df7, type: 3}
+--- !u!114 &830628102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1701134073913295249, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+  m_PrefabInstance: {fileID: 1784124352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832430516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,6 +2725,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 71eac092a50a7c848a4233f11c22041f, type: 3}
+--- !u!114 &1175090848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2497726079730089511, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+  m_PrefabInstance: {fileID: 1784124352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1182306816 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 62401105, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
@@ -2785,7 +2791,11 @@ PrefabInstance:
     - target: {fileID: 1558703684, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: bkgImage
       value: 
-      objectReference: {fileID: 433243761}
+      objectReference: {fileID: 830628102}
+    - target: {fileID: 1558703684, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: coverImg
+      value: 
+      objectReference: {fileID: 1175090848}
     - target: {fileID: 1558703684, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: fillImage
       value: 
@@ -3953,42 +3963,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: magnetArea
-      value: 
-      objectReference: {fileID: 296491680}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: staminaMax
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: normalSpeed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: pondusLevel
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: sprintSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: numberOfSlot
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: chargedHuschMax
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: pickUpMagnetRadius
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: chanceOfSpawningOrbs
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 1946906730, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4005,6 +3979,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 5817875709885638250, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2570604}
     - target: {fileID: 6176864220257201133, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.41000366
@@ -4093,6 +4071,14 @@ PrefabInstance:
       propertyPath: progressionAnimator
       value: 
       objectReference: {fileID: 905886631}
+    - target: {fileID: 7746994109667425154, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2570604}
+    - target: {fileID: 9003623135930483642, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2570604}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}

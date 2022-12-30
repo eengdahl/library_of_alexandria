@@ -717,11 +717,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &296491680 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 1670314278, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-  m_PrefabInstance: {fileID: 1193998807}
-  m_PrefabAsset: {fileID: 0}
 --- !u!20 &351846718 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4801661774064406994, guid: 33aef46199a1e47478d2e1796659967d, type: 3}
@@ -893,17 +888,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1784124352}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431926666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &433243761 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 433243761, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-  m_PrefabInstance: {fileID: 1784124352}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -1228,6 +1212,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1784124352}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630586340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &648246506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1701134073913295249, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+  m_PrefabInstance: {fileID: 1784124352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -2298,7 +2293,11 @@ PrefabInstance:
     - target: {fileID: 1558703684, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: bkgImage
       value: 
-      objectReference: {fileID: 433243761}
+      objectReference: {fileID: 648246506}
+    - target: {fileID: 1558703684, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: coverImg
+      value: 
+      objectReference: {fileID: 1511651353}
     - target: {fileID: 1558703684, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: fillImage
       value: 
@@ -2824,6 +2823,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1511651353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2497726079730089511, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+  m_PrefabInstance: {fileID: 1784124352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1514641111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3162,42 +3172,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: magnetArea
-      value: 
-      objectReference: {fileID: 296491680}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: staminaMax
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: normalSpeed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: pondusLevel
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: sprintSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: numberOfSlot
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: chargedHuschMax
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: pickUpMagnetRadius
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670795071, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-      propertyPath: chanceOfSpawningOrbs
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 1784124354, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3214,6 +3188,10 @@ PrefabInstance:
       propertyPath: levelTime
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5817875709885638250, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2570604}
     - target: {fileID: 6176864220257201133, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.41000366
@@ -3298,6 +3276,14 @@ PrefabInstance:
       propertyPath: progressionAnimator
       value: 
       objectReference: {fileID: 1912582336}
+    - target: {fileID: 7746994109667425154, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2570604}
+    - target: {fileID: 9003623135930483642, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2570604}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
