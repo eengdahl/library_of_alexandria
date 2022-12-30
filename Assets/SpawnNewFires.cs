@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnNewFires : MonoBehaviour
 {
+    public GameObject flyingFire;
     public GameObject firePrefab;
     FireGrow fireGrowScript;
     public float spawnDistance = 1;
@@ -36,6 +37,10 @@ public class SpawnNewFires : MonoBehaviour
     {
         Vector3 spawnDirection = Random.insideUnitCircle.normalized * spawnDistance;
         Vector3 spawnPoint = transform.position + spawnDirection;
-        Instantiate(firePrefab, spawnPoint, this.transform.rotation);
+        GameObject smallfire = Instantiate(firePrefab, transform.position, this.transform.rotation);//Instantiate(firePrefab, spawnPoint, this.transform.rotation);
+        FireDirection fireDirection = smallfire.GetComponent<FireDirection>();
+        fireDirection.shouldMove = true;
+        fireDirection.spotMoveTowards = spawnPoint;
     }
+    //Spawn a small fire prefab instead that moves towards that direction,
 }

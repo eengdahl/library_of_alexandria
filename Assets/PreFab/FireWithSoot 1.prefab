@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3129333048320728810}
+  - component: {fileID: 7733805463126962087}
   m_Layer: 0
   m_Name: FireWithSoot 1
   m_TagString: Fire
@@ -31,8 +32,23 @@ Transform:
   - {fileID: 3129333048581940004}
   - {fileID: 3511803656090267744}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7733805463126962087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3129333048320728811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894d3be100fb6ee4fb6b83d126e48361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMove: 1
+  spotMoveTowards: {x: 0, y: 0, z: 0}
+  shouldMove: 0
 --- !u!1 &3129333048581940027
 GameObject:
   m_ObjectHideFlags: 0
