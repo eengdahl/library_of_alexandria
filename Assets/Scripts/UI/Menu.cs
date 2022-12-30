@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("scene_tutorial");
+        SceneManager.LoadScene("scene_main_julia");
     }
 
     public void Credits()
