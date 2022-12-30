@@ -90,7 +90,7 @@ public class PlayerController1 : MonoBehaviour
         facingRight = !facingRight;
         if (sprite.flipX == false)
         {
-            Debug.Log("sprite flip");
+           
             sprite.flipX = true;
         }
 

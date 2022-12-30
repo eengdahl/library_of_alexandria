@@ -24,7 +24,7 @@ public class WinAndLoseState : MonoBehaviour
     string sceneName;
     Scene currentScene;
 
-
+   
 
 
 
@@ -59,7 +59,7 @@ public class WinAndLoseState : MonoBehaviour
             //shuting down the other win/fail conditions
             swayBooksList.toMany = false;
 
-           
+
         }
         if (swayBooksList.toMany == true && toLoud.enabled == false && winScreen.enabled == false)
         {
@@ -78,7 +78,7 @@ public class WinAndLoseState : MonoBehaviour
             //shuting down the other win/fail conditions
             noiseSlider.value = 0;
 
-       
+
         }
     }
     public void TimeIsUp()
@@ -96,15 +96,16 @@ public class WinAndLoseState : MonoBehaviour
         {
             winScreen.enabled = true;
             bool spacePressed = false;
-                endLock = true;
+            endLock = true;
             if (Input.GetKey("space"))
             {
                 spacePressed = true;
             }
-            if (endTimer > 10  || spacePressed)
+            if (endTimer > 10 || spacePressed)
             {
                 winScreen.enabled = false;
                 Progression(SceneManager.GetActiveScene().buildIndex);
+                spacePressed = false;
 
             }
         }
@@ -114,7 +115,7 @@ public class WinAndLoseState : MonoBehaviour
     //SceneManager.GetActiveScene().buildIndex;
     public void Progression(int level)
     {
-        playerController.enabled = false;
+        //playerController.enabled = false;
         progressionScreen.SetActive(true);
         progressionAnimator.SetInteger("level", level);
 

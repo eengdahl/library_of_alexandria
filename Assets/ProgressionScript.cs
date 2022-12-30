@@ -18,10 +18,15 @@ public class ProgressionScript : MonoBehaviour
     {
         me = GetComponent<Animator>();
     }
+    private void Start()
+    {
+        me = GetComponent<Animator>();
+        
+    }
 
     public void AcvtivateButtons()
     {
-        me.SetInteger("level", 1);
+        me.SetFloat("levels", -1);
         retryButton.SetActive(true);
         continueButton.SetActive(true);
     }
