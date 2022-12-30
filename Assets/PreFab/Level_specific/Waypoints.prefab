@@ -676,7 +676,8 @@ MonoBehaviour:
   - {fileID: 3359307753071562788}
   - {fileID: 3359307752743133254}
   - {fileID: 3359307752710643749}
-  fourteenExitArray: []
+  fourteenExitArray:
+  - {fileID: 3359307752710643749}
   researcherArrayOne: []
   researcherArrayTwo: []
 --- !u!1001 &33152335

@@ -7,7 +7,7 @@ public class BeingHusched : MonoBehaviour
 {
 
 
-
+    [SerializeField]NPCMovement NPCMovementScript;
     //Should be placed on huschZone on NPCs
     public bool beingHusched = false;
     NPCMakeNoise npcMakeNoise;
@@ -54,6 +54,7 @@ public class BeingHusched : MonoBehaviour
             beingHusched = true;
             iMakeNoise.levelOfSound = 0;
             myAnimator.SetBool("burning", false);
+            NPCMovementScript.OnFire = false;
         }
 
         if (collision.tag == "Fire")
@@ -61,6 +62,7 @@ public class BeingHusched : MonoBehaviour
             if (Random.Range(0, 60) == 0)
             {
                 Debug.Log("ping");
+                NPCMovementScript.OnFire = true;
                 myAnimator.SetBool("burning", true);
                 npcMakeNoise.makingNosie = true;
             }

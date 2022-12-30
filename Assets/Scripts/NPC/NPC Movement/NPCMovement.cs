@@ -73,7 +73,10 @@ public class NPCMovement : MonoBehaviour
 
 
 
-
+    //Onfire
+    public bool OnFire = false;
+    float onFireSpeed;
+    float startMoveSpeed;
     //Move to table
 
     int tableWayPointIndex = 0;
@@ -95,6 +98,9 @@ public class NPCMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
 
+        //OnFire
+        onFireSpeed = moveSpeed * 1.5f;
+        startMoveSpeed = moveSpeed;
         //Exit
         exitStartScript = FindObjectOfType<ExitStart>();
         listOfExitStarts = exitStartScript.exitTransforms;
@@ -129,6 +135,15 @@ public class NPCMovement : MonoBehaviour
 
     void Update()
     {
+        if (OnFire)
+        {
+            moveSpeed = onFireSpeed; 
+        }
+        else
+        {
+            moveSpeed = startMoveSpeed;
+        }
+
         //To se if NPC is on left or right side of map
         if (transform.position.x < 0)
         {
