@@ -77,6 +77,7 @@ public class NPC_movment_tutorial : MonoBehaviour
     bool once = true;
 
     SpriteRenderer red;
+    Animator anim;
 
     void Start()
     {
@@ -87,8 +88,8 @@ public class NPC_movment_tutorial : MonoBehaviour
         audio1 = GetComponent<AudioSource>();
         red = redchild.GetComponent<SpriteRenderer>();
         //exclamation_talkbubbel = exclamation_talkbubbel.GetComponent<GameObject>();
-
-        opacity = 0;
+        anim = GetComponent<Animator>();
+;        opacity = 0;
     }
 
     void Update()
@@ -130,6 +131,7 @@ public class NPC_movment_tutorial : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 2 && timer <= 2.1)
             {
+                anim.SetBool("standing", true);
                 audio1.Play();
                 New_Hush_information.SetActive(true);
             }
@@ -179,7 +181,7 @@ public class NPC_movment_tutorial : MonoBehaviour
             if (timer2 > 2 && once == true)
             {
                 once = false;
-                Debug.Log("Enter");
+               
                 noiceNPCs();
             }
         }
@@ -223,6 +225,7 @@ public class NPC_movment_tutorial : MonoBehaviour
     }
     public void Walk_Out()
     {
+        anim.SetBool("standing", false);
         bigHushedNPC0.startWalking = true;
         bigHushedNPC1.startWalking = true;
         transform.position = Vector3.MoveTowards(transform.position, target2.position, speed * Time.deltaTime);
