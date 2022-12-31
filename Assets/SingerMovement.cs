@@ -6,18 +6,27 @@ public class SingerMovement : MonoBehaviour
 {
     Animator thisAnimator;
     Transform target;
-    [SerializeField]Transform singerSpot;
-    public Transform destroyPoint;
+    //Transforms for the spots
+    GameObject gOSingerSpot;
+    Transform singerSpot;
+    Transform destroyPoint;
+    GameObject gODestroyPoint;
+
     Transform directionTransform;
     DestroySinger destroySingerScript;
     float moveInSpeed = 0.003f;
     float moveOutSpeed = 0.005f;
     float speed;
-    bool directionChecker;
     float directionTimer;
     // Start is called before the first frame update
     void Start()
     {
+        //Find the different transforms 
+        gOSingerSpot = GameObject.FindGameObjectWithTag("SingerSpot");
+        singerSpot = gOSingerSpot.transform;
+        gODestroyPoint = GameObject.FindGameObjectWithTag("SingerDestroyPoint");
+        destroyPoint = gODestroyPoint.transform;
+
         thisAnimator = GetComponent<Animator>();
         destroySingerScript = GetComponent<DestroySinger>();
         target = singerSpot;
