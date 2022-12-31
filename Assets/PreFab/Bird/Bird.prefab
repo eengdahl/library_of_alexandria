@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 506254165317029086}
   - component: {fileID: 506254165317029081}
   - component: {fileID: 506254165317029087}
+  - component: {fileID: 620205044718311429}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -133,9 +134,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: b750363c54d87eb4da3b561c98c12658, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8e778963457b7fc45aa695933a8b716a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 255517c938479c84198853f669965235, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -235,3 +236,27 @@ CircleCollider2D:
   m_Offset: {x: 0.12962332, y: 0.3137968}
   serializedVersion: 2
   m_Radius: 6.9432607
+--- !u!114 &620205044718311429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506254165317029029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1980ec6d6f0c5204884c2b7eda855423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdNoices:
+  - {fileID: 8300000, guid: 255517c938479c84198853f669965235, type: 3}
+  - {fileID: 8300000, guid: de5f92ec7cbdf3e44843290a2081e526, type: 3}
+  - {fileID: 8300000, guid: 7d1c6a4670c9b974285b6fe462eade81, type: 3}
+  - {fileID: 8300000, guid: 017bf817c74facf4b8b2d5f3be156d93, type: 3}
+  - {fileID: 8300000, guid: 0586a5f7eb59ec6478654bb4bf340f0b, type: 3}
+  - {fileID: 8300000, guid: a4b0795c61fd41f4bbf0b95ee0018239, type: 3}
+  - {fileID: 8300000, guid: 2c864089ba4a79f4ba58ccce4189fced, type: 3}
+  - {fileID: 8300000, guid: 2ce34d8c6294fff44b957512955e1727, type: 3}
+  - {fileID: 8300000, guid: 6bd193bb90ab3304ea8e4e5aad3320fe, type: 3}
+  - {fileID: 8300000, guid: eb4b4032a9a9ee64a945663e3ffa03ba, type: 3}
+  aS: {fileID: 0}

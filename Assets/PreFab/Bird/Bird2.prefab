@@ -753,10 +753,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 506254165317029081, guid: a784b6dd8fce5fa48ac96f62a3f99c82, type: 3}
-      propertyPath: m_Volume
-      value: 0.047
-      objectReference: {fileID: 0}
     - target: {fileID: 506254165317029082, guid: a784b6dd8fce5fa48ac96f62a3f99c82, type: 3}
       propertyPath: wayPoints.Array.data[0]
       value: 

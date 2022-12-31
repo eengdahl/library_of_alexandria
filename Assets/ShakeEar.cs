@@ -83,7 +83,7 @@ public class ShakeEar : MonoBehaviour
     {
         if (noiseHandelerScript.soundLevelInRoom > when && noiseHandelerScript.soundLevelInRoom < when + 3)
         {
-            Debug.Log("Should be shaking now");
+           
             shakeTimer += Time.deltaTime;
             if (shakeTimer > 0.05)
             {
