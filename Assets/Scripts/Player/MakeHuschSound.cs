@@ -18,7 +18,7 @@ public class MakeHuschSound : MonoBehaviour
     float startSize = 1;
     SpriteRenderer spriteRenderer;
     [SerializeField] float smallHuschCharged = 0.4f;
-    Vector3 startSizeCharged; 
+    Vector3 startSizeCharged;
     AllPlayerUpgradeables playerUpgradeables;
     public bool doesBigHush = false;
     public AudioSource stepsAs;
@@ -58,21 +58,21 @@ public class MakeHuschSound : MonoBehaviour
 
         coolDown -= Time.deltaTime;
         //Om du trycker på  activate spela husch ljudet och gör om boolen doesHuschSound till true
-        if (Input.GetKey("space") && !doesHuschSound && staminaScript.stamina>0)
+        if (Input.GetKey("space") && !doesHuschSound && staminaScript.stamina > 0)
         {
             if (chargedHush < smallHuschCharged)
             {
                 chargedHush += Time.deltaTime;
             }
-            if (chargedHush  > smallHuschCharged + 0.05f)
+            if (chargedHush > smallHuschCharged + 0.05f)
             {
                 spriteRenderer.enabled = true;
                 animatorKarin.SetBool("breath", true);
             }
 
-            if (chargedHush < chargedHuschMax && staminaScript.stamina > 0 && chargedHush  > smallHuschCharged )
+            if (chargedHush < chargedHuschMax && staminaScript.stamina > 0 && chargedHush > smallHuschCharged)
             {
-                
+
                 if (chargedHush > smallHuschCharged)
                 {
                     staminaScript.stamina -= chargedHush * Time.deltaTime * 8;
@@ -81,14 +81,14 @@ public class MakeHuschSound : MonoBehaviour
                 {
                     chargedHush += Time.deltaTime / 4;
                 }
-                else 
+                else
                 {
                     chargedHush += Time.deltaTime;
                 }
             }
-            
+
             //"Shake the husch"
-            if (chargedHush > chargedHuschMax/1.5f && Input.GetKey("space") && chargedHush < chargedHuschMax) //chargedHuschMax - chargedHush > whenShake
+            if (chargedHush > chargedHuschMax / 1.5f && Input.GetKey("space") && chargedHush < chargedHuschMax) //chargedHuschMax - chargedHush > whenShake
             {
                 zoomIn = true;
                 float scale = chargedHush + startSizeCharged.x + Mathf.Sin(Time.time * 20) * 0.05f;
@@ -107,7 +107,7 @@ public class MakeHuschSound : MonoBehaviour
             zoomIn = false;
             //finetunear hur effektiv chargehush ska vara, work in progress
 
-            Invoke("StopAudio", chargedHush);
+            Invoke("StopAudio", chargedHush + 0.05f);
 
             doesHuschSound = true;
 
@@ -160,7 +160,7 @@ public class MakeHuschSound : MonoBehaviour
             huschTimer += Time.deltaTime;
             if (huschTimer >= lenghtOfHusch)
             {
-                
+
                 animatorKarin.SetBool("IsHushing", false);
                 //lenghtOfHusch = 0.5f;
                 chargedHush = 0;
