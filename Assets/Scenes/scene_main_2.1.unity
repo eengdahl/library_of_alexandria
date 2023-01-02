@@ -2632,10 +2632,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReloadScene
       objectReference: {fileID: 0}
-    - target: {fileID: 1840703927928061367, guid: 33aef46199a1e47478d2e1796659967d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -7.2
-      objectReference: {fileID: 0}
     - target: {fileID: 1840703927928061368, guid: 33aef46199a1e47478d2e1796659967d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
