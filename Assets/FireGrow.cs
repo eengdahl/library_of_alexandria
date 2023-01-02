@@ -33,6 +33,8 @@ public class FireGrow : MonoBehaviour
     AudioSource aS;
     bool soundPlayed = false;
 
+    int randomAnimationPicker;
+
 
     private void Start()
     {
@@ -48,7 +50,11 @@ public class FireGrow : MonoBehaviour
 
 
         randPicker = Random.Range(0, 11);
-
+        randomAnimationPicker = Random.Range(0,2);
+        if (randomAnimationPicker==1)
+        {
+            animator.SetFloat("randomAnimation", 1);
+        }
 
 
     }
@@ -63,12 +69,11 @@ public class FireGrow : MonoBehaviour
 
             if (randPicker == 0)
             {
-                Debug.Log("Is zero");
 
                 if (!soundPlayed)
                 {
 
-                    aS.PlayOneShot(sorry,0.5f);
+                    aS.PlayOneShot(sorry,1f);
                     soundPlayed = true;
                 }
                 animator.SetBool("FireIsHusched", true);

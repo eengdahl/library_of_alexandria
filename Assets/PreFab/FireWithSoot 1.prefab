@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 1434249822166433516, guid: a0d5f7b34873c0341beae98cc4d111a9, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ed135f77ab9677544a71dc1eb924b730, type: 3}
+      objectReference: {fileID: 8300000, guid: 3b627056d0042884c9937582243a4b1b, type: 3}
     - target: {fileID: 1434249822166433516, guid: a0d5f7b34873c0341beae98cc4d111a9, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -189,6 +189,10 @@ PrefabInstance:
       propertyPath: soot
       value: 
       objectReference: {fileID: 7703671258463432909, guid: da719fb4bb57d624984a8e36ea9200b7, type: 3}
+    - target: {fileID: 2004648301186197813, guid: a0d5f7b34873c0341beae98cc4d111a9, type: 3}
+      propertyPath: sorry
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b627056d0042884c9937582243a4b1b, type: 3}
     - target: {fileID: 2004648301186197813, guid: a0d5f7b34873c0341beae98cc4d111a9, type: 3}
       propertyPath: spriteAshes
       value: 
