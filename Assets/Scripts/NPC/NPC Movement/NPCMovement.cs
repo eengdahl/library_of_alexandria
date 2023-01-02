@@ -15,7 +15,7 @@ public class NPCMovement : MonoBehaviour
     //BasicMovement
     [SerializeField]
     Difficulty difficulty;
-   public float moveSpeed;
+    public float moveSpeed;
     public bool canMove = true;
     float stopTimer;
     public float stillAfterHusch = 2;
@@ -137,7 +137,7 @@ public class NPCMovement : MonoBehaviour
     {
         if (OnFire)
         {
-            moveSpeed = onFireSpeed; 
+            moveSpeed = onFireSpeed;
         }
         else
         {
@@ -207,7 +207,7 @@ public class NPCMovement : MonoBehaviour
             }
             if (atTableFinish && !hasChair) // start moving back and forth if no seats found
             {
-                
+
                 LookingForFreeSeats();
             }
         }
@@ -218,18 +218,18 @@ public class NPCMovement : MonoBehaviour
     void LookingForFreeSeats()
     {
 
-      
+
         transform.position = Vector3.MoveTowards(transform.position, nextCheckerSpot, moveSpeed * Time.deltaTime);
 
         if (onLeftSide)
         {
-           
+
             chairs = chairListScript.listOfLeftChairArrays[chairCheckerIndex];
 
             CheckIfChairsEmpty();
-            
+
             //If npc reaches the spot where it should check;
-            
+
             if (transform.position == nextCheckerSpot)
             {
                 chairPicker = 0;
@@ -257,52 +257,52 @@ public class NPCMovement : MonoBehaviour
                 //NPC sprite flip
                 currentWaypoint = wayPointsArmory.leftCheckerSpotsArray[chairSpotIndex];
                 FlipFacingDirection();
-                
-            }
-
-
 
             }
-            //Debug.Log("Hello can you see me? On left side bool: "+onLeftSide);
-            if (onLeftSide == false)
-            {
-                
-                chairs = chairListScript.listOfRightChairArrays[chairCheckerIndex];
 
-                CheckIfChairsEmpty();
+
+
+        }
+        //Debug.Log("Hello can you see me? On left side bool: "+onLeftSide);
+        if (onLeftSide == false)
+        {
+
+            chairs = chairListScript.listOfRightChairArrays[chairCheckerIndex];
+
+            CheckIfChairsEmpty();
             //If npc reaches the spot where it should check;
-           
+
 
             if (transform.position == nextCheckerSpot)//(transform.position == nextCheckerSpot)
-                    {
+            {
 
-                    chairPicker = 0;
-                    //Check if any chair is empty
-                    //change what chairs its checking when reaching checker spots
-                    if (chairCheckerIndex < chairListScript.listOfRightChairArrays.Count)
-                    {
-                        chairCheckerIndex += 1;
+                chairPicker = 0;
+                //Check if any chair is empty
+                //change what chairs its checking when reaching checker spots
+                if (chairCheckerIndex < chairListScript.listOfRightChairArrays.Count)
+                {
+                    chairCheckerIndex += 1;
 
-                    }
-                    else if (chairCheckerIndex >= chairListScript.listOfRightChairArrays.Count)
-                    {
-                        chairCheckerIndex = 0;
-                    }
-                    if (chairSpotIndex < wayPointsArmory.rightCheckerSpotsArray.Length)
-                    {
-                        chairSpotIndex += 1;
-                    }
-                    if (chairSpotIndex >= wayPointsArmory.rightCheckerSpotsArray.Length)
-                    {
-                        chairSpotIndex = 0;
-                    }
-                    nextCheckerSpot = wayPointsArmory.rightCheckerSpotsArray[chairSpotIndex].position;
-                    
-                    //NPC sprite flip
-                    currentWaypoint = wayPointsArmory.rightCheckerSpotsArray[chairSpotIndex];
-                    FlipFacingDirection();
-                    
                 }
+                else if (chairCheckerIndex >= chairListScript.listOfRightChairArrays.Count)
+                {
+                    chairCheckerIndex = 0;
+                }
+                if (chairSpotIndex < wayPointsArmory.rightCheckerSpotsArray.Length)
+                {
+                    chairSpotIndex += 1;
+                }
+                if (chairSpotIndex >= wayPointsArmory.rightCheckerSpotsArray.Length)
+                {
+                    chairSpotIndex = 0;
+                }
+                nextCheckerSpot = wayPointsArmory.rightCheckerSpotsArray[chairSpotIndex].position;
+
+                //NPC sprite flip
+                currentWaypoint = wayPointsArmory.rightCheckerSpotsArray[chairSpotIndex];
+                FlipFacingDirection();
+
+            }
         }
         void CheckIfChairsEmpty()
         {
@@ -471,7 +471,7 @@ public class NPCMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, toTableWayPoints[tableWayPointIndex].transform.position, moveSpeed * Time.deltaTime);
         }
         float distance = Vector3.Distance(transform.position, toTableWayPoints[tableWayPointIndex].transform.position);
-        if (distance<0.2f)//(transform.position == toTableWayPoints[tableWayPointIndex].transform.position)
+        if (distance < 0.2f)//(transform.position == toTableWayPoints[tableWayPointIndex].transform.position)
         {
             tableWayPointIndex += 1;
         }

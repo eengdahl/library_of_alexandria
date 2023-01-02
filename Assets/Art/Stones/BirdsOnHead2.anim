@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BirdsOnHead
+  m_Name: BirdsOnHead2
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.09, y: 0.529, z: 0}
+        value: {x: 0.131, y: 0.529, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -29,7 +29,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1.1666666
-        value: {x: 0.122, y: 0.529, z: 0}
+        value: {x: -0.132, y: 0.529, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -48,9 +48,9 @@ AnimationClip:
       value: {fileID: -396421034, guid: 0c13b17e136f31844b846c6f361edc40, type: 3}
     - time: 0.23333333
       value: {fileID: 667206868, guid: 0c13b17e136f31844b846c6f361edc40, type: 3}
-    - time: 0.46666667
+    - time: 0.43333334
       value: {fileID: -1270407202, guid: 0c13b17e136f31844b846c6f361edc40, type: 3}
-    - time: 0.6666667
+    - time: 0.7
       value: {fileID: 829880576, guid: 0c13b17e136f31844b846c6f361edc40, type: 3}
     - time: 0.9
       value: {fileID: -432516458, guid: 0c13b17e136f31844b846c6f361edc40, type: 3}
@@ -116,7 +116,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.09
+        value: 0.131
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -125,7 +125,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.1666666
-        value: 0.122
+        value: -0.132
         inSlope: 0
         outSlope: 0
         tangentMode: 136
