@@ -18,6 +18,9 @@ public class SingerMovement : MonoBehaviour
     float moveOutSpeed = 0.01f;
     float speed;
     float directionTimer;
+
+    public bool atSingingSpot = false;
+    public bool walkingIn = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,14 +43,27 @@ public class SingerMovement : MonoBehaviour
         //Animate singing 
         if (transform.position == singerSpot.position)
         {
+            atSingingSpot = true;
             thisAnimator.SetBool("StandsStill", true);
         }
         else
         {
+            atSingingSpot = false;
             thisAnimator.SetBool("StandsStill", false);
         }
         //Move
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
+
+        //Bool for arrow to work
+        if (target.position == gOSingerSpot.transform.position)
+        {
+            walkingIn = true;
+        }
+        else if (target.position == gODestroyPoint.transform.position)
+        {
+            walkingIn = false;
+        }
+
 
         //DirectionSwitch
         directionTimer += Time.deltaTime;
@@ -58,13 +74,13 @@ public class SingerMovement : MonoBehaviour
         }
 
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "SingerRemover")
         {
             speed = moveOutSpeed;
-            destroySingerScript.canBeDestroyed = true;
-            
+            destroySingerScript.canBeDestroyed = true;        
             directionTransform = destroyPoint;
         }
     }
