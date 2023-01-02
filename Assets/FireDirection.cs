@@ -11,27 +11,33 @@ public class FireDirection : MonoBehaviour
     float speedMove = 0.005f;
     public Vector3 spotMoveTowards;
     public bool shouldMove = false;
-
+    [SerializeField] FireHusched fireHuschedScript;
+    [SerializeField] GameObject soot;
 
     private void Update()
     {
+
+
         if (shouldMove)
         {
-            if(fireSprite != null)
+            if (fireSprite != null)
             {
                 fireSprite.enabled = false;
             }
-            if(sootSprite != null)
-            {
-
-            sootSprite.enabled = false;
-            }
             transform.position = Vector3.MoveTowards(transform.position, spotMoveTowards, speedMove);
+            if (transform.position == spotMoveTowards)
+            {
+                
+                fireSprite.enabled = true;
+                shouldMove = false;
+            }
+            else if (transform.position != spotMoveTowards)
+            {
+                Debug.Log("Shouldnt be able to husch fire now");
+                
+                sootSprite.enabled = false;
+            }
         }
-        else
-        {
-            //fireSprite.enabled = true;
-            //sootSprite.enabled = true;
-        }
+
     }
 }

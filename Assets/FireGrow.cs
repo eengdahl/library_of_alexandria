@@ -16,6 +16,7 @@ public class FireGrow : MonoBehaviour
     [SerializeField] GameObject fireLight;
     [SerializeField] FireHusched fireHuschedScript;
     [SerializeField] MoveFire moveFireScript;
+    [SerializeField] FireDirection fireDirection;
     Animator animator;
     //husched timer
     float timerEndHusched;
@@ -143,11 +144,18 @@ public class FireGrow : MonoBehaviour
             //randPicker = Random.Range(0, 11);
             fireLight.SetActive(false);
             ashesAnimator.SetBool("ashesOn", true);
-            spriteAshes.enabled = true;
+            //spriteAshes.enabled = true;
             spriteRendererFire.enabled = false;
             timerHusched += Time.deltaTime;
             transform.localScale = minSize;
-
+            if (fireDirection.shouldMove)
+            {
+                spriteAshes.enabled = false;
+            }
+            else
+            {
+                spriteAshes.enabled = true;
+            }
             
 
             if (timerHusched > timerEndHusched)

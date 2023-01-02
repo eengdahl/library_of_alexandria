@@ -20,7 +20,7 @@ public class FireHusched : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Husch" && makeHuschSoundScriptPlayer.doesHuschSound == true)
+        if (collision.tag == "Husch" && makeHuschSoundScriptPlayer != null && makeHuschSoundScriptPlayer.doesHuschSound == true )
         {
             //fireParent.transform.localScale = fireGrowScript.minSize;
             //aS.Play();
