@@ -20,7 +20,10 @@ public class PlayerController1 : MonoBehaviour
     Animator animator;
     public bool isMoving;
     AllPlayerUpgradeables playerUpgradeables;
+
     AudioSource aS;
+    public AudioClip water;
+    public AudioClip steps;
     private void Start()
     {
         playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
@@ -61,7 +64,7 @@ public class PlayerController1 : MonoBehaviour
         else
         {
             isMoving = false;
-            aS.Stop();  
+            aS.Stop();
             isPlayingAudio = false;
         }
 
@@ -112,6 +115,36 @@ public class PlayerController1 : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Water")
+        {
+            aS.clip = water;
+            isPlayingAudio = false;
+            aS.pitch = 0;
+            if (!isPlayingAudio)
+            {
+                aS.pitch = 2;
+                aS.Play();
+                isPlayingAudio = true;
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Water")
+        {
+            aS.clip = steps;
+            isPlayingAudio = false;
+            aS.pitch = 2;
+            if (!isPlayingAudio)
+            {
+                aS.Play();
+                isPlayingAudio = true;
+            }
+        }
+    }
 
 }
 

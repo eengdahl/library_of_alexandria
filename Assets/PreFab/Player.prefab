@@ -723,6 +723,8 @@ MonoBehaviour:
   inputAxis: {x: 0, y: 0}
   karinCantMove: 0
   isMoving: 0
+  water: {fileID: 8300000, guid: e41a3a435c107e443b3cc20c71fb53d7, type: 3}
+  steps: {fileID: 8300000, guid: 17b0928ff8203ed428c856e91c812f1d, type: 3}
 --- !u!50 &4355956085948609700
 Rigidbody2D:
   serializedVersion: 4
@@ -836,7 +838,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: b750363c54d87eb4da3b561c98c12658, type: 2}
   m_audioClip: {fileID: 8300000, guid: 17b0928ff8203ed428c856e91c812f1d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 2
   Loop: 1
   Mute: 0
