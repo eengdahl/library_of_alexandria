@@ -27,7 +27,7 @@ public class ProgressionScript : MonoBehaviour
     public void AcvtivateButtons()
     {
         me.SetFloat("levels", -1);
-        retryButton.SetActive(true);
+       // retryButton.SetActive(true);
         continueButton.SetActive(true);
     }
 }
