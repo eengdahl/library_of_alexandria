@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894d3be100fb6ee4fb6b83d126e48361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireSprite: {fileID: 3511803656090267746}
+  sootSprite: {fileID: 3129333048581940026}
   spotMoveTowards: {x: 0, y: 0, z: 0}
   shouldMove: 0
 --- !u!114 &1510610771390859178
@@ -257,5 +259,10 @@ PrefabInstance:
 --- !u!4 &3511803656090267744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2004648301186197814, guid: a0d5f7b34873c0341beae98cc4d111a9, type: 3}
+  m_PrefabInstance: {fileID: 3129333048469264726}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3511803656090267746 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2004648301186197812, guid: a0d5f7b34873c0341beae98cc4d111a9, type: 3}
   m_PrefabInstance: {fileID: 3129333048469264726}
   m_PrefabAsset: {fileID: 0}

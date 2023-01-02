@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class FireDirection : MonoBehaviour
 {
-    Animator fireAnimator;
-    Animator sootAnimator;
-    SpriteRenderer fireSprite;
-    SpriteRenderer sootSprite;
-     float speedMove = 0.005f;
+    //[SerializeField]Animator fireAnimator;
+    //[SerializeField]Animator sootAnimator;
+    [SerializeField] SpriteRenderer fireSprite;
+    [SerializeField] SpriteRenderer sootSprite;
+    float speedMove = 0.005f;
     public Vector3 spotMoveTowards;
     public bool shouldMove = false;
+
+
     private void Update()
     {
         if (shouldMove)
         {
-       
-        transform.position = Vector3.MoveTowards(transform.position, spotMoveTowards,speedMove);
+            fireSprite.enabled = false;
+            sootSprite.enabled = false;
+            transform.position = Vector3.MoveTowards(transform.position, spotMoveTowards, speedMove);
+        }
+        else
+        {
+            //fireSprite.enabled = true;
+            //sootSprite.enabled = true;
         }
     }
 }
