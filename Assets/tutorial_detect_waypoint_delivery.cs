@@ -67,7 +67,7 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
             {
 
                 playerHaveRedBook = true;
-                Debug.Log("should have found red book in inventory");
+         
             }
         }
         if (other.CompareTag("tutorial red bookshelf1") && playerHaveRedBook && Input.GetKey(KeyCode.E))
@@ -78,8 +78,8 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
             set_books_in_bookshelf_information.SetActive(false);
             End_of_tutorial_text.SetActive(true);
             continueButton.SetActive(true);
-            Show_Clock.SetActive(true);
-            Show_noicemeter.SetActive(true);
+          //  Show_Clock.SetActive(true);
+          //  Show_noicemeter.SetActive(true);
             Cursor.visible = true;
         }
     }

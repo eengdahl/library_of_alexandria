@@ -1,24 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Continue_button_script : MonoBehaviour
 {
     public GameObject Button;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int counter = 0;
+    public GameObject clockPicture;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     public void Continue()
     {
-        SceneManager.LoadScene("scene_main_1.0");
+        clockPicture.SetActive(true);
+        if (counter >= 1)
+        {
+            SceneManager.LoadScene("scene_main_1.0");
+        }
+        counter++;
     }
 }
