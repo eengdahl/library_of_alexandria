@@ -7,7 +7,7 @@ public class PlayerController1 : MonoBehaviour
 {
 
     public float speed;
-    float halfSpeed;
+    public float halfSpeed;
     public float fullSpeed;
 
     SpriteRenderer sprite;

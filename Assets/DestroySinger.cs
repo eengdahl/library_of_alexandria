@@ -9,8 +9,7 @@ public class DestroySinger : MonoBehaviour
     GameObject spawnSinger;
     private void Start()
     {
-        spawnSinger = GameObject.FindGameObjectWithTag("SingerDestroyPoint");
-        
+        spawnSinger = GameObject.FindGameObjectWithTag("SingerDestroyPoint");     
         spawnSingersScript = spawnSinger.GetComponent<SpawnSingers>();
     }
     void Update()

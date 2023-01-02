@@ -15,7 +15,7 @@ public class SingerMovement : MonoBehaviour
     Transform directionTransform;
     DestroySinger destroySingerScript;
     float moveInSpeed = 0.003f;
-    float moveOutSpeed = 0.005f;
+    float moveOutSpeed = 0.01f;
     float speed;
     float directionTimer;
     // Start is called before the first frame update
