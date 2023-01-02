@@ -61,7 +61,7 @@ public class PlayerController1 : MonoBehaviour
         else
         {
             isMoving = false;
-            aS.Stop();
+            aS.Stop();  
             isPlayingAudio = false;
         }
 
