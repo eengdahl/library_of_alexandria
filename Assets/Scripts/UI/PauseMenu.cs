@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         AudioListener.volume = 1f;
         isGamePaused = false;
+        overLaySprite.enabled = false;
     }
 
     void PauseGame()
