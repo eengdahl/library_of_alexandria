@@ -1783,6 +1783,14 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.43
       objectReference: {fileID: 0}
+    - target: {fileID: 4355956085948609701, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: steps
+      value: 
+      objectReference: {fileID: 8300000, guid: 17b0928ff8203ed428c856e91c812f1d, type: 3}
+    - target: {fileID: 4355956085948609701, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: water
+      value: 
+      objectReference: {fileID: 8300000, guid: e41a3a435c107e443b3cc20c71fb53d7, type: 3}
     - target: {fileID: 4355956085948609702, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1834,6 +1842,10 @@ PrefabInstance:
     - target: {fileID: 4355956086700047636, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
       propertyPath: chargedHush
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488670547339231959, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
