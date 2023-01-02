@@ -2081,6 +2081,7 @@ GameObject:
   - component: {fileID: 869663212}
   - component: {fileID: 869663211}
   - component: {fileID: 869663210}
+  - component: {fileID: 8487118540312536582}
   m_Layer: 5
   m_Name: Resume_Button
   m_TagString: Untagged
@@ -2202,6 +2203,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8487118540312536582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869663208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7cd2c63882ca04f9bd0c05285562ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continueButton: {fileID: 869663210}
 --- !u!1 &881907729
 GameObject:
   m_ObjectHideFlags: 0

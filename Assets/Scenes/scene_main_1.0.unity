@@ -2607,6 +2607,10 @@ PrefabInstance:
       propertyPath: yellowChild
       value: 
       objectReference: {fileID: 337689319}
+    - target: {fileID: 1095850506, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1784124354}
     - target: {fileID: 1421623169, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2747,6 +2751,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 869663208, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
   m_PrefabInstance: {fileID: 1784124352}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1784124354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 869663210, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+  m_PrefabInstance: {fileID: 1784124352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784124353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1906595820
 GameObject:
   m_ObjectHideFlags: 0
