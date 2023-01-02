@@ -981,6 +981,7 @@ MonoBehaviour:
   doesHuschSound: 0
   smallHuschCharged: 0.4
   doesBigHush: 0
+  stepsAs: {fileID: 6488670547339231959}
   whenShake: 0
   chargedHuschMax: 0
   zoomIn: 0

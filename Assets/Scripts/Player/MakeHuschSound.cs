@@ -21,6 +21,7 @@ public class MakeHuschSound : MonoBehaviour
     Vector3 startSizeCharged; 
     AllPlayerUpgradeables playerUpgradeables;
     public bool doesBigHush = false;
+    public AudioSource stepsAs;
 
 
     //"shake"
@@ -109,6 +110,8 @@ public class MakeHuschSound : MonoBehaviour
             Invoke("StopAudio", chargedHush);
 
             doesHuschSound = true;
+
+            stepsAs.Stop();
 
             //picking long hush
             audioSource.clip = longHush;
