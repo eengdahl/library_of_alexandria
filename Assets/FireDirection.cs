@@ -17,8 +17,15 @@ public class FireDirection : MonoBehaviour
     {
         if (shouldMove)
         {
-            fireSprite.enabled = false;
+            if(fireSprite != null)
+            {
+                fireSprite.enabled = false;
+            }
+            if(sootSprite != null)
+            {
+
             sootSprite.enabled = false;
+            }
             transform.position = Vector3.MoveTowards(transform.position, spotMoveTowards, speedMove);
         }
         else
