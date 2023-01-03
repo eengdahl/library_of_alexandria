@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour
     public GameObject SettingsOnOff;
     public Button start;
     public GameObject newCredits;
+    int levelDone;
 
     public void Quit()
     {
@@ -24,7 +25,17 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("scene_main_julia");
+        levelDone = PlayerPrefs.GetInt("levelCompleted");
+
+        if (levelDone < 2)
+        {
+            SceneManager.LoadScene("scene_main_julia");
+        }
+        else
+        {
+            SceneManager.LoadScene(levelDone);
+        }
+
     }
 
     public void Credits()
@@ -57,5 +68,5 @@ public class Menu : MonoBehaviour
         start.Select();
     }
 
-    
+
 }

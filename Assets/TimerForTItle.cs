@@ -12,6 +12,8 @@ public class TimerForTItle : MonoBehaviour
     AudioSource aS;
     void Start()
     {
+        PlayerPrefs.SetInt("levelCompleted", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
         aS = GetComponent<AudioSource>();
         continueButton.enabled = false;
         continueText.enabled = false;

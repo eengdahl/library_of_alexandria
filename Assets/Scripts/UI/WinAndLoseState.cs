@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class WinAndLoseState : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class WinAndLoseState : MonoBehaviour
     string sceneName;
     Scene currentScene;
 
-   
+
 
 
 
@@ -94,6 +95,8 @@ public class WinAndLoseState : MonoBehaviour
 
         if (fellOver.enabled == false && toLoud.enabled == false && !endLock)
         {
+            PlayerPrefs.SetInt("levelCompleted", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.Save();
             winScreen.enabled = true;
             bool spacePressed = false;
             endLock = true;
