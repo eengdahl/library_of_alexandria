@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour
     public GameObject CreditsOnOff;
     public GameObject SettingsOnOff;
     public Button start;
+    public GameObject newCredits;
 
     public void Quit()
     {
@@ -29,14 +30,16 @@ public class Menu : MonoBehaviour
     public void Credits()
     {
         ButtonPanelOnOff.SetActive(false);
-        CreditsOnOff.SetActive(true);
+        // CreditsOnOff.SetActive(true);
+        newCredits.SetActive(true);
 
     }
 
     public void MainMenu()
     {
         ButtonPanelOnOff.SetActive(true);
-        CreditsOnOff.SetActive(false);
+        // CreditsOnOff.SetActive(false);
+        newCredits.SetActive(false);
         start.Select();
     }
 
@@ -44,6 +47,7 @@ public class Menu : MonoBehaviour
     {
         ButtonPanelOnOff.SetActive(false);
         SettingsOnOff.SetActive(true);
+
     }
 
     public void Settings_to_MainMenu()
