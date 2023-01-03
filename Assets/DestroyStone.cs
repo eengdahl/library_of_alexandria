@@ -13,7 +13,7 @@ public class DestroyStone : MonoBehaviour
         if(Stone.transform.position == landingspot.transform.position)
         {
             timer += Time.deltaTime;
-            if (timer > 3)
+            if (timer > 8)
             {
                 Destroy(gameObject);
             }

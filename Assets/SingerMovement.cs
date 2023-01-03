@@ -67,7 +67,7 @@ public class SingerMovement : MonoBehaviour
 
         //DirectionSwitch
         directionTimer += Time.deltaTime;
-        if (directionTimer> 0.05)
+        if (directionTimer> 0.1)
         {
             target = directionTransform;
             directionTimer = 0;
