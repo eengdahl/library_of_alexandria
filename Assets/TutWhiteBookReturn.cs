@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TutWhiteBookReturn : MonoBehaviour
+{
+    [SerializeField] Animator bookAnimator;
+    bool pageHasBeenShowed = false;
+    [Header("GameObjects")]
+    [SerializeField] GameObject red_bookshelf;
+    [SerializeField] GameObject start_can_hush;
+    [Header("Arrows")]
+    [SerializeField] GameObject stopstart_Arrowreception;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Waypoint deliver"))
+        {
+            //Tutorial animation
+            if (!pageHasBeenShowed)
+            {
+                bookAnimator.SetBool("GoToWhiteBook", false);
+                bookAnimator.SetBool("TurnPage", true);
+                pageHasBeenShowed = true;
+            }
+            start_can_hush.SetActive(true);
+            stopstart_Arrowreception.SetActive(false);
+            red_bookshelf.SetActive(true);
+            //Waypoint_deliver.SetActive(false);
+        }
+    }
+}

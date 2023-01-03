@@ -83,6 +83,8 @@ public class NPC_movment_tutorial : MonoBehaviour
 
     //Animator for book
     [SerializeField] Animator bookAnimator;
+    bool animatorCheck = false;
+
 
     void Start()
     {
@@ -155,8 +157,11 @@ public class NPC_movment_tutorial : MonoBehaviour
             exclamation_talkbubbel.SetActive(false);
             New_Hush_information.SetActive(false);
             active_2 = true;
-
+            if (!animatorCheck)
+            {
             bookAnimator.SetBool("TurnPage", true);
+                animatorCheck = true;
+            }
         }
         if (Input.GetKey(KeyCode.Space))
         {

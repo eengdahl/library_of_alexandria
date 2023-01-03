@@ -45,41 +45,45 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.CompareTag("Book White"))
-        {
-            //Animator book
-            if (!havePickedUpBookWhite)
-            {
-            bookAnimator.SetBool("GoToWhiteBook", false);
-            bookAnimator.SetBool("TurnPage", true);
-                havePickedUpBookWhite = true;
-            }
+
+        //I used the same code more or less just put it in different scripts on different gameobjects to make the colliders work better otherwise, good job
 
 
-            Leave_at_desk_information.SetActive(true);
-            Waypoint_deliver.SetActive(true);
-            stopstart_Arrowreception.SetActive(true);
-            //start_can_hush.SetActive(true);
-            ArrowBookRenderer_false.SetActive(false);
-        }
-        if (other.CompareTag("Waypoint deliver"))
-        {
-            //Tutorial animation
-            if (!pageHasBeenShowed)
-            {
-            bookAnimator.SetBool("GoToWhiteBook", false);
+        //if (other.CompareTag("Book White"))
+        //{
+        //    //Animator book
+        //    if (!havePickedUpBookWhite)
+        //    {
+        //    bookAnimator.SetBool("GoToWhiteBook", false);
+        //    bookAnimator.SetBool("TurnPage", true);
+        //        havePickedUpBookWhite = true;
+        //    }
 
-            bookAnimator.SetBool("TurnPage", true);
-                pageHasBeenShowed = true;
-            }
 
-            start_can_hush.SetActive(true);
-            stopstart_Arrowreception.SetActive(false);
-            Leave_at_desk_information.SetActive(false);
-            set_books_in_bookshelf_information.SetActive(true);
-            red_bookshelf.SetActive(true);
-            //Waypoint_deliver.SetActive(false);
-        }
+        //    Leave_at_desk_information.SetActive(true);
+        //    Waypoint_deliver.SetActive(true);
+        //    stopstart_Arrowreception.SetActive(true);
+        //    //start_can_hush.SetActive(true);
+        //    ArrowBookRenderer_false.SetActive(false);
+        //}
+        //if (other.CompareTag("Waypoint deliver"))
+        //{
+        //    //Tutorial animation
+        //    if (!pageHasBeenShowed)
+        //    {
+        //    bookAnimator.SetBool("GoToWhiteBook", false);
+
+        //    bookAnimator.SetBool("TurnPage", true);
+        //        pageHasBeenShowed = true;
+        //    }
+
+        //    start_can_hush.SetActive(true);
+        //    stopstart_Arrowreception.SetActive(false);
+        //    Leave_at_desk_information.SetActive(false);
+        //    set_books_in_bookshelf_information.SetActive(true);
+        //    red_bookshelf.SetActive(true);
+        //    //Waypoint_deliver.SetActive(false);
+        //}
     }
     private void OnTriggerStay2D(Collider2D other)
     {

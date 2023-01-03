@@ -92,7 +92,7 @@ public class NPCHushedBIgTutorial : MonoBehaviour
         if(animatorBook != null && !haveTurnedPage)
         {
             
-            Debug.Log("Setting Bool all the time");
+            Debug.Log("Big husch!");
         animatorBook.SetBool("TurnPage", true);
             haveTurnedPage = true;
         }
