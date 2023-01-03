@@ -25,6 +25,8 @@ public class WinAndLoseState : MonoBehaviour
     string sceneName;
     Scene currentScene;
 
+    int menuScene = 1;
+
 
 
 
@@ -131,7 +133,7 @@ public class WinAndLoseState : MonoBehaviour
         //will soon be karin bathing 
         if (sceneName == "scene_main_2.3")
         {
-            SceneManager.LoadScene("Meny");
+            SceneManager.LoadScene("TitleScreen");
             return;
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
