@@ -8,6 +8,7 @@ using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 
 public class Meters : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Meters : MonoBehaviour
     private float timer;
     public float timer2;
     public SpriteRenderer clock;
+    public AudioSource clockAS;
+    public AudioClip lastTickOfClock;
     public Sprite[] clockpictures;
     private int timePast;
     public int maxTime;
@@ -26,14 +29,10 @@ public class Meters : MonoBehaviour
 
     private void Start()
     {
-
-       
         clock.sprite = clockpictures[0];
         tickOfClock = maxTime / clockpictures.Length;
         winAndLoseState = FindObjectOfType<WinAndLoseState>();
         nPCMovement = FindObjectOfType<NPCMovement>();
-
-
     }
 
 
@@ -44,8 +43,15 @@ public class Meters : MonoBehaviour
 
         if (timer > tickOfClock)
         {
-
+            clockAS.Play();
             timePast++;
+            bool clockLock = false;
+            if (timePast >= clockpictures.Length - 1 && !clockLock)
+            {
+                LastTickOfClock();
+                clockLock = true;
+
+            }
 
             if (timePast >= clockpictures.Length)
             {
@@ -72,11 +78,16 @@ public class Meters : MonoBehaviour
         {
             NPCs[i].GetComponent<NPCMovement>().isLeaving = true;
             NPCs[i].GetComponent<Animator>().SetBool("isLeaving", true);
-          
+
         }
 
     }
 
+    private void LastTickOfClock()
+    {
+        clockAS.clip = lastTickOfClock;
+        clockAS.Play();
+    }
 
 
 }

@@ -26,6 +26,11 @@ public class WinAndLoseState : MonoBehaviour
     Scene currentScene;
 
     int menuScene = 1;
+    public bool endLock = false;
+
+    public AudioSource bookFellAS;
+    public AudioSource tooLoudAS;
+    public AudioSource winAS;
 
 
 
@@ -53,6 +58,7 @@ public class WinAndLoseState : MonoBehaviour
             playerController.inputAxis = new Vector2(0, 0);
             //playerController.enabled =false;
 
+            tooLoudAS.Play();
 
             toLoud.enabled = true;
             toLoudButton.SetActive(true);
@@ -74,6 +80,7 @@ public class WinAndLoseState : MonoBehaviour
 
             if (endTimer > 4)
             {
+                bookFellAS.Play();
                 fellOver.enabled = true;
                 fellOverButton.SetActive(true);
 
@@ -86,7 +93,6 @@ public class WinAndLoseState : MonoBehaviour
     }
     public void TimeIsUp()
     {
-        bool endLock = false;
         playerController.karinCantMove = true;
         playerController.inputAxis = new Vector2(0, 0);
         //playerController.enabled =false;
@@ -99,6 +105,7 @@ public class WinAndLoseState : MonoBehaviour
         {
             PlayerPrefs.SetInt("levelCompleted", SceneManager.GetActiveScene().buildIndex + 1);
             PlayerPrefs.Save();
+            winAS.Play();
             winScreen.enabled = true;
             bool spacePressed = false;
             endLock = true;

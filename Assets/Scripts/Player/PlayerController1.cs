@@ -115,10 +115,9 @@ public class PlayerController1 : MonoBehaviour
         }
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void WalkingOnWater(bool onOf)
     {
-        if (collision.tag == "Water")
+        if (onOf)
         {
             aS.clip = water;
             isPlayingAudio = false;
@@ -130,10 +129,7 @@ public class PlayerController1 : MonoBehaviour
                 isPlayingAudio = true;
             }
         }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Water")
+        else
         {
             aS.clip = steps;
             isPlayingAudio = false;
@@ -145,6 +141,7 @@ public class PlayerController1 : MonoBehaviour
             }
         }
     }
+
 
 }
 

@@ -27,7 +27,9 @@ public class WaterChecker : MonoBehaviour
             playerMovement.speed = halfSpeed;
             spriteMask.enabled = true;
             inWater = true;
-            
+            playerMovement.WalkingOnWater(inWater);
+
+
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -41,7 +43,8 @@ public class WaterChecker : MonoBehaviour
         {
             inWater = false;
             spriteMask.enabled = false;
-            
+            playerMovement.WalkingOnWater(inWater);
+
         }
     }
 }

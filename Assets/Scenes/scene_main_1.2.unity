@@ -1073,6 +1073,10 @@ PrefabInstance:
       value: CameraParent
       objectReference: {fileID: 0}
     - target: {fileID: 4801661773207878474, guid: 33aef46199a1e47478d2e1796659967d, type: 3}
+      propertyPath: speed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801661773207878474, guid: 33aef46199a1e47478d2e1796659967d, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 909472406}
@@ -3822,6 +3826,11 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4801661773471811777, guid: 33aef46199a1e47478d2e1796659967d, type: 3}
   m_PrefabInstance: {fileID: 337376178}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1618009769 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9075877363432374927, guid: 33aef46199a1e47478d2e1796659967d, type: 3}
+  m_PrefabInstance: {fileID: 337376178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1653376433 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4801661773324975563, guid: 33aef46199a1e47478d2e1796659967d, type: 3}
@@ -4111,6 +4120,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2264900311570635475, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.649992
+      objectReference: {fileID: 0}
     - target: {fileID: 4161427384591519964, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: levelTime
       value: 0
@@ -4171,6 +4184,10 @@ PrefabInstance:
       propertyPath: clock
       value: 
       objectReference: {fileID: 1618009767}
+    - target: {fileID: 6176864220609053189, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: clockAS
+      value: 
+      objectReference: {fileID: 1618009769}
     - target: {fileID: 6176864220609053191, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_Name
       value: GameProcesses
