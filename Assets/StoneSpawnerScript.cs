@@ -10,7 +10,7 @@ public class StoneSpawnerScript : MonoBehaviour
     float timerEnd;
     void Start()
     {
-        timer = Random.Range(5, 20f);
+        //timer = Random.Range(5, 20f);
         timerEnd = Random.Range(10f, 17f);
     }
 
