@@ -26,7 +26,7 @@ public class WinAndLoseState : MonoBehaviour
     Scene currentScene;
 
     int menuScene = 1;
-    public bool endLock = false;
+    
 
     public AudioSource bookFellAS;
     public AudioSource tooLoudAS;
@@ -100,7 +100,7 @@ public class WinAndLoseState : MonoBehaviour
         //shuting down the other win/fail conditions
         noiseSlider.value = 0;
         swayBooksList.toMany = false;
-
+        bool endLock = false;
         if (fellOver.enabled == false && toLoud.enabled == false && !endLock)
         {
             PlayerPrefs.SetInt("levelCompleted", SceneManager.GetActiveScene().buildIndex + 1);
