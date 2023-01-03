@@ -18,7 +18,13 @@ public class PingPingUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float size = Mathf.PingPong(Time.time * speed, 1) * distance;
-        thisRectTransform.localScale = startPosition.localScale + new Vector3(size, size,0);
+        float size = Mathf.PingPong(Time.time * speed, 0.1f) * distance;//* distance
+        thisRectTransform.localScale = startPosition.localScale + new Vector3(size, size, 0); //startPosition.localScale +
+
+
+
+        //thisRectTransform.localScale = new Vector3(Mathf.PingPong(Time.time, 0.1f), thisRectTransform.localScale.y, thisRectTransform.localScale.z);
+
     }
 }
+
