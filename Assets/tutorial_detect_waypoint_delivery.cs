@@ -98,7 +98,8 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
                 //Tutorial animation
                 if (!havePickUpRedBook)
                 {
-                bookAnimator.SetBool("TurnPage", true);
+                    stopstart_Arrowreception.SetActive(false);
+                    bookAnimator.SetBool("TurnPage", true);
                 havePickUpRedBook = true;
                 }
             }

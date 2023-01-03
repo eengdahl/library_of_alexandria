@@ -1257,6 +1257,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 472356506, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 472356506, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
@@ -1268,6 +1272,10 @@ PrefabInstance:
       propertyPath: bellAnimator
       value: 
       objectReference: {fileID: 501880912}
+    - target: {fileID: 2100566774, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7349438753114596915, guid: 11ed7070028d7cf418dd9f43bef7f9f9, type: 3}
       propertyPath: m_Name
       value: Registration
@@ -4882,6 +4890,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975132519}
+  - component: {fileID: 975132520}
   m_Layer: 5
   m_Name: ClockInfo
   m_TagString: Untagged
@@ -4911,6 +4920,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &975132520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975132518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46266667d13870c4fab2f9b2604be072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ear: {fileID: 952381920}
 --- !u!1 &976586065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 550712675, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
@@ -9502,11 +9524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1214117566, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -455.46
+      value: -443.39
       objectReference: {fileID: 0}
     - target: {fileID: 1214117566, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -280.17
+      value: -276.41
       objectReference: {fileID: 0}
     - target: {fileID: 1421623169, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9670,11 +9692,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6402807215417936997, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836379387332937627, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -459.26
       objectReference: {fileID: 0}
     - target: {fileID: 6836379387332937627, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.52001953
+      value: -276.13
       objectReference: {fileID: 0}
     - target: {fileID: 7633425745763678988, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10265,6 +10291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1894987290}
+  - component: {fileID: 1894987291}
   m_Layer: 5
   m_Name: End_of_tutorial_text
   m_TagString: Untagged
@@ -10294,6 +10321,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1894987291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894987289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46266667d13870c4fab2f9b2604be072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ear: {fileID: 539597779}
 --- !u!1 &1900212203
 GameObject:
   m_ObjectHideFlags: 0

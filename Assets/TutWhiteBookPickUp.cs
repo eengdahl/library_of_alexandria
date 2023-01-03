@@ -28,9 +28,9 @@ public class TutWhiteBookPickUp : MonoBehaviour
             {
                 bookAnimator.SetBool("GoToWhiteBook", false);
                 bookAnimator.SetBool("TurnPage", true);
+                stopstart_Arrowreception.SetActive(true);
                 havePickedUpBookWhite = true;
             }
-            stopstart_Arrowreception.SetActive(true);
             ArrowBookRenderer_false.SetActive(false);
             Waypoint_deliver.SetActive(true);
         }

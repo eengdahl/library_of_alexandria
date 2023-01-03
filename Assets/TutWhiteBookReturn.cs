@@ -22,9 +22,9 @@ public class TutWhiteBookReturn : MonoBehaviour
                 bookAnimator.SetBool("GoToWhiteBook", false);
                 bookAnimator.SetBool("TurnPage", true);
                 pageHasBeenShowed = true;
+            stopstart_Arrowreception.SetActive(false);
             }
             start_can_hush.SetActive(true);
-            stopstart_Arrowreception.SetActive(false);
             red_bookshelf.SetActive(true);
             //Waypoint_deliver.SetActive(false);
         }
