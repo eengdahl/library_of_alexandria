@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class TimerForTItle : MonoBehaviour
 {
-    public SpriteRenderer continueButton;
+    public Image continueButton;
     public TMP_Text continueText;
     public float timer;
     public AudioClip huschSound;
