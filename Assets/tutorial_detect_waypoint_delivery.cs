@@ -19,8 +19,15 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
     public GameObject stopstart_Arrowreception;
     public GameObject start_can_hush;
 
+    //Book animator
+    [SerializeField] Animator bookAnimator;
+    bool pageHasBeenShowed = false;
+    bool havePickedUpBookWhite = false;
+    bool havePickUpRedBook = false;
+    [SerializeField] GameObject tutorialInstructionBook;
 
     bool playerHaveRedBook = false;
+
     GameObject redBookChecker;
 
     InventoryPlayer inventoryPlayer;
@@ -40,6 +47,15 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
 
         if (other.CompareTag("Book White"))
         {
+            //Animator book
+            if (!havePickedUpBookWhite)
+            {
+            bookAnimator.SetBool("GoToWhiteBook", false);
+            bookAnimator.SetBool("TurnPage", true);
+                havePickedUpBookWhite = true;
+            }
+
+
             Leave_at_desk_information.SetActive(true);
             Waypoint_deliver.SetActive(true);
             stopstart_Arrowreception.SetActive(true);
@@ -48,6 +64,15 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
         }
         if (other.CompareTag("Waypoint deliver"))
         {
+            //Tutorial animation
+            if (!pageHasBeenShowed)
+            {
+            bookAnimator.SetBool("GoToWhiteBook", false);
+
+            bookAnimator.SetBool("TurnPage", true);
+                pageHasBeenShowed = true;
+            }
+
             start_can_hush.SetActive(true);
             stopstart_Arrowreception.SetActive(false);
             Leave_at_desk_information.SetActive(false);
@@ -65,13 +90,19 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
             redBookChecker = inventoryPlayer.FindChildWithTag(inventoryPlayer.slots[i], "Book Red");
             if (redBookChecker != null)
             {
-
                 playerHaveRedBook = true;
-         
+                //Tutorial animation
+                if (!havePickUpRedBook)
+                {
+                bookAnimator.SetBool("TurnPage", true);
+                havePickUpRedBook = true;
+                }
             }
         }
         if (other.CompareTag("tutorial red bookshelf1") && playerHaveRedBook && Input.GetKey(KeyCode.E))
         {
+            tutorialInstructionBook.SetActive(false);
+
             Waypoint_deliver.SetActive(false);
             close_long_hush_information.SetActive(false);
             close_pick_up_information.SetActive(false);

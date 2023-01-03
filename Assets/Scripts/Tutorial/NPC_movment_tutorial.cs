@@ -79,6 +79,11 @@ public class NPC_movment_tutorial : MonoBehaviour
     SpriteRenderer red;
     Animator anim;
 
+
+
+    //Animator for book
+    [SerializeField] Animator bookAnimator;
+
     void Start()
     {
         // deactivate timer
@@ -117,9 +122,12 @@ public class NPC_movment_tutorial : MonoBehaviour
         }
         if (W_is_pressed == true && A_is_pressed == true && S_is_pressed == true && D_is_pressed == true && walking_is_done == false)
         {
+
+            
+            bookAnimator.SetBool("TurnPage", true);
             All_movebuttons_pressed = true;
             walking_is_done = true;
-            deactivate_information_WASD.SetActive(false);
+            //deactivate_information_WASD.SetActive(false);
         }
 
         //now have all buttons been pressed and first npc walks in
@@ -147,6 +155,8 @@ public class NPC_movment_tutorial : MonoBehaviour
             exclamation_talkbubbel.SetActive(false);
             New_Hush_information.SetActive(false);
             active_2 = true;
+
+            bookAnimator.SetBool("TurnPage", true);
         }
         if (Input.GetKey(KeyCode.Space))
         {

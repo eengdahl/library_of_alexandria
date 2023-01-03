@@ -51,6 +51,11 @@ TagManager:
   - KAOSBOK
   - PickUpMagnet
   - Orb
+  - pick_up_staminaore
+  - ArrowBook
+  - SingerRemover
+  - SingerSpot
+  - Stone
   layers:
   - Default
   - TransparentFX
@@ -64,7 +69,7 @@ TagManager:
   - PondFlowerBlocker
   - PondFlower
   - PostProcessing
-  - 
+  - TutorialMasking
   - 
   - 
   - 
@@ -87,4 +92,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Mask
+    uniqueID: 2754267485
     locked: 0

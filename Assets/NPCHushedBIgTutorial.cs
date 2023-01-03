@@ -7,7 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class NPCHushedBIgTutorial : MonoBehaviour
 {
-
+    [SerializeField] Animator animatorBook;
     public Transform standingPosition;
     public Transform startPosition;
     float speed = 2f;
@@ -24,7 +24,7 @@ public class NPCHushedBIgTutorial : MonoBehaviour
     Image whiteBookPage;
     public GameObject book;
 
-
+    bool haveTurnedPage = false;
 
     Animator myAnimator;
     AudioSource aS;
@@ -86,9 +86,16 @@ public class NPCHushedBIgTutorial : MonoBehaviour
         longHuschInformation.SetActive(false);
         staminaInformaion.SetActive(false);
 
-        whiteBookPage = whiteBookTutorial.GetComponent<Image>();
-        whiteBookPage.enabled = true;
-
+        //whiteBookPage = whiteBookTutorial.GetComponent<Image>();
+        //whiteBookPage.enabled = true;
+        //animate book
+        if(animatorBook != null && !haveTurnedPage)
+        {
+            
+            Debug.Log("Setting Bool all the time");
+        animatorBook.SetBool("TurnPage", true);
+            haveTurnedPage = true;
+        }
         arrowToBookRenderer.enabled = true;
        
 
