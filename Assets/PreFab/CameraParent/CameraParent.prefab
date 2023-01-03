@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 453569707896756565, guid: 9081088c40fa54342ae4a73ba3812b89, type: 3}
+      propertyPath: m_TagString
+      value: Clock
+      objectReference: {fileID: 0}
     - target: {fileID: 453569708531253322, guid: 9081088c40fa54342ae4a73ba3812b89, type: 3}
       propertyPath: m_Name
       value: Main Camera

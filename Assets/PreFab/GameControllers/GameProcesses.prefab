@@ -4737,19 +4737,19 @@ MonoBehaviour:
   clockAS: {fileID: 0}
   lastTickOfClock: {fileID: 8300000, guid: a1985a342f836c64b9205f6d923f24c1, type: 3}
   clockpictures:
-  - {fileID: 855663204, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: -288885799, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: -1148093318, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: 1015476098, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: 1063621602, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: 1488246427, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: 1934214537, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: -2023805413, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: 1574710194, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: 920312724, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: -1707728574, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: 112785439, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
-  - {fileID: 75545811, guid: 5d11096dcef0a6c4faacd55825162797, type: 3}
+  - {fileID: 1347268419, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: -921049802, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: 1640088893, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: 103573304, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: 1582990261, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: -1170068226, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: -1730681886, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: -1909589629, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: -1618208166, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: 1331674289, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: -289846238, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: 30961379, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
+  - {fileID: -647552068, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
   maxTime: 0
   npcSpawner: {fileID: 990194449}
 --- !u!114 &1016374378

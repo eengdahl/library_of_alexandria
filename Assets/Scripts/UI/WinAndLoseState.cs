@@ -107,6 +107,8 @@ public class WinAndLoseState : MonoBehaviour
             PlayerPrefs.Save();
             winAS.Play();
             winScreen.enabled = true;
+            winScreen.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            
             bool spacePressed = false;
             endLock = true;
             if (Input.GetKey("space"))
@@ -116,6 +118,7 @@ public class WinAndLoseState : MonoBehaviour
             if (endTimer > 10 || spacePressed)
             {
                 winScreen.enabled = false;
+                winScreen.GetComponentInChildren<SpriteRenderer>().enabled = false;
                 Progression(SceneManager.GetActiveScene().buildIndex);
                 spacePressed = false;
 

@@ -16,7 +16,8 @@ public class Meters : MonoBehaviour
     private float timer;
     public float timer2;
     public SpriteRenderer clock;
-    public AudioSource clockAS;
+    AudioSource clockAS;
+    GameObject clockGame;
     public AudioClip lastTickOfClock;
     public Sprite[] clockpictures;
     private int timePast;
@@ -33,6 +34,8 @@ public class Meters : MonoBehaviour
         tickOfClock = maxTime / clockpictures.Length;
         winAndLoseState = FindObjectOfType<WinAndLoseState>();
         nPCMovement = FindObjectOfType<NPCMovement>();
+        clockGame = GameObject.FindGameObjectWithTag("Clock");
+        clockAS = clockGame.GetComponent<AudioSource>();
     }
 
 
