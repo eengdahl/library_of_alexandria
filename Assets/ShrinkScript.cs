@@ -13,7 +13,7 @@ public class ShrinkScript : MonoBehaviour
 
     private void Start()
     {
-        AudioSource.PlayClipAtPoint(returnSound, transform.position, 0.8f);
+        AudioSource.PlayClipAtPoint(returnSound, transform.position, 1f);
     }
     void Update()
     {
