@@ -2347,10 +2347,6 @@ PrefabInstance:
       propertyPath: chargedHush
       value: 0.6
       objectReference: {fileID: 0}
-    - target: {fileID: 6488670547339231959, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
-      propertyPath: m_Volume
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: af2619a3662b8b0438f04d494033eab2, type: 3}
