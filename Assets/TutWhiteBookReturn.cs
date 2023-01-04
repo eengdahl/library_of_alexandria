@@ -25,7 +25,7 @@ public class TutWhiteBookReturn : MonoBehaviour
                 pageHasBeenShowed = true;
             stopstart_Arrowreception.SetActive(false);
             }
-            start_can_hush.SetActive(true);
+            //start_can_hush.SetActive(true);
             red_bookshelf.SetActive(true);
             //Waypoint_deliver.SetActive(false);
         }
