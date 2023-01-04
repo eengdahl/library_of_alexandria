@@ -16,7 +16,7 @@ public class Meters : MonoBehaviour
     private float timer;
     public float timer2;
     public SpriteRenderer clock;
-    AudioSource clockAS;
+    public AudioSource clockAS;
     GameObject clockGame;
     public AudioClip lastTickOfClock;
     public Sprite[] clockpictures;
@@ -27,15 +27,20 @@ public class Meters : MonoBehaviour
     NPCMovement nPCMovement;
     GameObject[] npc;
     public GameObject npcSpawner;
-
+    //Scen2
     private void Start()
     {
         clock.sprite = clockpictures[0];
         tickOfClock = maxTime / clockpictures.Length;
         winAndLoseState = FindObjectOfType<WinAndLoseState>();
         nPCMovement = FindObjectOfType<NPCMovement>();
+
         clockGame = GameObject.FindGameObjectWithTag("Clock");
-        clockAS = clockGame.GetComponent<AudioSource>();
+        if (clockGame != null)
+        {
+            clockAS = clockGame.GetComponent<AudioSource>();
+        }
+
     }
 
 
