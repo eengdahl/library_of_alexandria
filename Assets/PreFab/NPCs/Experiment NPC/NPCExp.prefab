@@ -636,13 +636,13 @@ MonoBehaviour:
   timer: 0
   aS: {fileID: 0}
   nosie:
-  - {fileID: 8300000, guid: 1fea91ebf775e7540a6c18ad27bd8acf, type: 3}
+  - {fileID: 8300000, guid: 958803f62eb76cf499c1aea4b7c3a2a0, type: 3}
   - {fileID: 8300000, guid: 5590ecb722d0013419ee8a1b0de01367, type: 3}
   - {fileID: 8300000, guid: c26a85c844f3a3b4e80d060545fc3875, type: 3}
   - {fileID: 8300000, guid: 20aea77670b17db44b47e539ac6d883a, type: 3}
   - {fileID: 8300000, guid: 694496e257d40c6468e48fb4d970decc, type: 3}
-  - {fileID: 8300000, guid: 743aeae597097114b93a78aa378389d6, type: 3}
-  - {fileID: 8300000, guid: 099d2c3a99d38184e911442b17e87253, type: 3}
+  - {fileID: 8300000, guid: 613442cb701b3584e847047dd655d4c7, type: 3}
+  - {fileID: 8300000, guid: 190a2d91652147b4bbf3897a9a7ea2bf, type: 3}
   makingNosie: 0
   chanceOfMakingSound: 0
   npcMovement: {fileID: 0}
