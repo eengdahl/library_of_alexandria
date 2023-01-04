@@ -10,11 +10,29 @@ public class WaterChecker : MonoBehaviour
     public SpriteMask spriteMask;
     AllPlayerUpgradeables playerUpgradeables;
     public bool inWater = false;
+
+    //particell effects;
+    [SerializeField] GameObject dust;
+    [SerializeField] GameObject water;
     private void Start()
     {
         playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
         normalSpeed = playerUpgradeables.normalSpeed;
         halfSpeed = normalSpeed / 3;
+    }
+    private void Update()
+    {
+        if (inWater)
+        {
+            dust.SetActive(false);
+            water.SetActive(true);
+        }
+        else
+        {
+            dust.SetActive(true);
+            water.SetActive(false);
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
