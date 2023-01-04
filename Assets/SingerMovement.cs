@@ -14,7 +14,7 @@ public class SingerMovement : MonoBehaviour
 
     Transform directionTransform;
     DestroySinger destroySingerScript;
-    float moveInSpeed = 0.003f;
+    float moveInSpeed = 0.005f;
     float moveOutSpeed = 0.006f;
     float speed;
     float directionTimer;
