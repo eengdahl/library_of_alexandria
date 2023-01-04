@@ -4644,6 +4644,14 @@ PrefabInstance:
       propertyPath: magnetArea
       value: 
       objectReference: {fileID: 1466991386}
+    - target: {fileID: 1784124354, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b5b4c31053f63244aa6db611de2e5a28, type: 3}
+    - target: {fileID: 1784124354, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1946906730, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4651,6 +4659,14 @@ PrefabInstance:
     - target: {fileID: 1946906730, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452866671858519300, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452866671858519300, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3168209318992732211, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: Priority
