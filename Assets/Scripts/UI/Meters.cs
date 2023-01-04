@@ -29,8 +29,13 @@ public class Meters : MonoBehaviour
     GameObject[] npc;
     public GameObject npcSpawner;
     //Scen2
+
+
+    //Shake 
+    public bool shouldShake = false;
     private void Start()
     {
+        
         clock.sprite = clockpictures[0];
         tickOfClock = maxTime / clockpictures.Length;
         winAndLoseState = FindObjectOfType<WinAndLoseState>();
@@ -52,6 +57,7 @@ public class Meters : MonoBehaviour
 
         if (timer > tickOfClock)
         {
+            shouldShake = true;
             clockAS.Play();
             timePast++;
             bool clockLock = false;
@@ -75,7 +81,10 @@ public class Meters : MonoBehaviour
             clock.sprite = clockpictures[timePast];
             timer = 0;
         }
-
+        else
+        {
+            shouldShake = false;
+        }
     }
 
     //making all npc leav room when level is done 
@@ -95,6 +104,7 @@ public class Meters : MonoBehaviour
 
     private void LastTickOfClock()
     {
+
         clockAS.clip = lastTickOfClock;
         clockAS.Play();
     }

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AnimationBoolFunctions : MonoBehaviour
 {
-
+    AudioSource aS;
     Animator animator;
+    [SerializeField]AudioClip turnPageSound;
     // Start is called before the first frame update
     void Start()
     {
+        aS = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
 
@@ -46,5 +48,9 @@ public class AnimationBoolFunctions : MonoBehaviour
     {
         animator.SetBool("TurnPage", false);
         animator.SetBool("ReturnColouredBook", true);
+    }
+    public void TurnPageSound()
+    {
+        aS.PlayOneShot(turnPageSound, 1);
     }
 }

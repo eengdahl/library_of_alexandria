@@ -40,7 +40,7 @@ public class InventoryPlayer : MonoBehaviour
         spotsWhileInLoop = 0;
         if(invSpotsUsed >= upgradesScript.numberOfSlot) // isFull.Length
         {
-            Debug.Log("Inventroy is fulll!");
+            
             inventoryFull = true;
         }
         else

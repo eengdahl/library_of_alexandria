@@ -85,6 +85,8 @@ public class NPC_movment_tutorial : MonoBehaviour
     [SerializeField] Animator bookAnimator;
     bool animatorCheck = false;
 
+    //PageTurnSound
+    [SerializeField] AnimationBoolFunctions boolFunctions;
 
     void Start()
     {
@@ -125,7 +127,7 @@ public class NPC_movment_tutorial : MonoBehaviour
         if (W_is_pressed == true && A_is_pressed == true && S_is_pressed == true && D_is_pressed == true && walking_is_done == false)
         {
 
-            
+            boolFunctions.TurnPageSound();
             bookAnimator.SetBool("TurnPage", true);
             All_movebuttons_pressed = true;
             walking_is_done = true;
@@ -159,7 +161,8 @@ public class NPC_movment_tutorial : MonoBehaviour
             active_2 = true;
             if (!animatorCheck)
             {
-            bookAnimator.SetBool("TurnPage", true);
+                boolFunctions.TurnPageSound();
+                bookAnimator.SetBool("TurnPage", true);
                 animatorCheck = true;
             }
         }

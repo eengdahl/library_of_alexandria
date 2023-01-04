@@ -8,6 +8,7 @@ using static UnityEngine.GraphicsBuffer;
 public class NPCHushedBIgTutorial : MonoBehaviour
 {
     [SerializeField] Animator animatorBook;
+    [SerializeField] AnimationBoolFunctions boolFunctions;
     public Transform standingPosition;
     public Transform startPosition;
     float speed = 2f;
@@ -93,7 +94,12 @@ public class NPCHushedBIgTutorial : MonoBehaviour
         {
             
             Debug.Log("Big husch!");
-        animatorBook.SetBool("TurnPage", true);
+            if(boolFunctions != null)
+            {
+            boolFunctions.TurnPageSound();
+
+            }
+            animatorBook.SetBool("TurnPage", true);
             haveTurnedPage = true;
         }
         arrowToBookRenderer.enabled = true;

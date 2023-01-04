@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
         {
             if (isGamePaused == false)
             {
-                Cursor.visible = true;
+                //Cursor.visible = true;
                 PauseGame();
                 overLaySprite.enabled = true;
 
