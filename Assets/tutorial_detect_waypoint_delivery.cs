@@ -25,6 +25,8 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
     bool havePickedUpBookWhite = false;
     bool havePickUpRedBook = false;
     [SerializeField] GameObject tutorialInstructionBook;
+    //Turn page sound
+    [SerializeField] AnimationBoolFunctions boolFunctions;
 
     bool playerHaveRedBook = false;
 
@@ -99,6 +101,7 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
                 if (!havePickUpRedBook)
                 {
                     stopstart_Arrowreception.SetActive(false);
+                    boolFunctions.TurnPageSound();
                     bookAnimator.SetBool("TurnPage", true);
                 havePickUpRedBook = true;
                 }

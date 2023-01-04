@@ -9,6 +9,7 @@ public class TutWhiteBookPickUp : MonoBehaviour
     [SerializeField] Animator bookAnimator;
     bool havePickedUpBookWhite = false;
     [SerializeField] GameObject tutorialInstructionBook;
+    [SerializeField] AnimationBoolFunctions boolFunctions;
 
     //Arrows
     [Header("Arrows")]
@@ -19,6 +20,8 @@ public class TutWhiteBookPickUp : MonoBehaviour
     [Header("Other GameObjects")]
     [SerializeField] GameObject Waypoint_deliver;
     
+
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Book White"))
@@ -26,6 +29,7 @@ public class TutWhiteBookPickUp : MonoBehaviour
             //Animator book
             if (!havePickedUpBookWhite)
             {
+                boolFunctions.TurnPageSound();
                 bookAnimator.SetBool("GoToWhiteBook", false);
                 bookAnimator.SetBool("TurnPage", true);
                 stopstart_Arrowreception.SetActive(true);

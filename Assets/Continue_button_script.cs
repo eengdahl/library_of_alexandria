@@ -10,12 +10,18 @@ public class Continue_button_script : MonoBehaviour
     int counter = 0;
     public GameObject clockPicture;
     [SerializeField] GameObject shadow;
-    [SerializeField] Animator EndBookAnimator; 
-    
+    [SerializeField] Animator EndBookAnimator;
+    AudioSource aS;
+    [SerializeField] AudioClip turnPageSound;
+    private void Start()
+    {
+        aS = GetComponent<AudioSource>();
+    }
     public void Continue()
     {
         shadow.SetActive(false);
         clockPicture.SetActive(true);
+        aS.PlayOneShot(turnPageSound, 1);
         EndBookAnimator.SetBool("TurnPage", true);
         if (counter >= 1)
         {

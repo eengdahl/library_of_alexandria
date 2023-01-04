@@ -819,6 +819,7 @@ GameObject:
   - component: {fileID: 137431298}
   - component: {fileID: 137431301}
   - component: {fileID: 137431302}
+  - component: {fileID: 137431303}
   m_Layer: 0
   m_Name: TutorialInstructions
   m_TagString: Untagged
@@ -926,6 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57933d23d01ea84da39c26e51391146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnPageSound: {fileID: 8300000, guid: 59452bb59ee3c594a86a56f0fd7bd27b, type: 3}
 --- !u!114 &137431302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +942,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 0.25
   speed: 0.15
+--- !u!82 &137431303
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137431297}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &141180159
 GameObject:
   m_ObjectHideFlags: 0
@@ -3434,6 +3532,7 @@ GameObject:
   - component: {fileID: 793083063}
   - component: {fileID: 793083066}
   - component: {fileID: 793083067}
+  - component: {fileID: 793083068}
   m_Layer: 5
   m_Name: Continue button
   m_TagString: Untagged
@@ -3572,6 +3671,7 @@ MonoBehaviour:
   clockPicture: {fileID: 975132518}
   shadow: {fileID: 458374956}
   EndBookAnimator: {fileID: 905915411}
+  turnPageSound: {fileID: 8300000, guid: 59452bb59ee3c594a86a56f0fd7bd27b, type: 3}
 --- !u!114 &793083067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3585,6 +3685,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   retryButton: {fileID: 793083063}
+--- !u!82 &793083068
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793083061}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &802896045
 GameObject:
   m_ObjectHideFlags: 0
@@ -7610,6 +7806,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1591563602}
     - target: {fileID: -6981103244138007404, guid: 7344677f635e6b049b9131d41c359cc3, type: 3}
+      propertyPath: boolFunctions
+      value: 
+      objectReference: {fileID: 137431301}
+    - target: {fileID: -6981103244138007404, guid: 7344677f635e6b049b9131d41c359cc3, type: 3}
       propertyPath: emergency_text
       value: 
       objectReference: {fileID: 469809333}
@@ -7822,6 +8022,7 @@ MonoBehaviour:
   start_can_hush: {fileID: 2096337312}
   bookAnimator: {fileID: 137431298}
   tutorialInstructionBook: {fileID: 137431297}
+  boolFunctions: {fileID: 137431301}
 --- !u!1 &1591563601
 GameObject:
   m_ObjectHideFlags: 0
@@ -7856,6 +8057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorBook: {fileID: 0}
+  boolFunctions: {fileID: 0}
   standingPosition: {fileID: 1334470032}
   startPosition: {fileID: 954048042}
   hasBeenHushed: 0
@@ -8430,23 +8632,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.1902303, y: 4.479692e-15}
   m_Size: {x: 0.3995372, y: 1.3599998}
   m_Direction: 0
---- !u!1 &1636385758 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6176864220609053191, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
-  m_PrefabInstance: {fileID: 1784124352}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1636385762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636385758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f80c29c0340b1de45b9698748c0e89b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1648835267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5449406020605534304, guid: 2e4ae7bd5e175654a89aa3cc71fe066a, type: 3}
@@ -8923,6 +9108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorBook: {fileID: 137431298}
+  boolFunctions: {fileID: 137431301}
   standingPosition: {fileID: 1932837670}
   startPosition: {fileID: 1815182135}
   hasBeenHushed: 0
@@ -9936,6 +10122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookAnimator: {fileID: 137431298}
   tutorialInstructionBook: {fileID: 137431297}
+  boolFunctions: {fileID: 137431301}
   ArrowBookRenderer_false: {fileID: 2127124376}
   stopstart_Arrowreception: {fileID: 1327403456}
   Waypoint_deliver: {fileID: 237975612}
@@ -11324,6 +11511,7 @@ MonoBehaviour:
   red_bookshelf: {fileID: 141180159}
   start_can_hush: {fileID: 1327403456}
   stopstart_Arrowreception: {fileID: 2096337312}
+  boolFunctions: {fileID: 137431301}
 --- !u!1 &2064628136
 GameObject:
   m_ObjectHideFlags: 0
