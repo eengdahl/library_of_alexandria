@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shrinkRate: 5
   increaseRate: 2
-  returnSound: {fileID: 8300000, guid: f3b8a04e675859a4090413f51d77540e, type: 3}
+  returnSound: {fileID: 8300000, guid: 21ccaeefb09e17948b7c5a39d3cef973, type: 3}
 --- !u!82 &7527181817620674512
 AudioSource:
   m_ObjectHideFlags: 0
