@@ -3463,6 +3463,10 @@ PrefabInstance:
       propertyPath: magnetArea
       value: 
       objectReference: {fileID: 296491680}
+    - target: {fileID: 1784124354, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1946906730, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
