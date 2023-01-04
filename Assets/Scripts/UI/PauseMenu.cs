@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject overLay;
     SpriteRenderer overLaySprite;
-    public static bool isGamePaused = false;
+    public bool isGamePaused = false;
     [SerializeField] GameObject PauseMenunow;
 
     private void Awake()

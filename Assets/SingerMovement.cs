@@ -21,6 +21,7 @@ public class SingerMovement : MonoBehaviour
 
     public bool atSingingSpot = false;
     public bool walkingIn = true;
+    [SerializeField] PauseMenu pauseMenuScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,42 +36,47 @@ public class SingerMovement : MonoBehaviour
         target = singerSpot;
         directionTransform = target;
         speed = moveInSpeed;
+        pauseMenuScript = FindObjectOfType<PauseMenu>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Animate singing 
-        if (transform.position == singerSpot.position)
+        if (!pauseMenuScript.isGamePaused)
         {
-            atSingingSpot = true;
-            thisAnimator.SetBool("StandsStill", true);
-        }
-        else
-        {
-            atSingingSpot = false;
-            thisAnimator.SetBool("StandsStill", false);
-        }
-        //Move
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
+            //Animate singing 
+            if (transform.position == singerSpot.position)
+            {
+                atSingingSpot = true;
+                thisAnimator.SetBool("StandsStill", true);
+            }
+            else
+            {
+                atSingingSpot = false;
+                thisAnimator.SetBool("StandsStill", false);
+            }
+            //Move
+            transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
 
-        //Bool for arrow to work
-        if (target.position == gOSingerSpot.transform.position)
-        {
-            walkingIn = true;
-        }
-        else if (target.position == gODestroyPoint.transform.position)
-        {
-            walkingIn = false;
-        }
+            //Bool for arrow to work
+            if (target.position == gOSingerSpot.transform.position)
+            {
+                walkingIn = true;
+            }
+            else if (target.position == gODestroyPoint.transform.position)
+            {
+                walkingIn = false;
+            }
 
 
-        //DirectionSwitch
-        directionTimer += Time.deltaTime;
-        if (directionTimer> 0.1)
-        {
-            target = directionTransform;
-            directionTimer = 0;
+            //DirectionSwitch
+            directionTimer += Time.deltaTime;
+            if (directionTimer > 0.1)
+            {
+                target = directionTransform;
+                directionTimer = 0;
+            }
+
         }
 
     }
@@ -80,7 +86,7 @@ public class SingerMovement : MonoBehaviour
         if (collision.tag == "SingerRemover")
         {
             speed = moveOutSpeed;
-            destroySingerScript.canBeDestroyed = true;        
+            destroySingerScript.canBeDestroyed = true;
             directionTransform = destroyPoint;
         }
     }
