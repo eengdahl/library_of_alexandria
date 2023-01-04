@@ -41,7 +41,7 @@ public class WinAndLoseState : MonoBehaviour
     SwayBooksList swayBooksList;
     private void Start()
     {
-       
+
         playerUpgrades = FindObjectOfType<AllPlayerUpgradeables>();
         noiseHandeler = FindObjectOfType<NoiseHandeler>();
         currentScene = SceneManager.GetActiveScene();
@@ -100,7 +100,7 @@ public class WinAndLoseState : MonoBehaviour
         //shuting down the other win/fail conditions
         noiseSlider.value = 0;
         swayBooksList.toMany = false;
-       // bool endLock = false;
+        // bool endLock = false;
 
         if (fellOver.enabled == false && toLoud.enabled == false)
         {
@@ -113,15 +113,15 @@ public class WinAndLoseState : MonoBehaviour
                 AudioListener.volume = 0.1f;
             }
             winScreen.enabled = true;
-            
-            if ( winscreenbakground != null)
+
+            if (winscreenbakground != null)
             {
-            winscreenbakground.enabled = true;
+                winscreenbakground.enabled = true;
             }
             winScreen.GetComponentInChildren<SpriteRenderer>().enabled = true;
 
             bool spacePressed = false;
-            if (Input.GetKey("space"))
+            if (endTimer > 1 && Input.GetKey("space"))
             {
                 spacePressed = true;
             }
@@ -133,7 +133,7 @@ public class WinAndLoseState : MonoBehaviour
                 spacePressed = false;
 
             }
-           
+
         }
     }
 
