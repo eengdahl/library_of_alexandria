@@ -8,8 +8,12 @@ public class PickUP : MonoBehaviour
     public GameObject BookColour;
     AllPlayerUpgradeables playerUpgrades;
     public AudioClip pickUpSound;
+    AudioSource aS;
+    PickUpSoundScript pickUpSoundScript;
     private void Start()
     {
+        pickUpSoundScript = FindObjectOfType<PickUpSoundScript>();
+        aS = GetComponent<AudioSource>();
         playerUpgrades = FindObjectOfType<AllPlayerUpgradeables>();
         inventoryPlayer = GameObject.FindGameObjectWithTag ("BookPickUpZone").GetComponent<InventoryPlayer>();
         
@@ -22,11 +26,14 @@ public class PickUP : MonoBehaviour
             {
                 if (inventoryPlayer.isFull[i] == false)
                 {
-
+                    pickUpSoundScript.PlayPickUpSound();
                     //BOOK CAN BE ADDED TO INVENTORY
                     inventoryPlayer.isFull[i] = true;
                     Instantiate(BookColour, inventoryPlayer.slots[i].transform, false);
-                    AudioSource.PlayClipAtPoint(pickUpSound, transform.position, 0.8f);
+                    //aS.clip = pickUpSound;
+                    //aS.Play();
+                    AudioSource.PlayClipAtPoint(pickUpSound, transform.position, 1f);
+                    
                     Destroy(gameObject);
                     break; //Stop the for loop if empty spot in inventory is found
                 }

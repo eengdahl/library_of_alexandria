@@ -17,8 +17,11 @@ public class MagnetCollectMoveBook : MonoBehaviour
     ShakeInventory shakeInventroyScript;
     AudioSource aS;
     ShakeInventoryRotate inventoryRotate;
+    [SerializeField]AudioClip cantPickUpSound;
+    PickUpSoundScript pickUpSound;
     private void Start()
     {
+        pickUpSound = FindObjectOfType<PickUpSoundScript>();
         aS = GetComponent<AudioSource>();
         shakeInventroyScript = FindObjectOfType<ShakeInventory>();
         playerUpgradeables = FindObjectOfType<AllPlayerUpgradeables>();
@@ -70,6 +73,7 @@ public class MagnetCollectMoveBook : MonoBehaviour
         }
         if (collision.CompareTag("PickUpMagnet") && invPlayer.inventoryFull)
         {
+            aS.clip = cantPickUpSound;
             aS.Play();
             //shakeInventroyScript.StartShake(0.1f, 0.05f);
             inventoryRotate.RotateInventory();
