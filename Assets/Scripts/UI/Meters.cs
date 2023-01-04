@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using Unity.VisualScripting;
 using System.Runtime.CompilerServices;
+using UnityEngine.UIElements;
 
 public class Meters : MonoBehaviour
 {
@@ -54,15 +55,16 @@ public class Meters : MonoBehaviour
             clockAS.Play();
             timePast++;
             bool clockLock = false;
-            if (timePast >= clockpictures.Length - 1 && !clockLock)
+            if (timePast >= clockpictures.Length - 2 && !clockLock)
             {
                 LastTickOfClock();
                 clockLock = true;
 
             }
 
-            if (timePast >= clockpictures.Length)
+            if (timePast >= clockpictures.Length-1)
             {
+                
                 SearchForAllNPC();
                 winAndLoseState.TimeIsUp();
 
@@ -80,7 +82,7 @@ public class Meters : MonoBehaviour
     public void SearchForAllNPC()
     {
         npcSpawner.SetActive(false);
-
+        clock.sprite = clockpictures[clockpictures.Length-1];
         var NPCs = GameObject.FindGameObjectsWithTag("NPC");
         for (int i = 0; i < NPCs.Length; i++)
         {
