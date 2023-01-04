@@ -105,10 +105,10 @@ public class Difficulty : MonoBehaviour
     void Level3()
     {
         SetTimeOfLevel(100); // 160
-        SetNPCNoiseChance(8);
+        SetNPCNoiseChance(9);
         SetNPCMovespeed(1.25f);
         MaxNPCOnMap(25);
-        SpawnRateNPC(5);
+        SpawnRateNPC(2);
     }
 
     void Level4()
@@ -125,26 +125,26 @@ public class Difficulty : MonoBehaviour
         SetTimeOfLevel(100);//140
         SetNPCNoiseChance(8);
         SetNPCMovespeed(1.4f);
-        MaxNPCOnMap(15);
+        MaxNPCOnMap(25);
         SpawnRateNPC(3);
     }
 
     void Level6()
     {
         SetTimeOfLevel(100);//110
-        SetNPCNoiseChance(5);
+        SetNPCNoiseChance(8);
         SetNPCMovespeed(1.4f);
-        MaxNPCOnMap(12);
-        SpawnRateNPC(4);
+        MaxNPCOnMap(25);
+        SpawnRateNPC(3);
     }
 
     void Level7()
     {
-        SetTimeOfLevel(100);//170
-        SetNPCNoiseChance(7);
+        SetTimeOfLevel(170);//170
+        SetNPCNoiseChance(8);
         SetNPCMovespeed(1.4f);
         MaxNPCOnMap(30);
-        SpawnRateNPC(4);
+        SpawnRateNPC(3);
     }
 
     void Tutorial()
