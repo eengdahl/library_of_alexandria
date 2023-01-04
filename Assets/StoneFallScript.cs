@@ -25,10 +25,11 @@ public class StoneFallScript : MonoBehaviour
 
         if (gameObject.tag == "SmallStone")
         {
-            Vector3 landingspotRandom = landingSpot.position + new Vector3(randomPositionScript.randomX, 0, 0);
+            Debug.Log("SmallStone");
+            Vector3 landingspotRandom = landingSpot.position + new Vector3(randomPositionScript.randomX, -0.1f, 0);
             transform.position = Vector3.MoveTowards(this.transform.position, landingspotRandom, 0.1f);
         }
-        else
+        else if (gameObject.tag != "SmallStone")
         {
             transform.position = Vector3.MoveTowards(this.transform.position, target.position, speed);
             if (transform.position == target.position)

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 994957941792527369}
   - component: {fileID: 8695291544186745880}
   - component: {fileID: 497584343678223770}
-  - component: {fileID: 7977845403752148369}
+  - component: {fileID: 664255108214986829}
   m_Layer: 0
   m_Name: SmallStone (1)
   m_TagString: SmallStone
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1829012598337493890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.16, y: 4, z: 0.019829288}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5871814574633531260}
@@ -89,9 +89,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb13ba49f3257e14d858f9fe77a2e7de, type: 3}
-  m_Color: {r: 0.764151, g: 0.48917603, b: 0.19223918, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 46102cae8f50f724cbd9c1be2d172bea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,7 +100,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &497584343678223770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomX: 0
---- !u!114 &7977845403752148369
+--- !u!114 &664255108214986829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,12 +123,139 @@ MonoBehaviour:
   m_GameObject: {fileID: 1829012598337493890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b9c3be9085ac74ca71780998f83f8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 779b0c5c6ef79264392f129eed5ad56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToStartFading: 2
   fadeSpeed: 0.8
-  landingSpot: {fileID: 5871814574575887687}
+  BigStoneFadeOut: {fileID: 4450407608450083701}
+--- !u!1 &2218051332183011274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2416543572674203311}
+  - component: {fileID: 3397585551020817375}
+  - component: {fileID: 6716689271571603185}
+  - component: {fileID: 5241931028008589364}
+  - component: {fileID: 3338313739720323774}
+  m_Layer: 0
+  m_Name: SmallStone (4)
+  m_TagString: SmallStone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2416543572674203311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218051332183011274}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.16, y: 4, z: 0.019829288}
+  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5871814574633531260}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3397585551020817375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218051332183011274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db770f3f57dc8c43af5977267edb07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landingSpot: {fileID: 5871814574575887686}
+  bounceSpot: {fileID: 0}
+--- !u!212 &6716689271571603185
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218051332183011274}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 641515565187d414e9dac87c8b75cb54, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.32, y: 0.32}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 1
+--- !u!114 &5241931028008589364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218051332183011274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc89e71239efe14b84d8235af2bf3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomX: 0
+--- !u!114 &3338313739720323774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218051332183011274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 779b0c5c6ef79264392f129eed5ad56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 0.8
+  BigStoneFadeOut: {fileID: 4450407608450083701}
 --- !u!1 &2719174765905430033
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +268,7 @@ GameObject:
   - component: {fileID: 7712006766904738164}
   - component: {fileID: 4545486090672745815}
   - component: {fileID: 7580844640924725754}
-  - component: {fileID: 1701059931356227989}
+  - component: {fileID: 225081322798379163}
   m_Layer: 0
   m_Name: SmallStone (2)
   m_TagString: SmallStone
@@ -158,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 2719174765905430033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.16, y: 4, z: 0.019829288}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5871814574633531260}
@@ -218,9 +345,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb13ba49f3257e14d858f9fe77a2e7de, type: 3}
-  m_Color: {r: 0.764151, g: 0.48917603, b: 0.19223918, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 26ee0c5e2556e824f86c53254b86db28, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -229,7 +356,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &7580844640924725754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomX: 0
---- !u!114 &1701059931356227989
+--- !u!114 &225081322798379163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,12 +379,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2719174765905430033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b9c3be9085ac74ca71780998f83f8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 779b0c5c6ef79264392f129eed5ad56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToStartFading: 2
   fadeSpeed: 0.8
-  landingSpot: {fileID: 5871814574575887687}
+  BigStoneFadeOut: {fileID: 4450407608450083701}
 --- !u!1 &3677095370089350853
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +396,7 @@ GameObject:
   - component: {fileID: 7056380037179568215}
   - component: {fileID: 8834024739637194404}
   - component: {fileID: 3923066600303902222}
-  - component: {fileID: 9022725607872348810}
+  - component: {fileID: 7820421391580817061}
   m_Layer: 0
   m_Name: SmallStone
   m_TagString: SmallStone
@@ -287,7 +413,7 @@ Transform:
   m_GameObject: {fileID: 3677095370089350853}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 4, z: 0.019829288}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5871814574633531260}
@@ -347,9 +473,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb13ba49f3257e14d858f9fe77a2e7de, type: 3}
-  m_Color: {r: 0.764151, g: 0.48917603, b: 0.19223918, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: bb83de99a988fbb4b9fc15d2ef3d8027, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -358,7 +484,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &3923066600303902222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomX: 0
---- !u!114 &9022725607872348810
+--- !u!114 &7820421391580817061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -381,12 +507,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3677095370089350853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b9c3be9085ac74ca71780998f83f8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 779b0c5c6ef79264392f129eed5ad56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToStartFading: 2
-  fadeSpeed: 0.8
-  landingSpot: {fileID: 5871814574575887687}
+  fadeSpeed: 1.2
+  BigStoneFadeOut: {fileID: 4450407608450083701}
 --- !u!1 &3912629061308816749
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +524,7 @@ GameObject:
   - component: {fileID: 7041214721340430293}
   - component: {fileID: 7428562198021522294}
   - component: {fileID: 2792657419297520082}
-  - component: {fileID: 6936609339236199757}
+  - component: {fileID: 206025125280261674}
   m_Layer: 0
   m_Name: SmallStone (3)
   m_TagString: SmallStone
@@ -416,7 +541,7 @@ Transform:
   m_GameObject: {fileID: 3912629061308816749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.16, y: 4, z: 0.019829288}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5871814574633531260}
@@ -476,9 +601,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb13ba49f3257e14d858f9fe77a2e7de, type: 3}
-  m_Color: {r: 0.764151, g: 0.48917603, b: 0.19223918, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: a0d10cfb42f38a2479dbe7cc14f1976b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -487,7 +612,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &2792657419297520082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,7 +626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomX: 0
---- !u!114 &6936609339236199757
+--- !u!114 &206025125280261674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -510,12 +635,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3912629061308816749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b9c3be9085ac74ca71780998f83f8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 779b0c5c6ef79264392f129eed5ad56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToStartFading: 2
   fadeSpeed: 0.8
-  landingSpot: {fileID: 5871814574575887687}
+  BigStoneFadeOut: {fileID: 4450407608450083701}
 --- !u!1 &5871814574575887687
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +667,7 @@ Transform:
   m_GameObject: {fileID: 5871814574575887687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.03965858}
-  m_LocalScale: {x: 0.8, y: 0.2, z: 1}
+  m_LocalScale: {x: 1.38, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5871814574633531260}
@@ -616,6 +740,7 @@ MonoBehaviour:
   timeToStartFading: 6
   fadeSpeed: 0.8
   landingSpot: {fileID: 5871814575240504612}
+  fadingOut: 0
 --- !u!1 &5871814574633531261
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +776,7 @@ Transform:
   - {fileID: 4582193511399670026}
   - {fileID: 5409477787853819854}
   - {fileID: 8378934581335026120}
+  - {fileID: 2416543572674203311}
   - {fileID: 7571491275679619851}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -680,11 +806,12 @@ GameObject:
   - component: {fileID: 5871814575240504611}
   - component: {fileID: 5871814575240504610}
   - component: {fileID: 3916702856849146847}
-  - component: {fileID: 2509473968696190818}
   - component: {fileID: 9147826033933140695}
   - component: {fileID: 4450407608450083701}
   - component: {fileID: 8373645023866705265}
   - component: {fileID: 6410263005518175707}
+  - component: {fileID: 2070610299976439586}
+  - component: {fileID: 8307294347576206315}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Stone
@@ -749,8 +876,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: bb13ba49f3257e14d858f9fe77a2e7de, type: 3}
-  m_Color: {r: 1, g: 0.4768409, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 783a8bc820b3eeb4ebb9bc3254b502e1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -774,22 +901,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landingSpot: {fileID: 5871814574575887686}
   bounceSpot: {fileID: 7571491275679619851}
---- !u!58 &2509473968696190818
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5871814575240504612}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.01768601, y: 0.076452255}
-  serializedVersion: 2
-  m_Radius: 0.0713253
 --- !u!114 &9147826033933140695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,9 +927,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1871b218d4f3404b82ce1b2cd1510a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToStartFading: 6
-  fadeSpeed: 0.8
+  timeToStartFading: 7
+  fadeSpeed: 1.2
   landingSpot: {fileID: 5871814574575887687}
+  fadingOut: 0
 --- !u!114 &8373645023866705265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,6 +1043,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2070610299976439586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5871814575240504612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a8059d2852f8344acef93232582722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &8307294347576206315
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5871814575240504612}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.002606444, y: 0.06038747}
+  m_Size: {x: 0.36924636, y: 0.14010979}
+  m_Direction: 1
 --- !u!1 &7243432854486770203
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,7 +1127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8350828428081179535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

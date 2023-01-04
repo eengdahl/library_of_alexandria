@@ -12,6 +12,9 @@ public class FadeOut : MonoBehaviour
     public float fadeSpeed = 1f;
     //LandingSpot
     [SerializeField] GameObject landingSpot;
+
+    public bool fadingOut = false;
+    bool isFading;
     public void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -19,17 +22,20 @@ public class FadeOut : MonoBehaviour
 
     public void Update()
     {
-        if (transform.position == landingSpot.transform.position)
+        if (transform.position.y == landingSpot.transform.position.y)
         {
             //Timer
             if (timeToStartFading > 0)
             {
+                
                 timeToStartFading -= Time.deltaTime;
                 return;
             }
+                fadingOut = true;
 
             //Modify the color by changing alpha value
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, spriteRenderer.color.a - (fadeSpeed * Time.deltaTime));
         }
+
     }
 }
