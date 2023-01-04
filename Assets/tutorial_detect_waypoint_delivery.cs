@@ -119,7 +119,7 @@ public class tutorial_detect_waypoint_delivery : MonoBehaviour
             continueButton.SetActive(true);
           //  Show_Clock.SetActive(true);
           //  Show_noicemeter.SetActive(true);
-            Cursor.visible = true;
+           
         }
     }
 
