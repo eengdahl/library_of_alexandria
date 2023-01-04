@@ -110,6 +110,7 @@ public class WinAndLoseState : MonoBehaviour
             {
                 winAS.Play();
                 playSoundOnce = false;
+                AudioListener.volume = 0.1f;
             }
             winScreen.enabled = true;
             
@@ -151,6 +152,7 @@ public class WinAndLoseState : MonoBehaviour
     {
         //Temporary to not break level load
         //will soon be karin bathing 
+        AudioListener.volume = 1f;
         if (sceneName == "scene_main_2.3")
         {
             SceneManager.LoadScene("TitleScreen");
