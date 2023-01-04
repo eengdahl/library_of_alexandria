@@ -14,6 +14,7 @@ public class TimerForTItle : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("levelCompleted", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.SetFloat("volume", 0);
         PlayerPrefs.Save();
         aS = GetComponent<AudioSource>();
         continueButton.enabled = false;
@@ -33,7 +34,7 @@ public class TimerForTItle : MonoBehaviour
         {
             aS.PlayOneShot(huschSound);
             Invoke("LoadMenu", huschSound.length);
-            
+
         }
 
     }
