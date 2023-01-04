@@ -52,7 +52,7 @@ public class WinAndLoseState : MonoBehaviour
     }
     private void Update()
     {
-        if (noiseHandeler.soundLevelInRoom >= 100 && swayBooksList.toMany == false && winScreen.enabled == false)
+        if (noiseHandeler.soundLevelInRoom >= 80 && swayBooksList.toMany == false && winScreen.enabled == false)
         {
             playerController.karinCantMove = true;
             playerController.inputAxis = new Vector2(0, 0);

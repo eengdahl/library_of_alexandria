@@ -19,7 +19,7 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-        if (noiseHandelerScript.soundLevelInRoom > 90 && noiseHandelerScript.soundLevelInRoom<100)
+        if (noiseHandelerScript.soundLevelInRoom > 70 && noiseHandelerScript.soundLevelInRoom<100)
         {
             shakeTimer += Time.deltaTime;
             if (shakeTimer > 0.05)

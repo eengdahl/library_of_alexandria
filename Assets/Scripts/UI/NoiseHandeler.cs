@@ -91,7 +91,7 @@ public class NoiseHandeler : MonoBehaviour
             yellow.enabled = false;
             yellowChild.enabled = false;
         }
-        if (soundLevelInRoom >= 20 && soundLevelInRoom < 66)
+        if (soundLevelInRoom >= 20 && soundLevelInRoom < 40)
         {
             //Yellow
             yellow.enabled = true;
@@ -103,7 +103,7 @@ public class NoiseHandeler : MonoBehaviour
             
         }
 
-        if (soundLevelInRoom >= 66 && soundLevelInRoom < 100)
+        if (soundLevelInRoom >= 40 && soundLevelInRoom < 100)
         {
             //Red
             red.enabled = true;
