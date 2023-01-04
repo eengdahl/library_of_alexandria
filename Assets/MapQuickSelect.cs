@@ -9,6 +9,7 @@ public class MapQuickSelect : MonoBehaviour
 
     void Update()
     {
+        /* 
         if (Input.GetKeyDown("3"))
         {
             SceneManager.LoadScene("scene_tutorial");
@@ -36,6 +37,7 @@ public class MapQuickSelect : MonoBehaviour
         if (Input.GetKeyDown("9"))
         {
             SceneManager.LoadScene("scene_main_2.2");
-        }
+        } 
+        */
     }
 }
