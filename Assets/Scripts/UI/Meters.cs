@@ -104,7 +104,7 @@ public class Meters : MonoBehaviour
 
     private void LastTickOfClock()
     {
-
+        clockAS.volume = 0.5f;
         clockAS.clip = lastTickOfClock;
         clockAS.Play();
     }
