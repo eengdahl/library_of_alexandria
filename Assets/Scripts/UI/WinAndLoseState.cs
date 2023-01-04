@@ -112,7 +112,11 @@ public class WinAndLoseState : MonoBehaviour
                 playSoundOnce = false;
             }
             winScreen.enabled = true;
+            
+            if ( winscreenbakground != null)
+            {
             winscreenbakground.enabled = true;
+            }
             winScreen.GetComponentInChildren<SpriteRenderer>().enabled = true;
 
             bool spacePressed = false;
