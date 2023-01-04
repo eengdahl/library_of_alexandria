@@ -347,7 +347,7 @@ public class NPCMovement : MonoBehaviour
         if (isSeated)// start timer when at chair
         {
             seatedTimer += Time.deltaTime;
-
+            chairOccupiedScript.chairOccupied = true;
             thisAnimator.SetFloat("isSitting", seatedTimer);
             if (chairs[chairPicker].tag == "Chair Face Left")
             {
