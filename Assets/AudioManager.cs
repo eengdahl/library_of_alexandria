@@ -33,10 +33,11 @@ public class AudioManager : MonoBehaviour
     public void AdjustMusicVolume(float volume)
     {
         //Update AudioMixer
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.SetFloat("volume", Mathf.Log10(volume)*20);
         //Update PlayerPrefs "Music"
         PlayerPrefs.SetFloat("volume", volume);
         //Save changes
         PlayerPrefs.Save();
     }
 }
+

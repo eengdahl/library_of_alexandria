@@ -26,7 +26,7 @@ public class musicSetting : MonoBehaviour
     }
     public void ChangeVolume()
     {
-        if (volume.value > 0)
+        if (volume.value > 0.7f)
         {
             volumeImage.sprite = red;
             speakerRed0.SetActive(true);
@@ -36,7 +36,7 @@ public class musicSetting : MonoBehaviour
             speakerYellow0.SetActive(false);
             speakerYellow1.SetActive(false);
         }
-        if (volume.value > -40 && volume.value < 0)
+        if (volume.value > 0.3f && volume.value < 0.7f)
         {
             volumeImage.sprite = yellow;
             speakerRed0.SetActive(false);
@@ -46,7 +46,7 @@ public class musicSetting : MonoBehaviour
             speakerYellow0.SetActive(true);
             speakerYellow1.SetActive(true);
         }
-        if (volume.value > -80 && volume.value < -40)
+        if (volume.value > 0 && volume.value < 0.3f)
         {
             volumeImage.sprite = green;
             speakerRed0.SetActive(false);

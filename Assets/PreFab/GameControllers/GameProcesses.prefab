@@ -584,16 +584,16 @@ AudioSource:
   m_GameObject: {fileID: 250049668}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b750363c54d87eb4da3b561c98c12658, type: 2}
   m_audioClip: {fileID: 8300000, guid: 578d4e6238785d4468da98866583d4a5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 59
+  Priority: 126
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -812,7 +812,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: b750363c54d87eb4da3b561c98c12658, type: 2}
   m_audioClip: {fileID: 8300000, guid: 357d9b118d4f76b49bc6c60400326080, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.11
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4752,6 +4752,7 @@ MonoBehaviour:
   - {fileID: -647552068, guid: 8afe84f449fcb7c43a74a3e03a6099eb, type: 3}
   maxTime: 0
   npcSpawner: {fileID: 990194449}
+  shouldShake: 0
 --- !u!114 &1016374378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4795,7 +4796,6 @@ MonoBehaviour:
   progressionScreen: {fileID: 0}
   progressionAnimator: {fileID: 0}
   playerController: {fileID: 0}
-  endLock: 0
   bookFellAS: {fileID: 885814095344585440}
   tooLoudAS: {fileID: 2144648517912963960}
   winAS: {fileID: 5925526440086696510}

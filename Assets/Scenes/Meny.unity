@@ -5082,10 +5082,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2009053335}
   m_HandleRect: {fileID: 735423549}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 10
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.534
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
