@@ -33,7 +33,7 @@ public class FireDirection : MonoBehaviour
             }
             else if (transform.position != spotMoveTowards)
             {
-                Debug.Log("Shouldnt be able to husch fire now");
+               
                 
                 sootSprite.enabled = false;
             }

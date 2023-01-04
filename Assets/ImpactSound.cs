@@ -22,7 +22,7 @@ public class ImpactSound : MonoBehaviour
     {
         if (playFirstSound && transform.position == landingSpot.position)
         {
-            aS.PlayOneShot(firstImpactSound, 0.2f);
+            aS.PlayOneShot(firstImpactSound, 0.1f);
             playFirstSound = false;
         }
 
