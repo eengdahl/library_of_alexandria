@@ -15,6 +15,7 @@ public class WinAndLoseState : MonoBehaviour
     public SpriteRenderer toLoud;
     public GameObject toLoudButton;
     public SpriteRenderer winScreen;
+    public SpriteRenderer winscreenbakground;
 
     public GameObject progressionScreen;
     public Animator progressionAnimator;
@@ -111,6 +112,7 @@ public class WinAndLoseState : MonoBehaviour
                 playSoundOnce = false;
             }
             winScreen.enabled = true;
+            winscreenbakground.enabled = true;
             winScreen.GetComponentInChildren<SpriteRenderer>().enabled = true;
 
             bool spacePressed = false;
@@ -159,6 +161,4 @@ public class WinAndLoseState : MonoBehaviour
         string sceneName = currentScene.name;
         SceneManager.LoadScene(sceneName);
     }
-
-
 }
