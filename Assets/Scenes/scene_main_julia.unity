@@ -11881,7 +11881,7 @@ MonoBehaviour:
   bookAnimator: {fileID: 137431298}
   red_bookshelf: {fileID: 141180159}
   start_can_hush: {fileID: 1327403456}
-  stopstart_Arrowreception: {fileID: 2096337312}
+  stopstart_Arrowreception: {fileID: 1327403456}
   boolFunctions: {fileID: 137431301}
 --- !u!1 &2064628136
 GameObject:
