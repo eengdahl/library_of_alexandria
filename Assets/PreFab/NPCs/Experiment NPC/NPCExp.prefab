@@ -642,8 +642,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 20aea77670b17db44b47e539ac6d883a, type: 3}
   - {fileID: 8300000, guid: 694496e257d40c6468e48fb4d970decc, type: 3}
   - {fileID: 8300000, guid: 743aeae597097114b93a78aa378389d6, type: 3}
-  - {fileID: 8300000, guid: 099d2c3a99d38184e911442b17e87253, type: 3}
-  - {fileID: 8300000, guid: a2c7636a506761949bbfe4da6507df36, type: 3}
+  - {fileID: 8300000, guid: d4eb9dfda8a2b294189a55b00e225461, type: 3}
+  - {fileID: 8300000, guid: edaee34f0cc14394390f862a1ef207d5, type: 3}
   - {fileID: 8300000, guid: 53f3bfef01a90954e88b3ce0ddc974dc, type: 3}
   makingNosie: 0
   chanceOfMakingSound: 0
