@@ -26,9 +26,6 @@ public class WinAndLoseState : MonoBehaviour
     Scene currentScene;
 
     int menuScene = 1;
-    bool endLock;
-
-
     public AudioSource bookFellAS;
     public AudioSource tooLoudAS;
     public AudioSource winAS;
@@ -36,14 +33,14 @@ public class WinAndLoseState : MonoBehaviour
 
 
 
-
+    bool playSoundOnce = true;
 
 
     float endTimer;
     SwayBooksList swayBooksList;
     private void Start()
     {
-        endLock = false;
+       
         playerUpgrades = FindObjectOfType<AllPlayerUpgradeables>();
         noiseHandeler = FindObjectOfType<NoiseHandeler>();
         currentScene = SceneManager.GetActiveScene();
@@ -102,17 +99,21 @@ public class WinAndLoseState : MonoBehaviour
         //shuting down the other win/fail conditions
         noiseSlider.value = 0;
         swayBooksList.toMany = false;
-        
-        if (fellOver.enabled == false && toLoud.enabled == false && !endLock)
+       // bool endLock = false;
+
+        if (fellOver.enabled == false && toLoud.enabled == false)
         {
             PlayerPrefs.SetInt("levelCompleted", SceneManager.GetActiveScene().buildIndex + 1);
             PlayerPrefs.Save();
-            winAS.Play();
+            if (playSoundOnce)
+            {
+                winAS.Play();
+                playSoundOnce = false;
+            }
             winScreen.enabled = true;
             winScreen.GetComponentInChildren<SpriteRenderer>().enabled = true;
-            
+
             bool spacePressed = false;
-            endLock = true;
             if (Input.GetKey("space"))
             {
                 spacePressed = true;
@@ -125,6 +126,7 @@ public class WinAndLoseState : MonoBehaviour
                 spacePressed = false;
 
             }
+           
         }
     }
 
