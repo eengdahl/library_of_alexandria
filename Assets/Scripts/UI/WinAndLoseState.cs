@@ -117,6 +117,11 @@ public class WinAndLoseState : MonoBehaviour
             if (winscreenbakground != null)
             {
                 winscreenbakground.enabled = true;
+                if (endTimer > 300 || endTimer > 5 && Input.GetKey("space"))
+                {
+                    NextScene();
+                }
+                return;
             }
             winScreen.GetComponentInChildren<SpriteRenderer>().enabled = true;
 
