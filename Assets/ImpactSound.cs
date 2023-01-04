@@ -22,7 +22,7 @@ public class ImpactSound : MonoBehaviour
     {
         if (playFirstSound && transform.position == landingSpot.position)
         {
-            aS.PlayOneShot(firstImpactSound, 1);
+            aS.PlayOneShot(firstImpactSound, 0.2f);
             playFirstSound = false;
         }
 
@@ -32,7 +32,7 @@ public class ImpactSound : MonoBehaviour
         }
         if (playSecondSound && transform.position == landingSpot.position)
         {
-            aS.PlayOneShot(secondImpactSound, 0.5f);
+          //  aS.PlayOneShot(secondImpactSound, 0.25f);
             playSecondSound = false;
         }
 

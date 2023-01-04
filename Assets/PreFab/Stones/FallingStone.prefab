@@ -833,8 +833,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounceSpot: {fileID: 7571491275679619851}
   landingSpot: {fileID: 5871814574575887686}
-  firstImpactSound: {fileID: 8300000, guid: a5bb24331bb91744f89aa9a452fae05e, type: 3}
-  secondImpactSound: {fileID: 8300000, guid: a5bb24331bb91744f89aa9a452fae05e, type: 3}
+  firstImpactSound: {fileID: 8300000, guid: 6bb5f6582b2339c49bd9d3d871cf4a6c, type: 3}
+  secondImpactSound: {fileID: 8300000, guid: 6bb5f6582b2339c49bd9d3d871cf4a6c, type: 3}
 --- !u!82 &6410263005518175707
 AudioSource:
   m_ObjectHideFlags: 0
@@ -847,7 +847,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
