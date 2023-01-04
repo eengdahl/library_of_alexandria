@@ -361,7 +361,6 @@ public class NPCMovement : MonoBehaviour
 
         if (seatedTimer > willBeSeatedFor && nPCbookPickUp.haveBook == true)
         { //Reset everything that have anything to do with books
-            Debug.Log("Should reset occupied bool");
             chairOccupiedScript.chairOccupied = false;
             isSeated = false;
             SpawnBook2();//Spawn book 
@@ -621,12 +620,12 @@ public class NPCMovement : MonoBehaviour
     }
     void SpawnBook()
     {
-        float chanceOfNotDroppingBook;
-        chanceOfNotDroppingBook = Random.Range(0, 10);
-        if (chanceOfNotDroppingBook > 7)
-        {
-            return;
-        }
+        //float chanceOfNotDroppingBook;
+        //chanceOfNotDroppingBook = Random.Range(0, 10);
+        //if (chanceOfNotDroppingBook > 7)
+        //{
+        //    return;
+        //}
         GameObject[] tables; //tables gameObjects
         tables = GameObject.FindGameObjectsWithTag("Table");
         distanceBetween = new float[tables.Length];
