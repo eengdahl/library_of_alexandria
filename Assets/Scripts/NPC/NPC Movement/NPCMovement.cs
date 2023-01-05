@@ -33,7 +33,7 @@ public class NPCMovement : MonoBehaviour
 
     //Chairs
     int chairPicker = 0;
-
+    bool hasLeftChairBool = false;
     //The Picked array of chairs
     public GameObject[] chairs;
 
@@ -185,8 +185,6 @@ public class NPCMovement : MonoBehaviour
                 {
                     //Idle animators
                     thisAnimator.SetBool("isWalking", false);
-
-
                     stopTimer += Time.deltaTime;
                     if (stopTimer > stillAfterHusch)
                     {
@@ -263,7 +261,7 @@ public class NPCMovement : MonoBehaviour
 
 
         }
-        //Debug.Log("Hello can you see me? On left side bool: "+onLeftSide);
+
         if (onLeftSide == false)
         {
 
@@ -311,11 +309,12 @@ public class NPCMovement : MonoBehaviour
                 chairs = chairListScript.listOfLeftChairArrays[chairCheckerIndex];
                 chairOccupiedScript = chairs[chairPicker].GetComponent<ChairOccupied>();//chairsMiddleL[chairPicker].GetComponent<ChairOccupied>();
 
-                if (chairOccupiedScript.chairOccupied == false)
+                if (chairOccupiedScript.chairOccupied == false && !hasChair)
                 {
                     chairOccupiedScript.chairOccupied = true;
                     hasChair = true;
                     atTableFinish = false;
+                    return;
                 }
                 else if (chairOccupiedScript.chairOccupied == true && !hasChair)
                 {
@@ -327,11 +326,12 @@ public class NPCMovement : MonoBehaviour
                 chairs = chairListScript.listOfRightChairArrays[chairCheckerIndex];
                 chairOccupiedScript = chairs[chairPicker].GetComponent<ChairOccupied>();
 
-                if (chairOccupiedScript.chairOccupied == false)
+                if (chairOccupiedScript.chairOccupied == false && !hasChair)
                 {
                     chairOccupiedScript.chairOccupied = true;
                     hasChair = true;
                     atTableFinish = false;
+                    return;
                 }
                 else if (chairOccupiedScript.chairOccupied == true && !hasChair)
                 {
@@ -359,15 +359,19 @@ public class NPCMovement : MonoBehaviour
             }
         }
 
-        if (seatedTimer > willBeSeatedFor && nPCbookPickUp.haveBook == true)
+        if (seatedTimer >= willBeSeatedFor && nPCbookPickUp.haveBook == true)
         { //Reset everything that have anything to do with books
+            if (!hasLeftChairBool)
+            {
             chairOccupiedScript.chairOccupied = false;
+                hasLeftChairBool = true;
+            }
             isSeated = false;
             SpawnBook2();//Spawn book 
             nPCbookPickUp.haveBook = false;
             hasChair = false;
             seatedTimer = 0;
-            thisAnimator.SetFloat("isSitting", seatedTimer);
+            thisAnimator.SetFloat("isSitting", 0); //seatedTimer
             isLeaving = true;//Bool to start looking for exit arrays
         }
 
@@ -394,6 +398,7 @@ public class NPCMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, chairs[chairPicker].transform.position - new Vector3(0f, 0.4f, 0), moveSpeed * Time.deltaTime);
         if (transform.position == chairs[chairPicker].transform.position - new Vector3(0, 0.4f, 0)) // if at chair
         {
+            
             isSeated = true;
         }
         currentWaypoint = chairs[chairPicker].transform;

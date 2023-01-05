@@ -15,22 +15,22 @@ public class PitchChanger : MonoBehaviour
     private void Update()
     {
         //200 noise max
-        if(noiseHandler.noiseSlider.value < 80) //Under "80" eller valfritt värde noise i rummet ha denna pitch
+        if(noiseHandler.noiseSlider.value < 60) //Under "80" eller valfritt värde noise i rummet ha denna pitch
         {
             audioSource.pitch = 1;
         }
-        else if (noiseHandler.noiseSlider.value > 80 && noiseHandler.noiseSlider.value < 120) //mellan 80 och 120 ha denna pitch
+        else if (noiseHandler.noiseSlider.value > 60 && noiseHandler.noiseSlider.value < 120) //mellan 80 och 120 ha denna pitch
         {
             audioSource.pitch = 1.2f;
         }
-        else if (noiseHandler.noiseSlider.value > 120 && noiseHandler.noiseSlider.value < 160)
-        {
-            audioSource.pitch = 1.4f;
-        }
-        else if (noiseHandler.noiseSlider.value > 160)
-        {
-            audioSource.pitch = 1.7f;
-        }
+        //else if (noiseHandler.noiseSlider.value > 60 && noiseHandler.noiseSlider.value < 160)
+        //{
+        //    audioSource.pitch = 1.4f;
+        //}
+        //else if (noiseHandler.noiseSlider.value > 160)
+        //{
+        //    audioSource.pitch = 1.7f;
+        //}
         
     }
 }
