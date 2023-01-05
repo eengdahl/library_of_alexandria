@@ -4652,6 +4652,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 130281339, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a1e44e196173adc44a59e140c6dc4670, type: 3}
     - target: {fileID: 171051563, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: player
       value: 
@@ -4712,6 +4716,14 @@ PrefabInstance:
       propertyPath: magnetArea
       value: 
       objectReference: {fileID: 1193998809}
+    - target: {fileID: 1714732223, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 00b1a63978f5d4f4da4096e6ede5073a, type: 3}
+    - target: {fileID: 1784124354, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2efef730fc461174e8d0757df7cb6c18, type: 3}
     - target: {fileID: 1946906730, guid: 74da55b37580c5445a82b0ef207e62b4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
